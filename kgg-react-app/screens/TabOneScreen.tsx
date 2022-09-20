@@ -3,6 +3,8 @@ import { StyleSheet } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
+// import LogoTest from "../assets/logos/Logomark/KGG_Logomark_Blue_RGB.svg";
+//       <LogoTest width={50} height={50}/>
 
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   return (
