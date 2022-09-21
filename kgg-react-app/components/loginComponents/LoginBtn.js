@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
-import Colors from "../constants/Colors";
+import Colors from "../../constants/Colors";
 
 const LoginBtn = ({ name }) => {
   const onPress = () => null;
@@ -20,13 +20,14 @@ const LoginBtn = ({ name }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: "center", paddingHorizontal: "20%" },
+  container: {
+    justifyContent: "center",
+    paddingTop: 20,
+  },
   button: {
     backgroundColor: Colors.red.color,
-    display: "flex",
-    //width: "fit-content",
-    flexShrink: 1,
-    paddingVertical: "2%",
+
+    paddingVertical: 10,
     flexDirection: "row",
     justifyContent: "center",
     borderRadius: 10,

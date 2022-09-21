@@ -1,13 +1,13 @@
 import React from "react";
-import { View, StyleSheet, Text, TextInput } from "react-native";
-import Colors from "../constants/Colors";
+import { View, StyleSheet, TextInput } from "react-native";
+import Colors from "../../constants/Colors";
 
-const InputField = ({ labelName, prompt }) => {
+const InputField = ({ prompt }) => {
   return (
     <View style={styles.container}>
-      <Text>{labelName}</Text>
       <TextInput
         style={styles.input}
+        keyboardType="email-address"
         placeholder={prompt}
         placeholderTextColor={Colors.darkGrey.color}
       />
@@ -17,10 +17,13 @@ const InputField = ({ labelName, prompt }) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
+    marginTop: 20,
   },
   input: {
     backgroundColor: Colors.offWhite.color,
+    padding: 5,
+    borderRadius: 5,
+    paddingLeft: 15,
   },
 });
 
