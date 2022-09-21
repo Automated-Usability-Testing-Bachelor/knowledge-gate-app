@@ -8,9 +8,9 @@ import ForgotPassword from "./ForgotPassword";
 const LoginForm = () => {
   return (
     <View style={styles.container}>
-      <InputField prompt="E-mail" />
+      <InputField prompt="E-mail" keyboardType="email-address" />
 
-      <InputField prompt="Password" />
+      <InputField prompt="Password" keyboardType="default" />
       <ForgotPassword />
       <LoginBtn name="Login" />
       <InfoText />

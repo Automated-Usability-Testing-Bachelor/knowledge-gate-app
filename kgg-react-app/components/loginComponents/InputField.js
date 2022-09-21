@@ -2,12 +2,12 @@ import React from "react";
 import { View, StyleSheet, TextInput } from "react-native";
 import Colors from "../../constants/Colors";
 
-const InputField = ({ prompt }) => {
+const InputField = ({ prompt, keyboardType }) => {
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        keyboardType="email-address"
+        keyboardType={keyboardType}
         placeholder={prompt}
         placeholderTextColor={Colors.darkGrey.color}
       />
