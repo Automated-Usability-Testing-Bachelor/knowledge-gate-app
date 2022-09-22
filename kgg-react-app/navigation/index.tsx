@@ -18,6 +18,8 @@ import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import CalendarScreen from "../screens/CalendarScreen";
 import LoginScreen from "../screens/LoginScreen";
+import ProjectsScreen from "../screens/ProjectsScreen";
+
 import {
   RootStackParamList,
   RootTabParamList,
@@ -42,6 +44,11 @@ const Stack = createNativeStackNavigator();
 function RootNavigator() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="Projects"
+        component={ProjectsScreen}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="Calendar"
         component={CalendarScreen}

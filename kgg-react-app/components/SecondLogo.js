@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     paddingRight: 10,
     paddingBottom: 5,
+    marginTop: 25,
   },
   logo: {
     width: 169,
