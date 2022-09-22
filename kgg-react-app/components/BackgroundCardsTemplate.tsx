@@ -1,15 +1,14 @@
 import React from "react";
 import { ScrollView, StyleSheet, View, Text} from "react-native";
 import Colors from "../constants/Colors";
-import { useRoute } from '@react-navigation/native';
 
 
 export default function BackgroundCardsTemplate(props: any) {
-    const route = useRoute();
+
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.header1}>{route.name}</Text>
+                <Text style={styles.header1}>{props.header}</Text>
             </View>
             <ScrollView style={styles.container2}>
                 {props.props}
