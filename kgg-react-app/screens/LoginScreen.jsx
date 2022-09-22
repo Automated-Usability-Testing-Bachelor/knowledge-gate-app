@@ -6,12 +6,12 @@ import Colors from "../constants/Colors";
 import Logo from "../components/loginComponents/Logo";
 import LoginView from "../components/loginComponents/LoginView";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+
 const LoginScreen = ({}) => {
   return (
     <SafeAreaProvider style={styles.container}>
       
-      <KeyboardAwareScrollView contentContainerStyle={styles.avoid}
-      >
+      <KeyboardAwareScrollView contentContainerStyle={styles.avoid}>
       <View style={styles.inner}>
         <Logo />
         <LoginView/>

@@ -13,8 +13,10 @@ import { ColorSchemeName, Pressable } from 'react-native';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import LoginScreen from '../screens/LoginScreen';
+import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import BottomTabNavigator from './Navbar';
 
 export default function Navigation() {
   return (
@@ -33,15 +35,11 @@ const Stack = createNativeStackNavigator();
 function RootNavigator() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
+        <Stack.Group>
+            <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+            <Stack.Screen name="NotFound" component={NotFoundScreen} options={{title: "Oops!"}} />
+        </Stack.Group>
+        <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}} />
     </Stack.Navigator>
   );
 }
-
-/**
- * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
- * https://reactnavigation.org/docs/bottom-tab-navigator
-
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
