@@ -1,10 +1,9 @@
 import React from "react";
-import { ScrollView, StyleSheet, View, Text} from "react-native";
+import {ScrollView, StyleSheet, Text, View} from "react-native";
 import Colors from "../constants/Colors";
 
 
 export default function BackgroundCardsTemplate(props: any) {
-
     return (
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.headerContainer}>

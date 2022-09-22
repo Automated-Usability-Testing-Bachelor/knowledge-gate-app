@@ -1,7 +1,7 @@
 import { useRoute } from "@react-navigation/native";
 import React from "react";
 import BackgroundCards from "../../components/BackgroundCardsTemplate";
-import ProjectCard from "./ProjectCard";
+import Projects from "./ProjectCard";
 import ProjectExpanded from "./ProjectExpanded";
 
 
@@ -20,7 +20,7 @@ export default function ProjectExpandedOrNot() {
         return (
         <BackgroundCards
             header={route.name}
-            props={ProjectCard()}
+            props={Projects()}
         />
         )
     }
