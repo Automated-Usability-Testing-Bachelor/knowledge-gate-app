@@ -6,15 +6,15 @@ import SecondLogo from "../components/SecondLogo";
 import BackgroundCards from "../components/BackgroundCardsTemplate";
 import ProjectCard from "../components/projectsComponents/ProjectCard";
 import { useRoute } from '@react-navigation/native';
-import Projects from "../components/projectsComponents/ProjectCard";
+import Projects from "../components/projectsComponents/ProjectExpanded";
 
-export default function ProjectsScreen() {
-    const route = useRoute();
+export default function ProjectsExpandedScreen() {
+    const name = "Project Name";
     return (
         <SafeAreaView style={styles.container}>
             <SecondLogo />
             <BackgroundCards
-                header={route.name}
+                header={name}
                 props={Projects()}
             />
         </SafeAreaView>

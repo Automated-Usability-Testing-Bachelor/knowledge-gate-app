@@ -20,7 +20,6 @@ const Data = [
     },
 ]
 
-// @ts-ignore
 const ProjectCard = ({item, onPress}) => (
     <TouchableOpacity style={styles.container} onPress={onPress}>
         <Text style={styles.title}>{item.title}</Text>

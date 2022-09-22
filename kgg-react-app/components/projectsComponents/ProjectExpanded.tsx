@@ -31,13 +31,13 @@ export default function Projects() {
     return (
         <>
             <ProjectExpanded
-                industry="Project 1"
+                industry="Industry"
                 industryDescription="Blah blah blah"
-                goals="Project 1"
+                goals="Goals"
                 goalsDescription="Blah blah blah"
-                description="Project 1"
+                description="Description"
                 descriptionDescription="Blah blah blah"
-                questions="Project 1"
+                questions="Questions"
                 questionsDescription="Blah blah blah"
             >
             </ProjectExpanded>

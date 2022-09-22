@@ -9,6 +9,7 @@ import * as React from "react";
 import CalendarScreen from "../screens/CalendarScreen";
 import LoginScreen from "../screens/LoginScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
+import ProjectsExpandedScreen from "../screens/ProjectExpandedScreen";
 
 export default function Navigation() {
     return (
@@ -27,6 +28,11 @@ const Stack = createNativeStackNavigator();
 function RootNavigator() {
     return (
         <Stack.Navigator>
+            <Stack.Screen
+                name="ProjectsExpanded"
+                component={ProjectsExpandedScreen}
+                options={{headerShown: false}}
+            />
             <Stack.Screen
                 name="Projects"
                 component={ProjectsScreen}
