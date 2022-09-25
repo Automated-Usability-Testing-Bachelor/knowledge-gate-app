@@ -3,6 +3,8 @@ import * as React from 'react';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import {AntDesign, Feather, FontAwesome5, Ionicons} from '@expo/vector-icons';
 import {StyleSheet, Text} from 'react-native';
+import CalendarScreen from "../screens/CalendarScreen";
+import ProjectsScreen from "../screens/ProjectsScreen";
 
 // const BottomTab = createBottomTabNavigator<RootTabParamList>();
 const BottomTab = createBottomTabNavigator();
@@ -31,22 +33,25 @@ export default function BottomTabNavigator() {
                 component={NotFoundScreen}
                 options={{
                     title: 'Profile',
+                    headerShown: false,
                     tabBarIcon: ({color}) => <AntDesign name="user" size={22} color={color}/>,
                 }}
             />
             <BottomTab.Screen
                 name="Projects"
-                component={NotFoundScreen}
+                component={ProjectsScreen}
                 options={{
                     title: 'Projects',
+                    headerShown: false,
                     tabBarIcon: ({color}) => <AntDesign name="clockcircleo" size={22} color={color}/>,
                 }}
             />
             <BottomTab.Screen
                 name="Calendar"
-                component={NotFoundScreen}
+                component={CalendarScreen}
                 options={{
                     title: 'Calendar',
+                    headerShown: false,
                     tabBarIcon: ({color}) => <Feather name="calendar" size={22} color={color}/>,
                 }}
             />
@@ -55,6 +60,7 @@ export default function BottomTabNavigator() {
                 component={NotFoundScreen}
                 options={{
                     title: 'Invoice',
+                    headerShown: false,
                     tabBarIcon: ({color}) => <FontAwesome5 name="money-bill-wave-alt" size={22} color={color}/>,
                 }}
             />
@@ -63,6 +69,7 @@ export default function BottomTabNavigator() {
                 component={NotFoundScreen}
                 options={{
                     title: 'Notifications',
+                    headerShown: false,
                     tabBarIcon: ({color}) => <Ionicons name="notifications-outline" size={22} color={color}/>,
                 }}
             />

@@ -18,12 +18,27 @@ const Data = [
         title: "Project 3",
         description: "Blah blah blah",
     },
+    {
+        id: 3,
+        title: "Project 4",
+        description: "Blah blah blah",
+    },
+    {
+        id: 4,
+        title: "Project 5",
+        description: "Blah blah blah",
+    },
+    {
+        id: 5,
+        title: "Project 6",
+        description: "Blah blah blah",
+    },
 ]
 
 const ProjectCard = ({item, onPress}) => (
     <TouchableOpacity style={styles.container} onPress={onPress}>
         <Text style={styles.title}>{item.title}</Text>
-        <Text>{item.description}</Text>
+        <Text style={styles.description}>{item.description}</Text>
     </TouchableOpacity>
 );
 
@@ -47,6 +62,7 @@ export default function Projects() {
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
             extraData={selectedId}
+            style={styles.flatListContainer}
         />
     );
 }
@@ -55,25 +71,26 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        margin: 10,
+        marginHorizontal: 15,
+        marginVertical: 5,
         dropShadow: 25,
         borderRadius: 5,
         backgroundColor: "white",
         pressable: true,
         height: 115,
     },
-    projectsExpandedContainer: {
-        flex: 1,
-        padding: 10,
-        margin: 10,
-    },
-    projectsExpandedText: {
-        marginTop: 5,
-        marginBottom: 5,
-    },
     title: {
         fontSize: 20,
         color: Colors.blue.color,
         marginBottom: 5,
-    }
+    },
+    description: {
+        fontSize: 15,
+        color: Colors.black.color,
+    },
+    flatListContainer: {
+        borderRadius: 15,
+        marginTop: 10,
+        // paddingBottom: 100,
+    },
 });

@@ -2,17 +2,18 @@ import React from "react";
 import {ScrollView, StyleSheet, Text, View} from "react-native";
 import Colors from "../constants/Colors";
 
-
 export default function BackgroundCardsTemplate(props: any) {
     return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.header1}>{props.header}</Text>
+                <Text style={styles.header1}>
+                    {props.headerTitle}
+                </Text>
             </View>
-            <ScrollView style={styles.container2}>
-                {props.props}
-            </ScrollView>
-        </ScrollView>
+            <View style={styles.container2}>
+                {props.body}
+            </View>
+        </View>
     );
 }
 
@@ -22,12 +23,15 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.warmGrey.color,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
+        height: "100%",
     },
     container2: {
         backgroundColor: Colors.offWhite.color,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        paddingVertical: 0,
+        height: "100%",
+        // paddingTop: 2,
+        paddingBottom: 110,
     },
     headerContainer: {
         paddingHorizontal: 25,
