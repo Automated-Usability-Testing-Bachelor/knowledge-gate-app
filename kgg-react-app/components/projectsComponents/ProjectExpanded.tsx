@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, Pressable } from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 import Colors from "../../constants/Colors";
 
 function ProjectExpanded(props: any) {
