@@ -105,4 +105,5 @@ dist
 
 .DS_Store
 
-.kgg-react-app/.idea/workspace.xml
+kgg-react-app/.idea/workspace.xml
+.idea/workspace.xml
