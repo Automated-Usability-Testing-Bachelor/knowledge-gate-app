@@ -1,6 +1,10 @@
 import React, {useState} from "react";
 import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
 import Colors from "../../constants/Colors";
+import ProjectsExpandedScreen from "../../screens/ProjectExpandedScreen";
+import { useNavigation } from '@react-navigation/native';
+import Navigation from "../../navigation";
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Data = [
     {
@@ -31,14 +35,27 @@ const Data = [
     {
         id: 5,
         title: "Project 6",
-        description: "Blah blah blah",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in dolor sit amet tellus aliquet pellentesque ut vitae risus. Pellentesque non libero eget metus suscipit efficitur. Donec nec euismod nunc. Ut efficitur sem eu interdum lobortis. Maecenas mattis massa et egestas porta. Cras placerat blandit porta. Etiam sed nisi et ipsum aliquam volutpat. Nam pulvinar, mauris accumsan gravida auctor, lectus purus vulputate erat, ut tincidunt felis magna vel lacus. Aliquam aliquam lectus eget tincidunt aliquam. Sed neque diam, tempus eu magna nec, iaculis semper libero. Vivamus vel diam ac lacus dapibus pulvinar. Aliquam eget eros blandit, bibendum nibh id, placerat velit. Nullam ac neque gravida sem bibendum ultrices non non mauris. Aliquam eleifend odio sit amet orci sodales viverra. Phasellus consectetur arcu ut iaculis mattis. Nam tincidunt libero a lectus faucibus vulputate.\n" +
+            "\n" +
+            "Suspendisse feugiat tortor metus, id commodo ipsum tincidunt ac. Maecenas aliquet in lectus non auctor. Aenean lorem massa, egestas et metus eu, porta accumsan turpis. Sed iaculis, quam a rhoncus ornare, orci leo maximus diam, ac condimentum risus enim et ante. Pellentesque maximus, leo vel ullamcorper scelerisque, orci ante suscipit massa, a ultricies justo ante quis neque. In a auctor neque. Donec in est vitae nunc scelerisque lobortis ut id enim. Suspendisse non molestie velit. Duis facilisis hendrerit erat id gravida. Vivamus magna diam, dignissim vel convallis id, aliquam at odio. Nam aliquam cursus augue nec cursus. Cras mollis ligula eget sem gravida consectetur. Nunc eleifend augue ut turpis molestie, nec malesuada est sollicitudin. Fusce ligula tortor, tincidunt et imperdiet non, accumsan non tortor. Donec vitae sem tristique, ullamcorper lorem non, mollis orci. In tempor augue mi, vel varius leo viverra in.",
     },
 ]
 
-const ProjectCard = ({item, onPress}) => (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+function pressed() {
+    // navigator.navigate("ProjectsExpandedScreen");
+    console.log("hello")
+}
+
+// const navigation = useNavigation();
+
+const ProjectCard = ({item, navigation}) => (
+    <TouchableOpacity
+        style={styles.container}
+        onPress={() => console.log(item.title)}
+        // onPress={() => navigation.navigate(item.route)}
+    >
         <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
+        <Text numberOfLines={3} style={styles.description}>{item.description}</Text>
     </TouchableOpacity>
 );
 
@@ -87,10 +104,11 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 15,
         color: Colors.black.color,
+        flex: 1,
+        flexWrap: "wrap",
     },
     flatListContainer: {
         borderRadius: 15,
         marginTop: 10,
-        // paddingBottom: 100,
     },
 });

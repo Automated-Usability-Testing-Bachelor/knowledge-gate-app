@@ -6,7 +6,6 @@ import {StyleSheet, Text} from 'react-native';
 import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
 
-// const BottomTab = createBottomTabNavigator<RootTabParamList>();
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
@@ -19,17 +18,11 @@ export default function BottomTabNavigator() {
                 tabBarActiveBackgroundColor: "#fff",
                 tabBarItemStyle: styles.tabBarItemStyle,
                 tabBarStyle: styles.tabBarStyle,
-                tabBarLabel: ({focused}) => {
-                    return focused
-                        // ? (<Text style={{ fontWeight: 'bold', fontSize: 8, color:"#DD2638"  }} >{route.name}</Text>)
-                        ? (<Text style={{fontWeight: 'normal', fontSize: 9, color: "#DD2638"}}>{route.name}</Text>)
-                        // ? (<Text adjustsFontSizeToFit numberOfLines={1} style={{ fontWeight: 'normal', color:"#DD2638"  }} >{route.name}</Text>)
-                        : (<Text style={{fontWeight: 'normal', fontSize: 8, color: "#fff"}}>{route.name}</Text>)
-                },
+                tabBarLabelStyle: styles.tabBarLabelStyle,
             })}
         >
             <BottomTab.Screen
-                name='Profile'
+                name='NotFound'
                 component={NotFoundScreen}
                 options={{
                     title: 'Profile',
@@ -111,4 +104,7 @@ const styles = StyleSheet.create({
         right: 3,
         bottom: 20,
     },
+    tabBarLabelStyle: {
+        fontSize: 9,
+    }
 });
