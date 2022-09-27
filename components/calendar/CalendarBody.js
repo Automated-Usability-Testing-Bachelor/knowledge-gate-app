@@ -6,7 +6,10 @@ import CalendarHeaderText from "./CalenderHeaderText";
 import AvailabilityHeader from "./AvailabilityHeader";
 import AvailabilityItem from "./AvailabilityItem";
 import ScheduleBtn from "./ScheduleBtn";
-import { getCalendarDataFromCurrentMonth } from "../../mocks/CalendarMockData";
+import {
+  getCalendarDataFromCurrentMonth,
+  addAvailability,
+} from "../../mocks/CalendarMockData";
 import moment from "moment";
 import ScheduleAvailabilityModal from "./scheduleModal/ScheduleAvailabilityModal";
 import { BlackSansBody1 } from "../Texts/Headers";
@@ -15,6 +18,7 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
   const [showModal, setShowModal] = useState(false);
   const [showAvailability, setShowAvailability] = useState(false);
   const [currentAvailabilities, setCurrentAvailabilities] = useState([]);
+  const [currentMonth, setCurrentMonth] = useState(moment().startOf("month"));
   const [datesWithAvailabilities, setDatesWithAvailability] = useState(
     getCalendarDataFromCurrentMonth(moment())
   );
@@ -27,6 +31,7 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
   };
   const currentMonthCallback = (date) => {
     setDatesWithAvailability(getCalendarDataFromCurrentMonth(date));
+    setCurrentMonth(date);
   };
   const hasAvailabilityOnCurrentDate = () => {
     for (let i = 0; i < datesWithAvailabilities.length; i++) {
@@ -48,8 +53,12 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
   };
   useEffect(() => {
     hasAvailabilityOnCurrentDate();
-  }, [currentDate]);
-  const getscheduledTime = (timeRange) => {};
+  }, [currentDate, datesWithAvailabilities]);
+  const getscheduledTime = (timeRange) => {
+    addAvailability(timeRange, currentDate);
+    setDatesWithAvailability(getCalendarDataFromCurrentMonth(currentMonth));
+  };
+
   return (
     <ScrollView style={styles.container}>
       <ActualCalendar
