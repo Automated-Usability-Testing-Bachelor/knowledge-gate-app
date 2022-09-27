@@ -29,17 +29,13 @@ export const getCalendarDataFromCurrentMonth = (date) => {
       allCalendarData[i].date.isSame(date, "year") &&
       allCalendarData[i].date.isSame(date, "month")
     ) {
-      console.log("yeds");
       availabilities.push({ ...allCalendarData[i] });
     }
   }
   return availabilities;
 };
 export const addAvailability = (timeRange, date) => {
-  console.log("from mocks");
-  console.log(timeRange);
   let startDay = date.startOf("day");
-  let isSet = false;
   for (let i = 0; i < allCalendarData.length; i++) {
     if (startDay.isSame(allCalendarData[i].date, "day")) {
       allCalendarData[i].availabilities.push({

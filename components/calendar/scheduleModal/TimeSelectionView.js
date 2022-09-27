@@ -59,6 +59,11 @@ const TimeSelectionView = ({ returnTimeRangeCallback }) => {
       setToString(moment(date).format("hh:mm A"));
       let newTimeRange = { from: moment(fromDate), to: moment(date) };
       returnTimeRangeCallback(newTimeRange);
+    } else {
+      let newTimeRange = { from: moment(fromDate), to: moment(toDate) };
+      console.log(newTimeRange);
+      returnTimeRangeCallback(newTimeRange);
+      console.log("yo");
     }
   }, [fromDate]);
 

@@ -30,8 +30,6 @@ const ActualCalendar = ({
           },
           textStyle: {
             color: "#FFFFFF",
-            fontSize: textStyles.blackSerifBody1.fontSize,
-            fontFamily: textStyles.blackSerifBody1.fontFamily,
           }, // sets the font color
           containerStyle: [], // extra styling for day container
           allowDisabled: true, // allow custom style to apply to disabled dates
@@ -43,6 +41,10 @@ const ActualCalendar = ({
   useEffect(() => {
     changeCustomDatesStyle(selectedMonthYear);
   }, [selectedMonthYear]);
+  /*useEffect(() => {
+    changeCustomDatesStyle(selectedMonthYear);
+    console.log(datesWithAvailabilities);
+  }, [datesWithAvailabilities]); */
 
   const changeCustomDatesStyle = (date) => {
     let startOfMonth = date.clone();
@@ -97,6 +99,7 @@ const ActualCalendar = ({
         }}
         selectedStartDate={currentSelectedDate}
         textStyle={{ fontFamily: textStyles.blackSerifBody1.fontFamily }}
+        minDate={moment().startOf("year")}
       />
     </View>
   );
