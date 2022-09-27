@@ -2,24 +2,27 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import {AntDesign, Feather, FontAwesome5, Ionicons} from '@expo/vector-icons';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet} from 'react-native';
 import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
+import ProjectsExpandedScreen from "../screens/ProjectExpandedScreen";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 const BottomTab = createBottomTabNavigator();
+const ProjectStack = createNativeStackNavigator();
 
 export default function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
             initialRouteName="Calendar"
-            screenOptions={({route}) => ({
+            screenOptions={{
                 tabBarActiveTintColor: "#DD2638",
                 tabBarInactiveTintColor: "#fff",
                 tabBarActiveBackgroundColor: "#fff",
                 tabBarItemStyle: styles.tabBarItemStyle,
                 tabBarStyle: styles.tabBarStyle,
                 tabBarLabelStyle: styles.tabBarLabelStyle,
-            })}
+            }}
         >
             <BottomTab.Screen
                 name='NotFound'

@@ -1,10 +1,6 @@
 import React, {useState} from "react";
 import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
 import Colors from "../../constants/Colors";
-import ProjectsExpandedScreen from "../../screens/ProjectExpandedScreen";
-import { useNavigation } from '@react-navigation/native';
-import Navigation from "../../navigation";
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Data = [
     {
@@ -41,7 +37,7 @@ const Data = [
     },
 ]
 
-function pressed() {
+const pressed = () => {
     // navigator.navigate("ProjectsExpandedScreen");
     console.log("hello")
 }
@@ -52,7 +48,7 @@ const ProjectCard = ({item, navigation}) => (
     <TouchableOpacity
         style={styles.container}
         onPress={() => console.log(item.title)}
-        // onPress={() => navigation.navigate(item.route)}
+        // onPress={() => navigation.navigate('NotFound')}
     >
         <Text style={styles.title}>{item.title}</Text>
         <Text numberOfLines={3} style={styles.description}>{item.description}</Text>
