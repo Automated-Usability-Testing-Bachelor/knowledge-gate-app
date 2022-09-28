@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, StyleSheet, ScrollView, FlatList } from "react-native";
+import { View, StyleSheet, ScrollView, FlatList } from "react-native";
 import Colors from "../../constants/Colors";
 import ActualCalendar from "./actualCalendar";
-import CalendarHeaderText from "./CalenderHeaderText";
 import AvailabilityHeader from "./AvailabilityHeader";
-import AvailabilityItem from "./AvailabilityItem";
 import ScheduleBtn from "./ScheduleBtn";
 import {
   getCalendarDataFromCurrentMonth,
   addAvailability,
+  getAvailabilityById,
 } from "../../mocks/CalendarMockData";
 import moment from "moment";
 import ScheduleAvailabilityModal from "./scheduleModal/ScheduleAvailabilityModal";
-import { BlackSansBody1 } from "../Texts/Headers";
-import NoAvailability from "../NoDataComponents/NoAvailabilities";
+import AvailabilitiesView from "./AvailabilitiesView";
+
 const CalendarBody = ({ selectedDayHeaderCallback }) => {
   const [showModal, setShowModal] = useState(false);
-  const [showAvailability, setShowAvailability] = useState(false);
-  const [currentAvailabilities, setCurrentAvailabilities] = useState([]);
+
   const [currentMonth, setCurrentMonth] = useState(moment().startOf("month"));
-  const [datesWithAvailabilities, setDatesWithAvailability] = useState(
-    getCalendarDataFromCurrentMonth(moment())
-  );
+  const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment());
+  const [datesWithAvailabilities, setDatesWithAvailability] =
+    useState(initialDatesWithAv);
   const [currentDate, setCurrentDate] = useState(moment());
   const ShowModalCallback = () => {
     setShowModal(true);
@@ -33,30 +31,30 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
     setDatesWithAvailability(getCalendarDataFromCurrentMonth(date));
     setCurrentMonth(date);
   };
-  const hasAvailabilityOnCurrentDate = () => {
-    for (let i = 0; i < datesWithAvailabilities.length; i++) {
-      let element = datesWithAvailabilities[i].date.clone();
-      element = element.startOf("day");
-      let date = currentDate.clone();
-      date = date.startOf("day");
-      if (date.isSame(element, "day")) {
-        setCurrentAvailabilities(datesWithAvailabilities[i].availabilities);
-        return;
-      } else {
-        setCurrentAvailabilities([]);
-      }
-    }
-  };
   const selectedDayCallback = (date) => {
     selectedDayHeaderCallback(date);
     setCurrentDate(date);
   };
-  useEffect(() => {
-    hasAvailabilityOnCurrentDate();
-  }, [currentDate, datesWithAvailabilities]);
+
   const getscheduledTime = (timeRange) => {
+    console.log("/n");
+    console.log("timerange called");
+    console.log("/n");
     addAvailability(timeRange, currentDate);
-    setDatesWithAvailability(getCalendarDataFromCurrentMonth(currentMonth));
+
+    //for refreshing availabilities view
+    setCurrentDate(currentDate.clone());
+
+    //refreshing calendar styling
+    let month = currentDate.clone();
+    month = month.startOf("month");
+    let arr = [];
+    let newData = getCalendarDataFromCurrentMonth(month);
+
+    for (let i = 0; i < newData.length; i++) {
+      arr.push(Object.assign({}, newData[i]));
+    }
+    setDatesWithAvailability(arr);
   };
 
   return (
@@ -67,19 +65,7 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
         currentMonthCallback={currentMonthCallback}
       />
       <AvailabilityHeader />
-      <View>
-        <FlatList
-          data={currentAvailabilities}
-          ListEmptyComponent={
-            <View style={styles.NoAvailabilityContainer}>
-              <NoAvailability />
-            </View>
-          }
-          renderItem={({ item }) => (
-            <AvailabilityItem from={item.from} to={item.to} />
-          )}
-        />
-      </View>
+      <AvailabilitiesView currentDate={currentDate} />
       <ScheduleBtn ShowModalCallback={ShowModalCallback} />
       <ScheduleAvailabilityModal
         closeModal={closeModal}
@@ -104,3 +90,14 @@ const styles = StyleSheet.create({
 });
 
 export default CalendarBody;
+function roundMinutes(date) {
+  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
+  date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
+
+  return date;
+}
+function addHours(date, hours) {
+  date.setHours(date.getHours() + hours);
+
+  return date;
+}

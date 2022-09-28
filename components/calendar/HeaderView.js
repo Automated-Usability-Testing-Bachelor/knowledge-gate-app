@@ -9,7 +9,6 @@ const HeaderView = () => {
   const [currentDate, setCurrentDate] = useState(moment());
   const selectedDayCallback = (date) => {
     setCurrentDate(date);
-    console.log(date.date());
   };
   return (
     <ScrollView contentContainerStyle={styles.container}>

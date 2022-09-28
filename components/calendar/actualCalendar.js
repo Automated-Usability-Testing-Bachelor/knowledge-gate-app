@@ -21,8 +21,14 @@ const ActualCalendar = ({
   );
 
   const dateContainsAvailability = (day, arr) => {
+    let dayHasAvailability = false;
     datesWithAvailabilities.forEach((element) => {
-      if (day.startOf("day").isSame(element.date.startOf("day"), "day")) {
+      let avDate = element.date.clone();
+      avDate = avDate.startOf("day");
+      if (
+        day.startOf("day").isSame(avDate, "day") &&
+        element.availabilities.length > 0
+      ) {
         arr.push({
           date: day.clone(),
           style: {
@@ -34,24 +40,32 @@ const ActualCalendar = ({
           containerStyle: [], // extra styling for day container
           allowDisabled: true, // allow custom style to apply to disabled dates
         });
+        dayHasAvailability = true;
       }
     });
-    return arr;
+    if (!dayHasAvailability) {
+      arr.push({
+        date: day.clone(),
+        style: {},
+        textStyle: {}, // sets the font color
+        containerStyle: [], // extra styling for day container
+        allowDisabled: true, // allow custom style to apply to disabled dates
+      });
+    }
   };
+  useEffect(() => {}, [selectedMonthYear]);
   useEffect(() => {
-    changeCustomDatesStyle(selectedMonthYear);
-  }, [selectedMonthYear]);
-  /*useEffect(() => {
-    changeCustomDatesStyle(selectedMonthYear);
-    console.log(datesWithAvailabilities);
-  }, [datesWithAvailabilities]); */
+    let tempMonth = selectedMonthYear.clone();
+
+    changeCustomDatesStyle(tempMonth);
+  }, [datesWithAvailabilities]);
 
   const changeCustomDatesStyle = (date) => {
     let startOfMonth = date.clone();
     let day = date;
     let styles = [];
     while (day.add(1, "day").isSame(startOfMonth, "month")) {
-      styles = dateContainsAvailability(day.clone(), styles);
+      dateContainsAvailability(day.clone(), styles);
     }
     setCustomDatesStyles(styles);
   };
@@ -94,7 +108,7 @@ const ActualCalendar = ({
         customDatesStyles={customDatesStyles}
         onMonthChange={(currentMonthYear) => {
           setSelectedMonthYear(currentMonthYear);
-          console.log(currentMonthYear.month());
+          changeCustomDatesStyle(selectedMonthYear);
           currentMonthCallback(currentMonthYear);
         }}
         selectedStartDate={currentSelectedDate}

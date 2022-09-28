@@ -6,6 +6,7 @@ import Modal from "react-native-modal";
 import TimeSelectionView from "./TimeSelectionView";
 import RedButton from "../../RedButton";
 import moment from "moment";
+import { getAvailabilityById } from "../../../mocks/CalendarMockData";
 
 const ScheduleAvailabilityModal = ({
   showModal,

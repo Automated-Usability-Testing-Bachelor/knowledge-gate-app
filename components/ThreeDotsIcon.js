@@ -1,16 +1,14 @@
 import React from "react";
-import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 
-const ThreeDotsIcon = ({ onPressCallback }) => {
+const ThreeDotsIcon = () => {
   //const icon = require("../assets/logos/Primary_Logo/KGG_PrimaryLogo_White_RGB_1.png");
   const icon = require("./calendar/three_dots.png");
 
   return (
-    <TouchableOpacity style={styles.container} onPress={onPressCallback}>
-      <View style={styles.container}>
-        <Image style={styles.logo} source={icon} />
-      </View>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <Image style={styles.logo} source={icon} />
+    </View>
   );
 };
 const styles = StyleSheet.create({
