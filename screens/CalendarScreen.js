@@ -8,7 +8,7 @@ import HeaderView from "../components/calendar/HeaderView";
 const CalendarScreen = ({}) => {
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
       <SecondLogo />
       <HeaderView />
     </SafeAreaView>

@@ -6,7 +6,7 @@ const NoAvailability = ({ text }) => {
   return (
     <View>
       <BlackSansBody1
-        text={`You have yet to scedule your availability this date.`}
+        text={`You have yet to scedule any availability this date.`}
       />
     </View>
   );

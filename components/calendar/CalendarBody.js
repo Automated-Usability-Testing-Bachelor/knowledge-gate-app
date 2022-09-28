@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { View, StyleSheet, ScrollView, FlatList } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, ScrollView } from "react-native";
 import Colors from "../../constants/Colors";
 import ActualCalendar from "./actualCalendar";
 import AvailabilityHeader from "./AvailabilityHeader";
@@ -17,12 +17,10 @@ import AvailabilitiesView from "./AvailabilitiesView";
 const CalendarBody = ({ selectedDayHeaderCallback }) => {
   const [edittingId, setEdittingId] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [modalStartTimeRange, setModalStartTimeRange] = useState({
-    from: roundMinutes(new Date()),
-    to: addHours(roundMinutes(new Date()), 1),
-  });
+  const [modalStartTimeRange, setModalStartTimeRange] = useState(
+    setInitialTimeRange()
+  );
   const [isModalEditing, setIsModalEditing] = useState(false);
-  const [currentMonth, setCurrentMonth] = useState(moment().startOf("month"));
   const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment());
   const [datesWithAvailabilities, setDatesWithAvailability] =
     useState(initialDatesWithAv);
@@ -35,7 +33,6 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
   };
   const currentMonthCallback = (date) => {
     setDatesWithAvailability(getCalendarDataFromCurrentMonth(date));
-    setCurrentMonth(date);
   };
   const selectedDayCallback = (date) => {
     selectedDayHeaderCallback(date);
@@ -55,39 +52,25 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
   const getscheduledTime = (timeRange) => {
     if (isModalEditing) {
       setIsModalEditing(false);
-
       let data = editAvailabilityTimeById(edittingId, timeRange);
       setEdittingId("");
-      //for refreshing availabilities view
-      setCurrentDate(currentDate.clone());
-
-      //refreshing calendar styling
-      let month = currentDate.clone();
-      month = month.startOf("month");
-      let arr = [];
-      let newData = getCalendarDataFromCurrentMonth(month);
-
-      for (let i = 0; i < newData.length; i++) {
-        arr.push(Object.assign({}, newData[i]));
-      }
-      setDatesWithAvailability(arr);
+      setModalStartTimeRange(setInitialTimeRange());
     } else {
       addAvailability(timeRange, currentDate);
-
-      //for refreshing availabilities view
-      setCurrentDate(currentDate.clone());
-
-      //refreshing calendar styling
-      let month = currentDate.clone();
-      month = month.startOf("month");
-      let arr = [];
-      let newData = getCalendarDataFromCurrentMonth(month);
-
-      for (let i = 0; i < newData.length; i++) {
-        arr.push(Object.assign({}, newData[i]));
-      }
-      setDatesWithAvailability(arr);
     }
+    //for refreshing availabilities view
+    setCurrentDate(currentDate.clone());
+
+    //refreshing calendar styling
+    let month = currentDate.clone();
+    month = month.startOf("month");
+    let arr = [];
+    let newData = getCalendarDataFromCurrentMonth(month);
+
+    for (let i = 0; i < newData.length; i++) {
+      arr.push(Object.assign({}, newData[i]));
+    }
+    setDatesWithAvailability(arr);
   };
 
   return (
@@ -137,4 +120,11 @@ function addHours(date, hours) {
   date.setHours(date.getHours() + hours);
 
   return date;
+}
+
+function setInitialTimeRange() {
+  return {
+    from: roundMinutes(new Date()),
+    to: addHours(roundMinutes(new Date()), 1),
+  };
 }

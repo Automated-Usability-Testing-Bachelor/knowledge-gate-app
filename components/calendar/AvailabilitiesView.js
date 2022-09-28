@@ -45,6 +45,7 @@ const AvailabilitiesView = ({ currentDate, onEditCallback }) => {
       <FlatList
         data={currentAvailabilities}
         keyExtractor={(item) => item.id}
+        initialNumToRender={1}
         ListEmptyComponent={
           <View style={styles.NoAvailabilityContainer}>
             <NoAvailability />

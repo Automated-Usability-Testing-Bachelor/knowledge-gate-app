@@ -14,6 +14,7 @@ const SecondLogo = () => {
 const styles = StyleSheet.create({
   container: {
     alignItems: "flex-end",
+    paddingTop: 10,
     paddingRight: 10,
     paddingBottom: 5,
   },
