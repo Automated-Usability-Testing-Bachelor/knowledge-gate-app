@@ -53,13 +53,17 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
 
     return (
         <View style={styles.container}>
-            <ActualCalendar
-                datesWithAvailabilities={datesWithAvailabilities}
-                selectedDayCallback={selectedDayCallback}
-                currentMonthCallback={currentMonthCallback}
-            />
-            <AvailabilityHeader/>
             <FlatList
+                ListHeaderComponent={
+                <>
+                    <ActualCalendar
+                        datesWithAvailabilities={datesWithAvailabilities}
+                        selectedDayCallback={selectedDayCallback}
+                        currentMonthCallback={currentMonthCallback}
+                    />
+                    <AvailabilityHeader/>
+                </>
+                }
                 data={currentAvailabilities}
                 ListEmptyComponent={
                     <View style={styles.NoAvailabilityContainer}>
@@ -69,12 +73,16 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
                 renderItem={({item}) => (
                     <AvailabilityItem from={item.from} to={item.to}/>
                 )}
-            />
-            <ScheduleBtn ShowModalCallback={ShowModalCallback}/>
-            <ScheduleAvailabilityModal
-                closeModal={closeModal}
-                showModal={showModal}
-                getTimeRangeCallback={getscheduledTime}
+                ListFooterComponent={
+                    <>
+                        <ScheduleBtn ShowModalCallback={ShowModalCallback}/>
+                        <ScheduleAvailabilityModal
+                            closeModal={closeModal}
+                            showModal={showModal}
+                            getTimeRangeCallback={getscheduledTime}
+                        />
+                    </>
+                }
             />
         </View>
     );
