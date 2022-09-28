@@ -8,17 +8,20 @@ import {
   getCalendarDataFromCurrentMonth,
   addAvailability,
   getAvailabilityById,
+  editAvailabilityTimeById,
 } from "../../mocks/CalendarMockData";
 import moment from "moment";
 import ScheduleAvailabilityModal from "./scheduleModal/ScheduleAvailabilityModal";
 import AvailabilitiesView from "./AvailabilitiesView";
 
 const CalendarBody = ({ selectedDayHeaderCallback }) => {
+  const [edittingId, setEdittingId] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalStartTimeRange, setModalStartTimeRange] = useState({
     from: roundMinutes(new Date()),
     to: addHours(roundMinutes(new Date()), 1),
   });
+  const [isModalEditing, setIsModalEditing] = useState(false);
   const [currentMonth, setCurrentMonth] = useState(moment().startOf("month"));
   const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment());
   const [datesWithAvailabilities, setDatesWithAvailability] =
@@ -39,33 +42,52 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
     setCurrentDate(date);
   };
   const onEditAvailability = (id) => {
+    setEdittingId(id);
     let av = getAvailabilityById(id);
-    console.log("from date--------------------");
-    console.log(av.from.format("hh:mm A"));
-    console.log(av.to.format("hh:mm A"));
     setModalStartTimeRange({
       from: av.from.toDate(),
       to: av.to.toDate(),
     });
-    console.log(av);
+    setIsModalEditing(true);
+    setShowModal(true);
   };
 
   const getscheduledTime = (timeRange) => {
-    addAvailability(timeRange, currentDate);
+    if (isModalEditing) {
+      setIsModalEditing(false);
 
-    //for refreshing availabilities view
-    setCurrentDate(currentDate.clone());
+      let data = editAvailabilityTimeById(edittingId, timeRange);
+      setEdittingId("");
+      //for refreshing availabilities view
+      setCurrentDate(currentDate.clone());
 
-    //refreshing calendar styling
-    let month = currentDate.clone();
-    month = month.startOf("month");
-    let arr = [];
-    let newData = getCalendarDataFromCurrentMonth(month);
+      //refreshing calendar styling
+      let month = currentDate.clone();
+      month = month.startOf("month");
+      let arr = [];
+      let newData = getCalendarDataFromCurrentMonth(month);
 
-    for (let i = 0; i < newData.length; i++) {
-      arr.push(Object.assign({}, newData[i]));
+      for (let i = 0; i < newData.length; i++) {
+        arr.push(Object.assign({}, newData[i]));
+      }
+      setDatesWithAvailability(arr);
+    } else {
+      addAvailability(timeRange, currentDate);
+
+      //for refreshing availabilities view
+      setCurrentDate(currentDate.clone());
+
+      //refreshing calendar styling
+      let month = currentDate.clone();
+      month = month.startOf("month");
+      let arr = [];
+      let newData = getCalendarDataFromCurrentMonth(month);
+
+      for (let i = 0; i < newData.length; i++) {
+        arr.push(Object.assign({}, newData[i]));
+      }
+      setDatesWithAvailability(arr);
     }
-    setDatesWithAvailability(arr);
   };
 
   return (

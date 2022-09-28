@@ -17,8 +17,6 @@ const AvailabilitiesView = ({ currentDate, onEditCallback }) => {
   const updateAvailabilityOnCurrentDate = (currentDate) => {
     let data = getAvailabilitiesFromDay(currentDate);
     if (data != undefined) {
-      console.log("availabilities view");
-      console.log(data.availabilities);
       setCurrentAvailabilities(data.availabilities);
     } else if (data === undefined || data.length == 0) {
       setCurrentAvailabilities([]);

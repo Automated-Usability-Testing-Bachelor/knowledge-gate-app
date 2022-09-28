@@ -25,16 +25,12 @@ var allCalendarData = [
 ];
 
 export const getCalendarDataFromCurrentMonth = (date) => {
-  displayCalendarData("getCalendarDataFromCurrentMonth");
-
   let availabilities = [];
   for (let i = 0; i < allCalendarData.length; i++) {
     if (
       allCalendarData[i].date.isSame(date, "year") &&
       allCalendarData[i].date.isSame(date, "month")
     ) {
-      console.log("each date inside getCalendarDataFromCurrentMonth");
-      console.log(allCalendarData[i]);
       availabilities.push({ ...allCalendarData[i] });
     }
   }
@@ -42,8 +38,6 @@ export const getCalendarDataFromCurrentMonth = (date) => {
 };
 
 export const getAvailabilitiesFromDay = (day) => {
-  displayCalendarData("getAvailabilitiesFromDay");
-
   let availabilities = undefined;
   for (let i = 0; i < allCalendarData.length; i++) {
     if (allCalendarData[i].date.isSame(day, "day")) {
@@ -55,11 +49,9 @@ export const getAvailabilitiesFromDay = (day) => {
 };
 
 export const getAvailabilityById = (id) => {
-  displayCalendarData("getAvailabilityById");
   let some = undefined;
   allCalendarData.forEach((element) => {
     element.availabilities.forEach((item) => {
-      console.log(item);
       if (item.id.toString() === id.toString()) {
         some = Object.assign({}, item);
         return some;
@@ -67,12 +59,27 @@ export const getAvailabilityById = (id) => {
     });
     return some;
   });
-  console.log(some.to.format("hh:mm A"));
+
   return some;
+};
+export const editAvailabilityTimeById = (id, timeRange) => {
+  let some = undefined;
+  for (let i = 0; i < allCalendarData.length; i++) {
+    for (let j = 0; j < allCalendarData[i].availabilities.length; j++) {
+      if (
+        allCalendarData[i].availabilities[j].id.toString() === id.toString()
+      ) {
+        allCalendarData[i].availabilities[j].from = timeRange.from;
+        allCalendarData[i].availabilities[j].to = timeRange.to;
+        some = Object.assign({}, allCalendarData[i].availabilities[j]);
+
+        return some;
+      }
+    }
+  }
 };
 
 export const addAvailability = (timeRange, date) => {
-  displayCalendarData("addAvailability");
   let startDay = date.startOf("day");
   for (let i = 0; i < allCalendarData.length; i++) {
     if (startDay.isSame(allCalendarData[i].date, "day")) {
@@ -90,7 +97,6 @@ export const addAvailability = (timeRange, date) => {
   });
 };
 export const deleteAvailability = (id) => {
-  displayCalendarData("deleteAvailability");
   let index = -1;
   for (let i = 0; i < allCalendarData.length; i++) {
     let newAllCalendarAvailabilities = [];

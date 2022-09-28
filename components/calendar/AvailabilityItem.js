@@ -18,7 +18,6 @@ const AvailabilityItem = ({
   onDeleteCallback,
   onEditCallback,
 }) => {
-  console.log(id);
   const [popupVisible, setPopUpVisible] = useState(false);
   const onThreeDotsPress = () => {
     setPopUpVisible(!popupVisible);

@@ -13,6 +13,7 @@ const ScheduleAvailabilityModal = ({
   closeModal,
   getTimeRangeCallback,
   modalStartTimeRange,
+  isEditing,
 }) => {
   const initialTimeRange = {
     from: moment(modalStartTimeRange.from),
