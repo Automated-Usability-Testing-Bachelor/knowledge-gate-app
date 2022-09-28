@@ -11,7 +11,13 @@ import {
   MenuTrigger,
 } from "react-native-popup-menu";
 
-const AvailabilityItem = ({ from, to, id, onDeleteCallback }) => {
+const AvailabilityItem = ({
+  from,
+  to,
+  id,
+  onDeleteCallback,
+  onEditCallback,
+}) => {
   console.log(id);
   const [popupVisible, setPopUpVisible] = useState(false);
   const onThreeDotsPress = () => {
@@ -35,7 +41,12 @@ const AvailabilityItem = ({ from, to, id, onDeleteCallback }) => {
               customStyles={optionsStyles}
               style={styles.MenuOptions}
             >
-              <MenuOption style={styles.MenuOption} onSelect={() => {}}>
+              <MenuOption
+                style={styles.MenuOption}
+                onSelect={() => {
+                  onEditCallback(id);
+                }}
+              >
                 <Text
                   style={{
                     color: Colors.black.color,

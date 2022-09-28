@@ -56,14 +56,19 @@ export const getAvailabilitiesFromDay = (day) => {
 
 export const getAvailabilityById = (id) => {
   displayCalendarData("getAvailabilityById");
-
+  let some = undefined;
   allCalendarData.forEach((element) => {
     element.availabilities.forEach((item) => {
-      if ((item.id = id)) {
-        return item;
+      console.log(item);
+      if (item.id.toString() === id.toString()) {
+        some = Object.assign({}, item);
+        return some;
       }
     });
+    return some;
   });
+  console.log(some.to.format("hh:mm A"));
+  return some;
 };
 
 export const addAvailability = (timeRange, date) => {

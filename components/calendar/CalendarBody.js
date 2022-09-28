@@ -38,11 +38,19 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
     selectedDayHeaderCallback(date);
     setCurrentDate(date);
   };
+  const onEditAvailability = (id) => {
+    let av = getAvailabilityById(id);
+    console.log("from date--------------------");
+    console.log(av.from.format("hh:mm A"));
+    console.log(av.to.format("hh:mm A"));
+    setModalStartTimeRange({
+      from: av.from.toDate(),
+      to: av.to.toDate(),
+    });
+    console.log(av);
+  };
 
   const getscheduledTime = (timeRange) => {
-    console.log("/n");
-    console.log("timerange called");
-    console.log("/n");
     addAvailability(timeRange, currentDate);
 
     //for refreshing availabilities view
@@ -68,7 +76,10 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
         currentMonthCallback={currentMonthCallback}
       />
       <AvailabilityHeader />
-      <AvailabilitiesView currentDate={currentDate} />
+      <AvailabilitiesView
+        currentDate={currentDate}
+        onEditCallback={onEditAvailability}
+      />
       <ScheduleBtn ShowModalCallback={ShowModalCallback} />
       <ScheduleAvailabilityModal
         closeModal={closeModal}

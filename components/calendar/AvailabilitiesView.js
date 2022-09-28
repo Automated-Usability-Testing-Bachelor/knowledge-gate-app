@@ -7,7 +7,7 @@ import { getAvailabilitiesFromDay } from "../../mocks/CalendarMockData";
 
 import NoAvailability from "../NoDataComponents/NoAvailabilities";
 
-const AvailabilitiesView = ({ currentDate }) => {
+const AvailabilitiesView = ({ currentDate, onEditCallback }) => {
   const [currentAvailabilities, setCurrentAvailabilities] = useState([]);
 
   useEffect(() => {
@@ -58,6 +58,7 @@ const AvailabilitiesView = ({ currentDate }) => {
             to={item.to}
             id={item.id}
             onDeleteCallback={onDeleteAvailability}
+            onEditCallback={onEditCallback}
           />
         )}
       />
