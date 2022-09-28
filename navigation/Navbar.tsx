@@ -5,6 +5,7 @@ import {StyleSheet} from 'react-native';
 import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
 import NotFoundScreen from '../screens/NotFoundScreen';
+import ProfileScreen from "../screens/ProfileScreen";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -23,7 +24,7 @@ function BottomTabNavigator() {
         >
             <BottomTab.Screen
                 name='Profile'
-                component={NotFoundScreen}
+                component={ProfileScreen}
                 options={{
                     title: 'Profile',
                     headerShown: false,

@@ -4,16 +4,17 @@ import SecondLogo from "../components/SecondLogo";
 import React from "react";
 import Colors from "../constants/Colors";
 import {useRoute} from "@react-navigation/native";
-import {BlackSansHeader2} from "../components/Texts/Headers";
+import ProfileHeader from "../components/profileComponents/ProfileHeader";
+import ProfileBody from "../components/profileComponents/ProfileBody";
 
-
-function NotFoundScreen() {
+function ProfileScreen() {
     const route = useRoute();
     return (
         <SafeAreaView style={styles.container}>
             <SecondLogo/>
             <BackgroundCardsTemplate
-                header={<BlackSansHeader2 text={route.name}/>}
+                header={ProfileHeader()}
+                body={ProfileBody()}
             />
         </SafeAreaView>
     );
@@ -27,4 +28,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default NotFoundScreen;
+export default ProfileScreen;

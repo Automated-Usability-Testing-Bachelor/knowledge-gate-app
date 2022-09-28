@@ -1,13 +1,12 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import Colors from "../constants/Colors";
-import {BlackSansHeader2, BlueSerifHeader2} from "./Texts/Headers";
 
 function BackgroundCardsTemplate(props: any) {
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-                <BlackSansHeader2 text={props.headerTitle}/>
+                {props.header}
             </View>
             <View style={styles.container2}>
                 {props.body}

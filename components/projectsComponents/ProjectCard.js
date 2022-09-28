@@ -1,7 +1,7 @@
 import React from "react";
-import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
+import {FlatList, StyleSheet, TouchableOpacity} from "react-native";
 import Colors from "../../constants/Colors";
-import {BlackSansBody1, BlackSansHeader2, BlackSerifBody1, BlueSerifHeader2} from "../Texts/Headers";
+import {BlackSansBody1, BlueSerifHeader2} from "../Texts/Headers";
 
 const projectData = require("../../data/projectsData.json");
 
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        marginHorizontal: 15,
+        marginHorizontal: 20,
         marginVertical: 5,
         dropShadow: 25,
         borderRadius: 5,
@@ -62,6 +62,6 @@ const styles = StyleSheet.create({
     },
     flatListContainer: {
         borderRadius: 15,
-        marginTop: 10,
+        // marginTop: 1,
     },
 });

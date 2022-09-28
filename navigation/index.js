@@ -7,6 +7,7 @@ import ProjectsScreen from "../screens/ProjectsScreen";
 import ProjectExpandedScreen from "../screens/ProjectExpandedScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import BottomTabNavigator from "./Navbar";
+import ProfileScreen from "../screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -42,6 +43,11 @@ function Navigation() {
                 <Stack.Screen
                     name="Login"
                     component={LoginScreen}
+                    options={{headerShown: false}}
+                />
+                <Stack.Screen
+                    name="Profile"
+                    component={ProfileScreen}
                     options={{headerShown: false}}
                 />
             </Stack.Navigator>

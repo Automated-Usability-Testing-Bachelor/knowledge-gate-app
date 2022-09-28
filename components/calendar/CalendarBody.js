@@ -55,14 +55,14 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
         <View style={styles.container}>
             <FlatList
                 ListHeaderComponent={
-                <>
-                    <ActualCalendar
-                        datesWithAvailabilities={datesWithAvailabilities}
-                        selectedDayCallback={selectedDayCallback}
-                        currentMonthCallback={currentMonthCallback}
-                    />
-                    <AvailabilityHeader/>
-                </>
+                    <>
+                        <ActualCalendar
+                            datesWithAvailabilities={datesWithAvailabilities}
+                            selectedDayCallback={selectedDayCallback}
+                            currentMonthCallback={currentMonthCallback}
+                        />
+                        <AvailabilityHeader/>
+                    </>
                 }
                 data={currentAvailabilities}
                 ListEmptyComponent={

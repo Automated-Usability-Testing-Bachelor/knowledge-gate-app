@@ -5,6 +5,7 @@ import SecondLogo from "../components/SecondLogo";
 import BackgroundCards from "../components/BackgroundCardsTemplate";
 import Projects from "../components/projectsComponents/ProjectCard";
 import {useRoute} from '@react-navigation/native';
+import {BlackSansHeader2} from "../components/Texts/Headers";
 
 export default function ProjectsScreen() {
     const route = useRoute();
@@ -12,7 +13,7 @@ export default function ProjectsScreen() {
         <SafeAreaView style={styles.container}>
             <SecondLogo/>
             <BackgroundCards
-                headerTitle={route.name}
+                header={<BlackSansHeader2 text={route.name}/>}
                 body={Projects()}
             />
         </SafeAreaView>
