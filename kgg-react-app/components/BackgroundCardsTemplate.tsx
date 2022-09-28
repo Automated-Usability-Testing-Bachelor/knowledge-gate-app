@@ -2,7 +2,7 @@ import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import Colors from "../constants/Colors";
 
-export default function BackgroundCardsTemplate(props: any) {
+function BackgroundCardsTemplate(props: any) {
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
@@ -46,3 +46,5 @@ const styles = StyleSheet.create({
         color: Colors.blue.color,
     },
 });
+
+export default BackgroundCardsTemplate;

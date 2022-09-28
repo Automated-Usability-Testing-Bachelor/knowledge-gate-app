@@ -15,15 +15,16 @@ function Navigation() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen
-                    name="Root"
-                    component={BottomTabNavigator}
-                    options={{headerShown: false}}
-                />
-                <Stack.Screen
                     name="ProjectsExpanded"
                     component={ProjectExpandedScreen}
                     options={{headerShown: false}}
                 />
+                <Stack.Screen
+                    name="Root"
+                    component={BottomTabNavigator}
+                    options={{headerShown: false}}
+                />
+
                 <Stack.Screen
                     name="Projects"
                     component={ProjectsScreen}

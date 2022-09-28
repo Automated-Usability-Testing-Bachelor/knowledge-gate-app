@@ -11,8 +11,8 @@ export default function ProjectsExpandedScreen() {
         <SafeAreaView style={styles.container}>
             <SecondLogo/>
             <BackgroundCards
-                header={name}
-                props={Projects()}
+                headerTitle={name}
+                body={Projects()}
             />
         </SafeAreaView>
     );
