@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {ScrollView, StyleSheet} from "react-native";
+import {StyleSheet, View} from "react-native";
 import Colors from "../../constants/Colors";
 import CalendarBody from "./CalendarBody";
 import CalendarHeaderText from "./CalenderHeaderText";
@@ -12,10 +12,10 @@ const HeaderView = () => {
         console.log(date.date());
     };
     return (
-        <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.container}>
             <CalendarHeaderText date={currentDate}/>
             <CalendarBody selectedDayHeaderCallback={selectedDayCallback}/>
-        </ScrollView>
+        </View>
     );
 };
 const styles = StyleSheet.create({
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.warmGrey.color,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
+        height: "100%",
     },
 });
 

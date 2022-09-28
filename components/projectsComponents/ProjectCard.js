@@ -1,6 +1,7 @@
 import React from "react";
 import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
 import Colors from "../../constants/Colors";
+import {BlackSansBody1, BlackSansHeader2, BlackSerifBody1, BlueSerifHeader2} from "../Texts/Headers";
 
 const projectData = require("../../data/projectsData.json");
 
@@ -9,8 +10,8 @@ const ProjectCard = ({item, onPress}) => (
         style={styles.container}
         onPress={onPress}
     >
-        <Text style={styles.title}>{item.title}</Text>
-        <Text numberOfLines={3} style={styles.description}>{item.description}</Text>
+        <BlueSerifHeader2 text={item.title}/>
+        <BlackSansBody1 text={item.description} numberOfLines={3}/>
     </TouchableOpacity>
 );
 

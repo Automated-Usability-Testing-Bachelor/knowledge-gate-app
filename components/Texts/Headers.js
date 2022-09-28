@@ -24,17 +24,17 @@ export const BlackSerifHeader4 = ({text}) => {
         </View>
     );
 };
-export const BlackSerifBody1 = ({text}) => {
+export const BlackSerifBody1 = ({text, numberOfLines}) => {
     return (
         <View>
-            <Text style={textStyles.blackSerifBody1}>{text}</Text>
+            <Text style={textStyles.blackSerifBody1} numberOfLines={numberOfLines}>{text}</Text>
         </View>
     );
 };
-export const BlackSansBody1 = ({text}) => {
+export const BlackSansBody1 = ({text, numberOfLines}) => {
     return (
         <View>
-            <Text style={textStyles.blackSansBody1}>{text}</Text>
+            <Text style={textStyles.blackSansBody1} numberOfLines={numberOfLines}>{text}</Text>
         </View>
     );
 };

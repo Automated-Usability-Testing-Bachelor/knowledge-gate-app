@@ -22,7 +22,7 @@ function BottomTabNavigator() {
             }}
         >
             <BottomTab.Screen
-                name='NotFound'
+                name='Profile'
                 component={NotFoundScreen}
                 options={{
                     title: 'Profile',

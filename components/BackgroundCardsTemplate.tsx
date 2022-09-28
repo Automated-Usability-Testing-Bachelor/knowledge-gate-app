@@ -1,14 +1,13 @@
 import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import Colors from "../constants/Colors";
+import {BlackSansHeader2, BlueSerifHeader2} from "./Texts/Headers";
 
 function BackgroundCardsTemplate(props: any) {
     return (
         <View style={styles.container}>
             <View style={styles.headerContainer}>
-                <Text style={styles.header1}>
-                    {props.headerTitle}
-                </Text>
+                <BlackSansHeader2 text={props.headerTitle}/>
             </View>
             <View style={styles.container2}>
                 {props.body}
@@ -30,8 +29,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         height: "100%",
-        // paddingTop: 2,
-        paddingBottom: 110,
+        paddingBottom: 120,
     },
     headerContainer: {
         paddingHorizontal: 25,

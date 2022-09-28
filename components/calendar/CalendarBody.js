@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {FlatList, ScrollView, StyleSheet, View} from "react-native";
+import {FlatList, StyleSheet, View} from "react-native";
 import Colors from "../../constants/Colors";
 import ActualCalendar from "./actualCalendar";
 import AvailabilityHeader from "./AvailabilityHeader";
@@ -50,36 +50,36 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
     }, [currentDate]);
     const getscheduledTime = (timeRange) => {
     };
+
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <ActualCalendar
                 datesWithAvailabilities={datesWithAvailabilities}
                 selectedDayCallback={selectedDayCallback}
                 currentMonthCallback={currentMonthCallback}
             />
             <AvailabilityHeader/>
-            <View>
-                <FlatList
-                    data={currentAvailabilities}
-                    ListEmptyComponent={
-                        <View style={styles.NoAvailabilityContainer}>
-                            <NoAvailability/>
-                        </View>
-                    }
-                    renderItem={({item}) => (
-                        <AvailabilityItem from={item.from} to={item.to}/>
-                    )}
-                />
-            </View>
+            <FlatList
+                data={currentAvailabilities}
+                ListEmptyComponent={
+                    <View style={styles.NoAvailabilityContainer}>
+                        <NoAvailability/>
+                    </View>
+                }
+                renderItem={({item}) => (
+                    <AvailabilityItem from={item.from} to={item.to}/>
+                )}
+            />
             <ScheduleBtn ShowModalCallback={ShowModalCallback}/>
             <ScheduleAvailabilityModal
                 closeModal={closeModal}
                 showModal={showModal}
                 getTimeRangeCallback={getscheduledTime}
             />
-        </ScrollView>
+        </View>
     );
 };
+
 const styles = StyleSheet.create({
     container: {
         //flex: 1,
@@ -87,6 +87,8 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         paddingVertical: 0,
+        height: "100%",
+        paddingBottom: 120,
     },
     NoAvailabilityContainer: {
         paddingHorizontal: 25,
