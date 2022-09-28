@@ -5,13 +5,10 @@ import {AntDesign, Feather, FontAwesome5, Ionicons} from '@expo/vector-icons';
 import {StyleSheet} from 'react-native';
 import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
-import ProjectsExpandedScreen from "../screens/ProjectExpandedScreen";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 
 const BottomTab = createBottomTabNavigator();
-const ProjectStack = createNativeStackNavigator();
 
-export default function BottomTabNavigator() {
+function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
             initialRouteName="Calendar"
@@ -111,3 +108,5 @@ const styles = StyleSheet.create({
         fontSize: 9,
     }
 });
+
+export default BottomTabNavigator;

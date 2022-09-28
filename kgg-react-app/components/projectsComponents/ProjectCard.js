@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {FlatList, StyleSheet, Text, TouchableOpacity} from "react-native";
 import Colors from "../../constants/Colors";
 
@@ -37,18 +37,10 @@ const Data = [
     },
 ]
 
-const pressed = () => {
-    // navigator.navigate("ProjectsExpandedScreen");
-    console.log("hello")
-}
-
-// const navigation = useNavigation();
-
-const ProjectCard = ({item, navigation}) => (
+const ProjectCard = ({item, onPress}) => (
     <TouchableOpacity
         style={styles.container}
-        onPress={() => console.log(item.title)}
-        // onPress={() => navigation.navigate('NotFound')}
+        onPress={onPress}
     >
         <Text style={styles.title}>{item.title}</Text>
         <Text numberOfLines={3} style={styles.description}>{item.description}</Text>
@@ -56,16 +48,11 @@ const ProjectCard = ({item, navigation}) => (
 );
 
 export default function Projects() {
-    const [selectedId, setSelectedId] = useState(null);
     const renderItem = ({item}) => {
-        const backgroundColor = item.id === selectedId ? "#6e3b6e" : "#f9c2ff";
-        const color = item.id === selectedId ? 'white' : 'black';
         return (
             <ProjectCard
                 item={item}
-                onPress={() => setSelectedId(item.id)}
-                backgroundColor={{backgroundColor}}
-                textColor={{color}}
+                onPress={() => console.log(item.title)}
             />
         );
     };
@@ -74,7 +61,6 @@ export default function Projects() {
             data={Data}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
-            extraData={selectedId}
             style={styles.flatListContainer}
         />
     );

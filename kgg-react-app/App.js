@@ -3,7 +3,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import Navigation from './navigation';
 
-export default function App() {
+function App() {
     const isLoadingComplete = useCachedResources();
 
     if (!isLoadingComplete) {
@@ -17,3 +17,5 @@ export default function App() {
         );
     }
 }
+
+export default App;
