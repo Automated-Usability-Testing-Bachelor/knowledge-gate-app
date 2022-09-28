@@ -15,7 +15,10 @@ import AvailabilitiesView from "./AvailabilitiesView";
 
 const CalendarBody = ({ selectedDayHeaderCallback }) => {
   const [showModal, setShowModal] = useState(false);
-
+  const [modalStartTimeRange, setModalStartTimeRange] = useState({
+    from: roundMinutes(new Date()),
+    to: addHours(roundMinutes(new Date()), 1),
+  });
   const [currentMonth, setCurrentMonth] = useState(moment().startOf("month"));
   const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment());
   const [datesWithAvailabilities, setDatesWithAvailability] =
@@ -71,6 +74,7 @@ const CalendarBody = ({ selectedDayHeaderCallback }) => {
         closeModal={closeModal}
         showModal={showModal}
         getTimeRangeCallback={getscheduledTime}
+        modalStartTimeRange={modalStartTimeRange}
       />
     </ScrollView>
   );

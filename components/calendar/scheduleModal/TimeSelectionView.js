@@ -6,10 +6,10 @@ import Modal from "react-native-modal";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import moment from "moment";
 
-const TimeSelectionView = ({ returnTimeRangeCallback }) => {
+const TimeSelectionView = ({ returnTimeRangeCallback, startFrom, startTo }) => {
   const minuteInterval = 30;
-  const [fromDate, setFromDate] = useState(roundMinutes(new Date()));
-  const [toDate, setToDate] = useState(addHours(roundMinutes(new Date()), 1));
+  const [fromDate, setFromDate] = useState(startFrom);
+  const [toDate, setToDate] = useState(startTo);
   const initialTimeRange = {
     from: fromDate,
     to: toDate,
@@ -136,15 +136,4 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 });
-function roundMinutes(date) {
-  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
-  date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
-
-  return date;
-}
-function addHours(date, hours) {
-  date.setHours(date.getHours() + hours);
-
-  return date;
-}
 export default TimeSelectionView;

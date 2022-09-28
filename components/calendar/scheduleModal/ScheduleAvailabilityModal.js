@@ -12,10 +12,11 @@ const ScheduleAvailabilityModal = ({
   showModal,
   closeModal,
   getTimeRangeCallback,
+  modalStartTimeRange,
 }) => {
   const initialTimeRange = {
-    from: moment(roundMinutes(new Date())),
-    to: moment(addHours(roundMinutes(new Date()), 1)),
+    from: moment(modalStartTimeRange.from),
+    to: moment(modalStartTimeRange.to),
   };
   const [cachedTimeRange, setCachedTimeRange] = useState(initialTimeRange);
   const getTimeRange = (timeRange) => {
@@ -44,7 +45,11 @@ const ScheduleAvailabilityModal = ({
         <View style={styles.containerOuter}>
           <View style={styles.containerInner}>
             <BlueSerifHeader2 text="Schedule Availability"></BlueSerifHeader2>
-            <TimeSelectionView returnTimeRangeCallback={getTimeRange} />
+            <TimeSelectionView
+              returnTimeRangeCallback={getTimeRange}
+              startFrom={modalStartTimeRange.from}
+              startTo={modalStartTimeRange.to}
+            />
             <RedButton name="save" onPress={onPressSave} />
           </View>
         </View>
