@@ -48,17 +48,11 @@ const CalendarHeaderText = ({date}) => {
         return "";
     };
     return (
-        <View style={styles.container}>
+        <View>
             <BlueSerifHeader2 text={setRelativeDay(date)}/>
             <BlackSansHeader2 text={date.format("dddd, MMMM Do")}/>
         </View>
     );
 };
-const styles = StyleSheet.create({
-    container: {
-        paddingHorizontal: 25,
-        paddingVertical: 20,
-    },
-});
 
 export default CalendarHeaderText;

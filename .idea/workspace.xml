@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/images/jeff.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/profileData.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profileData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/CalendarBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalendarBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/HeaderView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
