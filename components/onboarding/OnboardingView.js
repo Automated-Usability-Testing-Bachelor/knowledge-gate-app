@@ -6,12 +6,18 @@ import SecondHeader from "./SecondHeader";
 
 const OnboardingView = ({ icon, headerText, secondHeaderText }) => {
   return (
-    <View>
-      <Header text={headerText} />
-      <SecondHeader text={secondHeaderText} />
+    <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <Header text={headerText} />
+        <SecondHeader text={secondHeaderText} />
+      </View>
       <View style={styles.imageContainer}>
         <FadeInView duration={2500}>
-          <OnboardingImage iconSource={icon} height={260} width={326} />
+          <OnboardingImage
+            iconSource={icon.source}
+            height={icon.height}
+            width={icon.width}
+          />
         </FadeInView>
       </View>
     </View>
@@ -19,19 +25,12 @@ const OnboardingView = ({ icon, headerText, secondHeaderText }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#FFFFFF",
-    display: "flex",
-    flex: 1,
-    paddingTop: 0,
-    justifyContent: "space-evenly",
-    //justifyContent: "center",
-  },
+  container: {},
   imageContainer: {
-    justifyContent: "center",
     alignItems: "center",
-    paddingVertical: 50,
+    paddingTop: 60,
   },
+  headerContainer: {},
 });
 
 export default OnboardingView;

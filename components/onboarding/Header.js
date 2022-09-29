@@ -13,6 +13,6 @@ const Header = ({ text }) => {
 };
 
 const styles = StyleSheet.create({
-  container: {},
+  container: { marginBottom: 20 },
 });
 export default Header;

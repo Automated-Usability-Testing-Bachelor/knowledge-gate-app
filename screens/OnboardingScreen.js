@@ -17,9 +17,10 @@ const OnboardingScreen = ({}) => {
   const onPressGetStarted = () => {
     navigation.navigate("Carousel");
   };
+  const icon = { source: appDevImageSource, height: 260, width: 326 };
   return (
     <SafeAreaView style={styles.container}>
-      <OnboardingView headerText={headerText} icon={appDevImageSource} />
+      <OnboardingView headerText={headerText} icon={icon} />
       <FadeInView duration={3000}>
         <View style={styles.buttonsContainer}>
           <KggButton

@@ -31,6 +31,13 @@ export const BlackSerifHeader4 = ({ text }) => {
     </View>
   );
 };
+export const BlackSerifHeader2 = ({ text }) => {
+  return (
+    <View>
+      <Text style={textStyles.blackSerifHeader2}>{text}</Text>
+    </View>
+  );
+};
 export const BlackSerifBody1 = ({ text, numberOfLines }) => {
   return (
     <View>
@@ -61,6 +68,12 @@ export const textStyles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "Serif-Regular",
     color: Colors.blue.color,
+  },
+  blackSerifHeader2: {
+    fontSize: 24,
+    fontFamily: "Serif-Light",
+    color: Colors.black.color,
+    textAlign: "center",
   },
   blackSansHeader2: {
     fontSize: 20,
