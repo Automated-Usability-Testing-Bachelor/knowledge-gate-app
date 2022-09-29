@@ -1,9 +1,9 @@
 import React from "react";
 import {Image, StyleSheet, View} from "react-native";
 
-const SecondLogo = () => {
+const ThreeDotsIcon = () => {
     //const icon = require("../assets/logos/Primary_Logo/KGG_PrimaryLogo_White_RGB_1.png");
-    const icon = require("./whiteLogo.png");
+    const icon = require("./calendar/three_dots.png");
 
     return (
         <View style={styles.container}>
@@ -12,16 +12,11 @@ const SecondLogo = () => {
     );
 };
 const styles = StyleSheet.create({
-    container: {
-        alignItems: "flex-end",
-        paddingTop: 10,
-        paddingRight: 10,
-        paddingBottom: 5,
-    },
+    container: {paddingLeft: 15},
     logo: {
-        width: 169,
-        height: 52,
+        width: 24,
+        height: 24,
     },
 });
 
-export default SecondLogo;
+export default ThreeDotsIcon;

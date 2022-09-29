@@ -11,7 +11,7 @@ function App() {
     } else {
         return (
             <SafeAreaProvider>
-                <StatusBar/>
+                <StatusBar style={"light"}/>
                 <Navigation/>
             </SafeAreaProvider>
         );

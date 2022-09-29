@@ -1,17 +1,24 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {StyleSheet, View} from "react-native";
 import Colors from "../../../constants/Colors";
 import {BlueSerifHeader2} from "../../Texts/Headers";
 import Modal from "react-native-modal";
 import TimeSelectionView from "./TimeSelectionView";
 import RedButton from "../../RedButton";
+import moment from "moment";
 
 const ScheduleAvailabilityModal = ({
                                        showModal,
                                        closeModal,
                                        getTimeRangeCallback,
+                                       modalStartTimeRange,
+                                       isEditing,
                                    }) => {
-    const [cachedTimeRange, setCachedTimeRange] = useState({});
+    const initialTimeRange = {
+        from: moment(modalStartTimeRange.from),
+        to: moment(modalStartTimeRange.to),
+    };
+    const [cachedTimeRange, setCachedTimeRange] = useState(initialTimeRange);
     const getTimeRange = (timeRange) => {
         setCachedTimeRange(timeRange);
     };
@@ -20,6 +27,9 @@ const ScheduleAvailabilityModal = ({
         getTimeRangeCallback(cachedTimeRange);
         closeModal();
     };
+    useEffect(() => {
+        setCachedTimeRange(initialTimeRange);
+    }, [showModal]);
 
     return (
         <View>
@@ -35,7 +45,11 @@ const ScheduleAvailabilityModal = ({
                 <View style={styles.containerOuter}>
                     <View style={styles.containerInner}>
                         <BlueSerifHeader2 text="Schedule Availability"></BlueSerifHeader2>
-                        <TimeSelectionView returnTimeRangeCallback={getTimeRange}/>
+                        <TimeSelectionView
+                            returnTimeRangeCallback={getTimeRange}
+                            startFrom={modalStartTimeRange.from}
+                            startTo={modalStartTimeRange.to}
+                        />
                         <RedButton name="save" onPress={onPressSave}/>
                     </View>
                 </View>
@@ -63,3 +77,16 @@ const styles = StyleSheet.create({
 });
 
 export default ScheduleAvailabilityModal;
+
+function roundMinutes(date) {
+    date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
+    date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
+
+    return date;
+}
+
+function addHours(date, hours) {
+    date.setHours(date.getHours() + hours);
+
+    return date;
+}

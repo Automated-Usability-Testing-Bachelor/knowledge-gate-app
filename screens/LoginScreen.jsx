@@ -5,7 +5,7 @@ import Logo from "../components/loginComponents/Logo";
 import LoginView from "../components/loginComponents/LoginView";
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view'
 
-const LoginScreen = ({}) => {
+const LoginScreen = ({navigation}) => {
     return (
         <SafeAreaProvider style={styles.container}>
 
@@ -13,7 +13,7 @@ const LoginScreen = ({}) => {
             >
                 <View style={styles.inner}>
                     <Logo/>
-                    <LoginView/>
+                    <LoginView navigation={navigation}/>
 
                 </View>
             </KeyboardAwareScrollView>

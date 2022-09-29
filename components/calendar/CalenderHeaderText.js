@@ -28,6 +28,22 @@ const CalendarHeaderText = ({date}) => {
             )
         ) {
             return "Tomorrow";
+        } else if (
+            date
+                .clone()
+                .startOf("day")
+                .add(2, "day")
+                .isAfter(moment().startOf("day").add(2, "day"))
+        ) {
+            return "Later";
+        } else if (
+            date
+                .clone()
+                .startOf("day")
+                .subtract(2, "day")
+                .isBefore(moment().startOf("day").add(2, "day"))
+        ) {
+            return "In the past";
         }
         return "";
     };

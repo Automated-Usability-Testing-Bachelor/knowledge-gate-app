@@ -9,7 +9,6 @@ const HeaderView = () => {
     const [currentDate, setCurrentDate] = useState(moment());
     const selectedDayCallback = (date) => {
         setCurrentDate(date);
-        console.log(date.date());
     };
     return (
         <View style={styles.container}>
@@ -24,7 +23,6 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.warmGrey.color,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
-        height: "100%",
     },
 });
 

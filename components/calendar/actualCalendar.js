@@ -20,8 +20,14 @@ const ActualCalendar = ({
     );
 
     const dateContainsAvailability = (day, arr) => {
+        let dayHasAvailability = false;
         datesWithAvailabilities.forEach((element) => {
-            if (day.startOf("day").isSame(element.date.startOf("day"), "day")) {
+            let avDate = element.date.clone();
+            avDate = avDate.startOf("day");
+            if (
+                day.startOf("day").isSame(avDate, "day") &&
+                element.availabilities.length > 0
+            ) {
                 arr.push({
                     date: day.clone(),
                     style: {
@@ -29,26 +35,37 @@ const ActualCalendar = ({
                     },
                     textStyle: {
                         color: "#FFFFFF",
-                        fontSize: textStyles.blackSerifBody1.fontSize,
-                        fontFamily: textStyles.blackSerifBody1.fontFamily,
                     }, // sets the font color
                     containerStyle: [], // extra styling for day container
                     allowDisabled: true, // allow custom style to apply to disabled dates
                 });
+                dayHasAvailability = true;
             }
         });
-        return arr;
+        if (!dayHasAvailability) {
+            arr.push({
+                date: day.clone(),
+                style: {},
+                textStyle: {}, // sets the font color
+                containerStyle: [], // extra styling for day container
+                allowDisabled: true, // allow custom style to apply to disabled dates
+            });
+        }
     };
     useEffect(() => {
-        changeCustomDatesStyle(selectedMonthYear);
     }, [selectedMonthYear]);
+    useEffect(() => {
+        let tempMonth = selectedMonthYear.clone();
+
+        changeCustomDatesStyle(tempMonth);
+    }, [datesWithAvailabilities]);
 
     const changeCustomDatesStyle = (date) => {
         let startOfMonth = date.clone();
         let day = date;
         let styles = [];
         while (day.add(1, "day").isSame(startOfMonth, "month")) {
-            styles = dateContainsAvailability(day.clone(), styles);
+            dateContainsAvailability(day.clone(), styles);
         }
         setCustomDatesStyles(styles);
     };
@@ -78,9 +95,10 @@ const ActualCalendar = ({
                 dayLabelsWrapper={styles.dayLabel}
                 monthTitleStyle={styles.month}
                 yearTitleStyle={styles.year}
+                //scrollable={true}
                 selectMonthTitle="Select a Month in "
                 headerWrapperStyle={styles.header}
-                todayBackgroundColor={"rgba(0, 27, 114, 0.5)"}
+                todayBackgroundColor={"rgba(221, 38, 56, 0.5)"}
                 todayTextStyle={styles.TodayText}
                 selectedDayColor={Colors.red.color}
                 selectedDayTextStyle={styles.selectedText}
@@ -91,11 +109,12 @@ const ActualCalendar = ({
                 customDatesStyles={customDatesStyles}
                 onMonthChange={(currentMonthYear) => {
                     setSelectedMonthYear(currentMonthYear);
-                    console.log(currentMonthYear.month());
+                    changeCustomDatesStyle(selectedMonthYear);
                     currentMonthCallback(currentMonthYear);
                 }}
                 selectedStartDate={currentSelectedDate}
                 textStyle={{fontFamily: textStyles.blackSerifBody1.fontFamily}}
+                minDate={moment().startOf("year")}
             />
         </View>
     );
