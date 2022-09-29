@@ -14,6 +14,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName, Pressable } from "react-native";
 import HeaderView from "../components/calendar/HeaderView";
+import SecondLogo from "../components/SecondLogo";
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import CalendarScreen from "../screens/CalendarScreen";
@@ -40,6 +41,19 @@ export default function Navigation() {
 const Stack = createNativeStackNavigator();
 
 function RootNavigator() {
+  const headerOptions = () => ({
+    headerStyle: {
+      //backgroundColor: Colors.blue.color,
+      backgroundColor: "yellow",
+    },
+    headerTitle: "",
+    headerTintColor: Colors.offWhite.color,
+    headerShadowVisible: false,
+    headerTransparent: false,
+    headerRight: () => <SecondLogo />,
+    statusBarAnimation: "fade",
+    animation: "fade",
+  });
   return (
     <Stack.Navigator>
       <Stack.Screen

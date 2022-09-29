@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.blue.color,
     display: "flex",
     flex: 1,
+    paddingTop: 0,
   },
 });
 
