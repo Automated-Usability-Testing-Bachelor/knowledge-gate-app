@@ -1,23 +1,29 @@
 import React from "react";
-import {useRoute} from "@react-navigation/native";
 import {Image, StyleSheet, Text, View} from "react-native";
 import Colors from "../../constants/Colors";
 
 function ProfileHeader({text}) {
-    const route = useRoute();
     return (
         <View style={styles.container}>
             <Image
-                source={require("../../assets/images/adaptive-icon.png")}
+                source={require("../../assets/images/jeff.jpeg")}
                 style={{
                     width: 100,
                     height: 100,
-                    borderRadius: 50
+                    borderRadius: 20
                 }}
             />
-            <Text style={styles.nameHeader} >
-                {text.name}
-            </Text>
+            <View style={styles.headerTextContainer}>
+                <Text style={styles.headerName}>
+                    {text.name}
+                </Text>
+                <Text style={styles.headerText}>
+                    {text.company}
+                </Text>
+                <Text>
+                    {text.profession}
+                </Text>
+            </View>
         </View>
     );
 }
@@ -27,10 +33,18 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
     },
-    nameHeader: {
+    headerTextContainer: {
+        flex: 1,
+        marginLeft: 20,
+    },
+    headerName: {
         fontSize: 20,
         fontFamily: "Sans-SemiBold",
         color: Colors.blue.color,
+    },
+    headerText: {
+        fontSize: 14,
+        fontFamily: "Sans-Regular",
     }
 });
 

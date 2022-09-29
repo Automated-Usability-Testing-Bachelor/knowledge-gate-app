@@ -1,6 +1,7 @@
-import {Text, View, StyleSheet} from "react-native";
-import {BlackSansBody1, BlueSerifHeader2} from "../Texts/Headers";
+import {StyleSheet, Text, View} from "react-native";
+import {BlueSerifHeader2} from "../Texts/Headers";
 import ReadMore from "react-native-read-more-text";
+import Colors from "../../constants/Colors";
 
 
 const AboutText = ({about}) => {
@@ -51,12 +52,14 @@ const styles = StyleSheet.create({
         fontFamily: "Sans-Regular",
     },
     readMore: {
-        fontSize: 14,
-        color: "blue",
+        fontSize: 13,
+        color: Colors.blue.color,
+        fontFamily: "Sans-SemiBold",
     },
     readLess: {
-        fontSize: 14,
-        color: "blue",
+        fontSize: 13,
+        color: Colors.blue.color,
+        fontFamily: "Sans-SemiBold",
     }
 });
 

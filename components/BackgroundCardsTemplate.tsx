@@ -1,21 +1,31 @@
 import React from "react";
-import {StyleSheet, View} from "react-native";
+import {SafeAreaView, StyleSheet, View} from "react-native";
 import Colors from "../constants/Colors";
+import SecondLogo from "./SecondLogo";
 
 function BackgroundCardsTemplate(props: any) {
     return (
-        <View style={styles.container}>
-            <View style={styles.headerContainer}>
-                {props.header}
+        <SafeAreaView style={styles.background}>
+            <SecondLogo/>
+            <View style={styles.container}>
+                <View style={styles.headerContainer}>
+                    {props.header}
+                </View>
+                <View style={styles.container2}>
+                    {props.body}
+                </View>
             </View>
-            <View style={styles.container2}>
-                {props.body}
-            </View>
-        </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    background: {
+        backgroundColor: Colors.blue.color,
+        display: "flex",
+        flex: 1,
+        paddingTop: 20,
+    },
     container: {
         flex: 1,
         backgroundColor: Colors.warmGrey.color,
