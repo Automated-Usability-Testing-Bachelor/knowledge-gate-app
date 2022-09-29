@@ -11,10 +11,10 @@ const HeaderView = () => {
     setCurrentDate(date);
   };
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <CalendarHeaderText date={currentDate} />
       <CalendarBody selectedDayHeaderCallback={selectedDayCallback} />
-    </ScrollView>
+    </View>
   );
 };
 const styles = StyleSheet.create({

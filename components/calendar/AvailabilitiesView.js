@@ -7,7 +7,7 @@ import { getAvailabilitiesFromDay } from "../../mocks/CalendarMockData";
 
 import NoAvailability from "../NoDataComponents/NoAvailabilities";
 
-const AvailabilitiesView = ({ currentDate, onEditCallback }) => {
+const AvailabilitiesView = ({ currentDate, onEditCallback, header, footer }) => {
   const [currentAvailabilities, setCurrentAvailabilities] = useState([]);
 
   useEffect(() => {
@@ -43,6 +43,8 @@ const AvailabilitiesView = ({ currentDate, onEditCallback }) => {
   return (
     <View>
       <FlatList
+        ListHeaderComponent={header}
+        ListFooterComponent={footer}
         data={currentAvailabilities}
         keyExtractor={(item) => item.id}
         initialNumToRender={1}
