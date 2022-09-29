@@ -1,23 +1,23 @@
 import * as React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 import Colors from "../../constants/Colors";
 
 const LoginHeader = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.header}>Export Login</Text>
-    </View>
-  );
+    return (
+        <View style={styles.container}>
+            <Text style={styles.header}>Export Login</Text>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    //backgroundColor: "green",
-  },
-  header: {
-    fontSize: 20,
-    color: Colors.black.color,
-  },
+    container: {
+        //backgroundColor: "green",
+    },
+    header: {
+        fontSize: 20,
+        color: Colors.black.color,
+    },
 });
 
 export default LoginHeader;
