@@ -1,0 +1,30 @@
+{
+  "name": "Jeffrey Dahmer",
+  "age": 21,
+  "height": 6.2,
+  "company": "Serial Killer Inc",
+  "profession": "Serial Killer",
+  "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque in mauris sit amet interdum. Nunc imperdiet consectetur porttitor. Praesent varius imperdiet gravida. Donec lectus massa, ultrices ut dui at, consectetur imperdiet dolor. Sed feugiat neque enim, ut dictum velit euismod non. Curabitur convallis sapien libero, eget commodo erat pharetra sed. Vestibulum ipsum diam, bibendum malesuada enim eu, pulvinar volutpat leo. In a dui vel odio interdum luctus id non lectus. Quisque consectetur, velit id luctus euismod, turpis elit convallis velit, in finibus nisl nunc at ipsum. Sed id facilisis est, dignissim euismod libero. Suspendisse et sapien dui. In pharetra hendrerit lorem at rutrum. Nullam tortor odio, posuere aliquet facilisis elementum, pulvinar eu libero.\n\nMauris varius augue a tortor vulputate, sit amet auctor ligula rutrum. Suspendisse dolor justo, lobortis id nunc eget, dictum pharetra nisl. Nullam mollis scelerisque eleifend. Vestibulum id dolor fermentum, volutpat eros ac, hendrerit ex. Aenean in urna ac ante imperdiet laoreet id id velit. Suspendisse id felis dignissim, congue nulla id, tempor dui. Donec eros lectus, egestas sed laoreet ac, dictum non purus. Praesent tempus rutrum nunc nec ornare. Nam pharetra porttitor ultrices. Nulla placerat ex nec augue facilisis, ac porta urna placerat.",
+  "skills": [
+    "Maiming",
+    "Butchering",
+    "Disemboweling",
+    "Decapitation",
+    "Dissection",
+    "Killing",
+    "Eating"
+  ],
+  "experience": [
+    {
+      "company": "Army",
+      "title": "Combat Medic",
+      "years": 2
+    },
+    {
+      "company": "Polish Deli",
+      "title": "Butcher",
+      "years": 2
+    }
+  ]
+
+}

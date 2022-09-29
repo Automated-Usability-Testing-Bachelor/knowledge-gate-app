@@ -7,14 +7,16 @@ import {useRoute} from "@react-navigation/native";
 import ProfileHeader from "../components/profileComponents/ProfileHeader";
 import ProfileBody from "../components/profileComponents/ProfileBody";
 
+const profileData = require("../data/profileData.json");
+
 function ProfileScreen() {
     const route = useRoute();
     return (
         <SafeAreaView style={styles.container}>
             <SecondLogo/>
             <BackgroundCardsTemplate
-                header={ProfileHeader()}
-                body={ProfileBody()}
+                header={ProfileHeader({text: profileData})}
+                body={ProfileBody({text: profileData})}
             />
         </SafeAreaView>
     );

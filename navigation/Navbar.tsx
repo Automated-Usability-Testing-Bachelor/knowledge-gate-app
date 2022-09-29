@@ -12,7 +12,7 @@ const BottomTab = createBottomTabNavigator();
 function BottomTabNavigator() {
     return (
         <BottomTab.Navigator
-            initialRouteName="Calendar"
+            initialRouteName="Profile"
             screenOptions={{
                 tabBarActiveTintColor: "#DD2638",
                 tabBarInactiveTintColor: "#fff",

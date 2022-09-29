@@ -15,14 +15,14 @@ function Navigation() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-              <Stack.Screen
-                  name="Login"
-                  component={LoginScreen}
-                  options={{headerShown: false}}
-              />
                 <Stack.Screen
                     name="Root"
                     component={BottomTabNavigator}
+                    options={{headerShown: false}}
+                />
+                <Stack.Screen
+                    name="Login"
+                    component={LoginScreen}
                     options={{headerShown: false}}
                 />
                 <Stack.Screen
