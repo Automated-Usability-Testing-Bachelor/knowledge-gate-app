@@ -6,7 +6,6 @@ const TimePicker = ({ show, date, onChangecallback, minuteInterval }) => {
     <View>
       {show ? (
         <DateTimePicker
-          testID="fromPicker"
           value={date}
           minimumDate={new Date()}
           mode="time"
