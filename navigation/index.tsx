@@ -1,5 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {
+  HeaderStyleInterpolators,
+  StackCardInterpolationProps,
+  StackNavigationOptions,
+  TransitionSpecs,
+} from "@react-navigation/stack";
 import * as React from "react";
 import CalendarScreen from "../screens/CalendarScreen";
 import LoginScreen from "../screens/LoginScreen";
@@ -10,6 +16,7 @@ import BottomTabNavigator from "./Navbar";
 import ProfileScreen from "../screens/ProfileScreen";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import OnboardingCarouselScreen from "../screens/OnboardingCarouselScreen";
+import { horizontalAnimation, verticalAnimation } from "./transitionAnimation";
 const Stack = createNativeStackNavigator();
 
 const OnboardingFlow = () => {
@@ -51,7 +58,7 @@ function Navigation() {
         <Stack.Screen
           name="ProjectsExpanded"
           component={ProjectExpandedScreen}
-          options={{ headerShown: false }}
+          options={{ headerShown: false, gestureEnabled: true }}
         />
         <Stack.Screen
           name="Projects"
