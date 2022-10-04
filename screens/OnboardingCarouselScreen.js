@@ -106,6 +106,7 @@ const OnboardCarouselScreen = () => {
           sliderWidth={SLIDER_WIDTH}
           itemWidth={ITEM_WIDTH}
           onSnapToItem={(index) => setIndex(index)}
+          lockScrollWhileSnapping={true}
         />
 
         <View style={styles.pagAndArrows}>
