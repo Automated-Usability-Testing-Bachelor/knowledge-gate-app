@@ -1,19 +1,22 @@
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 const TimePicker = ({ show, date, onChangecallback, minuteInterval }) => {
-  console.log("android");
+  console.log("ios");
   return (
-    <View>
+    <View style={styles.picker}>
       {show ? (
         <DateTimePicker
+          style={styles.picker}
           testID="fromPicker"
           value={date}
+          textColor="black"
           minimumDate={new Date()}
           mode="time"
-          display="default"
+          display="spinner"
           is24Hour={false}
           onChange={onChangecallback}
           minuteInterval={minuteInterval}
+          accentColor="yellow"
         />
       ) : (
         <View></View>
@@ -22,4 +25,10 @@ const TimePicker = ({ show, date, onChangecallback, minuteInterval }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  picker: {
+    backgroundColor: "yellow",
+    width: 320,
+  },
+});
 export default TimePicker;

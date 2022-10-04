@@ -74,6 +74,7 @@ const OnboardCarouselScreen = () => {
   const [index, setIndex] = useState(0);
   const isCarousel = useRef(null);
   const navigation = useNavigation();
+  const [showFinishButton, setShowFinishButton] = useState(false);
   const onPressBack = () => {
     if (isCarousel != null) {
       isCarousel.current.snapToPrev();
@@ -86,6 +87,13 @@ const OnboardCarouselScreen = () => {
   };
   const onPressGetStarted = () => {
     navigation.navigate("Root");
+  };
+  const onBeforeSnapToItem = (slideIndex) => {
+    if (slideIndex === data.length - 1) {
+      setShowFinishButton(true);
+    } else if (showFinishButton && slideIndex !== data.length - 1) {
+      setShowFinishButton(false);
+    }
   };
   return (
     <SafeAreaView style={styles.outerContainer}>
@@ -107,6 +115,7 @@ const OnboardCarouselScreen = () => {
           itemWidth={ITEM_WIDTH}
           onSnapToItem={(index) => setIndex(index)}
           lockScrollWhileSnapping={true}
+          onBeforeSnapToItem={onBeforeSnapToItem}
         />
 
         <View style={styles.pagAndArrows}>
@@ -129,7 +138,7 @@ const OnboardCarouselScreen = () => {
             inactiveDotOpacity={0.4}
             inactiveDotScale={0.6}
           />
-          {index === data.length - 1 ? (
+          {showFinishButton ? (
             <KggButton color="red" name="Finish" onPress={onPressGetStarted} />
           ) : (
             <Arrow onPress={onPressForward} isRight={true} />

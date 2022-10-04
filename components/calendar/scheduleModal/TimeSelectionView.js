@@ -109,12 +109,14 @@ const TimeSelectionView = ({ returnTimeRangeCallback, startFrom, startTo }) => {
           </View>
         </View>
       </TouchableOpacity>
-      <TimePicker
-        show={toShow}
-        date={toDate}
-        onChangecallback={onToChange}
-        minuteInterval={minuteInterval}
-      />
+      <View>
+        <TimePicker
+          show={toShow}
+          date={toDate}
+          onChangecallback={onToChange}
+          minuteInterval={minuteInterval}
+        />
+      </View>
     </View>
   );
 };
