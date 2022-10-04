@@ -1,28 +1,25 @@
-import DatePicker from "react-native-date-picker";
-import { StyleSheet, View } from "react-native";
-
+import DateTimePicker from "@react-native-community/datetimepicker";
+import { View } from "react-native";
 const TimePicker = ({ show, date, onChangecallback, minuteInterval }) => {
-  console.log("ios");
-  console.log(show);
+  console.log("android");
   return (
     <View>
-      <DatePicker
-        open={show}
-        date={date}
-        onChange={(event, date) => {
-          onChangecallback(event, date);
-        }}
-        onCancel={() => {
-          onChangecallback(undefined, undefined);
-        }}
-      />
+      {show ? (
+        <DateTimePicker
+          testID="fromPicker"
+          value={date}
+          minimumDate={new Date()}
+          mode="time"
+          display="default"
+          is24Hour={false}
+          onChange={onChangecallback}
+          minuteInterval={minuteInterval}
+        />
+      ) : (
+        <View></View>
+      )}
     </View>
   );
 };
-const styles = StyleSheet.create({
-  datePicker: {
-    backgroundColor: "yello",
-  },
-});
 
 export default TimePicker;
