@@ -6,14 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CalendarBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalendarBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/HeaderView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,12 +30,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "ts.external.directory.path": "/Users/sk/Downloads/knowledge-gate-app/node_modules/typescript/lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/sk/Downloads/knowledge-gate-app/node_modules/typescript/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,8 +46,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664463451988</updated>
+      <workItem from="1664617930392" duration="5570000" />
+      <workItem from="1664971539047" duration="4171000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
