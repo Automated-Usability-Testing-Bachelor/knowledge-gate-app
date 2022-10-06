@@ -11,7 +11,7 @@ const LoginScreen = ({navigation}) => {
 
             <KeyboardAwareScrollView contentContainerStyle={styles.avoid}
             >
-                <View style={styles.inner}>
+                   <View style={styles.inner}>
                     <Logo/>
                     <LoginView navigation={navigation}/>
 

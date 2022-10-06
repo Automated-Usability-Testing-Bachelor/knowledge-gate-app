@@ -9,6 +9,7 @@ import GestureRecognizer, {
   swipeDirections,
 } from "react-native-swipe-gestures";
 import { useNavigation } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
 
 export default function ProjectsExpandedScreen(props) {
   const navigation = useNavigation();
@@ -43,6 +44,7 @@ export default function ProjectsExpandedScreen(props) {
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 30,
     backgroundColor: Colors.blue.color,
     display: "flex",
     flex: 1,

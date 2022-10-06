@@ -58,7 +58,11 @@ function Navigation() {
         <Stack.Screen
           name="ProjectsExpanded"
           component={ProjectExpandedScreen}
-          options={{ headerShown: false, gestureEnabled: true }}
+          options={{
+            headerShown: false,
+            gestureEnabled: true,
+            animation: "slide_from_right",
+          }}
         />
         <Stack.Screen
           name="Projects"
