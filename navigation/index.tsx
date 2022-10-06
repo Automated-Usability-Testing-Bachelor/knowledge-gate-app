@@ -10,6 +10,7 @@ import BottomTabNavigator from "./Navbar";
 import ProfileScreen from "../screens/ProfileScreen";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import OnboardingCarouselScreen from "../screens/OnboardingCarouselScreen";
+import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 
 const Stack = createNativeStackNavigator();
 
@@ -53,11 +54,15 @@ function Navigation() {
                 <Stack.Screen
                     name="ProjectsExpanded"
                     component={ProjectExpandedScreen}
-                    options={{
-                        headerShown: false,
-                        gestureEnabled: true,
-                        animation: "slide_from_right",
-                    }}
+                    options={({route}) => ({
+                        title: route.params.item.title,
+                        headerShown: true,
+                        headerStyle: HeaderStyles.headerStyle,
+                        headerTitleStyle: HeaderStyles.headerTitleStyle,
+                        headerTitleAlign: "center",
+                        // headerTitle: "",
+                        // headerRight: () => HeaderTitleRightIndex(),
+                    })}
                 />
                 <Stack.Screen
                     name="Projects"

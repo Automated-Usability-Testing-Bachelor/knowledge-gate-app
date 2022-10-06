@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Animated, StyleSheet, View} from "react-native";
+import {Animated, StyleSheet} from "react-native";
 import {BlackSansHeader2} from "../Texts/Headers";
 
 const CalendarHeaderText = ({date}) => {
@@ -15,9 +15,16 @@ const CalendarHeaderText = ({date}) => {
     }, [date]);
 
     return (
-        <View style={styles.container}>
+        <Animated.View
+            style={[
+                styles.container,
+                {
+                    opacity: 1, // Bind opacity to animated value
+                },
+            ]}
+        >
             <BlackSansHeader2 text={date.format("dddd, MMMM Do")}/>
-        </View>
+        </Animated.View>
     );
 };
 const styles = StyleSheet.create({

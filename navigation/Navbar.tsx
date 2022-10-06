@@ -7,6 +7,7 @@ import ProjectsScreen from "../screens/ProjectsScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import Colors from "../constants/Colors";
+import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -20,7 +21,11 @@ function BottomTabNavigator() {
                 tabBarItemStyle: styles.tabBarItemStyle,
                 tabBarStyle: styles.tabBarStyle,
                 tabBarLabelStyle: styles.tabBarLabelStyle,
-                headerStyle: styles.headerStyle,
+                headerStyle: HeaderStyles.headerStyle,
+                headerTitleStyle: HeaderStyles.headerTitleStyle,
+                headerTitleAlign: "center",
+                // headerTitle: "",
+                // headerRight: () => HeaderTitleRightNavBar(),
             }}
         >
             <BottomTab.Screen
@@ -73,14 +78,6 @@ function BottomTabNavigator() {
 }
 
 const styles = StyleSheet.create({
-    headerStyle: {
-        backgroundColor: Colors.warmGrey.color,
-        borderBottomWidth: 1,
-        borderBottomColor: Colors.blue.color,
-    },
-    headerTitleStyle: {
-        backgroundColor: Colors.blue.color,
-    },
     tabBarItemStyle: {
         alignItems: 'center',
         borderRadius: 10,

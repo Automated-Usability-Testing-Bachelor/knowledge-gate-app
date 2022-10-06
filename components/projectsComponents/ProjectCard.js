@@ -20,7 +20,6 @@ export default function Projects() {
             <ProjectCard
                 item={item}
                 onPress={() => {
-                    console.log(item);
                     navigation.navigate("ProjectsExpanded", {item});
                 }}
             />
@@ -39,16 +38,12 @@ export default function Projects() {
 
 const styles = StyleSheet.create({
     container: {
-        // paddingTop: 10,
-        // paddingBottom: 40,
-        // marginBottom: 120,
-        // backgroundColor: "yellow",
         height: "100%",
     },
     ProjectCardContainer: {
         flex: 1,
         paddingHorizontal: 10,
-        paddingVertical: 20,
+        paddingVertical: 10,
         marginHorizontal: 20,
         marginVertical: 5,
         dropShadow: 25,

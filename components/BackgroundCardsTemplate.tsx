@@ -18,11 +18,11 @@ function BackgroundCardsTemplate(props: any) {
 const styles = StyleSheet.create({
     background: {
         backgroundColor: Colors.warmGrey.color,
-        // display: "flex",
+        height: "100%",
     },
     container: {
         height: "100%",
-        marginBottom: 120,
+        // marginBottom: 120,
     },
 });
 
