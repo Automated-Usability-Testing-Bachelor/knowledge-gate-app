@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {StyleSheet, View} from "react-native";
+import Colors from "../../constants/Colors";
 import ActualCalendar from "./actualCalendar";
 import AvailabilityHeader from "./AvailabilityHeader";
 import ScheduleBtn from "./ScheduleBtn";
@@ -73,7 +74,7 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
     };
 
     return (
-        <View style={styles.container}>
+        <View>
             <AvailabilitiesView
                 header={
                     <>
@@ -102,20 +103,6 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
         </View>
     );
 };
-const styles = StyleSheet.create({
-    container: {
-        // backgroundColor: "green",
-        // height: "100%",
-        // paddingBottom: 180,
-        // marginTop: -50,
-    },
-    NoAvailabilityContainer: {
-        paddingHorizontal: 25,
-        paddingVertical: 10,
-    },
-});
-
-export default CalendarBody;
 
 function roundMinutes(date) {
     date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
@@ -136,3 +123,5 @@ function setInitialTimeRange() {
         to: addHours(roundMinutes(new Date()), 1),
     };
 }
+
+export default CalendarBody;

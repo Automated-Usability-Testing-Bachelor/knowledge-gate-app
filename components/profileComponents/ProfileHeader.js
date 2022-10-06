@@ -11,7 +11,6 @@ function ProfileHeader({text}) {
                     width: 100,
                     height: 100,
                     borderRadius: 20,
-                    backgroundColor: "yellow"
                 }}
             />
             <View style={styles.headerTextContainer}>

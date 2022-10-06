@@ -1,6 +1,7 @@
 import React from "react";
 import {SafeAreaView, StyleSheet, View} from "react-native";
 import Colors from "../constants/Colors";
+import SecondLogo from "./SecondLogo";
 
 const logo = require("./whiteLogo.png");
 

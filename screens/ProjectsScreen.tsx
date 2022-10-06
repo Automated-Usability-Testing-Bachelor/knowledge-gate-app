@@ -1,21 +1,13 @@
 import React from "react";
-import {SafeAreaView, StyleSheet} from "react-native";
 import BackgroundCards from "../components/BackgroundCardsTemplate";
 import Projects from "../components/projectsComponents/ProjectCard";
 
-export default function ProjectsScreen() {
+function ProjectsScreen() {
     return (
-        <SafeAreaView style={styles.container}>
-            <BackgroundCards
-                body={Projects()}
-            />
-        </SafeAreaView>
+        <BackgroundCards
+            body={Projects()}
+        />
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        display: "flex",
-        flex: 1,
-    },
-});
+export default ProjectsScreen;

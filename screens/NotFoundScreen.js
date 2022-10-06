@@ -1,22 +1,15 @@
-import {SafeAreaView, StyleSheet} from "react-native";
 import BackgroundCardsTemplate from "../components/BackgroundCardsTemplate";
 import React from "react";
-
+import {useRoute} from "@react-navigation/native";
+import {BlackSansHeader2} from "../components/Texts/Headers";
+import testComponent from "../components/TestComponent";
 
 function NotFoundScreen() {
     return (
-        <SafeAreaView style={styles.container}>
-            <BackgroundCardsTemplate
-            />
-        </SafeAreaView>
+        <BackgroundCardsTemplate
+            body={testComponent()}
+        />
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        display: "flex",
-        flex: 1,
-    },
-});
 
 export default NotFoundScreen;

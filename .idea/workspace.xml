@@ -1,16 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/jeff.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/TestComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 01/KGG_Logo_Lockup_Black_RGB-01.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 01/KGG_Logo_Lockup_Black_RGB-01.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 01/KGG_Logo_Lockup_Blue_RGB-01.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 01/KGG_Logo_Lockup_Blue_RGB-01.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 01/KGG_Logo_Lockup_Red_RGB-01.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 01/KGG_Logo_Lockup_Red_RGB-01.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 01/KGG_Logo_Lockup_White_RGB-01.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 01/KGG_Logo_Lockup_White_RGB-01.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 03/KGG_Logo_Lockup_Black_RGB-03.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 03/KGG_Logo_Lockup_Black_RGB-03.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 03/KGG_Logo_Lockup_Blue_RGB-03.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 03/KGG_Logo_Lockup_Blue_RGB-03.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 03/KGG_Logo_Lockup_Red_RGB-03.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 03/KGG_Logo_Lockup_Red_RGB-03.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup 03/KGG_Logo_Lockup_White_RGB-03.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup 03/KGG_Logo_Lockup_White_RGB-03.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup02/KGG_Logo_Lockup_Black_RGB-02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup02/KGG_Logo_Lockup_Black_RGB-02.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup02/KGG_Logo_Lockup_Blue_RGB-02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup02/KGG_Logo_Lockup_Blue_RGB-02.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup02/KGG_Logo_Lockup_Red_RGB-02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup02/KGG_Logo_Lockup_Red_RGB-02.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup02/KGG_Logo_Lockup_White_RGB-02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup02/KGG_Logo_Lockup_White_RGB-02.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/AdditionalLockups/Lockup02/whiteLogo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Additional_Lockups/Lockup02/whiteLogo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/Secondary Logo/KGG_SecondaryLogo_Black_RGB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Secondary_Logo/KGG_SecondaryLogo_Black_RGB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/Secondary Logo/KGG_SecondaryLogo_Blue_RGB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Secondary_Logo/KGG_SecondaryLogo_Blue_RGB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/Secondary Logo/KGG_SecondaryLogo_Red_RGB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Secondary_Logo/KGG_SecondaryLogo_Red_RGB.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/logos/Secondary Logo/KGG_SecondaryLogo_White_RGB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Secondary_Logo/KGG_SecondaryLogo_White_RGB.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/CalendarBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalendarBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/HeaderView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/loginComponents/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +48,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
+  <component name="ProjectId" id="2FRmpHA2AMD6eOaONYlavO0EBih" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -32,18 +64,27 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/sk/Downloads/knowledge-gate-app/node_modules/typescript/lib&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/components/navigationComponents" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="" />
+      <created>1664463451988</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1664463451988</updated>
+      <workItem from="1664617930392" duration="5570000" />
+      <workItem from="1664971539047" duration="4171000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -55,5 +96,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
