@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.warmGrey.color,
     },
     containerInner: {
+        padding: 10,
         borderRadius: 20,
         backgroundColor: Colors.offWhite.color,
         padding: 30,

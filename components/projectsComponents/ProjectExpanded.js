@@ -6,32 +6,34 @@ const projectData = require("../../data/projectsData.json");
 
 const ProjectExpanded = ({item}) => (
     <ScrollView style={styles.projectsExpandedContainer}>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Industry</Text>
-            <Text>{item.industry}</Text>
-        </View>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Goals</Text>
-            <Text>{item.goals}</Text>
-        </View>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Description</Text>
-            <Text>{item.description}</Text>
-        </View>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Questions</Text>
-            <Text>{item.questions}</Text>
-        </View>
+        <FadeInView duration={1000}>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Industry</Text>
+                <Text>{item.industry}</Text>
+            </View>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Goals</Text>
+                <Text>{item.goals}</Text>
+            </View>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Description</Text>
+                <Text>{item.description}</Text>
+            </View>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Questions</Text>
+                <Text>{item.questions}</Text>
+            </View>
+        </FadeInView>
     </ScrollView>
 );
 
-function Projects() {
+function Projects({item}) {
+    console.log(item);
     return (
         <ProjectExpanded
-            item={projectData[5]}
+            item={item}
             keyExtractor={(item) => item.id}
-        >
-        </ProjectExpanded>
+        ></ProjectExpanded>
     );
 }
 
@@ -49,6 +51,7 @@ const styles = StyleSheet.create({
     projectsExpandedContainer: {
         flex: 1,
         padding: 10,
+        paddingBottom: 20,
         margin: 10,
     },
     projectsExpandedText: {
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: Colors.blue.color,
         marginBottom: 5,
-    }
+    },
 });
 
 export default Projects;

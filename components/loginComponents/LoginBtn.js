@@ -6,7 +6,7 @@ import {useNavigation} from "@react-navigation/native";
 const LoginBtn = ({name}) => {
     const navigation = useNavigation();
     const onPress = () => {
-        navigation.navigate("Root");
+        navigation.navigate("Onboarding");
     };
     return (
         <View style={styles.container}>

@@ -74,7 +74,7 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <AvailabilitiesView
                 header={
                     <>
@@ -103,6 +103,20 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
         </View>
     );
 };
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: Colors.offWhite.color,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        paddingVertical: 0,
+        height: "100%",
+        paddingBottom: 180,
+    },
+    NoAvailabilityContainer: {
+        paddingHorizontal: 25,
+        paddingVertical: 10,
+    },
+});
 
 function roundMinutes(date) {
     date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));

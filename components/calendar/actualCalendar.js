@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from "react";
-import {Image, StyleSheet, View} from "react-native";
+import React, {useEffect, useRef, useState} from "react";
+import {Animated, Image, StyleSheet, View} from "react-native";
 import Colors from "../../constants/Colors";
 import CalendarPicker from "react-native-calendar-picker";
 import moment from "moment";
 import {textStyles} from "../Texts/Headers";
+import FadeInView from "../animatedComponents/FadeInView";
 
 const ActualCalendar = ({
                             datesWithAvailabilities,
@@ -18,6 +19,8 @@ const ActualCalendar = ({
     const [selectedMonthYear, setSelectedMonthYear] = useState(
         moment().startOf("month")
     );
+
+    const expandCircle = useRef(new Animated.Value(0)).current; // Initial value
 
     const dateContainsAvailability = (day, arr) => {
         let dayHasAvailability = false;
@@ -85,37 +88,44 @@ const ActualCalendar = ({
             <View style={styles.logoContainer}>
                 <Image style={styles.logo} source={icon}></Image>
             </View>
-
-            <CalendarPicker
-                startFromMonday={true}
-                previousComponent={
-                    <Image style={styles.leftArrow} source={arrowLeft}/>
-                }
-                nextComponent={<Image style={styles.leftArrow} source={arrowRight}/>}
-                dayLabelsWrapper={styles.dayLabel}
-                monthTitleStyle={styles.month}
-                yearTitleStyle={styles.year}
-                //scrollable={true}
-                selectMonthTitle="Select a Month in "
-                headerWrapperStyle={styles.header}
-                todayBackgroundColor={"rgba(221, 38, 56, 0.5)"}
-                todayTextStyle={styles.TodayText}
-                selectedDayColor={Colors.red.color}
-                selectedDayTextStyle={styles.selectedText}
-                showDayStragglers={true}
-                headingLevel={3}
-                customDayHeaderStyles={customDayHeaderStyles}
-                onDateChange={selectedDayCallback}
-                customDatesStyles={customDatesStyles}
-                onMonthChange={(currentMonthYear) => {
-                    setSelectedMonthYear(currentMonthYear);
-                    changeCustomDatesStyle(selectedMonthYear);
-                    currentMonthCallback(currentMonthYear);
-                }}
-                selectedStartDate={currentSelectedDate}
-                textStyle={{fontFamily: textStyles.blackSerifBody1.fontFamily}}
-                minDate={moment().startOf("year")}
-            />
+            <FadeInView duration={1000}>
+                <CalendarPicker
+                    startFromMonday={true}
+                    previousComponent={
+                        <Image style={styles.leftArrow} source={arrowLeft}/>
+                    }
+                    nextComponent={<Image style={styles.leftArrow} source={arrowRight}/>}
+                    dayLabelsWrapper={styles.dayLabel}
+                    monthTitleStyle={styles.month}
+                    yearTitleStyle={styles.year}
+                    //scrollable={true}
+                    selectMonthTitle="Select a Month in "
+                    headerWrapperStyle={styles.header}
+                    todayBackgroundColor={"rgba(221, 38, 56, 0.5)"}
+                    todayTextStyle={styles.TodayText}
+                    selectedDayColor={Colors.red.color}
+                    selectedDayTextStyle={styles.selectedText}
+                    selectedDayStyle={{
+                        backgroundColor: Colors.red.color,
+                        transform: [{scale: 1}],
+                    }}
+                    showDayStragglers={true}
+                    headingLevel={3}
+                    customDayHeaderStyles={customDayHeaderStyles}
+                    onDateChange={(date) => {
+                        selectedDayCallback(date);
+                    }}
+                    customDatesStyles={customDatesStyles}
+                    onMonthChange={(currentMonthYear) => {
+                        setSelectedMonthYear(currentMonthYear);
+                        changeCustomDatesStyle(selectedMonthYear);
+                        currentMonthCallback(currentMonthYear);
+                    }}
+                    selectedStartDate={currentSelectedDate}
+                    textStyle={{fontFamily: textStyles.blackSerifBody1.fontFamily}}
+                    minDate={moment().startOf("year")}
+                />
+            </FadeInView>
         </View>
     );
 };

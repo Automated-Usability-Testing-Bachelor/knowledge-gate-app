@@ -3,10 +3,11 @@ import {SafeAreaView, StyleSheet, View} from "react-native";
 import Colors from "../constants/Colors";
 import SecondLogo from "./SecondLogo";
 
+const logo = require("./whiteLogo.png");
+
 function BackgroundCardsTemplate(props: any) {
     return (
         <SafeAreaView style={styles.background}>
-            <SecondLogo/>
             <View style={styles.container}>
                 <View style={styles.headerContainer}>
                     {props.header}
@@ -15,26 +16,30 @@ function BackgroundCardsTemplate(props: any) {
                     {props.body}
                 </View>
             </View>
+            <View style={styles.container2}>
+                {props.body}
+            </View>
         </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: Colors.blue.color,
+        // backgroundColor: Colors.blue.color,
+        backgroundColor: Colors.warmGrey.color,
         display: "flex",
         flex: 1,
         paddingTop: 20,
     },
     container: {
         flex: 1,
-        backgroundColor: Colors.warmGrey.color,
+        // backgroundColor: Colors.warmGrey.color,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         height: "100%",
     },
     container2: {
-        backgroundColor: Colors.offWhite.color,
+        // backgroundColor: Colors.offWhite.color,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         height: "100%",

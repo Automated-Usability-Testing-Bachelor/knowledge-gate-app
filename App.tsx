@@ -13,7 +13,7 @@ function App() {
         return (
             <SafeAreaProvider>
                 <MenuProvider>
-                    <StatusBar style={"light"}/>
+                    <StatusBar style={"dark"}/>
                     <Navigation/>
                 </MenuProvider>
             </SafeAreaProvider>

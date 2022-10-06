@@ -33,7 +33,11 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignSelf: "center",
     },
-    touchable: {borderRadius: 10},
+    touchable: {
+        borderRadius: 10,
+        alignSelf: "center",
+        padding: 12,
+    },
     text: {
         color: "#FFF",
         lineHeight: 18,

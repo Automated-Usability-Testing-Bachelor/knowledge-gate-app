@@ -1,11 +1,12 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import * as React from 'react';
-import {AntDesign, Feather, FontAwesome5, Ionicons} from '@expo/vector-icons';
-import {StyleSheet} from 'react-native';
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
+import * as React from "react";
+import {AntDesign, Feather, FontAwesome5, Ionicons} from "@expo/vector-icons";
+import {StyleSheet} from "react-native";
 import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
 import NotFoundScreen from '../screens/NotFoundScreen';
 import ProfileScreen from "../screens/ProfileScreen";
+import Colors from "../constants/Colors";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -14,12 +15,12 @@ function BottomTabNavigator() {
         <BottomTab.Navigator
             initialRouteName="Profile"
             screenOptions={{
-                tabBarActiveTintColor: "#DD2638",
-                tabBarInactiveTintColor: "#fff",
-                tabBarActiveBackgroundColor: "#fff",
+                tabBarActiveTintColor: Colors.red.color,
+                tabBarInactiveTintColor: "rgba(0, 27, 114, 0.6)",
                 tabBarItemStyle: styles.tabBarItemStyle,
                 tabBarStyle: styles.tabBarStyle,
                 tabBarLabelStyle: styles.tabBarLabelStyle,
+                // tabBarItemStyle: ,
             }}
         >
             <BottomTab.Screen
@@ -27,7 +28,8 @@ function BottomTabNavigator() {
                 component={ProfileScreen}
                 options={{
                     title: 'Profile',
-                    headerShown: false,
+                    headerShown: true,
+                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <AntDesign name="user" size={22} color={color}/>,
                 }}
             />
@@ -36,7 +38,8 @@ function BottomTabNavigator() {
                 component={ProjectsScreen}
                 options={{
                     title: 'Projects',
-                    headerShown: false,
+                    headerShown: true,
+                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <AntDesign name="clockcircleo" size={22} color={color}/>,
                 }}
             />
@@ -45,7 +48,8 @@ function BottomTabNavigator() {
                 component={CalendarScreen}
                 options={{
                     title: 'Calendar',
-                    headerShown: false,
+                    headerShown: true,
+                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <Feather name="calendar" size={22} color={color}/>,
                 }}
             />
@@ -54,7 +58,8 @@ function BottomTabNavigator() {
                 component={NotFoundScreen}
                 options={{
                     title: 'Invoice',
-                    headerShown: false,
+                    headerShown: true,
+                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <FontAwesome5 name="money-bill-wave-alt" size={22} color={color}/>,
                 }}
             />
@@ -63,7 +68,8 @@ function BottomTabNavigator() {
                 component={NotFoundScreen}
                 options={{
                     title: 'Notifications',
-                    headerShown: false,
+                    headerShown: true,
+                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <Ionicons name="notifications-outline" size={22} color={color}/>,
                 }}
             />
@@ -73,19 +79,10 @@ function BottomTabNavigator() {
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    separator: {
-        marginVertical: 30,
-        height: 1,
-        width: '80%',
+    headerStyle: {
+        backgroundColor: Colors.warmGrey.color,
+        borderBottomWidth: 1,
+        borderBottomColor: Colors.blue.color,
     },
     tabBarItemStyle: {
         alignItems: 'center',
@@ -96,14 +93,9 @@ const styles = StyleSheet.create({
         height: 55,
     },
     tabBarStyle: {
-        paddingVertical: 5,
-        borderRadius: 15,
-        backgroundColor: '#001B72',
-        position: 'absolute',
-        height: 65,
-        left: 3,
-        right: 3,
-        bottom: 20,
+        backgroundColor: "white",
+        borderTopWidth: 2,
+        borderTopColor: "rgba(0, 27, 114, 0.6)",
     },
     tabBarLabelStyle: {
         fontSize: 9,

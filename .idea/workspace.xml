@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CalendarBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalendarBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/HeaderView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +18,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectId" id="2FRmpHA2AMD6eOaONYlavO0EBih" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -34,12 +28,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "ts.external.directory.path": "/Users/sk/Downloads/knowledge-gate-app/node_modules/typescript/lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/sk/Downloads/knowledge-gate-app/node_modules/typescript/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
