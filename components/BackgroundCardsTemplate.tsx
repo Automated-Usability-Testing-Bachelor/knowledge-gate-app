@@ -1,13 +1,13 @@
 import React from "react";
 import {SafeAreaView, StyleSheet, View} from "react-native";
 import Colors from "../constants/Colors";
-import SecondLogo from "./SecondLogo";
 
 const logo = require("./whiteLogo.png");
 
 function BackgroundCardsTemplate(props: any) {
     return (
         <SafeAreaView style={styles.background}>
+
             <View style={styles.container}>
                 <View style={styles.headerContainer}>
                     {props.header}
