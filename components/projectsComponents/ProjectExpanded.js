@@ -4,22 +4,24 @@ import Colors from "../../constants/Colors";
 
 const ProjectExpanded = ({item}) => (
     <ScrollView style={styles.projectsExpandedContainer}>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Industry</Text>
-            <Text>{item.industry}</Text>
-        </View>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Goals</Text>
-            <Text>{item.goals}</Text>
-        </View>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Description</Text>
-            <Text>{item.description}</Text>
-        </View>
-        <View style={styles.projectsExpandedText}>
-            <Text style={styles.title}>Questions</Text>
-            <Text>{item.questions}</Text>
-        </View>
+        <FadeInView duration={1000}>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Industry</Text>
+                <Text>{item.industry}</Text>
+            </View>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Goals</Text>
+                <Text>{item.goals}</Text>
+            </View>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Description</Text>
+                <Text>{item.description}</Text>
+            </View>
+            <View style={styles.projectsExpandedText}>
+                <Text style={styles.title}>Questions</Text>
+                <Text>{item.questions}</Text>
+            </View>
+        </FadeInView>
     </ScrollView>
 );
 
