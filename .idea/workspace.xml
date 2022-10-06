@@ -3,51 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logos/Primary_Logo/KGG_PrimaryLogo_Black_RGB.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logos/Primary_Logo/KGG_PrimaryLogo_Black_RGB.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Arrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Arrow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/KggButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/KggButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/RedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/RedButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/SecondLogoWithBackButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/SecondLogoWithBackButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Texts/Headers.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Texts/Headers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/animatedComponents/FadeInView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/animatedComponents/FadeInView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/animatedComponents/SlideUpView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/animatedComponents/SlideUpView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilityItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/AvailabilityItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CalendarBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalendarBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/actualCalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/actualCalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimePicker.android.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/TimePicker.android.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimePicker.ios.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/TimePicker.ios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.android.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.android.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.ios.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.ios.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/LoginBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/LoginView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/Arrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/onboarding/Arrow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/onboarding/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/OnboardingImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/onboarding/OnboardingImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/OnboardingView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/onboarding/OnboardingView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/SecondHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/onboarding/SecondHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/transitionAnimation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/transitionAnimation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/LoginScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LoginScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/OnboardingCarouselScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OnboardingCarouselScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/OnboardingScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OnboardingScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -20,6 +20,7 @@ function BottomTabNavigator() {
                 tabBarItemStyle: styles.tabBarItemStyle,
                 tabBarStyle: styles.tabBarStyle,
                 tabBarLabelStyle: styles.tabBarLabelStyle,
+                headerStyle: styles.headerStyle,
             }}
         >
             <BottomTab.Screen
@@ -28,7 +29,6 @@ function BottomTabNavigator() {
                 options={{
                     title: 'Profile',
                     headerShown: true,
-                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <AntDesign name="user" size={22} color={color}/>,
                 }}
             />
@@ -38,7 +38,6 @@ function BottomTabNavigator() {
                 options={{
                     title: 'Projects',
                     headerShown: true,
-                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <AntDesign name="clockcircleo" size={22} color={color}/>,
                 }}
             />
@@ -48,7 +47,6 @@ function BottomTabNavigator() {
                 options={{
                     title: 'Calendar',
                     headerShown: true,
-                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <Feather name="calendar" size={22} color={color}/>,
                 }}
             />
@@ -58,7 +56,6 @@ function BottomTabNavigator() {
                 options={{
                     title: 'Invoice',
                     headerShown: true,
-                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <FontAwesome5 name="money-bill-wave-alt" size={22} color={color}/>,
                 }}
             />
@@ -68,7 +65,6 @@ function BottomTabNavigator() {
                 options={{
                     title: 'Notifications',
                     headerShown: true,
-                    headerStyle: styles.headerStyle,
                     tabBarIcon: ({color}) => <Ionicons name="notifications-outline" size={22} color={color}/>,
                 }}
             />
@@ -81,6 +77,9 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.warmGrey.color,
         borderBottomWidth: 1,
         borderBottomColor: Colors.blue.color,
+    },
+    headerTitleStyle: {
+        backgroundColor: Colors.blue.color,
     },
     tabBarItemStyle: {
         alignItems: 'center',
