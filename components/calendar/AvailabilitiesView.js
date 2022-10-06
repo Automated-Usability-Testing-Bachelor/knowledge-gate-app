@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {FlatList, StyleSheet, View} from "react-native";
-import Colors from "../../constants/Colors";
 
 import AvailabilityItem from "./AvailabilityItem";
 import {getAvailabilitiesFromDay} from "../../mocks/CalendarMockData";
@@ -43,6 +42,7 @@ const AvailabilitiesView = ({currentDate, onEditCallback, header, footer}) => {
     return (
         <View>
             <FlatList
+                style={styles.container}
                 ListHeaderComponent={header}
                 ListFooterComponent={footer}
                 data={currentAvailabilities}
@@ -68,11 +68,7 @@ const AvailabilitiesView = ({currentDate, onEditCallback, header, footer}) => {
 };
 const styles = StyleSheet.create({
     container: {
-        //flex: 1,
-        backgroundColor: Colors.offWhite.color,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        paddingVertical: 0,
+        height: "100%",
     },
     NoAvailabilityContainer: {
         paddingHorizontal: 25,
