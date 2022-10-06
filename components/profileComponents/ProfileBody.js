@@ -1,12 +1,12 @@
-import {Text, View} from "react-native";
-
+import { Text, View } from "react-native";
+import PublicationsAndClinicalTrialsView from "./PublicationsAndClinicalTrialsView";
 
 function ProfileBody() {
-    return (
-        <View>
-            <Text>Profile Body</Text>
-        </View>
-    );
+  return (
+    <View>
+      <PublicationsAndClinicalTrialsView />
+    </View>
+  );
 }
 
 export default ProfileBody;

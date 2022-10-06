@@ -17,6 +17,9 @@ import ProfileScreen from "../screens/ProfileScreen";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import OnboardingCarouselScreen from "../screens/OnboardingCarouselScreen";
 import { horizontalAnimation, verticalAnimation } from "./transitionAnimation";
+import PublicationsAndClinicalTrialsView from "../components/profileComponents/PublicationsAndClinicalTrialsView";
+import PublicationScreen from "../screens/PublicationScreen";
+import ClinicalTrialScreen from "../screens/ClinicalTrialScreen";
 const Stack = createNativeStackNavigator();
 
 const OnboardingFlow = () => {
@@ -83,6 +86,16 @@ function Navigation() {
         <Stack.Screen
           name="Profile"
           component={ProfileScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PublicationScreen"
+          component={PublicationScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ClinicalTrialScreen"
+          component={ClinicalTrialScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

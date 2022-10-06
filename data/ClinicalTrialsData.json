@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "title": "Clinical Trial 1",
+    "conditions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Locations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Interventions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "publishDate": "12-03-2018",
+    "link": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+    "status": "complete"
+  },
+  {
+    "id": 1,
+    "title": "Clinical Trial 2",
+    "conditions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Locations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Interventions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "publishDate": "12-03-2018",
+    "link": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+    "status": "unknown"
+  },
+  {
+    "id": 2,
+    "title": "Clinical Trial 3",
+    "conditions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Locations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Interventions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "publishDate": "12-03-2018",
+    "link": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+    "status": "active not recruiting"
+  },
+  {
+    "id": 3,
+    "title": "Clinical Trial 4",
+    "conditions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Locations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Interventions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "publishDate": "12-03-2018",
+    "link": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+    "status": "active not recruiting"
+  },
+   {
+    "id": 4,
+    "title": "Clinical Trial 5",
+    "conditions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Locations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Interventions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "publishDate": "12-03-2018",
+    "link": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+    "status": "active not recruiting"
+  },
+   {
+    "id": 5,
+    "title": "Clinical Trial 6",
+    "conditions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Locations": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "Interventions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas rhoncus, ex ut rhoncus vulputate.",
+    "publishDate": "12-03-2018",
+    "link": "https://www.youtube.com/watch?v=xvFZjo5PgG0",
+    "status": "active not recruiting"
+  }
+]

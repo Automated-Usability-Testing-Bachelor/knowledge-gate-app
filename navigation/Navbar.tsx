@@ -6,6 +6,7 @@ import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import PublicationsAndClinicalTrialsView from "../components/profileComponents/PublicationsAndClinicalTrialsView";
 const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() {
