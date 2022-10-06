@@ -1,9 +1,9 @@
 import {Text, View} from "react-native";
-import { SparklesIcon } from "react-native-heroicons/solid";
+import {SparklesIcon} from "react-native-heroicons/solid";
 import Logo from "../assets/logos/Secondary_Logo/KGG_SecondaryLogo_Black_RGB.svg"
-import Svg, {SvgUri, SvgXml} from "react-native-svg";
+import {SvgUri} from "react-native-svg";
 
-const TestComponent : React.FC = () => {
+const TestComponent: React.FC = () => {
     return (
         <View>
             <Text>Test Component Ardit</Text>

@@ -10,6 +10,8 @@ import BottomTabNavigator from "./Navbar";
 import ProfileScreen from "../screens/ProfileScreen";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import OnboardingCarouselScreen from "../screens/OnboardingCarouselScreen";
+import PublicationScreen from "../screens/PublicationScreen";
+import ClinicalTrialScreen from "../screens/ClinicalTrialScreen";
 import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 
 const Stack = createNativeStackNavigator();
@@ -60,6 +62,7 @@ function Navigation() {
                         headerStyle: HeaderStyles.headerStyle,
                         headerTitleStyle: HeaderStyles.headerTitleStyle,
                         headerTitleAlign: "center",
+                        headerBackTitleVisible: false,
                         // headerTitle: "",
                         // headerRight: () => HeaderTitleRightIndex(),
                     })}
@@ -83,6 +86,16 @@ function Navigation() {
                 <Stack.Screen
                     name="Profile"
                     component={ProfileScreen}
+                    options={{headerShown: false}}
+                />
+                <Stack.Screen
+                    name="PublicationScreen"
+                    component={PublicationScreen}
+                    options={{headerShown: false}}
+                />
+                <Stack.Screen
+                    name="ClinicalTrialScreen"
+                    component={ClinicalTrialScreen}
                     options={{headerShown: false}}
                 />
             </Stack.Navigator>

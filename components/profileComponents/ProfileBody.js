@@ -3,6 +3,7 @@ import {BlueSerifHeader2} from "../Texts/Headers";
 import ReadMore from "react-native-read-more-text";
 import Colors from "../../constants/Colors";
 import React from "react";
+import PublicationsAndClinicalTrialsView from "./PublicationsAndClinicalTrialsView";
 
 const AboutText = ({about}) => {
     const renderTruncatedFooter = (handlePress) => {
@@ -37,7 +38,10 @@ const AboutText = ({about}) => {
 function ProfileBody({text}) {
     return (
         <View style={styles.container}>
-            <AboutText about={text.about}/>
+            <View style={styles.aboutTextContainer}>
+                <AboutText about={text.about}/>
+            </View>
+            <PublicationsAndClinicalTrialsView/>
         </View>
     );
 }
@@ -45,6 +49,10 @@ function ProfileBody({text}) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        // padding: 20,
+        height: 30,
+    },
+    aboutTextContainer: {
         padding: 20,
     },
     aboutText: {
