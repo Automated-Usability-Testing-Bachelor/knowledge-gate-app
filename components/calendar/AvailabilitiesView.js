@@ -67,13 +67,6 @@ const AvailabilitiesView = ({currentDate, onEditCallback, header, footer}) => {
     );
 };
 const styles = StyleSheet.create({
-    container: {
-        //flex: 1,
-        backgroundColor: Colors.offWhite.color,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        paddingVertical: 0,
-    },
     NoAvailabilityContainer: {
         paddingHorizontal: 25,
         paddingVertical: 10,

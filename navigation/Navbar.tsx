@@ -8,7 +8,7 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 const BottomTab = createBottomTabNavigator();
 
-function BottomTabNavigator() {
+const BottomTabNavigator: React.FC = () => {
   return (
     <BottomTab.Navigator
       initialRouteName="Calendar"
@@ -22,17 +22,6 @@ function BottomTabNavigator() {
       }}
     >
       <BottomTab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          title: "Profile",
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <AntDesign name="user" size={22} color={color} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
         name="Projects"
         component={ProjectsScreen}
         options={{
@@ -40,17 +29,6 @@ function BottomTabNavigator() {
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <AntDesign name="clockcircleo" size={22} color={color} />
-          ),
-        }}
-      />
-      <BottomTab.Screen
-        name="Calendar"
-        component={CalendarScreen}
-        options={{
-          title: "Calendar",
-          headerShown: false,
-          tabBarIcon: ({ color }) => (
-            <Feather name="calendar" size={22} color={color} />
           ),
         }}
       />
@@ -66,6 +44,17 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
+        name="Calendar"
+        component={CalendarScreen}
+        options={{
+          title: "Calendar",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Feather name="calendar" size={22} color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
         name="Notifications"
         component={NotFoundScreen}
         options={{
@@ -73,6 +62,17 @@ function BottomTabNavigator() {
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <Ionicons name="notifications-outline" size={22} color={color} />
+          ),
+        }}
+      />
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          title: "Profile",
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <AntDesign name="user" size={22} color={color} />
           ),
         }}
       />
