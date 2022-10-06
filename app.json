@@ -4,11 +4,11 @@
     "slug": "kgg-react-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./components/calendar/kBlue.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./components/calendar/kBlue.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -54,3 +54,4 @@
     }
   }
 }
+
