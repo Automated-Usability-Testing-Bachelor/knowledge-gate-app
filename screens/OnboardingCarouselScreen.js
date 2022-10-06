@@ -115,9 +115,7 @@ const OnboardCarouselScreen = () => {
   };
   const onBeforeSnapToItem = (slideIndex) => {
     if (slideIndex === data.length - 1) {
-      setShowFinishButton(true);
-    } else if (showFinishButton && slideIndex !== data.length - 1) {
-      setShowFinishButton(false);
+      animationFadeOut.start();
     }
   };
   return (
