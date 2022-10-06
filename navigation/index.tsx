@@ -13,6 +13,7 @@ import OnboardingCarouselScreen from "../screens/OnboardingCarouselScreen";
 import PublicationScreen from "../screens/PublicationScreen";
 import ClinicalTrialScreen from "../screens/ClinicalTrialScreen";
 import HeaderStyles from "../components/navigationComponents/HeaderStyles";
+import Colors from "../constants/Colors";
 
 const Stack = createNativeStackNavigator();
 
@@ -36,7 +37,18 @@ const OnboardingFlow = () => {
 function Navigation() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator
+                screenOptions={{
+                    headerStyle: HeaderStyles.headerStyleIndex,
+                    headerTitleStyle: HeaderStyles.headerTitleStyle,
+                    headerTitleAlign: "center",
+                    headerBackTitleVisible: false,
+                    headerTintColor: Colors.red.color,
+                    // headerShadowVisible: false,
+                    // headerTitle: "",
+                    // headerRight: () => HeaderTitleRightIndex(),
+                }}
+            >
                 <Stack.Screen
                     name="Root"
                     component={BottomTabNavigator}
@@ -57,14 +69,8 @@ function Navigation() {
                     name="ProjectsExpanded"
                     component={ProjectExpandedScreen}
                     options={({route}) => ({
+                        // @ts-ignore
                         title: route.params.item.title,
-                        headerShown: true,
-                        headerStyle: HeaderStyles.headerStyle,
-                        headerTitleStyle: HeaderStyles.headerTitleStyle,
-                        headerTitleAlign: "center",
-                        headerBackTitleVisible: false,
-                        // headerTitle: "",
-                        // headerRight: () => HeaderTitleRightIndex(),
                     })}
                 />
                 <Stack.Screen
@@ -91,12 +97,18 @@ function Navigation() {
                 <Stack.Screen
                     name="PublicationScreen"
                     component={PublicationScreen}
-                    options={{headerShown: false}}
+                    options={({route}) => ({
+                        // @ts-ignore
+                        title: route.params.item.title,
+                    })}
                 />
                 <Stack.Screen
                     name="ClinicalTrialScreen"
                     component={ClinicalTrialScreen}
-                    options={{headerShown: false}}
+                    options={({route}) => ({
+                        // @ts-ignore
+                        title: route.params.item.title,
+                    })}
                 />
             </Stack.Navigator>
         </NavigationContainer>

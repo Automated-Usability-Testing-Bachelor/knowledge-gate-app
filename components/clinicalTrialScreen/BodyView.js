@@ -6,7 +6,6 @@ import Dialog from "./Dialog";
 import StatusBadge from "../profileComponents/tabs/StatusBadge";
 
 const BodyView = ({item}) => {
-    console.log(item);
     return (
         <View style={styles.container}>
             <View style={styles.DateContainer}>

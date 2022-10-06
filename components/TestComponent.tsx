@@ -8,11 +8,11 @@ const TestComponent: React.FC = () => {
         <View>
             <Text>Test Component Ardit</Text>
             <SparklesIcon height={50} width={50} color={"#000000"}/>
-            <SvgUri
-                width="50"
-                height="50"
-                uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"
-            />
+            {/*<SvgUri*/}
+            {/*    width="50"*/}
+            {/*    height="50"*/}
+            {/*    uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"*/}
+            {/*/>*/}
             <Logo width={200} height={200} fill={'red'}/>
         </View>
     );

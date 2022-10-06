@@ -8,6 +8,7 @@ export default function HeaderTitleRightIndex() {
     const route = useRoute();
     return (
         <Text style={HeaderStyles.headerTitleStyle2}>
+            {/*// @ts-ignore*/}
             {route.params.item.title}
         </Text>
     );

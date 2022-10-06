@@ -1,4 +1,3 @@
-import {SafeAreaView, StyleSheet} from "react-native";
 import BackgroundCards from "../components/BackgroundCardsTemplate";
 import CalendarHeaderText from "../components/calendar/CalenderHeaderText";
 import CalendarBody from "../components/calendar/CalendarBody";
@@ -11,22 +10,11 @@ const CalendarScreen = ({}) => {
         setCurrentDate(date);
     };
     return (
-        <SafeAreaView style={styles.container}>
-            <BackgroundCards
-                header={CalendarHeaderText({date: currentDate})}
-                body={CalendarBody({selectedDayHeaderCallback: selectedDayCallback})}
-            />
-        </SafeAreaView>
+        <BackgroundCards
+            header={CalendarHeaderText({date: currentDate})}
+            body={CalendarBody({selectedDayHeaderCallback: selectedDayCallback})}
+        />
     );
 };
-
-
-const styles = StyleSheet.create({
-    container: {
-        // display: "flex",
-        // flex: 1,
-        // backgroundColor: "yellow",
-    },
-});
 
 export default CalendarScreen;

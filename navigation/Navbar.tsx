@@ -1,13 +1,14 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import * as React from "react";
 import {AntDesign, Feather, FontAwesome5, Ionicons} from "@expo/vector-icons";
-import {StyleSheet} from "react-native";
+import {StyleSheet, View} from "react-native";
 import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import Colors from "../constants/Colors";
 import HeaderStyles from "../components/navigationComponents/HeaderStyles";
+import KLogo from "../assets/logos/Logomark/KGG_Logomark_Blue_RGB.svg";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -24,6 +25,13 @@ function BottomTabNavigator() {
                 headerStyle: HeaderStyles.headerStyle,
                 headerTitleStyle: HeaderStyles.headerTitleStyle,
                 headerTitleAlign: "center",
+                headerLeft: () => {
+                    return (
+                        <View style={{paddingLeft: 20}}>
+                            <KLogo width={30} height={30}/>
+                        </View>
+                    );
+                },
                 // headerTitle: "",
                 // headerRight: () => HeaderTitleRightNavBar(),
             }}

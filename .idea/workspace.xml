@@ -5,30 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/clinicalTrialScreen/BodyView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/clinicalTrialScreen/Dialog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/PubClinButtonGroup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/PublicationsAndClinicalTrialsView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/tabs/ClinicalTrials.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/tabs/Publications.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/tabs/StatusBadge.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/publicationScreen/BodyView.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/publicationScreen/LinkOriginalButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ClinicalTrialsData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/PublicationsData.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screens/PublicationScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/TestComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TestComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileBody.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/metro.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/clinicalTrialScreen/BodyView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/clinicalTrialScreen/BodyView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navigationComponents/HeaderTitleRightIndex.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigationComponents/HeaderTitleRightIndex.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/LinkingConfiguration.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/PublicationScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PublicationScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
