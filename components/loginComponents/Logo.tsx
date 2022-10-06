@@ -12,10 +12,7 @@ const Logo = () => {
 
 const styles = StyleSheet.create({
     container: {
-        //backgroundColor: "#000",
         flex: 3,
-        //minHeight: 200,
-
         justifyContent: "center",
         alignItems: "center",
     },

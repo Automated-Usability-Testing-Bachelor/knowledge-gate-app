@@ -8,7 +8,7 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 const BottomTab = createBottomTabNavigator();
 
-function BottomTabNavigator() {
+const BottomTabNavigator: React.FC = () => {
   return (
     <BottomTab.Navigator
       initialRouteName="Calendar"
