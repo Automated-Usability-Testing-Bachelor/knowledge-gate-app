@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Text,
   View,
@@ -6,6 +6,7 @@ import {
   Image,
   StyleSheet,
   TouchableOpacity,
+  Animated,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Carousel, { Pagination } from "react-native-snap-carousel";
@@ -71,10 +72,34 @@ const renderItem = ({ item }) => {
 };
 
 const OnboardCarouselScreen = () => {
+  const [fadeAnim, setFadeAnim] = useState(new Animated.Value(1));
+  const animation = Animated.sequence([
+    Animated.timing(fadeAnim, {
+      toValue: 0,
+      duration: 100,
+      useNativeDriver: true,
+    }),
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 100,
+      useNativeDriver: true,
+    }),
+  ]);
+  const animationFadeIn = Animated.timing(fadeAnim, {
+    toValue: 1,
+    duration: 100,
+    useNativeDriver: true,
+  });
+  const animationFadeOut = Animated.timing(fadeAnim, {
+    toValue: 0,
+    duration: 50,
+    useNativeDriver: true,
+  });
+
   const [index, setIndex] = useState(0);
   const isCarousel = useRef(null);
   const navigation = useNavigation();
-  const [showFinishButton, setShowFinishButton] = useState(false);
+
   const onPressBack = () => {
     if (isCarousel != null) {
       isCarousel.current.snapToPrev();
@@ -113,7 +138,15 @@ const OnboardCarouselScreen = () => {
           inactiveSlideOpacity={0}
           sliderWidth={SLIDER_WIDTH}
           itemWidth={ITEM_WIDTH}
-          onSnapToItem={(index) => setIndex(index)}
+          onBeforeSnapToItem={(slideIndex) => {
+            if (slideIndex === data.length - 1) {
+              animationFadeOut.start();
+            }
+          }}
+          onSnapToItem={(index) => {
+            setIndex(index);
+            animationFadeIn.start();
+          }}
           lockScrollWhileSnapping={true}
           onBeforeSnapToItem={onBeforeSnapToItem}
         />
@@ -138,11 +171,23 @@ const OnboardCarouselScreen = () => {
             inactiveDotOpacity={0.4}
             inactiveDotScale={0.6}
           />
-          {showFinishButton ? (
-            <KggButton color="red" name="Finish" onPress={onPressGetStarted} />
-          ) : (
-            <Arrow onPress={onPressForward} isRight={true} />
-          )}
+          <Animated.View
+            style={[
+              {
+                opacity: fadeAnim, // Bind opacity to animated value
+              },
+            ]}
+          >
+            {index === data.length - 1 ? (
+              <KggButton
+                color="red"
+                name="Finish"
+                onPress={onPressGetStarted}
+              />
+            ) : (
+              <Arrow onPress={onPressForward} isRight={true} />
+            )}
+          </Animated.View>
         </View>
       </View>
     </SafeAreaView>
