@@ -7,16 +7,8 @@
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/TestComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TestComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/clinicalTrialScreen/BodyView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/clinicalTrialScreen/BodyView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navigationComponents/HeaderTitleRightIndex.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigationComponents/HeaderTitleRightIndex.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/LinkingConfiguration.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/PublicationScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PublicationScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/LoginScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LoginScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

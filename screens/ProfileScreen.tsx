@@ -5,7 +5,7 @@ import ProfileBody from "../components/profileComponents/ProfileBody";
 
 const profileData = require("../data/profileData.json");
 
-function ProfileScreen() {
+const ProfileScreen = () => {
     return (
         <BackgroundCardsTemplate
             header={ProfileHeader({text: profileData})}
