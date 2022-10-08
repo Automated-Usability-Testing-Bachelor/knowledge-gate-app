@@ -7,7 +7,7 @@ const ScheduleBtn = ({ShowModalCallback}) => {
     return (
         <View style={styles.container}>
             <RedButton
-                name="schedule"
+                name="Schedule"
                 onPress={ShowModalCallback}
                 icon={
                     <View style={styles.box}>

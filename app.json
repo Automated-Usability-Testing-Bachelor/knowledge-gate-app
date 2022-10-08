@@ -4,11 +4,10 @@
     "slug": "kgg-react-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./components/calendar/kBlue.png",
+    "icon": "./components/calendarComponents/kBlue.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./components/calendar/kBlue.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -42,8 +41,7 @@
     "adaptiveIcon": {
       "foregroundImage": "./assets/images/adaptive-icon.png",
       "backgroundColor": "#ffffff"
-    },
-    "package": "com.markusmunk.kggreactapp"
+    }
   },
   "web": {
     "favicon": "./assets/images/favicon.png"

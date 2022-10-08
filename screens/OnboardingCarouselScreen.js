@@ -129,11 +129,6 @@ const OnboardCarouselScreen = () => {
                     inactiveSlideOpacity={0}
                     sliderWidth={SLIDER_WIDTH}
                     itemWidth={ITEM_WIDTH}
-                    onBeforeSnapToItem={(slideIndex) => {
-                        if (slideIndex === data.length - 1) {
-                            animationFadeOut.start();
-                        }
-                    }}
                     onSnapToItem={(index) => {
                         setIndex(index);
                         animationFadeIn.start();
@@ -204,7 +199,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     skipText: {
-        fontSize: "Sans-Regular",
+        fontFamily: "Sans-Regular",
         fontSize: 18,
         color: Colors.red.color,
     },

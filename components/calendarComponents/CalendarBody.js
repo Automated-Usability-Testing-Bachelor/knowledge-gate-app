@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {StyleSheet, View} from "react-native";
-import Colors from "../../constants/Colors";
 import ActualCalendar from "./actualCalendar";
 import AvailabilityHeader from "./AvailabilityHeader";
 import ScheduleBtn from "./ScheduleBtn";
@@ -105,12 +104,11 @@ const CalendarBody = ({selectedDayHeaderCallback}) => {
 };
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: Colors.offWhite.color,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        paddingVertical: 0,
+        // backgroundColor: Colors.offWhite.color,
+        // borderTopLeftRadius: 20,
+        // borderTopRightRadius: 20,
         height: "100%",
-        paddingBottom: 180,
+        // paddingBottom: 180,
     },
     NoAvailabilityContainer: {
         paddingHorizontal: 25,

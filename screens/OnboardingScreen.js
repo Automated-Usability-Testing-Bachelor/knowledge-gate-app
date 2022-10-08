@@ -62,12 +62,6 @@ const styles = StyleSheet.create({
         marginBottom: 60,
         marginTop: 30,
     },
-    buttonsContainer: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        paddingHorizontal: 20,
-        marginBottom: 60,
-    },
 });
 
 export default OnboardingScreen;

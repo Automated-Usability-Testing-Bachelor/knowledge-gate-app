@@ -1,5 +1,4 @@
 import {NavigationContainer} from "@react-navigation/native";
-import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import * as React from "react";
 import CalendarScreen from "../screens/CalendarScreen";
 import LoginScreen from "../screens/LoginScreen";
@@ -14,8 +13,10 @@ import PublicationScreen from "../screens/PublicationScreen";
 import ClinicalTrialScreen from "../screens/ClinicalTrialScreen";
 import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 import Colors from "../constants/Colors";
+import {createStackNavigator} from "@react-navigation/stack";
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const OnboardingFlow = () => {
     return (
@@ -39,7 +40,7 @@ function Navigation() {
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
-                    headerStyle: HeaderStyles.headerStyleIndex,
+                    headerStyle: HeaderStyles.headerStyle,
                     headerTitleStyle: HeaderStyles.headerTitleStyle,
                     headerTitleAlign: "center",
                     headerBackTitleVisible: false,
@@ -64,7 +65,6 @@ function Navigation() {
                     component={OnboardingFlow}
                     options={{headerShown: false}}
                 />
-
                 <Stack.Screen
                     name="ProjectsExpanded"
                     component={ProjectExpandedScreen}

@@ -7,7 +7,7 @@ import {useRoute} from '@react-navigation/native';
 export default function HeaderTitleRightIndex() {
     const route = useRoute();
     return (
-        <Text style={HeaderStyles.headerTitleStyle2}>
+        <Text style={HeaderStyles.headerTitleStyleRight}>
             {/*// @ts-ignore*/}
             {route.params.item.title}
         </Text>

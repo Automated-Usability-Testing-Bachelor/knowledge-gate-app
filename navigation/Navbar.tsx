@@ -1,7 +1,6 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import * as React from "react";
-import {AntDesign, Feather, FontAwesome5, Ionicons} from "@expo/vector-icons";
-import {StyleSheet, View} from "react-native";
+import {Platform, StyleSheet, View} from "react-native";
 import CalendarScreen from "../screens/CalendarScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
@@ -9,6 +8,7 @@ import ProfileScreen from "../screens/ProfileScreen";
 import Colors from "../constants/Colors";
 import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 import KLogo from "../assets/logos/Logomark/KGG_Logomark_Blue_RGB.svg";
+import Icons from "../components/navigationComponents/Icons";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -37,30 +37,12 @@ function BottomTabNavigator() {
             }}
         >
             <BottomTab.Screen
-                name='Profile'
-                component={ProfileScreen}
-                options={{
-                    title: 'Profile',
-                    headerShown: true,
-                    tabBarIcon: ({color}) => <AntDesign name="user" size={22} color={color}/>,
-                }}
-            />
-            <BottomTab.Screen
                 name="Projects"
                 component={ProjectsScreen}
                 options={{
                     title: 'Projects',
                     headerShown: true,
-                    tabBarIcon: ({color}) => <AntDesign name="clockcircleo" size={22} color={color}/>,
-                }}
-            />
-            <BottomTab.Screen
-                name="Calendar"
-                component={CalendarScreen}
-                options={{
-                    title: 'Calendar',
-                    headerShown: true,
-                    tabBarIcon: ({color}) => <Feather name="calendar" size={22} color={color}/>,
+                    tabBarIcon: ({focused, color}) => <Icons name="Projects" color={color} focused={focused}/>,
                 }}
             />
             <BottomTab.Screen
@@ -69,7 +51,16 @@ function BottomTabNavigator() {
                 options={{
                     title: 'Invoice',
                     headerShown: true,
-                    tabBarIcon: ({color}) => <FontAwesome5 name="money-bill-wave-alt" size={22} color={color}/>,
+                    tabBarIcon: ({focused, color}) => <Icons name="Invoice" color={color} focused={focused}/>,
+                }}
+            />
+            <BottomTab.Screen
+                name="Calendar"
+                component={CalendarScreen}
+                options={{
+                    title: 'Calendar',
+                    headerShown: true,
+                    tabBarIcon: ({focused, color}) => <Icons name="Calendar" color={color} focused={focused}/>,
                 }}
             />
             <BottomTab.Screen
@@ -78,7 +69,16 @@ function BottomTabNavigator() {
                 options={{
                     title: 'Notifications',
                     headerShown: true,
-                    tabBarIcon: ({color}) => <Ionicons name="notifications-outline" size={22} color={color}/>,
+                    tabBarIcon: ({focused, color}) => <Icons name="Notifications" color={color} focused={focused}/>,
+                }}
+            />
+            <BottomTab.Screen
+                name='Profile'
+                component={ProfileScreen}
+                options={{
+                    title: 'Profile',
+                    headerShown: true,
+                    tabBarIcon: ({focused, color}) => <Icons name="Profile" color={color} focused={focused}/>,
                 }}
             />
         </BottomTab.Navigator>
@@ -88,20 +88,24 @@ function BottomTabNavigator() {
 const styles = StyleSheet.create({
     tabBarItemStyle: {
         alignItems: 'center',
-        borderRadius: 10,
         paddingBottom: 5,
         marginRight: 5,
         marginLeft: 5,
         height: 55,
     },
     tabBarStyle: {
-        backgroundColor: "white",
-        borderTopWidth: 2,
+        backgroundColor: Colors.offWhite.color,
+        borderTopWidth: 1,
         borderTopColor: "rgba(0, 27, 114, 0.6)",
+        ...Platform.select({
+            android: {
+                paddingBottom: 60,
+            },
+        })
     },
     tabBarLabelStyle: {
         fontSize: 9,
-    }
+    },
 });
 
 export default BottomTabNavigator;

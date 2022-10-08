@@ -5,6 +5,7 @@ import CalendarPicker from "react-native-calendar-picker";
 import moment from "moment";
 import {textStyles} from "../Texts/Headers";
 import FadeInView from "../animatedComponents/FadeInView";
+import {ArrowLeftIcon, ArrowRightIcon} from "react-native-heroicons/solid";
 
 const ActualCalendar = ({
                             datesWithAvailabilities,
@@ -12,8 +13,6 @@ const ActualCalendar = ({
                             currentMonthCallback,
                         }) => {
     const icon = require("./kBlue.png");
-    const arrowLeft = require("./ArrowLeftOutline.png");
-    const arrowRight = require("./ArrowRightOutline.png");
     const [currentSelectedDate, setCurrentSelectedDate] = useState(moment());
     const [customDatesStyles, setCustomDatesStyles] = useState([]);
     const [selectedMonthYear, setSelectedMonthYear] = useState(
@@ -92,9 +91,11 @@ const ActualCalendar = ({
                 <CalendarPicker
                     startFromMonday={true}
                     previousComponent={
-                        <Image style={styles.leftArrow} source={arrowLeft}/>
+                        <ArrowLeftIcon size={20} fill={Colors.red.color}/>
                     }
-                    nextComponent={<Image style={styles.leftArrow} source={arrowRight}/>}
+                    nextComponent={
+                        <ArrowRightIcon size={20} fill={Colors.red.color}/>
+                    }
                     dayLabelsWrapper={styles.dayLabel}
                     monthTitleStyle={styles.month}
                     yearTitleStyle={styles.year}

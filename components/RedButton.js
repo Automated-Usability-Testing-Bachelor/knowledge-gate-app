@@ -11,8 +11,8 @@ const RedButton = ({name, icon, onPress}) => {
                 activeOpacity={0.6}
             >
                 <View style={styles.button}>
-                    {icon ? icon : <View></View>}
                     <Text style={styles.text}>{name}</Text>
+                    {icon ? icon : <View></View>}
                 </View>
             </TouchableOpacity>
         </View>
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: Colors.red.color,
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         paddingVertical: 10,
         flexDirection: "row",
         justifyContent: "center",
@@ -41,6 +41,7 @@ const styles = StyleSheet.create({
     text: {
         color: "#FFF",
         lineHeight: 18,
+        paddingHorizontal: 5,
     },
 });
 

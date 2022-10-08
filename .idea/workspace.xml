@@ -5,10 +5,50 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/calendarComponents/PlusIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/calendarComponents/clockIcon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/navigationComponents/Icons.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Arrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Arrow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/RedButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/RedButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/TestComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/TestComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/LoginScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/LoginScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ThreeDotsIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ThreeDotsIcon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/ArrowLeftOutline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/ArrowRightOutline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilitiesView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/AvailabilitiesView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilityHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/AvailabilityHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/AvailabilityItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/AvailabilityItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/CalendarBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/CalendarBody.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/CalenderHeaderText.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/CalenderHeaderText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/PlusCircle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/PlusIcon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/ScheduleBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/ScheduleBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/Vector.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/actualCalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/clockIcon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/clockIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/kBlue.png" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/kBlue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/ScheduleAvailabilityModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/ScheduleAvailabilityModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimePicker.android.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.android.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimePicker.ios.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.ios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.android.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.android.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.android.js~HEAD" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.android.js~HEAD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.android.js~ProfileScreen" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.android.js~ProfileScreen" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/scheduleModal/TimeSelectionView.ios.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.ios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendar/three_dots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/loginComponents/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/onboarding/Arrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/onboarding/Arrow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/onboarding/left_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/onboarding/right_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/OnboardingCarouselScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OnboardingCarouselScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/OnboardingScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OnboardingScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +57,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -47,6 +90,7 @@
       <updated>1664463451988</updated>
       <workItem from="1664617930392" duration="5570000" />
       <workItem from="1664971539047" duration="4171000" />
+      <workItem from="1665235742379" duration="25898000" />
     </task>
     <servers />
   </component>

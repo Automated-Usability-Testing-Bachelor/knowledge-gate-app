@@ -1,15 +1,18 @@
 import {useNavigation} from "@react-navigation/native";
 import React from "react";
-import {FlatList, StyleSheet, TouchableOpacity, View} from "react-native";
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import Colors from "../../constants/Colors";
-import {BlackSansBody1, BlueSerifHeader2} from "../Texts/Headers";
 
 const projectData = require("../../data/projectsData.json");
 
 const ProjectCard = ({item, onPress}) => (
     <TouchableOpacity style={styles.ProjectCardContainer} onPress={onPress}>
-        <BlueSerifHeader2 text={item.title}/>
-        <BlackSansBody1 text={item.description} numberOfLines={3}/>
+        <Text style={styles.title}>
+            {item.title}
+        </Text>
+        <Text style={styles.description} numberOfLines={3}>
+            {item.description}
+        </Text>
     </TouchableOpacity>
 );
 
@@ -41,26 +44,28 @@ const styles = StyleSheet.create({
         height: "100%",
     },
     ProjectCardContainer: {
-        flex: 1,
         paddingHorizontal: 10,
         paddingVertical: 10,
         marginHorizontal: 20,
         marginVertical: 5,
         dropShadow: 25,
         borderRadius: 5,
-        backgroundColor: "white",
+        backgroundColor: "rgba(255, 255, 255, 0.5)",
         pressable: true,
-        height: 90,
+        height: 100,
+        borderColor: "rgba(0, 27, 114, 0.3)",
+        borderWidth: 1,
     },
     title: {
-        fontSize: 20,
+        fontSize: 14,
         color: Colors.blue.color,
-        marginBottom: 5,
+        fontFamily: "Serif-Bold"
     },
     description: {
-        fontSize: 15,
+        fontSize: 12,
+        fontFamily: "Sans-Regular",
+        marginVertical: 10,
         color: Colors.black.color,
-        flex: 1,
-        flexWrap: "wrap",
+
     },
 });

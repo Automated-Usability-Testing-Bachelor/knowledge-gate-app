@@ -1,8 +1,9 @@
 import {Text, View} from "react-native";
-import {SparklesIcon} from "react-native-heroicons/solid";
-import Logo from "../assets/logos/Secondary_Logo/KGG_SecondaryLogo_Black_RGB.svg"
+import {ClockIcon, SparklesIcon} from "react-native-heroicons/solid";
+import Logo from "../assets/logos/Secondary_Logo/KGG_SecondaryLogo_Black_RGB.svg";
 
-const TestComponent: React.FC = () => {
+// const Logo = require("../assets/logos/Secondary_Logo/KGG_SecondaryLogo_Black_RGB.svg");
+const TestComponent = () => {
     return (
         <View>
             <Text>Test Component Ardit</Text>
@@ -13,6 +14,7 @@ const TestComponent: React.FC = () => {
             {/*    uri="https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/debian.svg"*/}
             {/*/>*/}
             <Logo width={200} height={200} fill={'green'}/>
+            <ClockIcon height={50} width={50} color={"red"}/>
         </View>
     );
 }

@@ -50,7 +50,7 @@ const ScheduleAvailabilityModal = ({
                             startFrom={modalStartTimeRange.from}
                             startTo={modalStartTimeRange.to}
                         />
-                        <RedButton name="save" onPress={onPressSave}/>
+                        <RedButton name="Save" onPress={onPressSave}/>
                     </View>
                 </View>
             </Modal>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.warmGrey.color,
     },
     containerInner: {
-        padding: 10,
+        // padding: 10,
         borderRadius: 20,
         backgroundColor: Colors.offWhite.color,
         padding: 30,

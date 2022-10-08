@@ -1,28 +1,17 @@
 import Colors from "../../constants/Colors";
 
-
 export default {
     headerStyle: {
         backgroundColor: Colors.warmGrey.color,
-        borderBottomWidth: 1,
+        borderBottomWidth: 0.2,
         borderBottomColor: Colors.blue.color,
-    },
-    headerStyleIndex: {
-        backgroundColor: Colors.warmGrey.color,
-        // borderBottomWidth: 2,
-        borderBottomWidth: 10,
-        borderBottomColor: Colors.blue.color,
-        elevation: 0,
-        shadowOpacity: 0,
-        shadowColor: 'transparent',
-        borderWidth: 0,
     },
     headerTitleStyle: {
         color: Colors.blue.color,
         fontFamily: "Sans-SemiBold",
         fontSize: 20,
     },
-    headerTitleStyle2: {
+    headerTitleStyleRight: {
         color: Colors.blue.color,
         fontFamily: "Sans-SemiBold",
         fontSize: 20,

@@ -1,6 +1,6 @@
 import BackgroundCards from "../components/BackgroundCardsTemplate";
-import CalendarHeaderText from "../components/calendar/CalenderHeaderText";
-import CalendarBody from "../components/calendar/CalendarBody";
+import CalendarHeaderText from "../components/calendarComponents/CalenderHeaderText";
+import CalendarBody from "../components/calendarComponents/CalendarBody";
 import React, {useState} from "react";
 import moment from "moment/moment";
 

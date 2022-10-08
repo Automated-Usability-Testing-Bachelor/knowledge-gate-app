@@ -1,5 +1,7 @@
 import React from "react";
-import {Image, StyleSheet, TouchableOpacity, View} from "react-native";
+import {StyleSheet, TouchableOpacity, View} from "react-native";
+import {ArrowLeftIcon, ArrowRightIcon} from "react-native-heroicons/solid";
+import Colors from "../constants/Colors";
 
 const Arrow = ({onPress, backgroundColor, isRight}) => {
     return (
@@ -17,14 +19,18 @@ const Arrow = ({onPress, backgroundColor, isRight}) => {
                         },
                     ]}
                 >
-                    <Image
-                        source={
-                            isRight
-                                ? require("./onboarding/right_arrow.png")
-                                : require("./onboarding/left_arrow.png")
-                        }
-                        style={{height: 24, width: 24}}
-                    />
+                    {isRight
+                        ? <ArrowRightIcon size={24} fill={Colors.red.color}/>
+                        : <ArrowLeftIcon size={24} fill={Colors.red.color}/>
+                    }
+                    {/*<Image*/}
+                    {/*    source={*/}
+                    {/*        isRight*/}
+                    {/*            ? <ArrowRightIcon size={24} fill={Colors.red.color}/>*/}
+                    {/*            : <ArrowLeftIcon size={24} fill={Colors.red.color}/>*/}
+                    {/*    }*/}
+                    {/*    style={{height: 24, width: 24}}*/}
+                    {/*/>*/}
                 </View>
             </TouchableOpacity>
         </View>
