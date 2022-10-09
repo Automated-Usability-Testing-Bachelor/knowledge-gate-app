@@ -5,7 +5,7 @@ import Colors from "../../constants/Colors";
 
 const projectData = require("../../data/projectsData.json");
 
-const ProjectCard = ({item, onPress}) => (
+const ProjectCard = ({item, onPress}: any) => (
     <TouchableOpacity style={styles.ProjectCardContainer} onPress={onPress}>
         <Text style={styles.title}>
             {item.title}
@@ -18,11 +18,12 @@ const ProjectCard = ({item, onPress}) => (
 
 export default function Projects() {
     const navigation = useNavigation();
-    const renderItem = ({item}) => {
+    const renderItem = ({item}: any) => {
         return (
             <ProjectCard
                 item={item}
                 onPress={() => {
+                    // @ts-ignore
                     navigation.navigate("ProjectsExpanded", {item});
                 }}
             />
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 14,
         color: Colors.blue.color,
-        fontFamily: "Serif-Bold"
+        fontFamily: "Sans-Medium"
     },
     description: {
         fontSize: 12,

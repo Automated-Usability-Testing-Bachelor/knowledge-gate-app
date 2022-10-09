@@ -5,7 +5,7 @@ import CalendarPicker from "react-native-calendar-picker";
 import moment from "moment";
 import {textStyles} from "../Texts/Headers";
 import FadeInView from "../animatedComponents/FadeInView";
-import {ArrowLeftIcon, ArrowRightIcon} from "react-native-heroicons/solid";
+import {ChevronLeftIcon, ChevronRightIcon} from "react-native-heroicons/solid";
 
 const ActualCalendar = ({
                             datesWithAvailabilities,
@@ -91,10 +91,10 @@ const ActualCalendar = ({
                 <CalendarPicker
                     startFromMonday={true}
                     previousComponent={
-                        <ArrowLeftIcon size={20} fill={Colors.red.color}/>
+                        <ChevronLeftIcon size={20} fill={Colors.red.color}/>
                     }
                     nextComponent={
-                        <ArrowRightIcon size={20} fill={Colors.red.color}/>
+                        <ChevronRightIcon size={20} fill={Colors.red.color}/>
                     }
                     dayLabelsWrapper={styles.dayLabel}
                     monthTitleStyle={styles.month}

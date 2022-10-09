@@ -2,41 +2,38 @@ import React from "react";
 import {ScrollView, StyleSheet, Text, View} from "react-native";
 import Colors from "../../constants/Colors";
 
-const ProjectExpanded = ({item}) => (
+const ProjectExpanded = ({item}: any) => (
     <ScrollView style={styles.projectsExpandedContainer}>
         <View style={styles.projectsExpandedText}>
             <Text style={styles.title}>Industry</Text>
-            <Text>{item.industry}</Text>
+            <Text style={styles.description}>{item.industry}</Text>
         </View>
         <View style={styles.projectsExpandedText}>
             <Text style={styles.title}>Goals</Text>
-            <Text>{item.goals}</Text>
+            <Text style={styles.description}>{item.goals}</Text>
         </View>
         <View style={styles.projectsExpandedText}>
             <Text style={styles.title}>Description</Text>
-            <Text>{item.description}</Text>
+            <Text style={styles.description}>{item.description}</Text>
         </View>
         <View style={styles.projectsExpandedText}>
             <Text style={styles.title}>Questions</Text>
-            <Text>{item.questions}</Text>
+            <Text style={styles.description}>{item.questions}</Text>
         </View>
     </ScrollView>
 );
 
-function Projects({item}) {
-    return (
-        <ProjectExpanded
-            item={item}
-            keyExtractor={(item) => item.id}
-        />
-    );
-}
+const Projects = ({item}: any) => (
+    <ProjectExpanded
+        item={item}
+        keyExtractor={({item}: any) => item.id}
+    />
+)
 
 const styles = StyleSheet.create({
     projectsExpandedContainer: {
         flex: 1,
         padding: 10,
-        // paddingBottom: 20,
         margin: 10,
         height: "100%",
     },
@@ -45,10 +42,15 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     title: {
-        fontSize: 20,
+        fontSize: 16,
+        fontFamily: "Sans-Medium",
         color: Colors.blue.color,
         marginBottom: 5,
     },
+    description: {
+        fontSize: 14,
+        fontFamily: "Sans-Regular",
+    }
 });
 
 export default Projects;

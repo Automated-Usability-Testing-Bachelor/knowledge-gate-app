@@ -3,5 +3,9 @@
   "compilerOptions": {
     "strict": true
   },
-  "include": ["components", "navigation", "custom.d.ts"]
+  "include": [
+    "components",
+    "navigation",
+    "custom.d.ts"
+  ]
 }
