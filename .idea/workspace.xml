@@ -5,19 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/logos/Fifth_Element/KGG_FifthElement_RGB-01.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logos/Fifth_Element/KGG_FifthElement_RGB-02.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/AboutText.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/ProfileBody.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileBody.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectExpanded.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BackgroundCardsTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BackgroundTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Pill.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Pill.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navigationComponents/Icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigationComponents/Icons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/profileComponents/AboutText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/AboutText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileBody.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/profileComponents/PublicationsAndClinicalTrialsView.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/PublicationsAndClinicalTrialsView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/profileData.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/profileData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/CalendarScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CalendarScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/NotFoundScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotFoundScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectExpandedScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/PublicationScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PublicationScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +64,7 @@
       <workItem from="1664617930392" duration="5570000" />
       <workItem from="1664971539047" duration="4171000" />
       <workItem from="1665235742379" duration="25898000" />
+      <workItem from="1665398914579" duration="5942000" />
     </task>
     <servers />
   </component>

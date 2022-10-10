@@ -1,4 +1,4 @@
-import BackgroundCards from "../components/BackgroundCardsTemplate";
+import BackgroundCards from "../components/BackgroundTemplate";
 import CalendarHeaderText from "../components/calendarComponents/CalenderHeaderText";
 import CalendarBody from "../components/calendarComponents/CalendarBody";
 import React, {useState} from "react";

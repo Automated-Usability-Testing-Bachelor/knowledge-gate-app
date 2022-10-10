@@ -2,7 +2,7 @@ import React from "react";
 import {SafeAreaView, StyleSheet, View} from "react-native";
 import Colors from "../constants/Colors";
 
-function BackgroundCardsTemplate(props: any) {
+function BackgroundTemplate(props: any) {
     return (
         <SafeAreaView style={styles.background}>
             <View style={{height: "100%"}}>
@@ -21,4 +21,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default BackgroundCardsTemplate;
+export default BackgroundTemplate;

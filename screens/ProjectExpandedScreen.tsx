@@ -1,5 +1,5 @@
 import React from "react";
-import BackgroundCards from "../components/BackgroundCardsTemplate";
+import BackgroundCards from "../components/BackgroundTemplate";
 import Projects from "../components/projectsComponents/ProjectExpanded";
 
 export default function ProjectsExpandedScreen(props) {

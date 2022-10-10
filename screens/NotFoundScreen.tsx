@@ -1,10 +1,10 @@
-import BackgroundCardsTemplate from "../components/BackgroundCardsTemplate";
+import BackgroundTemplate from "../components/BackgroundTemplate";
 import React from "react";
 import testComponent from "../components/TestComponent";
 
 function NotFoundScreen() {
     return (
-        <BackgroundCardsTemplate
+        <BackgroundTemplate
             body={testComponent()}
         />
     );

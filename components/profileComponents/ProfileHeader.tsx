@@ -2,7 +2,7 @@ import React from "react";
 import {Image, StyleSheet, Text, View} from "react-native";
 import Colors from "../../constants/Colors";
 
-const ProfileHeader = ({text}: any) => (
+const ProfileHeader = ({profileInfo}: any) => (
     <View style={styles.container}>
         <Image
             source={require("../../assets/images/jeff.jpg")}
@@ -14,13 +14,13 @@ const ProfileHeader = ({text}: any) => (
         />
         <View style={styles.headerTextContainer}>
             <Text style={styles.headerName}>
-                {text.name}
+                {profileInfo.name}
             </Text>
             <Text style={styles.headerText}>
-                {text.company}
+                {profileInfo.company}
             </Text>
             <Text>
-                {text.profession}
+                {profileInfo.profession}
             </Text>
         </View>
     </View>

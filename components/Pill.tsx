@@ -17,14 +17,10 @@ function Pill({backgroundColor, borderColor, fontColor, text}: any) {
 const styles = StyleSheet.create({
     container: {
         borderRadius: 100,
-        // justifyContent: "center",
         alignItems: "center",
-        // height: "auto",
-        // width: "auto",
-        // alignSelf: "flex-start",
         paddingVertical: 5,
         paddingHorizontal: 10,
-        margin: 5,
+        margin: 2.5,
     },
     text: {
         fontSize: 12,

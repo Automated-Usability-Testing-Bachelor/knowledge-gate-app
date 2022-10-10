@@ -1,15 +1,14 @@
 import React from "react";
-import BackgroundCards from "../components/BackgroundCardsTemplate";
+import Background from "../components/BackgroundTemplate";
 import BodyView from "../components/publicationScreen/BodyView";
 
-function PublicationScreen(props) {
+const PublicationScreen = (props: any) => {
     const item = props.route.params.item;
     return (
-        <BackgroundCards
+        <Background
             body={BodyView({item})}
         />
     );
 }
-
 
 export default PublicationScreen;

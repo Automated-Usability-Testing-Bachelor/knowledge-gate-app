@@ -18,14 +18,23 @@
   ],
   "experience": [
     {
-      "company": "Army",
-      "title": "Combat Medic",
-      "years": 2
-    },
-    {
       "company": "Polish Deli",
       "title": "Butcher",
-      "years": 2
+      "length": "2 Years",
+      "range": "March 1981 - December 1984"
+    },
+    {
+      "company": "Army",
+      "title": "Combat Medic",
+      "length": "2 Years",
+      "range": "July 1979 - March 1981"
+    }
+  ],
+  "extraInfo": [
+    {
+      "publications": "13",
+      "clinicalTrials": "2",
+      "murders": "17"
     }
   ]
 }

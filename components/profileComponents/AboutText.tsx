@@ -19,7 +19,7 @@ function AboutText({about}: any) {
 
     return (
         <View>
-            <Text style={styles.ContentHeader}>About</Text>
+            <Text style={styles.ContentHeader}>About Me</Text>
             <ReadMore
                 numberOfLines={3}
                 renderTruncatedFooter={renderTruncatedFooter}

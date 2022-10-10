@@ -14,6 +14,7 @@ import ClinicalTrialScreen from "../screens/ClinicalTrialScreen";
 import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 import Colors from "../constants/Colors";
 import {createStackNavigator} from "@react-navigation/stack";
+import ProfilePublicationsClinicalTrialsScreen from "../screens/ProfilePublicationsClinicalTrialsScreen";
 
 // const Stack = createNativeStackNavigator();
 const Stack = createStackNavigator();
@@ -93,6 +94,11 @@ function Navigation() {
                     name="Profile"
                     component={ProfileScreen}
                     options={{headerShown: false}}
+                />
+                <Stack.Screen
+                    name="ProfilePublicationsClinicalTrials"
+                    component={ProfilePublicationsClinicalTrialsScreen}
+                    options={{title: "Publications and Clinical Trials", headerShown: true}}
                 />
                 <Stack.Screen
                     name="PublicationScreen"
