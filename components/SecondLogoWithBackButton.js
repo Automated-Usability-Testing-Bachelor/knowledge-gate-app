@@ -9,12 +9,18 @@ const SecondLogoWithBackButton = () => {
     const icon = require("./whiteLogo.png");
     const navigation = useNavigation();
 
+    const arrowHandler = useCallback(
+      () => { navigation.goBack()},
+      [navigation],
+    )
+    
+
     return (
         <View style={styles.container}>
             <Arrow
                 isRight={false}
                 backgroundColor={Colors.red.color}
-                onPress={() => navigation.goBack()}
+                onPress={arrowHandler}
             />
 
             <Image style={styles.logo} source={icon}/>

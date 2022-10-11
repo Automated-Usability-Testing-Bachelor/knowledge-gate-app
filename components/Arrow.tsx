@@ -1,9 +1,16 @@
 import React from "react";
-import {StyleSheet, TouchableOpacity, View} from "react-native";
+import {GestureResponderEvent, StyleSheet, TouchableOpacity, View} from "react-native";
 import {ArrowLeftIcon, ArrowRightIcon} from "react-native-heroicons/solid";
 import Colors from "../constants/Colors";
 
-const Arrow = ({onPress, backgroundColor, isRight}) => {
+type ArrowProps = {
+    onPress: ((event: GestureResponderEvent) => void)
+    backgroundColor: string
+    isRight: boolean // true if right arrow, false if left arrow
+}
+
+
+const Arrow: React.FC<ArrowProps> = ({onPress, backgroundColor, isRight}) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity
