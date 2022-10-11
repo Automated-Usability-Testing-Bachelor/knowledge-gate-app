@@ -9,7 +9,7 @@ type FadeInViewProps = {
 const FadeInView: React.FC<PropsWithChildren<FadeInViewProps>> = ({
   duration,
   style,
-  children,
+  children
 }) => {
   const fadeAnim = useRef(new Animated.Value(0)).current // Initial value for opacity: 0
 

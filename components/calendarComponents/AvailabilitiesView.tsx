@@ -1,51 +1,53 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import React, { useEffect, useState } from 'react'
+import { FlatList, StyleSheet, View } from 'react-native'
 
-import AvailabilityItem from "./AvailabilityItem";
-import { getAvailabilitiesFromDay } from "../../mocks/CalendarMockData";
+import AvailabilityItem from './AvailabilityItem'
+import { getAvailabilitiesFromDay } from '../../mocks/CalendarMockData'
 
-import NoAvailability from "../NoDataComponents/NoAvailabilities";
+import NoAvailability from '../NoDataComponents/NoAvailabilities'
 
 export type Props = {
-  currentDate: moment.Moment;
-};
+  currentDate: moment.Moment
+}
 const AvailabilitiesView: React.FC<Props> = ({
   currentDate,
   onEditCallback,
   header,
-  footer,
+  footer
 }) => {
-  const [currentAvailabilities, setCurrentAvailabilities] = useState([]);
+  const [currentAvailabilities, setCurrentAvailabilities] = useState([])
 
   useEffect(() => {
-    updateAvailabilityOnCurrentDate(currentDate);
-  }, [currentDate]);
+    updateAvailabilityOnCurrentDate(currentDate)
+  }, [currentDate])
 
   const updateAvailabilityOnCurrentDate = (currentDate) => {
-    let data = getAvailabilitiesFromDay(currentDate);
+    const data = getAvailabilitiesFromDay(currentDate)
+
     if (data != undefined) {
-      setCurrentAvailabilities(data.availabilities);
+      setCurrentAvailabilities(data.availabilities)
     } else if (data === undefined || data.length == 0) {
-      setCurrentAvailabilities([]);
+      setCurrentAvailabilities([])
     }
-  };
+  }
 
   const onDeleteAvailability = (id, currentAvailabilities) => {
-    //update availabilities
-    let data = currentAvailabilities;
+    // update availabilities
+    const data = currentAvailabilities
+
     if (
       data === undefined ||
       data.availabilities.length === 0 ||
       data.availabilities === undefined
     ) {
-      setCurrentAvailabilities([]);
+      setCurrentAvailabilities([])
     } else {
-      let newData = data.availabilities;
-      let arr = [];
+      const newData = data.availabilities
+      const arr = []
 
-      setCurrentAvailabilities(newData);
+      setCurrentAvailabilities(newData)
     }
-  };
+  }
 
   return (
     <View>
@@ -72,16 +74,16 @@ const AvailabilitiesView: React.FC<Props> = ({
         )}
       />
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
+    height: '100%'
   },
   NoAvailabilityContainer: {
     paddingHorizontal: 25,
-    paddingVertical: 10,
-  },
-});
+    paddingVertical: 10
+  }
+})
 
-export default AvailabilitiesView;
+export default AvailabilitiesView
