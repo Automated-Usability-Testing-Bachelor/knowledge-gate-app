@@ -2,7 +2,12 @@ import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import Colors from "../../constants/Colors";
 
-export const BlueSerifHeader1 = ({text}) => {
+export type Props= {
+    text: string;
+    numberOfLines?: number;
+}
+
+export const BlueSerifHeader1: React.FC<Props> = ({text}) => {
     return (
         <View>
             <Text style={textStyles.blueSerifHeader1}>{text}</Text>
@@ -10,14 +15,14 @@ export const BlueSerifHeader1 = ({text}) => {
     );
 };
 
-export const BlueSerifHeader2 = ({text}) => {
+export const BlueSerifHeader2: React.FC<Props> = ({text}) => {
     return (
         <View>
             <Text style={textStyles.blueSerifHeader2}>{text}</Text>
         </View>
     );
 };
-export const BlackSansHeader2 = ({text}) => {
+export const BlackSansHeader2: React.FC<Props> = ({text}) => {
     return (
         <View>
             <Text style={textStyles.blackSansHeader2}>{text}</Text>
@@ -25,21 +30,21 @@ export const BlackSansHeader2 = ({text}) => {
     );
 };
 
-export const BlackSerifHeader4 = ({text}) => {
+export const BlackSerifHeader4: React.FC<Props> = ({text}) => {
     return (
         <View>
             <Text style={textStyles.blackSerifHeader4}>{text}</Text>
         </View>
     );
 };
-export const BlackSerifHeader2 = ({text}) => {
+export const BlackSerifHeader2: React.FC<Props> = ({text}) => {
     return (
         <View>
             <Text style={textStyles.blackSerifHeader2}>{text}</Text>
         </View>
     );
 };
-export const BlackSerifBody1 = ({text, numberOfLines}) => {
+export const BlackSerifBody1: React.FC<Props> = ({text, numberOfLines}) => {
     return (
         <View>
             <Text style={textStyles.blackSerifBody1} numberOfLines={numberOfLines}>
@@ -48,7 +53,7 @@ export const BlackSerifBody1 = ({text, numberOfLines}) => {
         </View>
     );
 };
-export const BlackSansBody1 = ({text, numberOfLines}) => {
+export const BlackSansBody1: React.FC<Props> = ({text, numberOfLines}) => {
     return (
         <View>
             <Text style={textStyles.blackSansBody1} numberOfLines={numberOfLines}>

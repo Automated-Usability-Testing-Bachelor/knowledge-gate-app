@@ -5,8 +5,17 @@ import ClockIcon from "./clockIcon";
 import ThreeDotsIcon from "../ThreeDotsIcon";
 import {deleteAvailability} from "../../mocks/CalendarMockData";
 import {Menu, MenuOption, MenuOptions, MenuTrigger,} from "react-native-popup-menu";
+import moment from "moment";
 
-const AvailabilityItem = ({
+export type Props = {
+    from: moment.Moment;
+    to: moment.Moment;
+    id: string | number[];
+    onDeleteCallback: Function;
+    onEditCallback: Function; 
+}
+
+const AvailabilityItem: React.FC<Props> = ({
                               from,
                               to,
                               id,
@@ -122,7 +131,6 @@ const optionsStyles = {
         shadowOpacity: 0.25,
         shadowRadius: 100,
         elevation: 20,
-        padding: 5,
         width: "auto",
     },
     optionsWrapper: {

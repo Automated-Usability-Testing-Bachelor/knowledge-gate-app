@@ -51,7 +51,7 @@ export const getCalendarDataFromCurrentMonth = (date: moment.Moment) => {
 };
 
 export const getAvailabilitiesFromDay = (day: moment.Moment) => {
-  let availabilities = undefined;
+  let availabilities: DateWithAvailability | undefined = undefined;
   for (let i = 0; i < allCalendarData.length; i++) {
     if (allCalendarData[i].date.isSame(day, "day")) {
       availabilities = allCalendarData[i];

@@ -1,7 +1,14 @@
-import DateTimePicker from "@react-native-community/datetimepicker";
+import DateTimePicker, {DateTimePickerEvent} from "@react-native-community/datetimepicker";
 import {View} from "react-native";
 
-const TimePicker = ({show, date, onChangecallback, minuteInterval}) => {
+export type Props = {
+    show: boolean;
+    date: Date;
+    onChangecallback: (event: DateTimePickerEvent, date?: Date | undefined) => void;
+    minuteInterval: number;
+}
+
+const TimePicker: React.FC<Props> = ({show, date, onChangecallback, minuteInterval}) => {
     console.log("android");
     return (
         <View>

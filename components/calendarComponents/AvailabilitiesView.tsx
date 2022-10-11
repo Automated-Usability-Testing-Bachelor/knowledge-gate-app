@@ -2,12 +2,20 @@ import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, View } from "react-native";
 
 import AvailabilityItem from "./AvailabilityItem";
-import { getAvailabilitiesFromDay } from "../../mocks/CalendarMockData";
+import {
+  getAvailabilitiesFromDay,
+  Availability,
+  DateWithAvailability,
+} from "../../mocks/CalendarMockData";
 
 import NoAvailability from "../NoDataComponents/NoAvailabilities";
+import moment from "moment";
 
 export type Props = {
   currentDate: moment.Moment;
+  onEditCallback: Function;
+  header: React.ReactElement;
+  footer: React.ReactElement;
 };
 const AvailabilitiesView: React.FC<Props> = ({
   currentDate,
@@ -15,22 +23,24 @@ const AvailabilitiesView: React.FC<Props> = ({
   header,
   footer,
 }) => {
-  const [currentAvailabilities, setCurrentAvailabilities] = useState([]);
+  const [currentAvailabilities, setCurrentAvailabilities] = useState<
+    Availability[]
+  >([]);
 
   useEffect(() => {
     updateAvailabilityOnCurrentDate(currentDate);
   }, [currentDate]);
 
-  const updateAvailabilityOnCurrentDate = (currentDate) => {
-    let data = getAvailabilitiesFromDay(currentDate);
+  const updateAvailabilityOnCurrentDate = (currentDate: moment.Moment) => {
+    let data: DateWithAvailability | undefined = getAvailabilitiesFromDay(currentDate);
     if (data != undefined) {
       setCurrentAvailabilities(data.availabilities);
-    } else if (data === undefined || data.length == 0) {
+    } else if (data === undefined) {
       setCurrentAvailabilities([]);
     }
   };
 
-  const onDeleteAvailability = (id, currentAvailabilities) => {
+  const onDeleteAvailability = (id: string, currentAvailabilities: DateWithAvailability) => {
     //update availabilities
     let data = currentAvailabilities;
     if (
@@ -54,7 +64,7 @@ const AvailabilitiesView: React.FC<Props> = ({
         ListHeaderComponent={header}
         ListFooterComponent={footer}
         data={currentAvailabilities}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item: Availability) => item.id.toString()}
         initialNumToRender={1}
         ListEmptyComponent={
           <View style={styles.NoAvailabilityContainer}>

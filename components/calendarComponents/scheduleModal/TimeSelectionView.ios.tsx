@@ -3,7 +3,14 @@ import {StyleSheet, Text, View,} from "react-native";
 import moment from "moment";
 import TimePicker from "./TimePicker";
 
-const TimeSelectionView = ({returnTimeRangeCallback, startFrom, startTo}) => {
+export type Props= {
+    returnTimeRangeCallback: Function;
+    startFrom: Date;
+    startTo: Date;
+}
+
+
+const TimeSelectionView: React.FC<Props> = ({returnTimeRangeCallback, startFrom, startTo}) => {
     const [fromDate, setFromDate] = useState(startFrom);
     const [toDate, setToDate] = useState(startTo);
     const initialTimeRange = {
@@ -11,7 +18,7 @@ const TimeSelectionView = ({returnTimeRangeCallback, startFrom, startTo}) => {
         to: toDate,
     };
 
-    const onFromChange = (event, date) => {
+    const onFromChange = (date: Date) => {
         console.log(date);
         const currentDate = date;
 
@@ -20,7 +27,7 @@ const TimeSelectionView = ({returnTimeRangeCallback, startFrom, startTo}) => {
         let newTimeRange = {from: moment(newDate), to: moment(toDate)};
         returnTimeRangeCallback(newTimeRange);
     };
-    const onToChange = (event, date) => {
+    const onToChange = (date: Date) => {
         const currentDate = date;
 
         let newDate = new Date(currentDate);

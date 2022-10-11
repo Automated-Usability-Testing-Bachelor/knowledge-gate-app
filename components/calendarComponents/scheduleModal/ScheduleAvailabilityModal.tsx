@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
 import Colors from "../../../constants/Colors";
 import { BlueSerifHeader2 } from "../../Texts/Headers";
-import Modal from "react-native-modal";
+import Modal, { OnSwipeCompleteParams } from "react-native-modal";
+import PanResponderGestureState from "react-native-modal";
 import TimeSelectionView from "./TimeSelectionView";
 import RedButton from "../../RedButton";
 import moment from "moment";
@@ -47,10 +48,10 @@ const ScheduleAvailabilityModal: React.FC<Props> = ({
       <Modal
         isVisible={showModal}
         backdropOpacity={0.3}
-        onBackdropPress={closeModal}
+        onBackdropPress={() => closeModal()}
         swipeDirection={["down"]}
         style={styles.modal}
-        onSwipeComplete={closeModal}
+        onSwipeComplete={() => closeModal()}
         useNativeDriverForBackdrop
       >
         <View style={styles.containerOuter}>
