@@ -11,10 +11,4 @@ export default {
         fontFamily: "Sans-SemiBold",
         fontSize: 20,
     },
-    headerTitleStyleRight: {
-        color: Colors.blue.color,
-        fontFamily: "Sans-SemiBold",
-        fontSize: 20,
-        paddingRight: 20,
-    },
 };
