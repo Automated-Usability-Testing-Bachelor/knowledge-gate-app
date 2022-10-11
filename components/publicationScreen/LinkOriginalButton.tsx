@@ -1,8 +1,13 @@
 import React, {useCallback} from "react";
-import {Linking, StyleSheet, Text, TouchableOpacity, View,} from "react-native";
+import {Alert, Linking, StyleSheet, Text, TouchableOpacity, View,} from "react-native";
 import Colors from "../../constants/Colors";
+import {ArrowTopRightOnSquareIcon} from "react-native-heroicons/solid";
 
-const LinkOriginalButton = ({link, icon}) => {
+type Props = {
+    link: string;
+}
+
+const LinkOriginalButton : React.FC<Props> = ({link}) => {
     const handlePress = useCallback(async () => {
         const supported = await Linking.canOpenURL(link);
         if (supported) {
@@ -20,7 +25,7 @@ const LinkOriginalButton = ({link, icon}) => {
             >
                 <View style={styles.button}>
                     <Text style={styles.text}>Original</Text>
-                    {icon ? icon : <View></View>}
+                    <ArrowTopRightOnSquareIcon size={16} fill={"white"} style={{marginLeft: 10}}/>
                 </View>
             </TouchableOpacity>
         </View>
