@@ -3,7 +3,8 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import React, { useCallback } from 'react'
 import { StyleSheet, View } from 'react-native'
 import RedButton from '../RedButton'
-import RootStackParamList from '../../navigation/index'
+// eslint-disable-next-line import/no-cycle
+import { StackParamList } from '../../navigation/index'
 
 const styles = StyleSheet.create({
   container: {
@@ -11,35 +12,22 @@ const styles = StyleSheet.create({
   }
 })
 
-
-
 type PropsButton = {
   name: string
 }
 
+export type StackNavigation = StackNavigationProp<StackParamList>
+
 const LoginBtn: React.FC<PropsButton> = ({ name }) => {
+  const navigation = useNavigation<StackNavigation>()
 
-
-
-    export type onBoardingProp = {
-        StackNavigationProp<RootStackParamList, 'Onboarding'>
-    }
-
-
-    const navigation = useNavigation<onBoardingProp>()
-
-//   const redButtonHandler = useCallback(() => {
-//      navigation.navigate('Onboarding')
-//   }, [])
-
+  const redButtonHandler = useCallback(() => {
+    navigation.navigate('Onboarding')
+  }, [navigation])
 
   return (
     <View style={styles.container}>
-      <RedButton name={
-        name
-      } onPress={navigation.navigate(
-        'Onboarding'
-      )} icon={undefined} />
+      <RedButton name={name} onPress={redButtonHandler} icon={undefined} />
     </View>
   )
 }

@@ -19,7 +19,7 @@ import InvoiceScreen from '../screens/InvoiceScreen'
 
 // const Stack = createNativeStackNavigator();
 
-export type RootStackParamList = {
+export type StackParamList = {
   Main: undefined
   Home: undefined
   Onboarding: undefined
@@ -42,7 +42,7 @@ export type RootStackParamList = {
   InvoiceScreen: undefined
 }
 
-const Stack = createStackNavigator<RootStackParamList>()
+const Stack = createStackNavigator<StackParamList>()
 
 const OnboardingFlow: React.FC = () => {
   return (
@@ -130,16 +130,16 @@ const Navigation: React.FC = () => {
         <Stack.Screen
           name={'PublicationScreen'}
           component={PublicationScreen}
-        //   options={({ route }) => ({
-        //     title: route.params.item.title
-        //   })}
+          //   options={({ route }) => ({
+          //     title: route.params.item.title
+          //   })}
         />
         <Stack.Screen
           name={'ClinicalTrialScreen'}
           component={ClinicalTrialScreen}
-        //   options={({ route }) => ({
-        //     title: route.params.item.title
-        //   })}
+          /*  //   options={({ route }) => ({
+          //     title: route.params.item.title
+          //   })} */
         />
         <Stack.Screen
           name={'InvoiceScreen'}
