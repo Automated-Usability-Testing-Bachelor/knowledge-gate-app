@@ -1,47 +1,48 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import Colors from "../constants/Colors";
 
-const RedButton = ({ name, icon, onPress }) => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={onPress}
-        style={styles.touchable}
-        activeOpacity={0.6}
-      >
-        <View style={styles.button}>
-          {icon ? icon : <View></View>}
-          <Text style={styles.text}>{name}</Text>
+const RedButton = ({name, icon, onPress}) => {
+    return (
+        <View style={styles.container}>
+            <TouchableOpacity
+                onPress={onPress}
+                style={styles.touchable}
+                activeOpacity={0.6}
+            >
+                <View style={styles.button}>
+                    <Text style={styles.text}>{name}</Text>
+                    {icon ? icon : <View></View>}
+                </View>
+            </TouchableOpacity>
         </View>
-      </TouchableOpacity>
-    </View>
-  );
+    );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    justifyContent: "center",
-  },
-  button: {
-    backgroundColor: Colors.red.color,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 10,
-    alignSelf: "center",
-  },
-  touchable: {
-    borderRadius: 10,
-    alignSelf: "center",
-    padding: 12,
-  },
-  text: {
-    color: "#FFF",
-    lineHeight: 18,
-  },
+    container: {
+        justifyContent: "center",
+    },
+    button: {
+        backgroundColor: Colors.red.color,
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 10,
+        alignSelf: "center",
+    },
+    touchable: {
+        borderRadius: 10,
+        alignSelf: "center",
+        padding: 12,
+    },
+    text: {
+        color: "#FFF",
+        lineHeight: 18,
+        paddingHorizontal: 5,
+    },
 });
 
 export default RedButton;

@@ -1,11 +1,11 @@
 import * as React from "react";
-import {Image, StyleSheet, View} from "react-native";
+import {StyleSheet, View} from "react-native";
+import LogoSVG from "../../assets/logos/Additional_Lockups/Lockup02/KGG_Logo_Lockup_White_RGB-02.svg"
 
 const Logo = () => {
-    const icon = require("../../assets/logos/Additional_Lockups/Lockup02/whiteLogo.png");
     return (
         <View style={styles.container}>
-            <Image style={styles.logo} source={icon}/>
+            <LogoSVG height={200} width={200} fill={"white"}/>
         </View>
     );
 };
