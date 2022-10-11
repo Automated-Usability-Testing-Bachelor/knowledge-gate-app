@@ -24,12 +24,12 @@ const OnboardingFlow = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Start"
+        name={'Start'}
         component={OnboardingScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Carousel"
+        name={'Carousel'}
         component={OnboardingCarouselScreen}
         options={{ headerShown: false }}
       />
@@ -53,51 +53,50 @@ const Navigation = () => {
         }}
       >
         <Stack.Screen
-          name="Root"
+          name={'Root'}
           component={BottomTabNavigator}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Login"
+          name={'Login'}
           component={LoginScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Onboarding"
+          name={'Onboarding'}
           component={OnboardingFlow}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="ProjectsExpanded"
+          name={'ProjectsExpanded'}
           component={ProjectExpandedScreen}
-          options={({ route }) => ({
-            // @ts-ignore
+          /* options={({ route }) => ({
             title: route.params.item.title
-          })}
+          })} */
         />
         <Stack.Screen
-          name="Projects"
+          name={'Projects'}
           component={ProjectsScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Calendar"
+          name={'Calendar'}
           component={CalendarScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Not Found"
+          name={'Not Found'}
           component={NotFoundScreen}
           options={{ headerShown: false }}
         />
 
         <Stack.Screen
-          name="Profile"
+          name={'Profile'}
           component={ProfileScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="ProfilePublicationsClinicalTrials"
+          name={'ProfilePublicationsClinicalTrials'}
           component={ProfilePublicationsClinicalTrialsScreen}
           options={{
             title: 'Publications and Clinical Trials',
@@ -105,23 +104,21 @@ const Navigation = () => {
           }}
         />
         <Stack.Screen
-          name="PublicationScreen"
+          name={'PublicationScreen'}
           component={PublicationScreen}
           options={({ route }) => ({
-            // @ts-ignore
             title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name="ClinicalTrialScreen"
+          name={'ClinicalTrialScreen'}
           component={ClinicalTrialScreen}
           options={({ route }) => ({
-            // @ts-ignore
             title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name="InvoiceScreen"
+          name={'InvoiceScreen'}
           component={InvoiceScreen}
           options={{ headerShown: false }}
         />

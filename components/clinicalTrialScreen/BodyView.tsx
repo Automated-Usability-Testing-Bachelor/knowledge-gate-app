@@ -5,33 +5,6 @@ import LinkOriginalButton from '../publicationScreen/LinkOriginalButton'
 import Dialog from './Dialog'
 import StatusBadge from '../profileComponents/tabs/StatusBadge'
 
-const BodyView = ({ item }) => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.DateContainer}>
-        <View>
-          <Text style={styles.publishDateText}>
-            {`Published: ${item.publishDate}`}
-          </Text>
-        </View>
-        <StatusBadge status={item.status} />
-      </View>
-      <View>
-        <View style={styles.titleContainer}>
-          <Text style={styles.TitleText}>{item.title}</Text>
-        </View>
-        <ScrollView>
-          <Dialog title='Conditions' body={item.conditions} />
-          <Dialog title='Locations' body={item.Locations} />
-          <Dialog title='Interventions' body={item.Interventions} />
-        </ScrollView>
-      </View>
-      <View style={styles.btnContainer}>
-        <LinkOriginalButton link={item.link} />
-      </View>
-    </View>
-  )
-}
 const styles = StyleSheet.create({
   container: {
     marginBottom: 10,
@@ -70,5 +43,51 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   }
 })
+
+type Props = {
+  status: string
+  publishDate: string
+  title: string
+  conditions: string
+  interventions: string
+  locations: string
+  link: string
+}
+
+const BodyView: React.FC<Props> = ({
+  status,
+  publishDate,
+  title,
+  conditions,
+  interventions,
+  locations,
+  link
+}) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.DateContainer}>
+        <View>
+          <Text style={styles.publishDateText}>
+            {`Published: ${publishDate}`}
+          </Text>
+        </View>
+        <StatusBadge status={status} />
+      </View>
+      <View>
+        <View style={styles.titleContainer}>
+          <Text style={styles.TitleText}>{title}</Text>
+        </View>
+        <ScrollView>
+          <Dialog title={'Conditions'} body={conditions} />
+          <Dialog title={'Locations'} body={locations} />
+          <Dialog title={'Interventions'} body={interventions} />
+        </ScrollView>
+      </View>
+      <View style={styles.btnContainer}>
+        <LinkOriginalButton link={link} />
+      </View>
+    </View>
+  )
+}
 
 export default BodyView
