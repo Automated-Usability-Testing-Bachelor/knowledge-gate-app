@@ -9,7 +9,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "ci:lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./"
+
   },
   "dependencies": {
     "@heroicons/react": "2.0.11",
@@ -59,9 +61,14 @@
     "eslint": "8.25.0",
     "eslint-config-airbnb-typescript": "17.0.0",
     "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-react": "7.31.10",
+    "eslint-config-airbnb-typescript-prettier": "5.0.0",
+    "eslint-config-next": "12.3.0",
+    "eslint-plugin-deprecation": "1.3.2",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsx-a11y": "6.6.1",
-    "eslint-plugin-react": "7.31.10",
+    "eslint-plugin-promise": "6.0.1",
+    "eslint-plugin-storybook": "0.6.4",
     "prettier": "2.7.1"
   },
   "private": true

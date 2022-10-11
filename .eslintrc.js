@@ -78,6 +78,10 @@ const rules = {
     'error',
     {
       'endOfLine': 'auto',
+      'singleQuote': true,
+      'semi': false,
+      'trailingComma': 'none'
+      
     }
   ],
   "no-warning-comments": "warn",
@@ -90,13 +94,13 @@ module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
   plugins: ["deprecation", "promise"],
-  extends: ["next", "airbnb-typescript-prettier", "plugin:storybook/recommended", "plugin:promise/recommended"],
+  extends: ["airbnb-typescript-prettier", "plugin:storybook/recommended", "plugin:promise/recommended"],
   rules,
   overrides: [{
     files: ["*.ts", "*.tsx"],
     parser: "@typescript-eslint/parser",
     plugins: ["deprecation", "promise"],
-    extends: ["next", "airbnb-typescript-prettier", "plugin:promise/recommended"],
+    extends: ["airbnb-typescript-prettier", "plugin:promise/recommended"],
     rules: {
       ...rules,
       "@typescript-eslint/no-explicit-any": "error",
