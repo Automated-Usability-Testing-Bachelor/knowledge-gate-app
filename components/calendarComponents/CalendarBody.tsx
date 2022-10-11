@@ -116,11 +116,7 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
 };
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: Colors.offWhite.color,
-    // borderTopLeftRadius: 20,
-    // borderTopRightRadius: 20,
-    height: "100%",
-    // paddingBottom: 180,
+    height: "100%",  
   },
   NoAvailabilityContainer: {
     paddingHorizontal: 25,
