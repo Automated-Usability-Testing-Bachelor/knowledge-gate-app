@@ -1,11 +1,7 @@
-import React from "react";
-import BackgroundTemplate from "../components/BackgroundTemplate";
-import InvoiceCards from "../components/invoiceComponents/InvoiceCards";
+import React from 'react'
+import BackgroundTemplate from '../components/BackgroundTemplate'
+import InvoiceCards from '../components/invoiceComponents/InvoiceCards'
 
-const InvoiceScreen = () => (
-    <BackgroundTemplate
-        body={InvoiceCards()}
-    />
-)
+const InvoiceScreen = () => <BackgroundTemplate body={InvoiceCards()} />
 
-export default InvoiceScreen;
+export default InvoiceScreen
