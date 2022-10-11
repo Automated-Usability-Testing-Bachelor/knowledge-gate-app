@@ -1,24 +1,24 @@
-import {StatusBar} from "expo-status-bar";
-import {SafeAreaProvider} from "react-native-safe-area-context";
-import useCachedResources from "./hooks/useCachedResources";
-import Navigation from "./navigation";
-import {MenuProvider} from "react-native-popup-menu";
+import { StatusBar } from 'expo-status-bar'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { MenuProvider } from 'react-native-popup-menu'
+import useCachedResources from './hooks/useCachedResources'
+import Navigation from './navigation'
 
-function App() {
-    const isLoadingComplete = useCachedResources();
+const App = () => {
+  const isLoadingComplete = useCachedResources()
 
-    if (!isLoadingComplete) {
-        return null;
-    } else {
-        return (
-            <SafeAreaProvider>
-                <MenuProvider>
-                    <StatusBar style={"dark"}/>
-                    <Navigation/>
-                </MenuProvider>
-            </SafeAreaProvider>
-        );
-    }
+  if (!isLoadingComplete) {
+    return null
+  }
+
+  return (
+    <SafeAreaProvider>
+      <MenuProvider>
+        <StatusBar style={'dark'} />
+        <Navigation />
+      </MenuProvider>
+    </SafeAreaProvider>
+  )
 }
 
-export default App;
+export default App

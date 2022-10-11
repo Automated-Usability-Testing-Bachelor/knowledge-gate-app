@@ -11,37 +11,37 @@ import { DateTimeRange } from "../CalendarBody";
 import { MomentTimeRange } from "../../../mocks/CalendarMockData";
 
 export type Props = {
-  showModal: boolean;
-  closeModal: Function;
-  getTimeRangeCallback: Function;
-  modalStartTimeRange: DateTimeRange;
-  isEditing?: boolean;
-};
+  showModal: boolean
+  closeModal: Function
+  getTimeRangeCallback: Function
+  modalStartTimeRange: DateTimeRange
+  isEditing?: boolean
+}
 
 const ScheduleAvailabilityModal: React.FC<Props> = ({
   showModal,
   closeModal,
   getTimeRangeCallback,
   modalStartTimeRange,
-  isEditing,
+  isEditing
 }) => {
   const initialTimeRange: MomentTimeRange = {
     from: moment(modalStartTimeRange.from),
-    to: moment(modalStartTimeRange.to),
-  };
+    to: moment(modalStartTimeRange.to)
+  }
   const [cachedTimeRange, setCachedTimeRange] =
-    useState<MomentTimeRange>(initialTimeRange);
+    useState<MomentTimeRange>(initialTimeRange)
   const getTimeRange = (timeRange: MomentTimeRange) => {
-    setCachedTimeRange(timeRange);
-  };
+    setCachedTimeRange(timeRange)
+  }
 
   const onPressSave = () => {
-    getTimeRangeCallback(cachedTimeRange);
-    closeModal();
-  };
+    getTimeRangeCallback(cachedTimeRange)
+    closeModal()
+  }
   useEffect(() => {
-    setCachedTimeRange(initialTimeRange);
-  }, [showModal]);
+    setCachedTimeRange(initialTimeRange)
+  }, [showModal])
 
   return (
     <View>
@@ -62,43 +62,43 @@ const ScheduleAvailabilityModal: React.FC<Props> = ({
               startFrom={modalStartTimeRange.from}
               startTo={modalStartTimeRange.to}
             />
-            <RedButton name="Save" onPress={onPressSave} />
+            <RedButton name='Save' onPress={onPressSave} />
           </View>
         </View>
       </Modal>
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   modal: {
-    justifyContent: "flex-end",
-    margin: 0,
+    justifyContent: 'flex-end',
+    margin: 0
   },
   containerOuter: {
     padding: 10,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    backgroundColor: Colors.warmGrey.color,
+    backgroundColor: Colors.warmGrey.color
   },
   containerInner: {
     // padding: 10,
     borderRadius: 20,
     backgroundColor: Colors.offWhite.color,
-    padding: 30,
-  },
-});
+    padding: 30
+  }
+})
 
-export default ScheduleAvailabilityModal;
+export default ScheduleAvailabilityModal
 
 function roundMinutes(date: Date) {
-  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
-  date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
+  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60))
+  date.setMinutes(0, 0, 0) // Resets also seconds and milliseconds
 
-  return date;
+  return date
 }
 
 function addHours(date: Date, hours: number) {
-  date.setHours(date.getHours() + hours);
+  date.setHours(date.getHours() + hours)
 
-  return date;
+  return date
 }

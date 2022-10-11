@@ -1,88 +1,90 @@
-import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
-import ActualCalendar from "./actualCalendar";
-import ScheduleBtn from "./ScheduleBtn";
+import React, { useState } from 'react'
+import { StyleSheet, View } from 'react-native'
+import moment from 'moment'
+import ActualCalendar from './actualCalendar'
+import ScheduleBtn from './ScheduleBtn'
 import {
   addAvailability,
   Availability,
   editAvailabilityTimeById,
   getAvailabilityById,
   getCalendarDataFromCurrentMonth,
-} from "../../mocks/CalendarMockData";
-import moment from "moment";
-import ScheduleAvailabilityModal from "./scheduleModal/ScheduleAvailabilityModal";
-import AvailabilitiesView from "./AvailabilitiesView";
-import { MomentTimeRange } from "../../mocks/CalendarMockData";
-import AvailabilityHeader from "./AvailabilityHeader";
+  MomentTimeRange
+} from '../../mocks/CalendarMockData'
+import ScheduleAvailabilityModal from './scheduleModal/ScheduleAvailabilityModal'
+import AvailabilitiesView from './AvailabilitiesView'
+import AvailabilityHeader from './AvailabilityHeader'
 
 export type Props = {
-  selectedDayHeaderCallback: Function;
-};
+  selectedDayHeaderCallback: Function
+}
+
 export type DateTimeRange = {
-  from: Date;
-  to: Date;
-};
+  from: Date
+  to: Date
+}
 
 const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
-  const [edittingId, setEdittingId] = useState("");
-  const [showModal, setShowModal] = useState(false);
+  const [edittingId, setEdittingId] = useState('')
+  const [showModal, setShowModal] = useState(false)
   const [modalStartTimeRange, setModalStartTimeRange] = useState<DateTimeRange>(
     setInitialTimeRange()
-  );
-  const [isModalEditing, setIsModalEditing] = useState(false);
-  const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment());
+  )
+  const [isModalEditing, setIsModalEditing] = useState(false)
+  const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment())
   const [datesWithAvailabilities, setDatesWithAvailability] =
-    useState(initialDatesWithAv);
-  const [currentDate, setCurrentDate] = useState(moment());
+    useState(initialDatesWithAv)
+  const [currentDate, setCurrentDate] = useState(moment())
   const ShowModalCallback = () => {
-    setShowModal(true);
-  };
+    setShowModal(true)
+  }
   const closeModal = () => {
-    setShowModal(false);
-  };
+    setShowModal(false)
+  }
   const currentMonthCallback = (date: moment.Moment) => {
-    setDatesWithAvailability(getCalendarDataFromCurrentMonth(date));
-  };
+    setDatesWithAvailability(getCalendarDataFromCurrentMonth(date))
+  }
   const selectedDayCallback = (date: moment.Moment) => {
-    selectedDayHeaderCallback(date);
-    setCurrentDate(date);
-  };
+    selectedDayHeaderCallback(date)
+    setCurrentDate(date)
+  }
   const onEditAvailability = (id: string) => {
-    setEdittingId(id);
-    let av: Availability | undefined = getAvailabilityById(id);
+    setEdittingId(id)
+    const av: Availability | undefined = getAvailabilityById(id)
+
     if (av !== undefined) {
       setModalStartTimeRange({
         from: av.from.toDate(),
-        to: av.to.toDate(),
-      });
-      setIsModalEditing(true);
-      setShowModal(true);
+        to: av.to.toDate()
+      })
+      setIsModalEditing(true)
+      setShowModal(true)
     }
-  };
+  }
 
   const getscheduledTime = (timeRange: MomentTimeRange) => {
     if (isModalEditing) {
-      setIsModalEditing(false);
-      let data = editAvailabilityTimeById(edittingId, timeRange);
-      setEdittingId("");
-      setModalStartTimeRange(setInitialTimeRange());
+      setIsModalEditing(false)
+      const data = editAvailabilityTimeById(edittingId, timeRange)
+      setEdittingId('')
+      setModalStartTimeRange(setInitialTimeRange())
     } else {
-      addAvailability(timeRange, currentDate);
+      addAvailability(timeRange, currentDate)
     }
-    //for refreshing availabilities view
-    setCurrentDate(currentDate.clone());
+    // for refreshing availabilities view
+    setCurrentDate(currentDate.clone())
 
-    //refreshing calendar styling
-    let month = currentDate.clone();
-    month = month.startOf("month");
-    let arr = [];
-    let newData = getCalendarDataFromCurrentMonth(month);
+    // refreshing calendar styling
+    let month = currentDate.clone()
+    month = month.startOf('month')
+    const arr = []
+    const newData = getCalendarDataFromCurrentMonth(month)
 
     for (let i = 0; i < newData.length; i++) {
-      arr.push(Object.assign({}, newData[i]));
+      arr.push({ ...newData[i] })
     }
-    setDatesWithAvailability(arr);
-  };
+    setDatesWithAvailability(arr)
+  }
 
   return (
     <View style={styles.container}>
@@ -112,36 +114,36 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
         onEditCallback={onEditAvailability}
       />
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   container: {
     height: "100%",  
   },
   NoAvailabilityContainer: {
     paddingHorizontal: 25,
-    paddingVertical: 10,
-  },
-});
+    paddingVertical: 10
+  }
+})
 
 function roundMinutes(date: Date) {
-  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60));
-  date.setMinutes(0, 0, 0); // Resets also seconds and milliseconds
+  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60))
+  date.setMinutes(0, 0, 0) // Resets also seconds and milliseconds
 
-  return date;
+  return date
 }
 
 function addHours(date: Date, hours: number) {
-  date.setHours(date.getHours() + hours);
+  date.setHours(date.getHours() + hours)
 
-  return date;
+  return date
 }
 
 function setInitialTimeRange() {
   return {
     from: roundMinutes(new Date()),
-    to: addHours(roundMinutes(new Date()), 1),
-  };
+    to: addHours(roundMinutes(new Date()), 1)
+  }
 }
 
-export default CalendarBody;
+export default CalendarBody

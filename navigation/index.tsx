@@ -18,7 +18,7 @@ import ProfilePublicationsClinicalTrialsScreen from "../screens/ProfilePublicati
 import InvoiceScreen from "../screens/InvoiceScreen";
 
 // const Stack = createNativeStackNavigator();
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 const OnboardingFlow = () => {
   return (
@@ -131,4 +131,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default Navigation
