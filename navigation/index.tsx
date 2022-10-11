@@ -18,9 +18,33 @@ import ProfilePublicationsClinicalTrialsScreen from '../screens/ProfilePublicati
 import InvoiceScreen from '../screens/InvoiceScreen'
 
 // const Stack = createNativeStackNavigator();
-const Stack = createStackNavigator()
 
-const OnboardingFlow = () => {
+export type RootStackParamList = {
+  Main: undefined
+  Home: undefined
+  Onboarding: undefined
+  Start: undefined
+  NotFound: undefined
+  Calendar: undefined
+  Projects: undefined
+  ProjectsExpanded: undefined
+  Profile: undefined
+  OnboardingCarousel: undefined
+  Publication: undefined
+  ClinicalTrial: undefined
+  ProfilePublicationsClinicalTrials: undefined
+  Invoice: undefined
+  Carousel: undefined
+  Root: undefined
+  Login: undefined
+  PublicationScreen: undefined
+  ClinicalTrialScreen: undefined
+  InvoiceScreen: undefined
+}
+
+const Stack = createStackNavigator<RootStackParamList>()
+
+const OnboardingFlow: React.FC = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -37,7 +61,7 @@ const OnboardingFlow = () => {
   )
 }
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -85,7 +109,7 @@ const Navigation = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name={'Not Found'}
+          name={'NotFound'}
           component={NotFoundScreen}
           options={{ headerShown: false }}
         />
@@ -106,16 +130,16 @@ const Navigation = () => {
         <Stack.Screen
           name={'PublicationScreen'}
           component={PublicationScreen}
-          options={({ route }) => ({
-            title: route.params.item.title
-          })}
+        //   options={({ route }) => ({
+        //     title: route.params.item.title
+        //   })}
         />
         <Stack.Screen
           name={'ClinicalTrialScreen'}
           component={ClinicalTrialScreen}
-          options={({ route }) => ({
-            title: route.params.item.title
-          })}
+        //   options={({ route }) => ({
+        //     title: route.params.item.title
+        //   })}
         />
         <Stack.Screen
           name={'InvoiceScreen'}
