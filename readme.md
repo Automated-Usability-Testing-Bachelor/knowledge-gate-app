@@ -1,5 +1,5 @@
-
 # Knowledge Gate App
+
 By Simon, Markus and Ardit
 
 ## Tutorial Typescript
@@ -7,12 +7,12 @@ By Simon, Markus and Ardit
 ### Create component
 
 ```javascript
-const name : React.FC = () => {
+const name: React.FC = () => {
     return (
         <HTML/>
     )
 
-} 
+}
 
 export default name 
 ```

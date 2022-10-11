@@ -1,11 +1,11 @@
-import {View, Text} from "react-native";
+import { Text, View } from 'react-native'
 
 const InvoiceCards = () => {
-    return (
-        <View>
-            <Text>InvoiceCards</Text>
-        </View>
-    )
+  return (
+    <View>
+      <Text>{'InvoiceCards'}</Text>
+    </View>
+  )
 }
 
-export default InvoiceCards;
+export default InvoiceCards

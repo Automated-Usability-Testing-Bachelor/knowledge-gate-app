@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import React, { useEffect, useState } from 'react'
+import { FlatList, StyleSheet, View } from 'react-native'
 
 import AvailabilityItem from "./AvailabilityItem";
 import {
@@ -21,15 +21,15 @@ const AvailabilitiesView: React.FC<Props> = ({
   currentDate,
   onEditCallback,
   header,
-  footer,
+  footer
 }) => {
   const [currentAvailabilities, setCurrentAvailabilities] = useState<
     Availability[]
   >([]);
 
   useEffect(() => {
-    updateAvailabilityOnCurrentDate(currentDate);
-  }, [currentDate]);
+    updateAvailabilityOnCurrentDate(currentDate)
+  }, [currentDate])
 
   const updateAvailabilityOnCurrentDate = (currentDate: moment.Moment) => {
     let data: DateWithAvailability | undefined = getAvailabilitiesFromDay(currentDate);
@@ -38,7 +38,7 @@ const AvailabilitiesView: React.FC<Props> = ({
     } else if (data === undefined) {
       setCurrentAvailabilities([]);
     }
-  };
+  }
 
   const onDeleteAvailability = (id: string, currentAvailabilities: DateWithAvailability) => {
     //update availabilities
@@ -48,14 +48,14 @@ const AvailabilitiesView: React.FC<Props> = ({
       data.availabilities.length === 0 ||
       data.availabilities === undefined
     ) {
-      setCurrentAvailabilities([]);
+      setCurrentAvailabilities([])
     } else {
-      let newData = data.availabilities;
-      let arr = [];
+      const newData = data.availabilities
+      const arr = []
 
-      setCurrentAvailabilities(newData);
+      setCurrentAvailabilities(newData)
     }
-  };
+  }
 
   return (
     <View>
@@ -82,16 +82,16 @@ const AvailabilitiesView: React.FC<Props> = ({
         )}
       />
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
+    height: '100%'
   },
   NoAvailabilityContainer: {
     paddingHorizontal: 25,
-    paddingVertical: 10,
-  },
-});
+    paddingVertical: 10
+  }
+})
 
-export default AvailabilitiesView;
+export default AvailabilitiesView
