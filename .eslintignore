@@ -1,0 +1,6 @@
+node_modules
+.eslintrc.js
+*.json
+tailwind.config.js
+postcss.config.js
+authCypress.ts

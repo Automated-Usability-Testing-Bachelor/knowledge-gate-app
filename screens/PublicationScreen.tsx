@@ -2,11 +2,15 @@ import React from "react";
 import Background from "../components/BackgroundTemplate";
 import BodyView from "../components/publicationScreen/BodyView";
 
-const PublicationScreen = (props: any) => {
-    const item = props.route.params.item;
+type Props = {
+    route: any;
+}
+
+const PublicationScreen : React.FC<Props> = ({route}) => {
+    const item = route.params.item;
     return (
         <Background
-            body={BodyView({item})}
+            body={BodyView({publishDate: item.publishDate, body: item.body, link: item.link, title: item.title})}
         />
     );
 }
