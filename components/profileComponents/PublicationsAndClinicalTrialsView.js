@@ -5,31 +5,6 @@ import PubClinButtonGroup from './PubClinButtonGroup'
 import Colors from '../../constants/Colors'
 import ClinicalTrials from './tabs/ClinicalTrials'
 
-const PublicationsAndClinicalTrialsView = () => {
-  const [currentSubject, setCurrentSubject] = useState(undefined)
-  const selectedSubject = (subject) => {
-    setCurrentSubject(subject)
-  }
-
-  useEffect(() => {}, [currentSubject])
-
-  return (
-    <View>
-      <PubClinButtonGroup selectedSubjectCallback={selectedSubject} />
-      <View style={styles.listContainer}>
-        {currentSubject === 'pub' ? (
-          <Publications />
-        ) : currentSubject === 'clin' ? (
-          <ClinicalTrials />
-        ) : (
-          <Text>{'fail'}</Text>
-        )}
-        {/* <Publications /> */}
-      </View>
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -67,11 +42,34 @@ const styles = StyleSheet.create({
     fontSize: 9
   },
   listContainer: {
-    height: '100%',
     padding: 10,
     backgroundColor: Colors.warmGrey.color,
-    paddingBottom: 165
+    paddingBottom: 50
   }
 })
+
+const PublicationsAndClinicalTrialsView = () => {
+  const [currentSubject, setCurrentSubject] = useState(undefined)
+  const selectedSubject = (subject) => {
+    setCurrentSubject(subject)
+  }
+
+  useEffect(() => {}, [currentSubject])
+
+  return (
+    <View>
+      <PubClinButtonGroup selectedSubjectCallback={selectedSubject} />
+      <View style={styles.listContainer}>
+        {currentSubject === 'pub' ? (
+          <Publications />
+        ) : currentSubject === 'clin' ? (
+          <ClinicalTrials />
+        ) : (
+          <Text>{'fail'}</Text>
+        )}
+      </View>
+    </View>
+  )
+}
 
 export default PublicationsAndClinicalTrialsView

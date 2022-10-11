@@ -8,18 +8,18 @@ const styles = StyleSheet.create({
   }
 })
 
-type BackgroundTemplateProps = {
+type BackgroundTemplateNoTabProps = {
   body: React.ReactNode
   header?: React.ReactNode
 }
 
-const BackgroundTemplate: React.FC<BackgroundTemplateProps> = ({
+const BackgroundTemplateNoTabProps: React.FC<BackgroundTemplateNoTabProps> = ({
   body,
   header
 }) => {
   return (
     <SafeAreaView style={styles.background}>
-      <View style={{ height: '100%', paddingBottom: 50 }}>
+      <View style={{ height: '100%', paddingBottom: 0 }}>
         {header}
         {body}
       </View>
@@ -27,4 +27,4 @@ const BackgroundTemplate: React.FC<BackgroundTemplateProps> = ({
   )
 }
 
-export default BackgroundTemplate
+export default BackgroundTemplateNoTabProps
