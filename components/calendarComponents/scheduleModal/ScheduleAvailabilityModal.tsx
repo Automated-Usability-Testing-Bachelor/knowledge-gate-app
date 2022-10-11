@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
-import Modal from 'react-native-modal'
-import moment from 'moment'
-import Colors from '../../../constants/Colors'
-import { BlueSerifHeader2 } from '../../Texts/Headers'
-import TimeSelectionView from './TimeSelectionView'
-import RedButton from '../../RedButton'
-import { DateTimeRange } from '../CalendarBody'
-import { MomentTimeRange } from '../../../mocks/CalendarMockData'
+import React, { useEffect, useState } from "react";
+import { StyleSheet, View } from "react-native";
+import Colors from "../../../constants/Colors";
+import { BlueSerifHeader2 } from "../../Texts/Headers";
+import Modal, { OnSwipeCompleteParams } from "react-native-modal";
+import PanResponderGestureState from "react-native-modal";
+import TimeSelectionView from "./TimeSelectionView";
+import RedButton from "../../RedButton";
+import moment from "moment";
+import { DateTimeRange } from "../CalendarBody";
+import { MomentTimeRange } from "../../../mocks/CalendarMockData";
 
 export type Props = {
   showModal: boolean
@@ -47,10 +48,10 @@ const ScheduleAvailabilityModal: React.FC<Props> = ({
       <Modal
         isVisible={showModal}
         backdropOpacity={0.3}
-        onBackdropPress={closeModal}
-        swipeDirection={['down']}
+        onBackdropPress={() => closeModal()}
+        swipeDirection={["down"]}
         style={styles.modal}
-        onSwipeComplete={closeModal}
+        onSwipeComplete={() => closeModal()}
         useNativeDriverForBackdrop
       >
         <View style={styles.containerOuter}>

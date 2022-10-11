@@ -84,11 +84,7 @@ const ActualCalendar: React.FC<Props> = ({
     setCustomDatesStyles(styles)
   }
 
-  const customDayHeaderStyles: CustomDayHeaderStylesFunc = ({
-    dayOfWeek,
-    month,
-    year
-  }) => {
+  const customDayHeaderStyles: CustomDayHeaderStylesFunc = ({}) => {
     return {
       textStyle: {
         color: textStyles.blackSerifHeader4.color,
@@ -131,10 +127,10 @@ const ActualCalendar: React.FC<Props> = ({
             selectedDayCallback(date)
           }}
           customDatesStyles={customDatesStyles}
-          onMonthChange={(currentMonthYear) => {
-            setSelectedMonthYear(currentMonthYear)
-            changeCustomDatesStyle(selectedMonthYear)
-            currentMonthCallback(currentMonthYear)
+          onMonthChange={(currentMonthYear: moment.Moment) => {
+            setSelectedMonthYear(currentMonthYear);
+            changeCustomDatesStyle(selectedMonthYear);
+            currentMonthCallback(currentMonthYear);
           }}
           selectedStartDate={currentSelectedDate}
           textStyle={{ fontFamily: textStyles.blackSerifBody1.fontFamily }}
