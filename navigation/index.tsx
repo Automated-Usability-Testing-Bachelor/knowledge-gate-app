@@ -1,21 +1,21 @@
-import { NavigationContainer } from "@react-navigation/native";
-import * as React from "react";
-import CalendarScreen from "../screens/CalendarScreen";
-import LoginScreen from "../screens/LoginScreen";
-import ProjectsScreen from "../screens/ProjectsScreen";
-import ProjectExpandedScreen from "../screens/ProjectExpandedScreen";
-import NotFoundScreen from "../screens/NotFoundScreen";
-import BottomTabNavigator from "./Navbar";
-import ProfileScreen from "../screens/ProfileScreen";
-import OnboardingScreen from "../screens/OnboardingScreen";
-import OnboardingCarouselScreen from "../screens/OnboardingCarouselScreen";
-import PublicationScreen from "../screens/PublicationScreen";
-import ClinicalTrialScreen from "../screens/ClinicalTrialScreen";
-import HeaderStyles from "../components/navigationComponents/HeaderStyles";
-import Colors from "../constants/Colors";
-import { createStackNavigator } from "@react-navigation/stack";
-import ProfilePublicationsClinicalTrialsScreen from "../screens/ProfilePublicationsClinicalTrialsScreen";
-import InvoiceScreen from "../screens/InvoiceScreen";
+import { NavigationContainer } from '@react-navigation/native'
+import * as React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import CalendarScreen from '../screens/CalendarScreen'
+import LoginScreen from '../screens/LoginScreen'
+import ProjectsScreen from '../screens/ProjectsScreen'
+import ProjectExpandedScreen from '../screens/ProjectExpandedScreen'
+import NotFoundScreen from '../screens/NotFoundScreen'
+import BottomTabNavigator from './Navbar'
+import ProfileScreen from '../screens/ProfileScreen'
+import OnboardingScreen from '../screens/OnboardingScreen'
+import OnboardingCarouselScreen from '../screens/OnboardingCarouselScreen'
+import PublicationScreen from '../screens/PublicationScreen'
+import ClinicalTrialScreen from '../screens/ClinicalTrialScreen'
+import HeaderStyles from '../components/navigationComponents/HeaderStyles'
+import Colors from '../constants/Colors'
+import ProfilePublicationsClinicalTrialsScreen from '../screens/ProfilePublicationsClinicalTrialsScreen'
+import InvoiceScreen from '../screens/InvoiceScreen'
 
 // const Stack = createNativeStackNavigator();
 const Stack = createStackNavigator()
@@ -34,101 +34,101 @@ const OnboardingFlow = () => {
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
-  );
-};
+  )
+}
 
-function Navigation() {
+const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{
           headerStyle: HeaderStyles.headerStyle,
           headerTitleStyle: HeaderStyles.headerTitleStyle,
-          headerTitleAlign: "center",
+          headerTitleAlign: 'center',
           headerBackTitleVisible: false,
-          headerTintColor: Colors.red.color,
+          headerTintColor: Colors.red.color
           // headerShadowVisible: false,
           // headerTitle: "",
           // headerRight: () => HeaderTitleRightIndex(),
         }}
       >
         <Stack.Screen
-          name="Login"
+          name='Login'
           component={LoginScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Root"
+          name='Root'
           component={BottomTabNavigator}
           options={{ headerShown: false }}
         />
 
         <Stack.Screen
-          name="Onboarding"
+          name='Onboarding'
           component={OnboardingFlow}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="ProjectsExpanded"
+          name='ProjectsExpanded'
           component={ProjectExpandedScreen}
           options={({ route }) => ({
             // @ts-ignore
-            title: route.params.item.title,
+            title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name="Projects"
+          name='Projects'
           component={ProjectsScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Calendar"
+          name='Calendar'
           component={CalendarScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Not Found"
+          name='Not Found'
           component={NotFoundScreen}
           options={{ headerShown: false }}
         />
 
         <Stack.Screen
-          name="Profile"
+          name='Profile'
           component={ProfileScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="ProfilePublicationsClinicalTrials"
+          name='ProfilePublicationsClinicalTrials'
           component={ProfilePublicationsClinicalTrialsScreen}
           options={{
-            title: "Publications and Clinical Trials",
-            headerShown: true,
+            title: 'Publications and Clinical Trials',
+            headerShown: true
           }}
         />
         <Stack.Screen
-          name="PublicationScreen"
+          name='PublicationScreen'
           component={PublicationScreen}
           options={({ route }) => ({
             // @ts-ignore
-            title: route.params.item.title,
+            title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name="ClinicalTrialScreen"
+          name='ClinicalTrialScreen'
           component={ClinicalTrialScreen}
           options={({ route }) => ({
             // @ts-ignore
-            title: route.params.item.title,
+            title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name="InvoiceScreen"
+          name='InvoiceScreen'
           component={InvoiceScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
 
 export default Navigation

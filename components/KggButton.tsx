@@ -13,8 +13,8 @@ export type Props = {
   icon?: ImageSourcePropType | undefined
   onPress: () => void
   color: string
-  paddingHorizontal: number
-  width: number
+  paddingHorizontal?: number
+  width?: number
 }
 
 const styles = StyleSheet.create({
@@ -42,10 +42,10 @@ const KggButton: React.FC<Props> = ({
   onPress,
   color,
   paddingHorizontal,
-  width,
+  width
 }) => {
   const determineBackColor = () => {
-    switch(color){
+    switch (color) {
       case 'red': {
         return Colors.red.color
       }
@@ -78,21 +78,21 @@ const KggButton: React.FC<Props> = ({
           styles.touchable,
           {
             backgroundColor: determineBackColor(),
-            paddingHorizontal: paddingHorizontal ? paddingHorizontal : 20,
-            width: width ? width : 'auto',
-          },
+            paddingHorizontal: paddingHorizontal || 20,
+            width: width || 'auto'
+          }
         ]}
         activeOpacity={0.6}
       >
         <View style={styles.button}>
-          {icon ? icon : <View></View>}
-          <Text style={styles.text}>{name}</Text>
+          <>
+            {icon || <View />}
+            <Text style={styles.text}>{name}</Text>
+          </>
         </View>
       </TouchableOpacity>
     </View>
   )
 }
-
-
 
 export default KggButton

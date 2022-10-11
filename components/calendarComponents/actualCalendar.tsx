@@ -128,9 +128,9 @@ const ActualCalendar: React.FC<Props> = ({
           }}
           customDatesStyles={customDatesStyles}
           onMonthChange={(currentMonthYear: moment.Moment) => {
-            setSelectedMonthYear(currentMonthYear);
-            changeCustomDatesStyle(selectedMonthYear);
-            currentMonthCallback(currentMonthYear);
+            setSelectedMonthYear(currentMonthYear)
+            changeCustomDatesStyle(selectedMonthYear)
+            currentMonthCallback(currentMonthYear)
           }}
           selectedStartDate={currentSelectedDate}
           textStyle={{ fontFamily: textStyles.blackSerifBody1.fontFamily }}

@@ -1,21 +1,29 @@
-import React from "react";
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import Header from './Header'
+import FadeInView from '../animatedComponents/FadeInView'
+import OnboardingImage, { IconObject } from './OnboardingImage'
+import SecondHeader from './SecondHeader'
 
-import { StyleSheet, View } from "react-native";
-import Header from "./Header";
-import FadeInView from "../animatedComponents/FadeInView";
-import OnboardingImage, { IconObject } from "./OnboardingImage";
-import SecondHeader from "./SecondHeader";
+const styles = StyleSheet.create({
+  container: {},
+  imageContainer: {
+    alignItems: 'center',
+    paddingTop: 60
+  },
+  headerContainer: {}
+})
 
 export type Props = {
-  icon: IconObject;
-  headerText: string;
-  secondHeaderText: string;
-};
+  icon: IconObject
+  headerText: string
+  secondHeaderText?: string
+}
 
 const OnboardingView: React.FC<Props> = ({
   icon,
   headerText,
-  secondHeaderText,
+  secondHeaderText
 }) => {
   return (
     <View style={styles.container}>
@@ -33,16 +41,7 @@ const OnboardingView: React.FC<Props> = ({
         </FadeInView>
       </View>
     </View>
-  );
-};
+  )
+}
 
-const styles = StyleSheet.create({
-  container: {},
-  imageContainer: {
-    alignItems: "center",
-    paddingTop: 60,
-  },
-  headerContainer: {},
-});
-
-export default OnboardingView;
+export default OnboardingView

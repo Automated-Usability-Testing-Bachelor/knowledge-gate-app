@@ -1,11 +1,11 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import FadeInView from "../animatedComponents/FadeInView";
-import { BlueSerifHeader1 } from "../Texts/Headers";
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import FadeInView from '../animatedComponents/FadeInView'
+import { BlueSerifHeader1 } from '../Texts/Headers'
 
 export type Props = {
-  text: string;
-};
+  text: string
+}
 
 const Header: React.FC<Props> = ({ text }) => {
   return (
@@ -14,10 +14,11 @@ const Header: React.FC<Props> = ({ text }) => {
         <BlueSerifHeader1 text={text} />
       </FadeInView>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
-  container: { marginBottom: 20 },
-});
-export default Header;
+  container: { marginBottom: 20 }
+})
+
+export default Header

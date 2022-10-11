@@ -1,28 +1,29 @@
-import React from "react";
-import { Image, ImageSourcePropType, StyleSheet, View } from "react-native";
+import React from 'react'
+import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native'
+
 export type IconObject = {
-  source: ImageSourcePropType | undefined;
-  height: number;
-  width: number;
-};
+  source: ImageSourcePropType | undefined
+  height: number
+  width: number
+}
 const OnboardingImage: React.FC<IconObject> = ({ height, width, source }) => {
   return (
     <View style={styles.container}>
       <Image
-        //resizeMode="center"
+        // resizeMode="center"
         style={{
-          height: height,
-          width: width,
+          height,
+          width
         }}
         source={source}
       />
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
   container: {},
 
-  logo: {},
-});
+  logo: {}
+})
 
-export default OnboardingImage;
+export default OnboardingImage
