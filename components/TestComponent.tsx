@@ -2,7 +2,6 @@ import {Text, View} from "react-native";
 import {ClockIcon, SparklesIcon} from "react-native-heroicons/solid";
 import Logo from "../assets/logos/Secondary_Logo/KGG_SecondaryLogo_Black_RGB.svg";
 
-// const Logo = require("../assets/logos/Secondary_Logo/KGG_SecondaryLogo_Black_RGB.svg");
 const TestComponent = () => {
     return (
         <View>

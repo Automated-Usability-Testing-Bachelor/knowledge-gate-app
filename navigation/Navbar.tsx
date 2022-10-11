@@ -9,6 +9,7 @@ import Colors from "../constants/Colors";
 import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 import KLogo from "../assets/logos/Logomark/KGG_Logomark_Blue_RGB.svg";
 import Icons from "../components/navigationComponents/Icons";
+import InvoiceScreen from "../screens/InvoiceScreen";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -47,7 +48,7 @@ function BottomTabNavigator() {
             />
             <BottomTab.Screen
                 name="Invoice"
-                component={NotFoundScreen}
+                component={InvoiceScreen}
                 options={{
                     title: 'Invoice',
                     headerShown: true,

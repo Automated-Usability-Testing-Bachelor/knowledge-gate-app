@@ -15,6 +15,7 @@ import HeaderStyles from "../components/navigationComponents/HeaderStyles";
 import Colors from "../constants/Colors";
 import {createStackNavigator} from "@react-navigation/stack";
 import ProfilePublicationsClinicalTrialsScreen from "../screens/ProfilePublicationsClinicalTrialsScreen";
+import InvoiceScreen from "../screens/InvoiceScreen";
 
 // const Stack = createNativeStackNavigator();
 const Stack = createStackNavigator();
@@ -116,6 +117,11 @@ function Navigation() {
                         title: route.params.item.title,
                     })}
                 />
+                <Stack.Screen
+                    name="InvoiceScreen"
+                    component={InvoiceScreen}
+                    options={{headerShown: false}}
+                    />
             </Stack.Navigator>
         </NavigationContainer>
     );
