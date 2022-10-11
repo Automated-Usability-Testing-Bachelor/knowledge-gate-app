@@ -104,7 +104,7 @@ const ActualCalendar: React.FC<Props> = ({
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={icon}></Image>
       </View>
-      <FadeInView duration={1000}>
+      <FadeInView duration={1000} style={undefined}>
         <CalendarPicker
           startFromMonday={true}
           previousComponent={
