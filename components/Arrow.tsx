@@ -30,14 +30,6 @@ const Arrow: React.FC<ArrowProps> = ({onPress, backgroundColor, isRight}) => {
                         ? <ArrowRightIcon size={24} fill={Colors.red.color}/>
                         : <ArrowLeftIcon size={24} fill={Colors.red.color}/>
                     }
-                    {/*<Image*/}
-                    {/*    source={*/}
-                    {/*        isRight*/}
-                    {/*            ? <ArrowRightIcon size={24} fill={Colors.red.color}/>*/}
-                    {/*            : <ArrowLeftIcon size={24} fill={Colors.red.color}/>*/}
-                    {/*    }*/}
-                    {/*    style={{height: 24, width: 24}}*/}
-                    {/*/>*/}
                 </View>
             </TouchableOpacity>
         </View>
