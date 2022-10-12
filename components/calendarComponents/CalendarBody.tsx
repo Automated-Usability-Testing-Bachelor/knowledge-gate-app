@@ -6,7 +6,9 @@ import ScheduleBtn from './ScheduleBtn'
 import {
   addAvailability,
   Availability,
+  DateWithAvailability,
   editAvailabilityTimeById,
+  getAvailabilitiesFromDay,
   getAvailabilityById,
   getCalendarDataFromCurrentMonth,
   MomentTimeRange
@@ -14,6 +16,7 @@ import {
 import ScheduleAvailabilityModal from './scheduleModal/ScheduleAvailabilityModal'
 import AvailabilitiesView from './AvailabilitiesView'
 import AvailabilityHeader from './AvailabilityHeader'
+import SwipeableAvailabilityItem from './SwipeableAvailabilityItem'
 
 export type Props = {
   selectedDayHeaderCallback: Function
@@ -31,9 +34,9 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
     setInitialTimeRange()
   )
   const [isModalEditing, setIsModalEditing] = useState(false)
-  const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment())
+  const initialDatesWithAv: DateWithAvailability[] = getCalendarDataFromCurrentMonth(moment())
   const [datesWithAvailabilities, setDatesWithAvailability] =
-    useState(initialDatesWithAv)
+    useState<DateWithAvailability[]>(initialDatesWithAv)
   const [currentDate, setCurrentDate] = useState(moment())
   const ShowModalCallback = () => {
     setShowModal(true)
@@ -77,8 +80,8 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
     // refreshing calendar styling
     let month = currentDate.clone()
     month = month.startOf('month')
-    const arr = []
-    const newData = getCalendarDataFromCurrentMonth(month)
+    const arr: DateWithAvailability[] = []
+    const newData: DateWithAvailability[] = getCalendarDataFromCurrentMonth(month)
 
     for (let i = 0; i < newData.length; i++) {
       arr.push({ ...newData[i] })
@@ -97,6 +100,7 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
               currentMonthCallback={currentMonthCallback}
             />
             <AvailabilityHeader />
+            <SwipeableAvailabilityItem currentDate={currentDate} onEditCallback={onEditAvailability}/>
           </>
         }
         footer={
@@ -118,7 +122,7 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
 }
 const styles = StyleSheet.create({
   container: {
-    height: '100%'
+    flex: 1
   },
   NoAvailabilityContainer: {
     paddingHorizontal: 25,

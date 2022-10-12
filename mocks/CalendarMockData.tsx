@@ -28,7 +28,7 @@ const allCalendarData: DateWithAvailability[] = [
     ]
   },
   {
-    date: moment(new Date(2022, 9, 4)),
+    date: moment(new Date(2022, 9, 12)),
     availabilities: [
       {
         id: uuid.v4(),
@@ -40,16 +40,15 @@ const allCalendarData: DateWithAvailability[] = [
 ]
 
 export const getCalendarDataFromCurrentMonth = (date: moment.Moment) => {
-  const availabilities = []
-  for (let i = 0; i < allCalendarData.length; i++) {
-    if (
-      allCalendarData[i].date.isSame(date, 'year') &&
-      allCalendarData[i].date.isSame(date, 'month')
-    ) {
-      availabilities.push({ ...allCalendarData[i] })
+  const availabilities: DateWithAvailability[] = []
+    for (let i = 0; i < allCalendarData.length; i++) {
+      if (
+        allCalendarData[i].date.isSame(date, 'year') &&
+        allCalendarData[i].date.isSame(date, 'month')
+      ) {
+        availabilities.push({ ...allCalendarData[i] })
+      }
     }
-  }
-
   return availabilities
 }
 

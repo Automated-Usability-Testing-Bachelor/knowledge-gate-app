@@ -10,6 +10,7 @@ import {
 } from '../../mocks/CalendarMockData'
 
 import NoAvailability from '../NoDataComponents/NoAvailabilities'
+import SwipeableAvailabilityItem from './SwipeableAvailabilityItem'
 
 export type Props = {
   currentDate: moment.Moment
@@ -64,8 +65,8 @@ const AvailabilitiesView: React.FC<Props> = ({
   }
 
   return (
-    <View>
-      <FlatList
+    <View style={{flex: 1}}>
+        <FlatList
         style={styles.container}
         ListHeaderComponent={header}
         ListFooterComponent={footer}

@@ -31,8 +31,6 @@ const ActualCalendar: React.FC<Props> = ({
     moment().startOf('month')
   )
 
-  const expandCircle = useRef(new Animated.Value(0)).current // Initial value
-
   const dateContainsAvailability = (
     day: moment.Moment,
     arr: CustomDateStyle[]

@@ -18,10 +18,6 @@ const TimeSelectionView: React.FC<Props> = ({
   const minuteInterval = 30
   const [fromDate, setFromDate] = useState(startFrom)
   const [toDate, setToDate] = useState(startTo)
-  const initialTimeRange = {
-    from: fromDate,
-    to: toDate
-  }
 
   const [fromString, setFromString] = useState(
     moment(fromDate).format('hh:mm A')
@@ -39,16 +35,12 @@ const TimeSelectionView: React.FC<Props> = ({
     setToShow(true)
   }
   const onFromChange = (event: DateTimePickerEvent, date: Date) => {
-    console.log(date)
-
     if (date === undefined) {
       setFromShow(false)
 
       return
     }
     setFromShow(false)
-
-    console.log(date)
     const currentDate = date
 
     const newDate = new Date(currentDate)
