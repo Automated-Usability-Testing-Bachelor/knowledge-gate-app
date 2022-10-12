@@ -9,12 +9,26 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: 10,
     paddingVertical: 15,
-    paddingHorizontal: 15,
+    
     borderRadius: 5,
     justifyContent: 'flex-start'
   },
   titleAndBodyContainer: {
     flex: 24
+  },
+  titleContainer: {
+    marginLeft: 15,
+    marginBottom: 10
+  },
+  outerScrollView: {
+    marginLeft: 15,
+    marginRight: 15,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 5
+  },
+  scrollView: {
+    padding: 10,
+    paddingBottom: 20
   },
   publishDateText: {
     fontFamily: 'Sans-Medium',
@@ -22,6 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 10
   },
   DateContainer: {
+    marginLeft: 15,
     justifyContent: 'center',
     flex: 1,
     marginBottom: 10
@@ -37,10 +52,10 @@ const styles = StyleSheet.create({
     color: Colors.black.color
   },
   btnContainer: {
-    flex: 4,
+    flex: 3,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    alignItems: "center"
+    alignItems: 'center'
   }
 })
 
@@ -49,14 +64,17 @@ const BodyView: React.FC<Item> = ({ publishDate, body, link, title }) => {
     <View style={styles.container}>
       <View style={styles.DateContainer}>
         <View>
-          <Text style={styles.publishDateText}>{publishDate}</Text>
+          <Text style={styles.publishDateText}>{`Published: ${publishDate}`}</Text>
         </View>
       </View>
       <View style={styles.titleAndBodyContainer}>
-        <View>
+        <View style={styles.titleContainer}>
           <Text style={styles.TitleText}>{title}</Text>
         </View>
-        <ScrollView>
+        <ScrollView
+          style={ styles.outerScrollView }
+          contentContainerStyle={ styles.scrollView }
+        >
           <Text style={styles.BodyText}>{body}</Text>
         </ScrollView>
       </View>

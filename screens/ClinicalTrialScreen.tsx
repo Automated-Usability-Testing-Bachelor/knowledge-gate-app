@@ -1,6 +1,6 @@
 import { RouteProp } from '@react-navigation/native'
 import React from 'react'
-import Background from '../components/BackgroundTemplate'
+import BackgroundNoTab from '../components/BackgroundTemplateNoTab'
 import BodyView from '../components/clinicalTrialScreen/BodyView'
 
 export type Item = {
@@ -21,7 +21,7 @@ const ClinicalTrialScreen: React.FC<Props> = ({ route }) => {
   const { item } = route.params
 
   return (
-    <Background
+    <BackgroundNoTab
       body={BodyView({
         status: item.status,
         publishDate: item.publishDate,
