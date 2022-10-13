@@ -82,6 +82,7 @@ const SwipeableAvilabilityItem = ({ currentDate, onEditCallback }) => {
     console.log(data);
     return (
       <VisibleItem
+        onEditCallback={onEditCallback}
         data={data}
         rowHeightAnimatedValue={rowHeightAnimatedValue}
         removeRow={() => {
@@ -135,6 +136,9 @@ const SwipeableAvilabilityItem = ({ currentDate, onEditCallback }) => {
         onRightAction={onRightAction}
         onLeftActionStatusChange={onLeftActionStatusChange}
         onRightActionStatusChange={onRightActionStatusChange}
+        swipeGestureBegan={()=> {
+          console.log("began")
+        }}
       />
     </View>
   );

@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
 })
 
 export type Props = {
+  onEditCallback: (id: string) => void
   data: Data
   rowHeightAnimatedValue: Animated.Value
   removeRow: () => void
@@ -44,6 +45,7 @@ export type Data = {
 
 const VisibleItem: React.FC<Props> = (props) => {
     const {
+      onEditCallback,
       data,
       rowHeightAnimatedValue,
       removeRow,
@@ -72,7 +74,7 @@ const VisibleItem: React.FC<Props> = (props) => {
       >
         <TouchableHighlight
           style={[styles.rowFrontVisible, { justifyContent: "center" }]}
-          onPress={() => console.log("Element touched")}
+          onPress={() => onEditCallback(data.item.id)}
           underlayColor={"#aaa"}
         >
           <View
