@@ -31,6 +31,7 @@ export type ExtraInfo = {
 }
 
 const ProfileScreen = () => {
+  console.log(profileData)
   return (
     <ScrollView style={{ backgroundColor: Colors.warmGrey.color }}>
       <BackgroundTemplate
