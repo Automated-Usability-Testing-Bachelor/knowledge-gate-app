@@ -19,7 +19,7 @@ const BackgroundTemplate: React.FC<BackgroundTemplateProps> = ({
 }) => {
   return (
     <SafeAreaView style={styles.background}>
-      <View style={{ height: '100%', paddingBottom: 50 }}>
+      <View style={{ height: '100%' }}>
         {header}
         {body}
       </View>
