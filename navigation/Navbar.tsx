@@ -49,10 +49,10 @@ const BottomTabNavigator = () => {
         }}
       />
       <BottomTab.Screen
-        name="Invoice"
+        name="Invoices"
         component={InvoiceScreen}
         options={{
-          title: 'Invoice',
+          title: 'Invoices',
           headerShown: true,
           tabBarIcon: ({ focused, color }) => (
             <Icons name='Invoice' color={color} focused={focused} />

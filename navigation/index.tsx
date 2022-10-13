@@ -124,7 +124,10 @@ const Navigation = () => {
         <Stack.Screen
           name='InvoiceScreen'
           component={InvoiceScreen}
-          options={{ headerShown: false }}
+          options={({ route }) => ({
+            // @ts-ignore
+            title: route.params.item.title
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
