@@ -7,10 +7,10 @@ import {
   MenuTrigger
 } from 'react-native-popup-menu'
 import moment from 'moment'
-import Colors from '../../constants/Colors'
+import Colors from '../../../constants/Colors'
 import ClockIcon from './clockIcon'
-import ThreeDotsIcon from '../ThreeDotsIcon'
-import { deleteAvailability } from '../../mocks/CalendarMockData'
+import ThreeDotsIcon from '../../ThreeDotsIcon'
+import { deleteAvailability } from '../../../mocks/CalendarMockData'
 
 export type Props = {
   from: moment.Moment

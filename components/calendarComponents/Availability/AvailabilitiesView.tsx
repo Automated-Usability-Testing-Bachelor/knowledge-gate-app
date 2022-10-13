@@ -7,10 +7,9 @@ import {
   getAvailabilitiesFromDay,
   Availability,
   DateWithAvailability
-} from '../../mocks/CalendarMockData'
+} from '../../../mocks/CalendarMockData'
 
-import NoAvailability from '../NoDataComponents/NoAvailabilities'
-import SwipeableAvailabilityItem from './SwipeableAvailabilityItem'
+import NoAvailability from '../../NoDataComponents/NoAvailabilities'
 
 export type Props = {
   currentDate: moment.Moment

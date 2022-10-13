@@ -28,7 +28,7 @@ const allCalendarData: DateWithAvailability[] = [
     ]
   },
   {
-    date: moment(new Date(2022, 9, 12)),
+    date: moment(new Date(2022, 9, )),
     availabilities: [
       {
         id: uuid.v4(),

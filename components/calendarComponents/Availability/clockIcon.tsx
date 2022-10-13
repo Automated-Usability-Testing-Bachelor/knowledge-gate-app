@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { ClockIcon } from 'react-native-heroicons/outline'
-import Colors from '../../constants/Colors'
+import Colors from '../../../constants/Colors'
 
 const ClockIconComponent = () => {
   return (

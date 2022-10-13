@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import moment from 'moment'
 import ActualCalendar from './actualCalendar'
-import ScheduleBtn from './ScheduleBtn'
+import ScheduleBtn from './Availability/ScheduleBtn'
 import {
   addAvailability,
   Availability,
@@ -14,9 +14,9 @@ import {
   MomentTimeRange
 } from '../../mocks/CalendarMockData'
 import ScheduleAvailabilityModal from './scheduleModal/ScheduleAvailabilityModal'
-import AvailabilitiesView from './AvailabilitiesView'
-import AvailabilityHeader from './AvailabilityHeader'
-import SwipeableAvailabilityItem from './SwipeableAvailabilityItem'
+import AvailabilitiesView from './Availability/AvailabilitiesView'
+import AvailabilityHeader from './Availability/AvailabilityHeader'
+import SwipeableAvailabilityItem from './Availability/SwipeableAvailabilityItem'
 
 export type Props = {
   selectedDayHeaderCallback: Function
