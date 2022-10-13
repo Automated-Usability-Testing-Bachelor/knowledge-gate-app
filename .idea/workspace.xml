@@ -6,17 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/RedButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/RedButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/invoiceComponents/InvoiceCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/invoiceComponents/InvoiceCards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/ForgotPassword.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/InfoText.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/InputField.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginBtn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/LoginHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/LoginView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BackgroundTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/BackgroundTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/NoDataComponents/NoAvailabilities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/NoDataComponents/NoAvailabilities.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Texts/Headers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Texts/Headers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/AvailabilitiesView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/AvailabilitiesView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/AvailabilityItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/AvailabilityItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/CalenderHeaderText.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/CalenderHeaderText.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/ScheduleBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/ScheduleBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/ScheduleAvailabilityModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/ScheduleAvailabilityModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.android.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.android.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.ios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.ios.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.android.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.android.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.ios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimeSelectionView.ios.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/LoginBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/projectsComponents/ProjectCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/publicationScreen/BodyView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/publicationScreen/BodyView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/profileData.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/ProfileData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/projectsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/ProjectsData.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mocks/CalendarMockData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mocks/CalendarMockData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProjectsScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/PublicationScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PublicationScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +58,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "js.last.introduce.type": "CONST",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "/Users/sk/Downloads/knowledge-gate-app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.eslint": "/Users/sk/Downloads/knowledge-gate-app/node_modules/eslint",
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
@@ -75,6 +92,7 @@
       <workItem from="1665235742379" duration="25898000" />
       <workItem from="1665398914579" duration="10998000" />
       <workItem from="1665476235701" duration="292000" />
+      <workItem from="1665648000296" duration="8590000" />
     </task>
     <servers />
   </component>

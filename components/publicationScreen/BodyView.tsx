@@ -3,35 +3,6 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import Colors from '../../constants/Colors'
 import LinkOriginalButton from './LinkOriginalButton'
 
-type Props = {
-  publishDate: string
-  title: string
-  body: string
-  link: string
-}
-
-const BodyView: React.FC<Props> = ({ publishDate, body, link, title }) => {
-  return (
-    <View style={styles.container}>
-      <View style={styles.DateContainer}>
-        <View>
-          <Text style={styles.publishDateText}>{publishDate}</Text>
-        </View>
-      </View>
-      <View>
-        <View>
-          <Text style={styles.TitleText}>{title}</Text>
-        </View>
-        <ScrollView>
-          <Text style={styles.BodyText}>{body}</Text>
-        </ScrollView>
-      </View>
-      <View style={styles.btnContainer}>
-        <LinkOriginalButton link={link} />
-      </View>
-    </View>
-  )
-}
 const styles = StyleSheet.create({
   container: {
     marginBottom: 10,
@@ -64,5 +35,35 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   }
 })
+
+type Props = {
+  publishDate: string
+  title: string
+  body: string
+  link: string
+}
+
+const BodyView: React.FC<Props> = ({ publishDate, body, link, title }) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.DateContainer}>
+        <View>
+          <Text style={styles.publishDateText}>{publishDate}</Text>
+        </View>
+      </View>
+      <View>
+        <View>
+          <Text style={styles.TitleText}>{title}</Text>
+        </View>
+        <ScrollView>
+          <Text style={styles.BodyText}>{body}</Text>
+        </ScrollView>
+      </View>
+      <View style={styles.btnContainer}>
+        <LinkOriginalButton link={link} />
+      </View>
+    </View>
+  )
+}
 
 export default BodyView

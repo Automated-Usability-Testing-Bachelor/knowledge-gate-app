@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 import DateTimePicker, {
-  DateTimePickerEvent,
-} from "@react-native-community/datetimepicker";
-import { StyleSheet } from "react-native";
-import Colors from "../../../constants/Colors";
+  DateTimePickerEvent
+} from '@react-native-community/datetimepicker'
+import { StyleSheet } from 'react-native'
+import Colors from '../../../constants/Colors'
 
 export type Props = {
-  date: Date;
-  onChangecallback: (date: Date) => void;
-};
+  date: Date
+  onChangecallback: (date: Date) => void
+}
 
 const TimePicker: React.FC<Props> = ({ date, onChangecallback }) => {
   return (
@@ -23,16 +23,17 @@ const TimePicker: React.FC<Props> = ({ date, onChangecallback }) => {
       onChange={(event: DateTimePickerEvent, date?: Date | undefined) =>
         onChangecallback(date)
       }
-      //themeVariant="light"
+      // themeVariant="light"
       minuteInterval={30}
     />
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   picker: {
     backgroundColor: Colors.offWhite.color,
-    minWidth: 80,
-  },
-});
-export default TimePicker;
+    minWidth: 80
+  }
+})
+
+export default TimePicker

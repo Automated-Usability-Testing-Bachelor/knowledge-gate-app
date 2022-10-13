@@ -7,7 +7,7 @@ type Props = {
 }
 
 const PublicationScreen: React.FC<Props> = ({ route }) => {
-  const { item } = route.params
+  const item = route.params
 
   return (
     <Background

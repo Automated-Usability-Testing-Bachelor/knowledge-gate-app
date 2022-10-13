@@ -3,8 +3,7 @@ import { StackNavigationProp } from '@react-navigation/stack'
 import React, { useCallback } from 'react'
 import { StyleSheet, View } from 'react-native'
 import RedButton from '../RedButton'
-// eslint-disable-next-line import/no-cycle
-import { StackParamList } from '../../navigation/index'
+import { StackParamList } from '../../navigation/StackParamList'
 
 const styles = StyleSheet.create({
   container: {

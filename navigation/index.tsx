@@ -5,7 +5,6 @@ import CalendarScreen from '../screens/CalendarScreen'
 import LoginScreen from '../screens/LoginScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
 import ProjectExpandedScreen from '../screens/ProjectExpandedScreen'
-import NotFoundScreen from '../screens/NotFoundScreen'
 import BottomTabNavigator from './Navbar'
 import ProfileScreen from '../screens/ProfileScreen'
 import OnboardingScreen from '../screens/OnboardingScreen'
@@ -16,31 +15,8 @@ import HeaderStyles from '../components/navigationComponents/HeaderStyles'
 import Colors from '../constants/Colors'
 import ProfilePublicationsClinicalTrialsScreen from '../screens/ProfilePublicationsClinicalTrialsScreen'
 import InvoiceScreen from '../screens/InvoiceScreen'
-
-// const Stack = createNativeStackNavigator();
-
-export type StackParamList = {
-  Main: undefined
-  Home: undefined
-  Onboarding: undefined
-  Start: undefined
-  NotFound: undefined
-  Calendar: undefined
-  Projects: undefined
-  ProjectsExpanded: undefined
-  Profile: undefined
-  OnboardingCarousel: undefined
-  Publication: undefined
-  ClinicalTrial: undefined
-  ProfilePublicationsClinicalTrials: undefined
-  Invoice: undefined
-  Carousel: undefined
-  Root: undefined
-  Login: undefined
-  PublicationScreen: undefined
-  ClinicalTrialScreen: undefined
-  InvoiceScreen: undefined
-}
+import { StackParamList } from './StackParamList'
+import NotificationScreen from '../screens/notificationScreen'
 
 const Stack = createStackNavigator<StackParamList>()
 
@@ -94,9 +70,9 @@ const Navigation: React.FC = () => {
         <Stack.Screen
           name={'ProjectsExpanded'}
           component={ProjectExpandedScreen}
-          /* options={({ route }) => ({
+          options={({ route }) => ({
             title: route.params.item.title
-          })} */
+          })}
         />
         <Stack.Screen
           name={'Projects'}
@@ -109,8 +85,8 @@ const Navigation: React.FC = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name={'NotFound'}
-          component={NotFoundScreen}
+          name={'Notifications'}
+          component={NotificationScreen}
           options={{ headerShown: false }}
         />
 
@@ -130,16 +106,16 @@ const Navigation: React.FC = () => {
         <Stack.Screen
           name={'PublicationScreen'}
           component={PublicationScreen}
-          //   options={({ route }) => ({
-          //     title: route.params.item.title
-          //   })}
+          options={({ route }) => ({
+            title: route.params.item.title
+          })}
         />
         <Stack.Screen
           name={'ClinicalTrialScreen'}
           component={ClinicalTrialScreen}
-          /*  //   options={({ route }) => ({
-          //     title: route.params.item.title
-          //   })} */
+          options={({ route }) => ({
+            title: route.params.item.title
+          })}
         />
         <Stack.Screen
           name={'InvoiceScreen'}

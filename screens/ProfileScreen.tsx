@@ -5,7 +5,7 @@ import ProfileHeader from '../components/profileComponents/ProfileHeader'
 import ProfileBody from '../components/profileComponents/ProfileBody'
 import Colors from '../constants/Colors'
 
-const profileData = require('../data/profileData.json')
+const profileData = require('../data/ProfileData.json')
 
 const ProfileScreen = () => {
   return (
