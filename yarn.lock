@@ -2088,9 +2088,9 @@
   resolved "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-native-calendar-picker@^7.0.2":
+"@types/react-native-calendar-picker@7.0.2":
   version "7.0.2"
-  resolved "https://registry.npmjs.org/@types/react-native-calendar-picker/-/react-native-calendar-picker-7.0.2.tgz"
+  resolved "https://registry.yarnpkg.com/@types/react-native-calendar-picker/-/react-native-calendar-picker-7.0.2.tgz#5bda6245bfa18416699ebde61c2bde77b37c039e"
   integrity sha512-vM97SJXE0sgNEMKV6uH7KfkbuJRe1v/0EuyHjqRHe2WVhKDG/3qYklAtO1aQTs29wYzpA2hN+0ZvMIOOQsUi/w==
   dependencies:
     "@types/react" "*"
@@ -7430,7 +7430,7 @@ react-native-swipe-gestures@1.0.5:
   resolved "https://registry.npmjs.org/react-native-swipe-gestures/-/react-native-swipe-gestures-1.0.5.tgz"
   integrity sha512-Ns7Bn9H/Tyw278+5SQx9oAblDZ7JixyzeOczcBK8dipQk2pD7Djkcfnf1nB/8RErAmMLL9iXgW0QHqiII8AhKw==
 
-react-native-swipe-list-view@^3.2.9:
+react-native-swipe-list-view@3.2.9:
   version "3.2.9"
   resolved "https://registry.yarnpkg.com/react-native-swipe-list-view/-/react-native-swipe-list-view-3.2.9.tgz#d725c7cdf481dd5df12a00dbfe0120013b5f2e59"
   integrity sha512-SjAEuHc/D6ovp+RjDUhfNmw6NYOntdT7+GFhfMGfP/BSLMuMWynpzJy9GKQeyB8sI78T6Lzip21TVbongOg1Mw==
