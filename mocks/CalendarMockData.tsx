@@ -28,7 +28,7 @@ const allCalendarData: DateWithAvailability[] = [
     ]
   },
   {
-    date: moment(new Date(2022, 9, )),
+    date: moment(new Date(2022, 9, 4)),
     availabilities: [
       {
         id: uuid.v4(),
@@ -147,7 +147,3 @@ const appendCalendarData = (element: DateWithAvailability) => {
   allCalendarData.push(element)
 }
 
-const displayCalendarData = (methodName: string) => {
-  console.log(methodName)
-  console.log(JSON.stringify(allCalendarData))
-}

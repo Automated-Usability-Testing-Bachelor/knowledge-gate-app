@@ -16,7 +16,7 @@ import {
 import ScheduleAvailabilityModal from './scheduleModal/ScheduleAvailabilityModal'
 import AvailabilitiesView from './Availability/AvailabilitiesView'
 import AvailabilityHeader from './Availability/AvailabilityHeader'
-import SwipeableAvailabilityItem from './Availability/SwipeableAvailabilityItem'
+import SwipeableAvailabilityView from './Availability/SwipeableAvailabilityView'
 
 export type Props = {
   selectedDayHeaderCallback: Function
@@ -28,7 +28,7 @@ export type DateTimeRange = {
 }
 
 const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
-  const [edittingId, setEdittingId] = useState('')
+  const [edittingId, setEdittingId] = useState<string | number[]>('')
   const [showModal, setShowModal] = useState(false)
   const [modalStartTimeRange, setModalStartTimeRange] = useState<DateTimeRange>(
     setInitialTimeRange()
@@ -51,7 +51,8 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
     selectedDayHeaderCallback(date)
     setCurrentDate(date)
   }
-  const onEditAvailability = (id: string) => {
+  const onEditAvailability = (id: string | number[]) => {
+    console.log("yo")
     setEdittingId(id)
     const av: Availability | undefined = getAvailabilityById(id)
 
@@ -100,7 +101,7 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
               currentMonthCallback={currentMonthCallback}
             />
             <AvailabilityHeader />
-            <SwipeableAvailabilityItem currentDate={currentDate} onEditCallback={onEditAvailability}/>
+            <SwipeableAvailabilityView currentDate={currentDate} onEditCallback={onEditAvailability}/>
           </>
         }
         footer={
@@ -114,8 +115,6 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
             />
           </>
         }
-        currentDate={currentDate}
-        onEditCallback={onEditAvailability}
       />
     </View>
   )

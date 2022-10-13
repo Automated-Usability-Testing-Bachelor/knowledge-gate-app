@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 })
 
 export type Props = {
-  onEditCallback: (id: string) => void
+  onEditCallback: (id: string | number[]) => void
   data: Data
   rowHeightAnimatedValue: Animated.Value
   removeRow: () => void
@@ -49,7 +49,6 @@ const VisibleItem: React.FC<Props> = (props) => {
       data,
       rowHeightAnimatedValue,
       removeRow,
-      leftActionState,
       rightActionState,
     } = props;
     if (rightActionState) {
