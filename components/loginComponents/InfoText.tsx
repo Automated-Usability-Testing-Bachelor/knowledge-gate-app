@@ -2,17 +2,6 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Colors from '../../constants/Colors'
 
-const InfoText = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        {'Your first time here? Look for an invitation to our platform in your'}
-        {'e-mail inbox'}
-      </Text>
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
@@ -24,5 +13,16 @@ const styles = StyleSheet.create({
     color: Colors.black.color
   }
 })
+
+const InfoText = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>
+        {'Your first time here? Look for an invitation to our platform in your'}
+        {'e-mail inbox'}
+      </Text>
+    </View>
+  )
+}
 
 export default InfoText

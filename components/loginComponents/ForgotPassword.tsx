@@ -2,16 +2,6 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Colors from '../../constants/Colors'
 
-const ForgotPassword = () => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.container}>
-        <Text style={styles.text}>{'Forgot password?'}</Text>
-      </TouchableOpacity>
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     // backgroundColor: "yellow",
@@ -25,5 +15,15 @@ const styles = StyleSheet.create({
     color: Colors.red.color
   }
 })
+
+const ForgotPassword = () => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.container}>
+        <Text style={styles.text}>{'Forgot password?'}</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
 
 export default ForgotPassword
