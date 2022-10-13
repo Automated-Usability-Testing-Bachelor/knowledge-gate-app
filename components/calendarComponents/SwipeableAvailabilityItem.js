@@ -7,6 +7,7 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   StatusBar,
+  Dimensions,
 } from "react-native";
 import { AntDesign, Feather } from "@expo/vector-icons";
 
@@ -22,7 +23,7 @@ import {
   getAvailabilitiesFromDay,
 } from "../../mocks/CalendarMockData";
 
-const NotificationScreen = ({ currentDate, onEditCallback }) => {
+const SwipeableAvilabilityItem = ({ currentDate, onEditCallback }) => {
   const [availabilities, setAvailabilities] = useState([]);
   useEffect(() => {
     let data = getAvailabilitiesFromDay(currentDate);
@@ -241,7 +242,6 @@ const NotificationScreen = ({ currentDate, onEditCallback }) => {
   return (
     <View style={styles.container}>
       <SwipeListView
-        useFlatList
         data={availabilities}
         keyExtractor={(rowData, index) => {
           return rowData.id.toString();
@@ -256,6 +256,8 @@ const NotificationScreen = ({ currentDate, onEditCallback }) => {
         rightActivationValue={-200}
         leftActionValue={0}
         rightActionValue={-500}
+        previewOpenValue={-40}
+        previewOpenDelay={3000}
         onLeftAction={onLeftAction}
         onRightAction={onRightAction}
         onLeftActionStatusChange={onLeftActionStatusChange}
@@ -265,7 +267,7 @@ const NotificationScreen = ({ currentDate, onEditCallback }) => {
   );
 };
 
-export default NotificationScreen;
+export default SwipeableAvilabilityItem;
 
 const styles = StyleSheet.create({
   container: {
