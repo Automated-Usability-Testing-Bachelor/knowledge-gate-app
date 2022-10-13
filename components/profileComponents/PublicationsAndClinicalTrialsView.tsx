@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   listContainer: {
     padding: 10,
     backgroundColor: Colors.warmGrey.color,
-    paddingBottom: 50
+    paddingBottom: 90
   }
 })
 

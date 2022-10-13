@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginBottom: 10,
-    paddingVertical: 15,
-    
+    paddingTop: 15,
+    paddingBottom: 50,
     borderRadius: 5,
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
   titleAndBodyContainer: {
     flex: 24
