@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import RedButton from '../RedButton'
-import PlusIcon from './PlusIcon'
+import RedButton from '../../RedButton'
+import PlusIcon from '../PlusIcon'
 
 export type Props = {
   ShowModalCallback: () => void

@@ -10,6 +10,31 @@ import {
 import { ArrowTopRightOnSquareIcon } from 'react-native-heroicons/solid'
 import Colors from '../../constants/Colors'
 
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center'
+  },
+  button: {
+    backgroundColor: Colors.red.color,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
+    alignSelf: 'center'
+  },
+  touchable: {
+    borderRadius: 10,
+    alignSelf: 'center',
+    padding: 12
+  },
+  text: {
+    color: '#FFF',
+    lineHeight: 18
+  }
+})
+
 type Props = {
   link: string
 }
@@ -44,30 +69,5 @@ const LinkOriginalButton: React.FC<Props> = ({ link }) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center'
-  },
-  button: {
-    backgroundColor: Colors.red.color,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 10,
-    alignSelf: 'center'
-  },
-  touchable: {
-    borderRadius: 10,
-    alignSelf: 'center',
-    padding: 12
-  },
-  text: {
-    color: '#FFF',
-    lineHeight: 18
-  }
-})
 
 export default LinkOriginalButton

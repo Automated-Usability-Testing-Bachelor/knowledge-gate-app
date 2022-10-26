@@ -1,27 +1,62 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import Colors from '../../constants/Colors'
 
-const PubClinButtonGroup = ({ selectedSubjectCallback }) => {
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  view: {
+    flex: 1,
+
+    alignItems: 'center',
+    padding: 10,
+    borderBottomWidth: 2,
+    borderBottomColor: Colors.darkGrey.color
+  },
+  selectedView: {
+    borderBottomColor: Colors.red.color
+  },
+  unselectedView: {
+    borderBottomColor: Colors.darkGrey.color
+  },
+  text: {
+    fontFamily: 'Sans-Regular',
+    fontSize: 16
+  },
+  selectedText: {
+    color: Colors.red.color
+  },
+  unselectedText: {
+    color: Colors.darkGrey.color
+  }
+})
+
+export type Props = {
+  selectedSubjectCallback: (subject: string) => void
+}
+
+const PubClinButtonGroup: React.FC<Props> = ({ selectedSubjectCallback }) => {
   const [isPubSelected, setIsPubSelected] = useState(true)
   const [isClinSelected, setIsClinSelected] = useState(false)
   useEffect(() => {
     selectedSubjectCallback('pub')
   }, [])
-  const onPressPub = () => {
+  const onPressPub = useCallback(() => {
     if (!isPubSelected) {
       setIsPubSelected(true)
       setIsClinSelected(false)
       selectedSubjectCallback('pub')
     }
-  }
-  const onPressClin = () => {
+  }, [isPubSelected, selectedSubjectCallback])
+  const onPressClin = useCallback(() => {
     if (!isClinSelected) {
       setIsPubSelected(false)
       setIsClinSelected(true)
       selectedSubjectCallback('clin')
     }
-  }
+  }, [isClinSelected, selectedSubjectCallback])
 
   return (
     <View style={styles.container}>
@@ -62,35 +97,5 @@ const PubClinButtonGroup = ({ selectedSubjectCallback }) => {
     </View>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'center'
-  },
-  view: {
-    flex: 1,
-
-    alignItems: 'center',
-    padding: 10,
-    borderBottomWidth: 2,
-    borderBottomColor: Colors.darkGrey.color
-  },
-  selectedView: {
-    borderBottomColor: Colors.red.color
-  },
-  unselectedView: {
-    borderBottomColor: Colors.darkGrey.color
-  },
-  text: {
-    fontFamily: 'Sans-Regular',
-    fontSize: 16
-  },
-  selectedText: {
-    color: Colors.red.color
-  },
-  unselectedText: {
-    color: Colors.darkGrey.color
-  }
-})
 
 export default PubClinButtonGroup

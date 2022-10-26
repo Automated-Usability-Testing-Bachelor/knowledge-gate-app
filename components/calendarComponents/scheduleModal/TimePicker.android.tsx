@@ -19,7 +19,6 @@ const TimePicker: React.FC<Props> = ({
   onChangecallback,
   minuteInterval
 }) => {
-  console.log('android')
 
   return (
     <View>

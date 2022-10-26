@@ -1,16 +1,24 @@
+import { RouteProp } from '@react-navigation/native'
 import React from 'react'
-import Background from '../components/BackgroundTemplate'
+import BackgroundNoTab from '../components/BackgroundTemplateNoTab'
 import BodyView from '../components/publicationScreen/BodyView'
 
+export type Item = {
+  publishDate: string
+  body: string
+  link: string
+  title: string
+}
+
 type Props = {
-  route: any
+  route: RouteProp<{ params: { item: Item } }, 'params'>
 }
 
 const PublicationScreen: React.FC<Props> = ({ route }) => {
   const item = route.params
 
   return (
-    <Background
+    <BackgroundNoTab
       body={BodyView({
         publishDate: item.publishDate,
         body: item.body,

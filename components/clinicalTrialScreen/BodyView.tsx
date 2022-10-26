@@ -3,7 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import Colors from '../../constants/Colors'
 import LinkOriginalButton from '../publicationScreen/LinkOriginalButton'
 import Dialog from './Dialog'
-import StatusBadge from '../profileComponents/tabs/StatusBadge'
+import StatusBadge from '../StatusBadge'
 
 const styles = StyleSheet.create({
   container: {

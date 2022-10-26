@@ -7,7 +7,7 @@ import Colors from '../../../constants/Colors'
 
 export type Props = {
   date: Date
-  onChangecallback: (date: Date) => void
+  onChangecallback: (date: Date | undefined) => void
 }
 
 const TimePicker: React.FC<Props> = ({ date, onChangecallback }) => {

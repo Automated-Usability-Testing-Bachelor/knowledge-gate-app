@@ -15,15 +15,13 @@ export type Props = {
   closeModal: Function
   getTimeRangeCallback: Function
   modalStartTimeRange: DateTimeRange
-  isEditing?: boolean
 }
 
 const ScheduleAvailabilityModal: React.FC<Props> = ({
   showModal,
   closeModal,
   getTimeRangeCallback,
-  modalStartTimeRange,
-  isEditing
+  modalStartTimeRange
 }) => {
   const initialTimeRange: MomentTimeRange = {
     from: moment(modalStartTimeRange.from),
@@ -89,16 +87,3 @@ const styles = StyleSheet.create({
 })
 
 export default ScheduleAvailabilityModal
-
-function roundMinutes(date: Date) {
-  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60))
-  date.setMinutes(0, 0, 0) // Resets also seconds and milliseconds
-
-  return date
-}
-
-function addHours(date: Date, hours: number) {
-  date.setHours(date.getHours() + hours)
-
-  return date
-}

@@ -24,12 +24,12 @@ const OnboardingFlow: React.FC = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name={'Start'}
+        name="Start"
         component={OnboardingScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name={'Carousel'}
+        name="Carousel"
         component={OnboardingCarouselScreen}
         options={{ headerShown: false }}
       />
@@ -53,34 +53,36 @@ const Navigation: React.FC = () => {
         }}
       >
         <Stack.Screen
-          name={'Root'}
-          component={BottomTabNavigator}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name={'Login'}
+          name='Login'
           component={LoginScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name={'Onboarding'}
+          name='Root'
+          component={BottomTabNavigator}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name='Onboarding'
           component={OnboardingFlow}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name={'ProjectsExpanded'}
+          name='ProjectsExpanded'
           component={ProjectExpandedScreen}
           options={({ route }) => ({
+            // @ts-ignore
             title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name={'Projects'}
+          name='Projects'
           component={ProjectsScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name={'Calendar'}
+          name='Calendar'
           component={CalendarScreen}
           options={{ headerShown: false }}
         />
@@ -91,12 +93,12 @@ const Navigation: React.FC = () => {
         />
 
         <Stack.Screen
-          name={'Profile'}
+          name='Profile'
           component={ProfileScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name={'ProfilePublicationsClinicalTrials'}
+          name='ProfilePublicationsClinicalTrials'
           component={ProfilePublicationsClinicalTrialsScreen}
           options={{
             title: 'Publications and Clinical Trials',
@@ -104,23 +106,28 @@ const Navigation: React.FC = () => {
           }}
         />
         <Stack.Screen
-          name={'PublicationScreen'}
+          name='PublicationScreen'
           component={PublicationScreen}
           options={({ route }) => ({
+            // @ts-ignore
             title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name={'ClinicalTrialScreen'}
+          name='ClinicalTrialScreen'
           component={ClinicalTrialScreen}
           options={({ route }) => ({
+            // @ts-ignore
             title: route.params.item.title
           })}
         />
         <Stack.Screen
-          name={'InvoiceScreen'}
+          name='InvoiceScreen'
           component={InvoiceScreen}
-          options={{ headerShown: false }}
+          options={({ route }) => ({
+            // @ts-ignore
+            title: route.params.item.title
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>

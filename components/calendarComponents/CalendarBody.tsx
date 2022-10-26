@@ -2,18 +2,21 @@ import React, { useState } from 'react'
 import { StyleSheet, View } from 'react-native'
 import moment from 'moment'
 import ActualCalendar from './actualCalendar'
-import ScheduleBtn from './ScheduleBtn'
+import ScheduleBtn from './Availability/ScheduleBtn'
 import {
   addAvailability,
   Availability,
+  DateWithAvailability,
   editAvailabilityTimeById,
+  getAvailabilitiesFromDay,
   getAvailabilityById,
   getCalendarDataFromCurrentMonth,
   MomentTimeRange
 } from '../../mocks/CalendarMockData'
 import ScheduleAvailabilityModal from './scheduleModal/ScheduleAvailabilityModal'
-import AvailabilitiesView from './AvailabilitiesView'
-import AvailabilityHeader from './AvailabilityHeader'
+import AvailabilitiesView from './Availability/AvailabilitiesView'
+import AvailabilityHeader from './Availability/AvailabilityHeader'
+import SwipeableAvailabilityView from './Availability/SwipeableAvailabilityView'
 
 export type Props = {
   selectedDayHeaderCallback: Function
@@ -25,15 +28,15 @@ export type DateTimeRange = {
 }
 
 const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
-  const [edittingId, setEdittingId] = useState('')
+  const [edittingId, setEdittingId] = useState<string | number[]>('')
   const [showModal, setShowModal] = useState(false)
   const [modalStartTimeRange, setModalStartTimeRange] = useState<DateTimeRange>(
     setInitialTimeRange()
   )
   const [isModalEditing, setIsModalEditing] = useState(false)
-  const initialDatesWithAv = getCalendarDataFromCurrentMonth(moment())
+  const initialDatesWithAv: DateWithAvailability[] = getCalendarDataFromCurrentMonth(moment())
   const [datesWithAvailabilities, setDatesWithAvailability] =
-    useState(initialDatesWithAv)
+    useState<DateWithAvailability[]>(initialDatesWithAv)
   const [currentDate, setCurrentDate] = useState(moment())
   const ShowModalCallback = () => {
     setShowModal(true)
@@ -48,7 +51,8 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
     selectedDayHeaderCallback(date)
     setCurrentDate(date)
   }
-  const onEditAvailability = (id: string) => {
+  const onEditAvailability = (id: string | number[]) => {
+    console.log("yo")
     setEdittingId(id)
     const av: Availability | undefined = getAvailabilityById(id)
 
@@ -77,8 +81,8 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
     // refreshing calendar styling
     let month = currentDate.clone()
     month = month.startOf('month')
-    const arr = []
-    const newData = getCalendarDataFromCurrentMonth(month)
+    const arr: DateWithAvailability[] = []
+    const newData: DateWithAvailability[] = getCalendarDataFromCurrentMonth(month)
 
     for (let i = 0; i < newData.length; i++) {
       arr.push({ ...newData[i] })
@@ -97,6 +101,7 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
               currentMonthCallback={currentMonthCallback}
             />
             <AvailabilityHeader />
+            <SwipeableAvailabilityView currentDate={currentDate} onEditCallback={onEditAvailability}/>
           </>
         }
         footer={
@@ -110,19 +115,13 @@ const CalendarBody: React.FC<Props> = ({ selectedDayHeaderCallback }) => {
             />
           </>
         }
-        currentDate={currentDate}
-        onEditCallback={onEditAvailability}
       />
     </View>
   )
 }
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: Colors.offWhite.color,
-    // borderTopLeftRadius: 20,
-    // borderTopRightRadius: 20,
-    height: '100%'
-    // paddingBottom: 180,
+    flex: 1
   },
   NoAvailabilityContainer: {
     paddingHorizontal: 25,

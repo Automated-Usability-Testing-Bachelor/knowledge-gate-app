@@ -53,7 +53,7 @@ const BottomTabNavigator = () => {
         name={'Invoice'}
         component={InvoiceScreen}
         options={{
-          title: 'Invoice',
+          title: 'Invoices',
           headerShown: true,
           tabBarIcon: ({ focused, color }) => (
             <Icons name={'Invoice'} color={color} focused={focused} />

@@ -3,12 +3,12 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import Colors from '../../constants/Colors'
 
-const ExtraInfoText = ({ extra }: any) => {
+const ExtraInfoCard = ({ extra }: any) => {
   const navigation = useNavigation()
 
   return (
     <>
-      <View style={styles.container}>
+      <View style={styles.cardContainer}>
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => {
@@ -20,7 +20,7 @@ const ExtraInfoText = ({ extra }: any) => {
           <Text style={styles.whiteText}>{'Publications'}</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.container}>
+      <View style={styles.cardContainer}>
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => {
@@ -32,7 +32,7 @@ const ExtraInfoText = ({ extra }: any) => {
           <Text style={styles.whiteText}>{'Clinical Trials'}</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.container}>
+      <View style={styles.cardContainer}>
         <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.whiteText}>{extra.murders}</Text>
           <Text style={styles.whiteText}>{'Murders'}</Text>
@@ -42,14 +42,14 @@ const ExtraInfoText = ({ extra }: any) => {
   )
 }
 
-const ExtraInfo = ({ extra }: any) => (
+const ExtraInfoView = ({ extra }: any) => (
   <View>
     <Text style={styles.header}>{'Additional Info'}</Text>
-    <Text>
+    <View style={styles.container}>
       {extra.map((element: any) => (
-        <ExtraInfoText key={element} extra={element} />
+        <ExtraInfoCard key={element} extra={element} />
       ))}
-    </Text>
+    </View>
   </View>
 )
 
@@ -61,9 +61,14 @@ const styles = StyleSheet.create({
     paddingBottom: 10
   },
   container: {
-    // flexDirection: "row",
-    alignItems: 'flex-start',
-    marginHorizontal: 5
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "flex-start"
+  },
+  cardContainer: {
+
+    alignItems: 'center',
+    marginRight: 5
   },
   buttonContainer: {
     backgroundColor: Colors.red.color,
@@ -78,4 +83,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default ExtraInfo
+export default ExtraInfoView
