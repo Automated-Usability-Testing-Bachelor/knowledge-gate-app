@@ -1,0 +1,53 @@
+diff --git a/node_modules/react-native-swipe-list-view/components/SwipeRow.js b/node_modules/react-native-swipe-list-view/components/SwipeRow.js
+index 9e3767f..0f85e0d 100644
+--- a/node_modules/react-native-swipe-list-view/components/SwipeRow.js
++++ b/node_modules/react-native-swipe-list-view/components/SwipeRow.js
+@@ -9,6 +9,7 @@ import {
+     StyleSheet,
+     TouchableOpacity,
+     View,
++    Easing
+ } from 'react-native';
+ 
+ const DEFAULT_PREVIEW_OPEN_DELAY = 700;
+@@ -218,6 +219,7 @@ class SwipeRow extends Component {
+             duration: this.props.previewDuration,
+             toValue,
+             delay,
++            easing: Easing.bounce,
+             useNativeDriver: this.props.useNativeDriver,
+         });
+     }
+@@ -235,6 +237,7 @@ class SwipeRow extends Component {
+ 
+         if (this.props.preview && !this.ranPreview) {
+             this.ranPreview = true;
++            console.log("before")
+             this.doFullAnimation();
+             if (this.props.previewRepeat) {
+                 this.setState({
+@@ -249,9 +252,10 @@ class SwipeRow extends Component {
+     doFullAnimation() {
+         const previewOpenValue =
+             this.props.previewOpenValue || this.props.rightOpenValue * 0.5;
++            console.log(this.props.previewOpenValue)
+         return this.getPreviewAnimation(
+-            previewOpenValue,
+-            this.props.previewOpenDelay
++            -20,
++            500
+         ).start(() => {
+             this.getPreviewAnimation(0, PREVIEW_CLOSE_DELAY).start(() => {
+                 this.props.onPreviewEnd && this.props.onPreviewEnd();
+@@ -644,7 +648,10 @@ class SwipeRow extends Component {
+                 <Animated.View
+                     manipulationModes={['translateX']}
+                     {...this._panResponder.panHandlers}
+-                    onLayout={e => this.onContentLayout(e)}
++                    onLayout={e => {
++                        this.onContentLayout(e)
++                        console.log("node layout")
++                    }}
+                     style={{
+                         zIndex: 2,
+                         transform: [{ translateX: this._translateX }],
