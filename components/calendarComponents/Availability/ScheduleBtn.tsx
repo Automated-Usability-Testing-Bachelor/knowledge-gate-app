@@ -10,7 +10,7 @@ const ScheduleBtn: React.FC<Props> = ({ ShowModalCallback }) => {
   return (
     <View style={styles.container}>
       <RedButton
-        name="Schedule"
+        name={'Schedule'}
         onPress={ShowModalCallback}
         icon={
           <View>

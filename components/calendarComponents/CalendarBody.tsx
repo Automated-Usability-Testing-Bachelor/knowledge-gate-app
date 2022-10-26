@@ -8,7 +8,6 @@ import {
   Availability,
   DateWithAvailability,
   editAvailabilityTimeById,
-  getAvailabilitiesFromDay,
   getAvailabilityById,
   getCalendarDataFromCurrentMonth,
   MomentTimeRange
