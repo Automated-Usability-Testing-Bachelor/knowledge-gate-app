@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { Animated, Image, StyleSheet, View } from 'react-native'
 import CalendarPicker, {
   CustomDateStyle,
@@ -65,22 +65,26 @@ const ActualCalendar: React.FC<Props> = ({
       })
     }
   }
+
+  const changeCustomDatesStyle = useCallback(
+    (date: moment.Moment) => {
+      const startOfMonth = date.clone()
+      const day = date
+      const styles: CustomDateStyle[] = []
+      while (day.add(1, 'day').isSame(startOfMonth, 'month')) {
+        dateContainsAvailability(day.clone(), styles)
+      }
+      setCustomDatesStyles(styles)
+    },
+    [dateContainsAvailability]
+  )
+
   useEffect(() => {}, [selectedMonthYear])
   useEffect(() => {
     const tempMonth = selectedMonthYear.clone()
 
     changeCustomDatesStyle(tempMonth)
-  }, [datesWithAvailabilities])
-
-  const changeCustomDatesStyle = (date: moment.Moment) => {
-    const startOfMonth = date.clone()
-    const day = date
-    const styles: CustomDateStyle[] = []
-    while (day.add(1, 'day').isSame(startOfMonth, 'month')) {
-      dateContainsAvailability(day.clone(), styles)
-    }
-    setCustomDatesStyles(styles)
-  }
+  }, [changeCustomDatesStyle, datesWithAvailabilities, selectedMonthYear])
 
   const customDayHeaderStyles: CustomDayHeaderStylesFunc = ({}) => {
     return {
