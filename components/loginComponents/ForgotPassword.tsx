@@ -4,7 +4,6 @@ import Colors from '../../constants/Colors'
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: "yellow",
     alignSelf: 'flex-end',
     paddingLeft: 10,
     paddingTop: 2
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const ForgotPassword = () => {
+const ForgotPassword: React.FC = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.container}>

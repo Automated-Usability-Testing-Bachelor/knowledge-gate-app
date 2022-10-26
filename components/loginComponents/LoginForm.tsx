@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const LoginForm = () => {
+const LoginForm: React.FC = () => {
   return (
     <View style={styles.container}>
       <InputField prompt={'E-mail'} keyboardType={'email-address'} />

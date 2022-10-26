@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 50,
     borderRadius: 5,
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-start'
   },
   titleAndBodyContainer: {
     flex: 24
@@ -64,7 +64,9 @@ const BodyView: React.FC<Item> = ({ publishDate, body, link, title }) => {
     <View style={styles.container}>
       <View style={styles.DateContainer}>
         <View>
-          <Text style={styles.publishDateText}>{`Published: ${publishDate}`}</Text>
+          <Text
+            style={styles.publishDateText}
+          >{`Published: ${publishDate}`}</Text>
         </View>
       </View>
       <View style={styles.titleAndBodyContainer}>
@@ -72,8 +74,8 @@ const BodyView: React.FC<Item> = ({ publishDate, body, link, title }) => {
           <Text style={styles.TitleText}>{title}</Text>
         </View>
         <ScrollView
-          style={ styles.outerScrollView }
-          contentContainerStyle={ styles.scrollView }
+          style={styles.outerScrollView}
+          contentContainerStyle={styles.scrollView}
         >
           <Text style={styles.BodyText}>{body}</Text>
         </ScrollView>

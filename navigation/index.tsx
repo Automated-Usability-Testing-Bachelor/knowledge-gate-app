@@ -5,7 +5,6 @@ import CalendarScreen from '../screens/CalendarScreen'
 import LoginScreen from '../screens/LoginScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
 import ProjectExpandedScreen from '../screens/ProjectExpandedScreen'
-import NotFoundScreen from '../screens/NotFoundScreen'
 import BottomTabNavigator from './Navbar'
 import ProfileScreen from '../screens/ProfileScreen'
 import OnboardingScreen from '../screens/OnboardingScreen'
@@ -16,11 +15,12 @@ import HeaderStyles from '../components/navigationComponents/HeaderStyles'
 import Colors from '../constants/Colors'
 import ProfilePublicationsClinicalTrialsScreen from '../screens/ProfilePublicationsClinicalTrialsScreen'
 import InvoiceScreen from '../screens/InvoiceScreen'
+import { StackParamList } from './StackParamList'
+import NotificationScreen from '../screens/notificationScreen'
 
-// const Stack = createNativeStackNavigator();
-const Stack = createStackNavigator()
+const Stack = createStackNavigator<StackParamList>()
 
-const OnboardingFlow = () => {
+const OnboardingFlow: React.FC = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -37,7 +37,7 @@ const OnboardingFlow = () => {
   )
 }
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -87,8 +87,8 @@ const Navigation = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name='Not Found'
-          component={NotFoundScreen}
+          name={'Notifications'}
+          component={NotificationScreen}
           options={{ headerShown: false }}
         />
 

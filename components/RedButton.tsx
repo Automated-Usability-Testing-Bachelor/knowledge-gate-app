@@ -2,29 +2,6 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Colors from '../constants/Colors'
 
-export type Props = {
-  name: string
-  icon?: React.ReactElement
-  onPress: () => void
-}
-
-const RedButton: React.FC<Props> = ({ name, icon, onPress }) => {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={onPress}
-        style={styles.touchable}
-        activeOpacity={0.6}
-      >
-        <View style={styles.button}>
-          <Text style={styles.text}>{name}</Text>
-          {icon || <View />}
-        </View>
-      </TouchableOpacity>
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -51,5 +28,28 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5
   }
 })
+
+export type Props = {
+  name: string
+  icon?: React.ReactElement
+  onPress(): void
+}
+
+const RedButton: React.FC<Props> = ({ name, icon, onPress }) => {
+  return (
+    <View style={styles.container}>
+      <TouchableOpacity
+        onPress={onPress}
+        style={styles.touchable}
+        activeOpacity={0.6}
+      >
+        <View style={styles.button}>
+          <Text style={styles.text}>{name}</Text>
+          {icon || <View />}
+        </View>
+      </TouchableOpacity>
+    </View>
+  )
+}
 
 export default RedButton

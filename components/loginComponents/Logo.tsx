@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const Logo = () => {
+const Logo: React.FC = () => {
   return (
     <View style={styles.container}>
       <LogoSVG height={200} width={200} fill={'white'} />

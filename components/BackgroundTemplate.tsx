@@ -4,7 +4,8 @@ import Colors from '../constants/Colors'
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: Colors.warmGrey.color
+    backgroundColor: Colors.warmGrey.color,
+    height: '100%'
   }
 })
 

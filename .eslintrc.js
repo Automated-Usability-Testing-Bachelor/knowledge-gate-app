@@ -101,7 +101,7 @@ const rules = {
   ],
   "no-warning-comments": "warn",
   "react/jsx-no-bind": [
-    "error",
+    "off",
     {
       allowArrowFunctions: false
     }
@@ -126,13 +126,13 @@ module.exports = {
       extends: ["airbnb-typescript-prettier", "plugin:promise/recommended"],
       rules: {
         ...rules,
-        "@typescript-eslint/no-explicit-any": "error",
-        "@typescript-eslint/no-unsafe-call": "error",
-        "@typescript-eslint/no-unsafe-member-access": "error",
-        "@typescript-eslint/no-unsafe-argument": "error",
-        "@typescript-eslint/no-unsafe-assignment": "error",
-        "@typescript-eslint/no-unnecessary-condition": "error",
-        "deprecation/deprecation": "warn",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unnecessary-condition": "off",
+        "deprecation/deprecation": "off",
         "import/no-extraneous-dependencies": [
           "error",
           {

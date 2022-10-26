@@ -4,7 +4,7 @@ import BackgroundTemplate from '../components/BackgroundTemplate'
 import ProfileHeader from '../components/profileComponents/ProfileHeader'
 import ProfileBody from '../components/profileComponents/ProfileBody'
 import Colors from '../constants/Colors'
-import profileData from '../data/profileData.json'
+import profileData from '../data/ProfileData.json'
 
 export type ProfileData = {
   name: string
@@ -32,6 +32,7 @@ export type ExtraInfo = {
 
 const ProfileScreen = () => {
   console.log(profileData)
+
   return (
     <ScrollView style={{ backgroundColor: Colors.warmGrey.color }}>
       <BackgroundTemplate

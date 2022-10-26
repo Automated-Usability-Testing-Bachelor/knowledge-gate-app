@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const InfoText = () => {
+const InfoText: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>

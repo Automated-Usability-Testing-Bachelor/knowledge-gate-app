@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
   }
 })
 
-export type Props = {
-  prompt?: string
-  keyboardType?: KeyboardTypeOptions | undefined
+type Props = {
+  prompt: string
+  keyboardType: KeyboardTypeOptions
 }
 
 const InputField: React.FC<Props> = ({ prompt, keyboardType }) => {

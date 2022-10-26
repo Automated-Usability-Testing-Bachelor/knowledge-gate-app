@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   }
 })
 
-const LoginView = () => {
+const LoginView: React.FC = () => {
   return (
     <View style={styles.container}>
       <LoginHeader />
