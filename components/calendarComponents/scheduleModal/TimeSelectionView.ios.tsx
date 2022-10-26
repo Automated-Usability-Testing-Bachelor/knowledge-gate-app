@@ -1,10 +1,34 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import moment from 'moment'
+// eslint-disable-next-line import/no-unresolved
 import TimePicker from './TimePicker'
+import { MomentTimeRange } from '../../../mocks/CalendarMockData'
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    paddingVertical: 20
+  },
+  toContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10
+  },
+  fromContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingRight: 20,
+    paddingVertical: 10
+  },
+  timeContainer: {
+    marginLeft: 10
+  }
+})
 
 export type Props = {
-  returnTimeRangeCallback: Function
+  returnTimeRangeCallback: (timeRange: MomentTimeRange) => void
   startFrom: Date
   startTo: Date
 }
@@ -16,28 +40,28 @@ const TimeSelectionView: React.FC<Props> = ({
 }) => {
   const [fromDate, setFromDate] = useState(startFrom)
   const [toDate, setToDate] = useState(startTo)
-  const initialTimeRange = {
-    from: fromDate,
-    to: toDate
-  }
 
-  const onFromChange = (date: Date) => {
-    console.log(date)
-    const currentDate = date
+  const onFromChange = useCallback(
+    (date: Date) => {
+      const currentDate = date
+      const newDate = new Date(currentDate)
+      setFromDate(newDate)
+      const newTimeRange = { from: moment(newDate), to: moment(toDate) }
+      returnTimeRangeCallback(newTimeRange)
+    },
+    [returnTimeRangeCallback, toDate]
+  )
 
-    const newDate = new Date(currentDate)
-    setFromDate(newDate)
-    const newTimeRange = { from: moment(newDate), to: moment(toDate) }
-    returnTimeRangeCallback(newTimeRange)
-  }
-  const onToChange = (date: Date) => {
-    const currentDate = date
-
-    const newDate = new Date(currentDate)
-    setToDate(new Date(currentDate))
-    const newTimeRange = { from: moment(fromDate), to: moment(newDate) }
-    returnTimeRangeCallback(newTimeRange)
-  }
+  const onToChange = useCallback(
+    (date: Date) => {
+      const currentDate = date
+      const newDate = new Date(currentDate)
+      setToDate(new Date(currentDate))
+      const newTimeRange = { from: moment(fromDate), to: moment(newDate) }
+      returnTimeRangeCallback(newTimeRange)
+    },
+    [fromDate, returnTimeRangeCallback]
+  )
   useEffect(() => {
     const date = new Date(fromDate)
     date.setMinutes(date.getMinutes() + 30)
@@ -54,7 +78,7 @@ const TimeSelectionView: React.FC<Props> = ({
       const newTimeRange = { from: moment(fromDate), to: moment(toDate) }
       returnTimeRangeCallback(newTimeRange)
     }
-  }, [fromDate])
+  }, [fromDate, returnTimeRangeCallback, toDate])
 
   return (
     <View>
@@ -80,26 +104,5 @@ const TimeSelectionView: React.FC<Props> = ({
     </View>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    paddingVertical: 20
-  },
-  toContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10
-  },
-  fromContainer: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingRight: 20,
-    paddingVertical: 10
-  },
-  timeContainer: {
-    marginLeft: 10
-  }
-})
 
 export default TimeSelectionView
