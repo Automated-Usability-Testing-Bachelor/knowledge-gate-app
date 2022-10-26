@@ -89,9 +89,9 @@ const Notifications: React.FC = () => {
         notificationDescription={item.notificationDescription}
         time={item.time}
         onPress={() => {
-          navigation.navigate('ProjectsExpanded', { item })
+          // navigation.navigate('ProjectsExpanded', { item })
           const ArrayElement = findArrayElementByTitle(item.projectTitle)
-          // navigation.navigate('ProjectsExpanded', { ArrayElement.title })
+          navigation.navigate('ProjectsExpanded', { item: ArrayElement })
           console.log(ArrayElement)
           // console.log(findArrayElementByTitle(item.ProjectTitle))
         }}
