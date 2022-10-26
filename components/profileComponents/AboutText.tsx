@@ -3,6 +3,24 @@ import React from 'react'
 import ReadMore from 'react-native-read-more-text'
 import Colors from '../../constants/Colors'
 
+const styles = StyleSheet.create({
+  ContentHeader: {
+    fontSize: 16,
+    fontFamily: 'Serif-Medium',
+    color: Colors.blue.color
+  },
+  aboutText: {
+    fontSize: 12,
+    fontFamily: 'Sans-Regular'
+  },
+  readText: {
+    fontSize: 13,
+    color: Colors.red.color,
+    fontFamily: 'Sans-Regular',
+    textDecorationLine: 'underline'
+  }
+})
+
 const AboutText = ({ about }: any) => {
   const renderTruncatedFooter = (handlePress: any) => (
     <Text style={styles.readText} onPress={handlePress}>
@@ -29,23 +47,5 @@ const AboutText = ({ about }: any) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  ContentHeader: {
-    fontSize: 16,
-    fontFamily: 'Serif-Medium',
-    color: Colors.blue.color
-  },
-  aboutText: {
-    fontSize: 12,
-    fontFamily: 'Sans-Regular'
-  },
-  readText: {
-    fontSize: 13,
-    color: Colors.red.color,
-    fontFamily: 'Sans-Regular',
-    textDecorationLine: 'underline'
-  }
-})
 
 export default AboutText

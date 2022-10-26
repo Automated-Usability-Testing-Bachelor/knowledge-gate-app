@@ -167,6 +167,7 @@ const SwipeableAvilabilityView: React.FC<Props> = ({
   return (
     <View style={styles.container}>
       <SwipeListView
+        useNativeDriver
         useFlatList
         swipeToOpenPercent={10}
         swipeToClosePercent={10}
@@ -175,6 +176,10 @@ const SwipeableAvilabilityView: React.FC<Props> = ({
         keyExtractor={(rowData) => {
           return rowData.id.toString()
         }}
+        previewRowKey={availabilities[0]?.id.toString()}
+        previewDuration={750}
+        previewOpenDelay={0}
+        previewOpenValue={200}
         renderItem={renderItem}
         renderHiddenItem={renderHiddenItem}
         ListEmptyComponent={

@@ -1,6 +1,7 @@
 import React from 'react'
 import { ScrollView } from 'react-native'
 import BackgroundTemplate from '../components/BackgroundTemplate'
+// eslint-disable-next-line import/no-cycle
 import ProfileHeader from '../components/profileComponents/ProfileHeader'
 import ProfileBody from '../components/profileComponents/ProfileBody'
 import Colors from '../constants/Colors'
