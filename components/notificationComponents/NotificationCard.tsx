@@ -81,6 +81,7 @@ const Notifications: React.FC = () => {
         notificationDescription={item.notificationDescription}
         time={item.time}
         onPress={() => {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           navigation.navigate('ProjectsExpanded', { item })
         }}
@@ -89,11 +90,11 @@ const Notifications: React.FC = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={styles.notificationCardContainer}>
       <FlatList
         data={NotificationsData}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.projectTitle}
       />
     </View>
   )
