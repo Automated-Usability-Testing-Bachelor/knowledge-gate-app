@@ -10,12 +10,14 @@ import { useNavigation } from '@react-navigation/native'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
 import Colors from '../../constants/Colors'
 import NotificationsData from '../../data/NotificationsData.json'
+import ProjectsData from '../../data/ProjectsData.json'
+import { formatDate } from '../utils/formatDate'
 
 const styles = StyleSheet.create({
   notificationCardContainer: {
     paddingHorizontal: 10,
     paddingVertical: 10,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     marginVertical: 5,
     dropShadow: 25,
     borderRadius: 5,
@@ -24,8 +26,9 @@ const styles = StyleSheet.create({
     height: 70,
     borderColor: 'rgba(0, 27, 114, 0.3)',
     borderWidth: 1,
+    display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   time: {
@@ -38,10 +41,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Sans-Regular',
     color: Colors.blue.color,
-    width: '60%'
+    width: '75%'
   },
   arrow: {
-    width: '20%',
+    width: '5%',
     alignItems: 'flex-end'
   }
 })
@@ -61,7 +64,7 @@ const NotificationCard: React.FC<Props> = ({
       onPress={onPress}
     >
       <Text style={styles.time} numberOfLines={3}>
-        {time}
+        {formatDate(time)}
       </Text>
       <Text style={styles.notificationDescription}>
         {notificationDescription}
@@ -75,15 +78,21 @@ const NotificationCard: React.FC<Props> = ({
 
 const Notifications: React.FC = () => {
   const navigation = useNavigation()
+
   const renderItem = ({ item }: any) => {
+    function findArrayElementByTitle() {
+      return ProjectsData.find((element) => {
+        return element.title === item.projectTitle
+      })
+    }
+    const ArrayElement = findArrayElementByTitle()
+
     return (
       <NotificationCard
         notificationDescription={item.notificationDescription}
         time={item.time}
         onPress={() => {
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          navigation.navigate('ProjectsExpanded', { item })
+          navigation.navigate('ProjectsExpanded', { item: ArrayElement })
         }}
       />
     )

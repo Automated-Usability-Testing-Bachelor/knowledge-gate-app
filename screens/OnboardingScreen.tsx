@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -49,7 +51,7 @@ const OnboardingScreen = () => {
         <View style={styles.buttonsContainer}>
           <KggButton
             color={'blue'}
-            name={'skip'}
+            name={'Skip'}
             // eslint-disable-next-line react/jsx-no-bind
             onPress={() => {
               onPressSkip()

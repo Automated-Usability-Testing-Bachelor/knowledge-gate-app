@@ -16,7 +16,7 @@ import Colors from '../constants/Colors'
 import ProfilePublicationsClinicalTrialsScreen from '../screens/ProfilePublicationsClinicalTrialsScreen'
 import InvoiceScreen from '../screens/InvoiceScreen'
 import { StackParamList } from './StackParamList'
-import NotificationScreen from '../screens/notificationScreen'
+import NotificationScreen from '../screens/NotificationScreen'
 
 const Stack = createStackNavigator<StackParamList>()
 

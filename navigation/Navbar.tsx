@@ -3,16 +3,46 @@ import * as React from 'react'
 import { Platform, StyleSheet, View } from 'react-native'
 import CalendarScreen from '../screens/CalendarScreen'
 import ProjectsScreen from '../screens/ProjectsScreen'
-import NotFoundScreen from '../screens/NotFoundScreen'
 import ProfileScreen from '../screens/ProfileScreen'
 import Colors from '../constants/Colors'
 import HeaderStyles from '../components/navigationComponents/HeaderStyles'
 import KLogo from '../assets/logos/Logomark/KGG_Logomark_Blue_RGB.svg'
 import Icons from '../components/navigationComponents/Icons'
 import InvoiceScreen from '../screens/InvoiceScreen'
-import NotificationScreen from '../screens/notificationScreen'
+import NotificationScreen from '../screens/NotificationScreen'
+
+const styles = StyleSheet.create({
+  tabBarItemStyle: {
+    alignItems: 'center',
+    paddingBottom: 5,
+    marginRight: 5,
+    marginLeft: 5,
+    height: 55
+  },
+  tabBarStyle: {
+    backgroundColor: Colors.offWhite.color,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0, 27, 114, 0.6)',
+    ...Platform.select({
+      android: {
+        paddingBottom: 60
+      }
+    })
+  },
+  tabBarLabelStyle: {
+    fontSize: 9
+  }
+})
 
 const BottomTab = createBottomTabNavigator()
+
+const HeaderLeftNavbar: React.FC = () => {
+  return (
+    <View style={{ paddingLeft: 20 }}>
+      <KLogo width={30} height={30} />
+    </View>
+  )
+}
 
 const BottomTabNavigator = () => {
   return (
@@ -27,15 +57,7 @@ const BottomTabNavigator = () => {
         headerStyle: HeaderStyles.headerStyle,
         headerTitleStyle: HeaderStyles.headerTitleStyle,
         headerTitleAlign: 'center',
-        headerLeft: () => {
-          return (
-            <View style={{ paddingLeft: 20 }}>
-              <KLogo width={30} height={30} />
-            </View>
-          )
-        }
-        // headerTitle: "",
-        // headerRight: () => HeaderTitleRightNavBar(),
+        headerLeft: HeaderLeftNavbar
       }}
     >
       <BottomTab.Screen
@@ -96,28 +118,5 @@ const BottomTabNavigator = () => {
     </BottomTab.Navigator>
   )
 }
-
-const styles = StyleSheet.create({
-  tabBarItemStyle: {
-    alignItems: 'center',
-    paddingBottom: 5,
-    marginRight: 5,
-    marginLeft: 5,
-    height: 55
-  },
-  tabBarStyle: {
-    backgroundColor: Colors.offWhite.color,
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(0, 27, 114, 0.6)',
-    ...Platform.select({
-      android: {
-        paddingBottom: 60
-      }
-    })
-  },
-  tabBarLabelStyle: {
-    fontSize: 9
-  }
-})
 
 export default BottomTabNavigator
