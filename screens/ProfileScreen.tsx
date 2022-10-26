@@ -1,6 +1,7 @@
 import React from 'react'
-import { ImageSourcePropType, ScrollView } from 'react-native'
+import { ScrollView } from 'react-native'
 import BackgroundTemplate from '../components/BackgroundTemplate'
+// eslint-disable-next-line import/no-cycle
 import ProfileHeader from '../components/profileComponents/ProfileHeader'
 import ProfileBody from '../components/profileComponents/ProfileBody'
 import Colors from '../constants/Colors'
@@ -31,8 +32,6 @@ export type ExtraInfo = {
 }
 
 const ProfileScreen = () => {
-  console.log(profileData)
-
   return (
     <ScrollView style={{ backgroundColor: Colors.warmGrey.color }}>
       <BackgroundTemplate

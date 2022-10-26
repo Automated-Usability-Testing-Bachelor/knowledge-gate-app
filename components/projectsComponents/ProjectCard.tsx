@@ -10,6 +10,36 @@ import {
 import Colors from '../../constants/Colors'
 import projectData from '../../data/ProjectsData.json'
 
+const styles = StyleSheet.create({
+  container: {
+    height: '100%'
+  },
+  ProjectCardContainer: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    marginHorizontal: 20,
+    marginVertical: 5,
+    dropShadow: 25,
+    borderRadius: 5,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    pressable: true,
+    height: 100,
+    borderColor: 'rgba(0, 27, 114, 0.3)',
+    borderWidth: 1
+  },
+  title: {
+    fontSize: 14,
+    color: Colors.blue.color,
+    fontFamily: 'Sans-Medium'
+  },
+  description: {
+    fontSize: 12,
+    fontFamily: 'Sans-Regular',
+    marginVertical: 10,
+    color: Colors.black.color
+  }
+})
+
 const ProjectCard = ({ item, onPress }: any) => (
   <TouchableOpacity style={styles.ProjectCardContainer} onPress={onPress}>
     <Text style={styles.title}>{item.title}</Text>
@@ -44,33 +74,3 @@ const Projects = () => {
 }
 
 export default Projects
-
-const styles = StyleSheet.create({
-  container: {
-    height: '100%'
-  },
-  ProjectCardContainer: {
-    paddingHorizontal: 10,
-    paddingVertical: 10,
-    marginHorizontal: 20,
-    marginVertical: 5,
-    dropShadow: 25,
-    borderRadius: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    pressable: true,
-    height: 100,
-    borderColor: 'rgba(0, 27, 114, 0.3)',
-    borderWidth: 1
-  },
-  title: {
-    fontSize: 14,
-    color: Colors.blue.color,
-    fontFamily: 'Sans-Medium'
-  },
-  description: {
-    fontSize: 12,
-    fontFamily: 'Sans-Regular',
-    marginVertical: 10,
-    color: Colors.black.color
-  }
-})
