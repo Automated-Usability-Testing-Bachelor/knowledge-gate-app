@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React, { useRef, useState } from 'react'
 import {
   Animated,
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
 })
 
 const OnboardCarouselScreen = () => {
-  const [fadeAnim, setFadeAnim] = useState(new Animated.Value(1))
+  const [fadeAnim] = useState(new Animated.Value(1))
 
   const animationFadeIn = Animated.timing(fadeAnim, {
     toValue: 1,
@@ -136,12 +137,12 @@ const OnboardCarouselScreen = () => {
   const navigation = useNavigation()
 
   const onPressBack = () => {
-    if (isCarousel != null) {
+    if (isCarousel.current != null) {
       isCarousel.current.snapToPrev()
     }
   }
   const onPressForward = () => {
-    if (isCarousel != null) {
+    if (isCarousel.current != null) {
       isCarousel.current.snapToNext()
     }
   }
@@ -174,8 +175,8 @@ const OnboardCarouselScreen = () => {
           inactiveSlideOpacity={0}
           sliderWidth={SLIDER_WIDTH}
           itemWidth={ITEM_WIDTH}
-          onSnapToItem={(index) => {
-            setIndex(index)
+          onSnapToItem={(_index: React.SetStateAction<number>) => {
+            setIndex(_index)
             animationFadeIn.start()
           }}
           lockScrollWhileSnapping

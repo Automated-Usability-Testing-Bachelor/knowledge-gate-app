@@ -1,135 +1,136 @@
-import React, { useState, useEffect } from "react";
-import {
-  View,
-  
-  StyleSheet,
-  Animated,
-  
-} from "react-native";
-import { SwipeListView } from "react-native-swipe-list-view";
+import React, { useState, useEffect } from 'react'
+import { View, StyleSheet, Animated } from 'react-native'
+import { SwipeListView } from 'react-native-swipe-list-view'
+import moment from 'moment'
 import {
   deleteAvailability,
-  getAvailabilitiesFromDay, Availability
-} from "../../../mocks/CalendarMockData";
-import VisibleItem, { Data } from "./VisibleItem";
-import HiddenItemWithActions from "./HiddenItemWithActions";
-import moment from "moment";
-import NoAvailability from "../../NoDataComponents/NoAvailabilities";
+  getAvailabilitiesFromDay,
+  Availability
+} from '../../../mocks/CalendarMockData'
+import VisibleItem, { Data } from './VisibleItem'
+import HiddenItemWithActions from './HiddenItemWithActions'
+import NoAvailability from '../../NoDataComponents/NoAvailabilities'
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   backTextWhite: {
-    color: "#FFF",
+    color: '#FFF'
   },
   title: {
     fontSize: 14,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 5,
-    color: "#666",
+    color: '#666'
   },
   details: {
     fontSize: 12,
-    color: "#999",
+    color: '#999'
   },
   box: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    backgroundColor: "#FFF",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#FFF',
     padding: 15,
     borderRadius: 10,
-    overflow: "visible",
+    overflow: 'visible'
   },
   clockText: {
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   textContainer: {
-    alignItems: "center",
-    height: 24,
+    alignItems: 'center',
+    height: 24
   },
   NoAvailabilityContainer: {
     paddingHorizontal: 25,
     paddingVertical: 10
   }
-});
+})
 
 export type Props = {
   currentDate: moment.Moment
-  onEditCallback: (id: string| number[] ) => void
+  onEditCallback: (id: string | number[]) => void
 }
 
-const SwipeableAvilabilityView: React.FC<Props> = ({ currentDate, onEditCallback }) => {
-  const [availabilities, setAvailabilities] = useState<Availability[]>([]);
+const SwipeableAvilabilityView: React.FC<Props> = ({
+  currentDate,
+  onEditCallback
+}) => {
+  const [availabilities, setAvailabilities] = useState<Availability[]>([])
   useEffect(() => {
-    let data = getAvailabilitiesFromDay(currentDate);
+    const data = getAvailabilitiesFromDay(currentDate)
+
     if (data) {
       data.availabilities.map((item, index) => ({
         key: `${item.id}`,
         from: item.from,
-        to: item.to,
+        to: item.to
       })),
-        setAvailabilities(data.availabilities);
+        setAvailabilities(data.availabilities)
     } else {
-      setAvailabilities([]);
+      setAvailabilities([])
     }
-  }, [currentDate]);
+  }, [currentDate])
   const closeRow = (rowMap, rowKey: string | number[]) => {
-    console.log(rowKey);
+    console.log(rowKey)
+
     if (rowMap[rowKey]) {
-      rowMap[rowKey].closeRow();
+      rowMap[rowKey].closeRow()
     }
-  };
+  }
   const editRow = (rowMap, rowKey: string | number[]) => {
-    closeRow(rowMap, rowKey);
-    onEditCallback(rowKey);
-  };
+    closeRow(rowMap, rowKey)
+    onEditCallback(rowKey)
+  }
 
   const deleteRow = (rowMap, rowKey: string | number[]) => {
-    closeRow(rowMap, rowKey);
-    const newData = [...availabilities];
-    const prevIndex = availabilities.findIndex((item) => item.id === rowKey);
-    newData.splice(prevIndex, 1);
-    setAvailabilities(newData);
-    deleteAvailability(rowKey);
-  };
+    closeRow(rowMap, rowKey)
+    const newData = [...availabilities]
+    const prevIndex = availabilities.findIndex((item) => item.id === rowKey)
+    newData.splice(prevIndex, 1)
+    setAvailabilities(newData)
+    deleteAvailability(rowKey)
+  }
   const onRowDidOpen = (index: number) => {
-    console.log("This row opened", index);
-  };
+    console.log('This row opened', index)
+  }
 
   const onLeftActionStatusChange = (rowKey: string) => {
-    console.log("onLeftActionStatusChange", rowKey);
-  };
+    console.log('onLeftActionStatusChange', rowKey)
+  }
 
   const onRightActionStatusChange = (rowKey: string) => {
-    console.log("onRightActionStatusChange", rowKey);
-  };
+    console.log('onRightActionStatusChange', rowKey)
+  }
 
   const onRightAction = (rowKey: string) => {
-    console.log("onRightAction", rowKey);
-  };
+    console.log('onRightAction', rowKey)
+  }
 
   const onLeftAction = (rowKey: string) => {
-    console.log("onLeftAction", rowKey);
-  };
+    console.log('onLeftAction', rowKey)
+  }
 
   const renderItem = (data: Data, rowMap: any) => {
-    const rowHeightAnimatedValue = new Animated.Value(60);
+    const rowHeightAnimatedValue = new Animated.Value(60)
+
     return (
       <VisibleItem
         onEditCallback={onEditCallback}
         data={data}
         rowHeightAnimatedValue={rowHeightAnimatedValue}
         removeRow={() => {
-          deleteRow(rowMap, data.item.id);
+          deleteRow(rowMap, data.item.id)
         }}
       />
-    );
-  };
+    )
+  }
 
   const renderHiddenItem = (data: any, rowMap) => {
-    const rowActionAnimatedValue = new Animated.Value(75);
-    const rowHeightAnimatedValue = new Animated.Value(60);
+    const rowActionAnimatedValue = new Animated.Value(75)
+    const rowHeightAnimatedValue = new Animated.Value(60)
 
     return (
       <HiddenItemWithActions
@@ -139,11 +140,11 @@ const SwipeableAvilabilityView: React.FC<Props> = ({ currentDate, onEditCallback
         rowHeightAnimatedValue={rowHeightAnimatedValue}
         onEdit={() => editRow(rowMap, data.item.id)}
         onDelete={() => {
-          deleteRow(rowMap, data.item.id);
+          deleteRow(rowMap, data.item.id)
         }}
       />
-    );
-  };
+    )
+  }
 
   return (
     <View style={styles.container}>
@@ -154,7 +155,7 @@ const SwipeableAvilabilityView: React.FC<Props> = ({ currentDate, onEditCallback
         closeOnScroll={false}
         data={availabilities}
         keyExtractor={(rowData) => {
-          return rowData.id.toString();
+          return rowData.id.toString()
         }}
         renderItem={renderItem}
         renderHiddenItem={renderHiddenItem}
@@ -177,13 +178,12 @@ const SwipeableAvilabilityView: React.FC<Props> = ({ currentDate, onEditCallback
         onRightAction={onRightAction}
         onLeftActionStatusChange={onLeftActionStatusChange}
         onRightActionStatusChange={onRightActionStatusChange}
-        swipeGestureBegan={()=> {
-          console.log("began")
+        swipeGestureBegan={() => {
+          console.log('began')
         }}
       />
     </View>
-  );
-};
+  )
+}
 
-export default SwipeableAvilabilityView;
-
+export default SwipeableAvilabilityView
