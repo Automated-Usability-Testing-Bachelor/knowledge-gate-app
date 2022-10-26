@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   notificationCardContainer: {
     paddingHorizontal: 10,
     paddingVertical: 10,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
     marginVertical: 5,
     dropShadow: 25,
     borderRadius: 5,
