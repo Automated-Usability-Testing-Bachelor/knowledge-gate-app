@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   tabBarItemStyle: {
     alignItems: 'center',
     paddingBottom: 5,
+    paddingTop: 5,
     marginRight: 5,
     marginLeft: 5,
     height: 55
