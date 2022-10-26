@@ -1,9 +1,12 @@
 import React from 'react'
-import { Image, StyleSheet, View } from 'react-native'
+import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native'
 
-const OnboardingImage = ({ height, width, iconSource }) => {
-  // const icon = require("../assets/logos/Primary_Logo/KGG_PrimaryLogo_White_RGB_1.png");
-
+export type IconObject = {
+  source: ImageSourcePropType | undefined
+  height: number
+  width: number
+}
+const OnboardingImage: React.FC<IconObject> = ({ height, width, source }) => {
   return (
     <View style={styles.container}>
       <Image
@@ -12,7 +15,7 @@ const OnboardingImage = ({ height, width, iconSource }) => {
           height,
           width
         }}
-        source={iconSource}
+        source={source}
       />
     </View>
   )

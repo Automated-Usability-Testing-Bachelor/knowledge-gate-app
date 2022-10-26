@@ -8,8 +8,7 @@ import {
   View
 } from 'react-native'
 import Colors from '../../constants/Colors'
-
-const projectData = require('../../data/projectsData.json')
+import projectData from '../../data/ProjectsData.json'
 
 const ProjectCard = ({ item, onPress }: any) => (
   <TouchableOpacity style={styles.ProjectCardContainer} onPress={onPress}>
@@ -20,14 +19,13 @@ const ProjectCard = ({ item, onPress }: any) => (
   </TouchableOpacity>
 )
 
-export default function Projects() {
+const Projects = () => {
   const navigation = useNavigation()
   const renderItem = ({ item }: any) => {
     return (
       <ProjectCard
         item={item}
         onPress={() => {
-          // @ts-ignore
           navigation.navigate('ProjectsExpanded', { item })
         }}
       />
@@ -44,6 +42,8 @@ export default function Projects() {
     </View>
   )
 }
+
+export default Projects
 
 const styles = StyleSheet.create({
   container: {

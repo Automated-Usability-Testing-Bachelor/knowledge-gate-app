@@ -1,29 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { StyleSheet, View } from "react-native";
-import Colors from "../../../constants/Colors";
-import { BlueSerifHeader2 } from "../../Texts/Headers";
-import Modal, { OnSwipeCompleteParams } from "react-native-modal";
-import PanResponderGestureState from "react-native-modal";
-import TimeSelectionView from "./TimeSelectionView";
-import RedButton from "../../RedButton";
-import moment from "moment";
-import { DateTimeRange } from "../CalendarBody";
-import { MomentTimeRange } from "../../../mocks/CalendarMockData";
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, View } from 'react-native'
+import Modal, { OnSwipeCompleteParams } from 'react-native-modal'
+import PanResponderGestureState from 'react-native-modal'
+import moment from 'moment'
+import Colors from '../../../constants/Colors'
+import { BlueSerifHeader2 } from '../../Texts/Headers'
+import TimeSelectionView from './TimeSelectionView'
+import RedButton from '../../RedButton'
+import { DateTimeRange } from '../CalendarBody'
+import { MomentTimeRange } from '../../../mocks/CalendarMockData'
 
 export type Props = {
   showModal: boolean
   closeModal: Function
   getTimeRangeCallback: Function
   modalStartTimeRange: DateTimeRange
-  isEditing?: boolean
 }
 
 const ScheduleAvailabilityModal: React.FC<Props> = ({
   showModal,
   closeModal,
   getTimeRangeCallback,
-  modalStartTimeRange,
-  isEditing
+  modalStartTimeRange
 }) => {
   const initialTimeRange: MomentTimeRange = {
     from: moment(modalStartTimeRange.from),
@@ -49,7 +47,7 @@ const ScheduleAvailabilityModal: React.FC<Props> = ({
         isVisible={showModal}
         backdropOpacity={0.3}
         onBackdropPress={() => closeModal()}
-        swipeDirection={["down"]}
+        swipeDirection={['down']}
         style={styles.modal}
         onSwipeComplete={() => closeModal()}
         useNativeDriverForBackdrop
@@ -89,16 +87,3 @@ const styles = StyleSheet.create({
 })
 
 export default ScheduleAvailabilityModal
-
-function roundMinutes(date: Date) {
-  date.setHours(date.getHours() + Math.round(date.getMinutes() / 60))
-  date.setMinutes(0, 0, 0) // Resets also seconds and milliseconds
-
-  return date
-}
-
-function addHours(date: Date, hours: number) {
-  date.setHours(date.getHours() + hours)
-
-  return date
-}

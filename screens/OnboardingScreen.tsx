@@ -7,41 +7,6 @@ import KggButton from '../components/KggButton'
 
 import OnboardingView from '../components/onboarding/OnboardingView'
 
-const OnboardingScreen = ({}) => {
-  const headerText = 'Welcome to our Expert Application'
-  const appDevImageSource = require('../components/onboarding/app_development.png')
-  const navigation = useNavigation()
-  const onPressSkip = () => {
-    navigation.navigate('Root')
-  }
-  const onPressGetStarted = () => {
-    navigation.navigate('Carousel')
-  }
-  const icon = { source: appDevImageSource, height: 260, width: 326 }
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <OnboardingView headerText={headerText} icon={icon} />
-      <FadeInView duration={3000}>
-        <View style={styles.buttonsContainer}>
-          <KggButton
-            color="blue"
-            name="skip"
-            onPress={onPressSkip}
-            width={150}
-          />
-          <KggButton
-            color="red"
-            name="Get Started"
-            onPress={onPressGetStarted}
-            width={150}
-          />
-        </View>
-      </FadeInView>
-    </SafeAreaView>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#FFFFFF',
@@ -64,5 +29,44 @@ const styles = StyleSheet.create({
     marginTop: 30
   }
 })
+
+const OnboardingScreen = () => {
+  const headerText = 'Welcome to our Expert Application'
+  const appDevImageSource = require('../components/onboarding/app_development.png')
+  const navigation = useNavigation()
+  const onPressSkip = () => {
+    navigation.navigate('Root')
+  }
+  const onPressGetStarted = () => {
+    navigation.navigate('Carousel')
+  }
+  const icon = { source: appDevImageSource, height: 260, width: 326 }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <OnboardingView headerText={headerText} icon={icon} />
+      <FadeInView duration={3000}>
+        <View style={styles.buttonsContainer}>
+          <KggButton
+            color={'blue'}
+            name={'skip'}
+            // eslint-disable-next-line react/jsx-no-bind
+            onPress={() => {
+              onPressSkip()
+            }}
+            width={150}
+          />
+          <KggButton
+            color={'red'}
+            name={'Get Started'}
+            // eslint-disable-next-line react/jsx-no-bind
+            onPress={onPressGetStarted}
+            width={150}
+          />
+        </View>
+      </FadeInView>
+    </SafeAreaView>
+  )
+}
 
 export default OnboardingScreen

@@ -16,5 +16,11 @@ export default {
   },
   warmGrey: {
     color: '#DADADA'
+  },
+  yellow: {
+    color: '#EAAD12'
+  },
+  green: {
+    color: '#3CB441'
   }
 }

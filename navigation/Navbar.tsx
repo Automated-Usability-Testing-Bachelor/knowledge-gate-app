@@ -10,13 +10,14 @@ import HeaderStyles from '../components/navigationComponents/HeaderStyles'
 import KLogo from '../assets/logos/Logomark/KGG_Logomark_Blue_RGB.svg'
 import Icons from '../components/navigationComponents/Icons'
 import InvoiceScreen from '../screens/InvoiceScreen'
+import NotificationScreen from '../screens/notificationScreen'
 
 const BottomTab = createBottomTabNavigator()
 
 const BottomTabNavigator = () => {
   return (
     <BottomTab.Navigator
-      initialRouteName="Calendar"
+      initialRouteName={'Calendar'}
       screenOptions={{
         tabBarActiveTintColor: Colors.red.color,
         tabBarInactiveTintColor: 'rgba(0, 27, 114, 0.6)',
@@ -38,57 +39,57 @@ const BottomTabNavigator = () => {
       }}
     >
       <BottomTab.Screen
-        name="Projects"
+        name={'Projects'}
         component={ProjectsScreen}
         options={{
           title: 'Projects',
           headerShown: true,
           tabBarIcon: ({ focused, color }) => (
-            <Icons name='Projects' color={color} focused={focused} />
+            <Icons name={'Projects'} color={color} focused={focused} />
           )
         }}
       />
       <BottomTab.Screen
-        name="Invoice"
+        name={'Invoice'}
         component={InvoiceScreen}
         options={{
-          title: 'Invoice',
+          title: 'Invoices',
           headerShown: true,
           tabBarIcon: ({ focused, color }) => (
-            <Icons name='Invoice' color={color} focused={focused} />
+            <Icons name={'Invoice'} color={color} focused={focused} />
           )
         }}
       />
       <BottomTab.Screen
-        name="Calendar"
+        name={'Calendar'}
         component={CalendarScreen}
         options={{
           title: 'Calendar',
           headerShown: true,
           tabBarIcon: ({ focused, color }) => (
-            <Icons name='Calendar' color={color} focused={focused} />
+            <Icons name={'Calendar'} color={color} focused={focused} />
           )
         }}
       />
       <BottomTab.Screen
-        name="Notifications"
-        component={NotFoundScreen}
+        name={'Notifications'}
+        component={NotificationScreen}
         options={{
           title: 'Notifications',
           headerShown: true,
           tabBarIcon: ({ focused, color }) => (
-            <Icons name='Notifications' color={color} focused={focused} />
+            <Icons name={'Notifications'} color={color} focused={focused} />
           )
         }}
       />
       <BottomTab.Screen
-        name="Profile"
+        name={'Profile'}
         component={ProfileScreen}
         options={{
           title: 'Profile',
           headerShown: true,
           tabBarIcon: ({ focused, color }) => (
-            <Icons name='Profile' color={color} focused={focused} />
+            <Icons name={'Profile'} color={color} focused={focused} />
           )
         }}
       />

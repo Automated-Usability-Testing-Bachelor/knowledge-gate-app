@@ -40,21 +40,20 @@ const allCalendarData: DateWithAvailability[] = [
 ]
 
 export const getCalendarDataFromCurrentMonth = (date: moment.Moment) => {
-  const availabilities = []
-  for (let i = 0; i < allCalendarData.length; i++) {
-    if (
-      allCalendarData[i].date.isSame(date, 'year') &&
-      allCalendarData[i].date.isSame(date, 'month')
-    ) {
-      availabilities.push({ ...allCalendarData[i] })
+  const availabilities: DateWithAvailability[] = []
+    for (let i = 0; i < allCalendarData.length; i++) {
+      if (
+        allCalendarData[i].date.isSame(date, 'year') &&
+        allCalendarData[i].date.isSame(date, 'month')
+      ) {
+        availabilities.push({ ...allCalendarData[i] })
+      }
     }
-  }
-
   return availabilities
 }
 
 export const getAvailabilitiesFromDay = (day: moment.Moment) => {
-  let availabilities: DateWithAvailability | undefined = undefined;
+  let availabilities: DateWithAvailability | undefined
   for (let i = 0; i < allCalendarData.length; i++) {
     if (allCalendarData[i].date.isSame(day, 'day')) {
       availabilities = allCalendarData[i]
@@ -148,7 +147,3 @@ const appendCalendarData = (element: DateWithAvailability) => {
   allCalendarData.push(element)
 }
 
-const displayCalendarData = (methodName: string) => {
-  console.log(methodName)
-  console.log(JSON.stringify(allCalendarData))
-}

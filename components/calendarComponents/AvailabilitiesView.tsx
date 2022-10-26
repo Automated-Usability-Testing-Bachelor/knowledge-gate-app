@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { FlatList, StyleSheet, View } from 'react-native'
 
-import AvailabilityItem from "./AvailabilityItem";
+import moment from 'moment'
+import AvailabilityItem from './AvailabilityItem'
 import {
   getAvailabilitiesFromDay,
   Availability,
-  DateWithAvailability,
-} from "../../mocks/CalendarMockData";
+  DateWithAvailability
+} from '../../mocks/CalendarMockData'
 
-import NoAvailability from "../NoDataComponents/NoAvailabilities";
-import moment from "moment";
+import NoAvailability from '../NoDataComponents/NoAvailabilities'
 
 export type Props = {
-  currentDate: moment.Moment;
-  onEditCallback: Function;
-  header: React.ReactElement;
-  footer: React.ReactElement;
-};
+  currentDate: moment.Moment
+  onEditCallback: Function
+  header: React.ReactElement
+  footer: React.ReactElement
+}
 const AvailabilitiesView: React.FC<Props> = ({
   currentDate,
   onEditCallback,
@@ -25,24 +25,30 @@ const AvailabilitiesView: React.FC<Props> = ({
 }) => {
   const [currentAvailabilities, setCurrentAvailabilities] = useState<
     Availability[]
-  >([]);
+  >([])
 
   useEffect(() => {
     updateAvailabilityOnCurrentDate(currentDate)
   }, [currentDate])
 
   const updateAvailabilityOnCurrentDate = (currentDate: moment.Moment) => {
-    let data: DateWithAvailability | undefined = getAvailabilitiesFromDay(currentDate);
+    const data: DateWithAvailability | undefined =
+      getAvailabilitiesFromDay(currentDate)
+
     if (data != undefined) {
-      setCurrentAvailabilities(data.availabilities);
+      setCurrentAvailabilities(data.availabilities)
     } else if (data === undefined) {
-      setCurrentAvailabilities([]);
+      setCurrentAvailabilities([])
     }
   }
 
-  const onDeleteAvailability = (id: string, currentAvailabilities: DateWithAvailability) => {
-    //update availabilities
-    let data = currentAvailabilities;
+  const onDeleteAvailability = (
+    id: string,
+    currentAvailabilities: DateWithAvailability
+  ) => {
+    // update availabilities
+    const data = currentAvailabilities
+
     if (
       data === undefined ||
       data.availabilities.length === 0 ||

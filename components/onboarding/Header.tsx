@@ -3,7 +3,11 @@ import { StyleSheet, View } from 'react-native'
 import FadeInView from '../animatedComponents/FadeInView'
 import { BlueSerifHeader1 } from '../Texts/Headers'
 
-const Header = ({ text }) => {
+export type Props = {
+  text: string
+}
+
+const Header: React.FC<Props> = ({ text }) => {
   return (
     <View style={styles.container}>
       <FadeInView duration={2000}>

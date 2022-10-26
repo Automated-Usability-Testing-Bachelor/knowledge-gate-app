@@ -31,8 +31,6 @@ const ActualCalendar: React.FC<Props> = ({
     moment().startOf('month')
   )
 
-  const expandCircle = useRef(new Animated.Value(0)).current // Initial value
-
   const dateContainsAvailability = (
     day: moment.Moment,
     arr: CustomDateStyle[]
@@ -128,9 +126,9 @@ const ActualCalendar: React.FC<Props> = ({
           }}
           customDatesStyles={customDatesStyles}
           onMonthChange={(currentMonthYear: moment.Moment) => {
-            setSelectedMonthYear(currentMonthYear);
-            changeCustomDatesStyle(selectedMonthYear);
-            currentMonthCallback(currentMonthYear);
+            setSelectedMonthYear(currentMonthYear)
+            changeCustomDatesStyle(selectedMonthYear)
+            currentMonthCallback(currentMonthYear)
           }}
           selectedStartDate={currentSelectedDate}
           textStyle={{ fontFamily: textStyles.blackSerifBody1.fontFamily }}

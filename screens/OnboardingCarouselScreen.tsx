@@ -14,12 +14,22 @@ import OnboardingView from '../components/onboarding/OnboardingView'
 import Colors from '../constants/Colors'
 import Arrow from '../components/onboarding/Arrow'
 import KggButton from '../components/KggButton'
+import { IconObject } from '../components/onboarding/OnboardingImage'
 
 export const SLIDER_WIDTH = Dimensions.get('window').width + 30
 
 export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.8)
 
-const data = [
+export type OnboardingData = OnboardingItem[]
+
+export type OnboardingItem = {
+  id: number
+  headerText: string
+  secondHeaderText: string
+  icon: IconObject
+}
+
+const data: OnboardingData = [
   {
     id: 1,
     headerText: 'Availability',
@@ -72,20 +82,44 @@ const renderItem = ({ item }) => {
   )
 }
 
+const styles = StyleSheet.create({
+  outerContainer: {
+    backgroundColor: '#FFFFFF',
+    display: 'flex',
+    flex: 1,
+    paddingTop: 0,
+    justifyContent: 'center'
+  },
+  inerContainer: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  carouselContainer: {},
+  pagAndArrows: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  skipText: {
+    fontFamily: 'Sans-Regular',
+    fontSize: 18,
+    color: Colors.red.color
+  },
+  buttonSkip: {
+    padding: 10
+  },
+  skipContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    paddingRight: 20,
+    paddingBottom: 5
+  }
+})
+
 const OnboardCarouselScreen = () => {
   const [fadeAnim, setFadeAnim] = useState(new Animated.Value(1))
-  const animation = Animated.sequence([
-    Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 100,
-      useNativeDriver: true
-    }),
-    Animated.timing(fadeAnim, {
-      toValue: 1,
-      duration: 100,
-      useNativeDriver: true
-    })
-  ])
+
   const animationFadeIn = Animated.timing(fadeAnim, {
     toValue: 1,
     duration: 100,
@@ -111,10 +145,12 @@ const OnboardCarouselScreen = () => {
       isCarousel.current.snapToNext()
     }
   }
+
   const onPressGetStarted = () => {
     navigation.navigate('Root')
   }
-  const onBeforeSnapToItem = (slideIndex) => {
+
+  const onBeforeSnapToItem = (slideIndex: number) => {
     if (slideIndex === data.length - 1) {
       animationFadeOut.start()
     }
@@ -175,8 +211,8 @@ const OnboardCarouselScreen = () => {
           >
             {index === data.length - 1 ? (
               <KggButton
-                color="red"
-                name="Finish"
+                color={'red'}
+                name={'Finish'}
                 onPress={onPressGetStarted}
               />
             ) : (
@@ -188,40 +224,5 @@ const OnboardCarouselScreen = () => {
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  outerContainer: {
-    backgroundColor: '#FFFFFF',
-    display: 'flex',
-    flex: 1,
-    paddingTop: 0,
-    justifyContent: 'center'
-  },
-  inerContainer: {
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  carouselContainer: {},
-  pagAndArrows: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  skipText: {
-    fontFamily: 'Sans-Regular',
-    fontSize: 18,
-    color: Colors.red.color
-  },
-  buttonSkip: {
-    padding: 10
-  },
-  skipContainer: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    paddingRight: 20,
-    paddingBottom: 5
-  }
-})
 
 export default OnboardCarouselScreen

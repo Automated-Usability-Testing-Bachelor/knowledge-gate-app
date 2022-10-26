@@ -1,8 +1,9 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import Colors from '../../constants/Colors'
+import { ProfileData } from '../../screens/ProfileScreen'
 
-const ProfileHeader = ({ profileInfo }: any) => (
+const ProfileHeader = ({ profileInfo }: ProfileData) => (
   <View style={styles.container}>
     <Image
       source={require('../../assets/images/jeff.jpg')}

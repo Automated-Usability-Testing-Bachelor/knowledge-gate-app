@@ -1,4 +1,13 @@
+import { PixelRatio } from 'react-native'
 import Colors from '../../constants/Colors'
+
+const getFontSize = () => {
+  if (PixelRatio.get() <= 3) {
+    return 16
+  }
+
+  return 20
+}
 
 export default {
   headerStyle: {
@@ -9,6 +18,6 @@ export default {
   headerTitleStyle: {
     color: Colors.blue.color,
     fontFamily: 'Sans-SemiBold',
-    fontSize: 20
+    fontSize: getFontSize()
   }
 }

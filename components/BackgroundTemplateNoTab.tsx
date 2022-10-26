@@ -4,23 +4,22 @@ import Colors from '../constants/Colors'
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: Colors.warmGrey.color,
-    height: '100%'
+    backgroundColor: Colors.warmGrey.color
   }
 })
 
-type BackgroundTemplateProps = {
+type BackgroundTemplateNoTabProps = {
   body: React.ReactNode
   header?: React.ReactNode
 }
 
-const BackgroundTemplate: React.FC<BackgroundTemplateProps> = ({
+const BackgroundTemplateNoTabProps: React.FC<BackgroundTemplateNoTabProps> = ({
   body,
   header
 }) => {
   return (
     <SafeAreaView style={styles.background}>
-      <View style={{ height: '100%' }}>
+      <View style={{ height: '100%', paddingBottom: 0 }}>
         {header}
         {body}
       </View>
@@ -28,4 +27,4 @@ const BackgroundTemplate: React.FC<BackgroundTemplateProps> = ({
   )
 }
 
-export default BackgroundTemplate
+export default BackgroundTemplateNoTabProps

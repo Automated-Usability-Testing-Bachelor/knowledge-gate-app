@@ -17,7 +17,7 @@ const Dialog = ({ title, body }) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.warmGrey.color,
+    backgroundColor: Colors.offWhite.color,
     paddingVertical: 5,
     paddingHorizontal: 10,
     borderRadius: 5,

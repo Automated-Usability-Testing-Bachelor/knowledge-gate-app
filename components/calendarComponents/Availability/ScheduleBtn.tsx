@@ -1,11 +1,11 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
-import RedButton from "../RedButton";
-import PlusIcon from "./PlusIcon";
+import React from 'react'
+import { StyleSheet, View } from 'react-native'
+import RedButton from '../../RedButton'
+import PlusIcon from '../PlusIcon'
 
 export type Props = {
-  ShowModalCallback: () => void;
-};
+  ShowModalCallback: () => void
+}
 const ScheduleBtn: React.FC<Props> = ({ ShowModalCallback }) => {
   return (
     <View style={styles.container}>
@@ -19,10 +19,10 @@ const ScheduleBtn: React.FC<Props> = ({ ShowModalCallback }) => {
         }
       />
     </View>
-  );
-};
+  )
+}
 const styles = StyleSheet.create({
-  container: { paddingHorizontal: 25, marginBottom: 25 },
-});
+  container: { paddingHorizontal: 25, marginBottom: 25 }
+})
 
-export default ScheduleBtn;
+export default ScheduleBtn

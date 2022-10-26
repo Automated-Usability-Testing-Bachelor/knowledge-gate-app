@@ -1,34 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { ReactElement, useCallback, useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import Publications from './tabs/Publications'
 import PubClinButtonGroup from './PubClinButtonGroup'
 import Colors from '../../constants/Colors'
 import ClinicalTrials from './tabs/ClinicalTrials'
-
-const PublicationsAndClinicalTrialsView = () => {
-  const [currentSubject, setCurrentSubject] = useState(undefined)
-  const selectedSubject = (subject) => {
-    setCurrentSubject(subject)
-  }
-
-  useEffect(() => {}, [currentSubject])
-
-  return (
-    <View>
-      <PubClinButtonGroup selectedSubjectCallback={selectedSubject} />
-      <View style={styles.listContainer}>
-        {currentSubject === 'pub' ? (
-          <Publications />
-        ) : currentSubject === 'clin' ? (
-          <ClinicalTrials />
-        ) : (
-          <Text>{'fail'}</Text>
-        )}
-        {/* <Publications /> */}
-      </View>
-    </View>
-  )
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -67,11 +42,32 @@ const styles = StyleSheet.create({
     fontSize: 9
   },
   listContainer: {
-    height: '100%',
     padding: 10,
     backgroundColor: Colors.warmGrey.color,
-    paddingBottom: 165
+    paddingBottom: 90
   }
 })
+
+const PublicationsAndClinicalTrialsView = () => {
+  const [currentSubject, setCurrentSubject] = useState<
+    ReactElement | undefined
+  >(undefined)
+  const selectedSubject = useCallback((subject: string) => {
+    if (subject === 'pub') {
+      setCurrentSubject(<Publications />)
+    } else if (subject === 'clin') {
+      setCurrentSubject(<ClinicalTrials />)
+    } else {
+      setCurrentSubject(<Text>{'fail'}</Text>)
+    }
+  }, [])
+
+  return (
+    <View>
+      <PubClinButtonGroup selectedSubjectCallback={selectedSubject} />
+      <View style={styles.listContainer}>{currentSubject}</View>
+    </View>
+  )
+}
 
 export default PublicationsAndClinicalTrialsView
