@@ -3,10 +3,19 @@ import React, { useEffect, useState } from 'react'
 import { Animated, StyleSheet } from 'react-native'
 import { BlackSansHeader2 } from '../Texts/Headers'
 
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 25,
+    paddingVertical: 20,
+    height: 'auto'
+  }
+})
+
 export type Props = {
   date: moment.Moment
 }
 const CalendarHeaderText: React.FC<Props> = ({ date }) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fadeAnim, setFadeAnim] = useState(new Animated.Value(0))
   const animationFadeIn = Animated.timing(fadeAnim, {
     toValue: 1,
@@ -16,7 +25,7 @@ const CalendarHeaderText: React.FC<Props> = ({ date }) => {
   useEffect(() => {
     animationFadeIn.reset()
     animationFadeIn.start()
-  }, [date])
+  }, [animationFadeIn, date])
 
   return (
     <Animated.View
@@ -31,12 +40,5 @@ const CalendarHeaderText: React.FC<Props> = ({ date }) => {
     </Animated.View>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 25,
-    paddingVertical: 20,
-    height: 'auto'
-  }
-})
 
 export default CalendarHeaderText

@@ -19,15 +19,14 @@ const TimePicker: React.FC<Props> = ({
   onChangecallback,
   minuteInterval
 }) => {
-
   return (
     <View>
       {show ? (
         <DateTimePicker
           value={date}
           minimumDate={new Date()}
-          mode="time"
-          display="default"
+          mode={'time'}
+          display={'default'}
           is24Hour={false}
           onChange={onChangecallback}
           minuteInterval={minuteInterval}

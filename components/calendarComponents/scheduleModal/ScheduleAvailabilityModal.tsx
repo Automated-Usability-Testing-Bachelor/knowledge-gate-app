@@ -1,72 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import Modal, { OnSwipeCompleteParams } from 'react-native-modal'
-import PanResponderGestureState from 'react-native-modal'
+// eslint-disable-next-line import/no-duplicates
+import Modal from 'react-native-modal'
 import moment from 'moment'
 import Colors from '../../../constants/Colors'
 import { BlueSerifHeader2 } from '../../Texts/Headers'
+// eslint-disable-next-line import/no-unresolved
 import TimeSelectionView from './TimeSelectionView'
 import RedButton from '../../RedButton'
+// eslint-disable-next-line import/no-cycle
 import { DateTimeRange } from '../CalendarBody'
 import { MomentTimeRange } from '../../../mocks/CalendarMockData'
 
-export type Props = {
-  showModal: boolean
-  closeModal: Function
-  getTimeRangeCallback: Function
-  modalStartTimeRange: DateTimeRange
-}
-
-const ScheduleAvailabilityModal: React.FC<Props> = ({
-  showModal,
-  closeModal,
-  getTimeRangeCallback,
-  modalStartTimeRange
-}) => {
-  const initialTimeRange: MomentTimeRange = {
-    from: moment(modalStartTimeRange.from),
-    to: moment(modalStartTimeRange.to)
-  }
-  const [cachedTimeRange, setCachedTimeRange] =
-    useState<MomentTimeRange>(initialTimeRange)
-  const getTimeRange = (timeRange: MomentTimeRange) => {
-    setCachedTimeRange(timeRange)
-  }
-
-  const onPressSave = () => {
-    getTimeRangeCallback(cachedTimeRange)
-    closeModal()
-  }
-  useEffect(() => {
-    setCachedTimeRange(initialTimeRange)
-  }, [showModal])
-
-  return (
-    <View>
-      <Modal
-        isVisible={showModal}
-        backdropOpacity={0.3}
-        onBackdropPress={() => closeModal()}
-        swipeDirection={['down']}
-        style={styles.modal}
-        onSwipeComplete={() => closeModal()}
-        useNativeDriverForBackdrop
-      >
-        <View style={styles.containerOuter}>
-          <View style={styles.containerInner}>
-            <BlueSerifHeader2 text="Schedule Availability"></BlueSerifHeader2>
-            <TimeSelectionView
-              returnTimeRangeCallback={getTimeRange}
-              startFrom={modalStartTimeRange.from}
-              startTo={modalStartTimeRange.to}
-            />
-            <RedButton name='Save' onPress={onPressSave} />
-          </View>
-        </View>
-      </Modal>
-    </View>
-  )
-}
 const styles = StyleSheet.create({
   modal: {
     justifyContent: 'flex-end',
@@ -85,5 +30,70 @@ const styles = StyleSheet.create({
     padding: 30
   }
 })
+
+export type Props = {
+  showModal: boolean
+  closeModal: () => void
+  getTimeRangeCallback: (timeRange: MomentTimeRange) => void
+  modalStartTimeRange: DateTimeRange
+}
+
+const ScheduleAvailabilityModal: React.FC<Props> = ({
+  showModal,
+  closeModal,
+  getTimeRangeCallback,
+  modalStartTimeRange
+}) => {
+  const initialTimeRange: MomentTimeRange = {
+    from: moment(modalStartTimeRange.from),
+    to: moment(modalStartTimeRange.to)
+  }
+  const [cachedTimeRange, setCachedTimeRange] =
+    useState<MomentTimeRange>(initialTimeRange)
+  const getTimeRange = useCallback((timeRange: MomentTimeRange) => {
+    setCachedTimeRange(timeRange)
+  }, [])
+  const onBackdropPress = useCallback(() => {
+    closeModal()
+  }, [closeModal])
+  const onSwipeComplete = useCallback(() => {
+    closeModal()
+  }, [closeModal])
+
+  const onPressSave = useCallback(() => {
+    getTimeRangeCallback(cachedTimeRange)
+    closeModal()
+  }, [cachedTimeRange, closeModal, getTimeRangeCallback])
+  useEffect(() => {
+    setCachedTimeRange(initialTimeRange)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showModal])
+
+  return (
+    <View>
+      <Modal
+        isVisible={showModal}
+        backdropOpacity={0.3}
+        onBackdropPress={onBackdropPress}
+        swipeDirection={['down']}
+        style={styles.modal}
+        onSwipeComplete={onSwipeComplete}
+        useNativeDriverForBackdrop
+      >
+        <View style={styles.containerOuter}>
+          <View style={styles.containerInner}>
+            <BlueSerifHeader2 text={'Schedule Availability'} />
+            <TimeSelectionView
+              returnTimeRangeCallback={getTimeRange}
+              startFrom={modalStartTimeRange.from}
+              startTo={modalStartTimeRange.to}
+            />
+            <RedButton name={'Save'} onPress={onPressSave} />
+          </View>
+        </View>
+      </Modal>
+    </View>
+  )
+}
 
 export default ScheduleAvailabilityModal
