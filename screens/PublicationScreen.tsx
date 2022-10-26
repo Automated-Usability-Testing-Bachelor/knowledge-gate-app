@@ -1,14 +1,32 @@
-import React from "react";
-import Background from "../components/BackgroundTemplate";
-import BodyView from "../components/publicationScreen/BodyView";
+import { RouteProp } from '@react-navigation/native'
+import React from 'react'
+import BodyView from '../components/publicationScreen/BodyView'
+import BackgroundNoTab from '../components/BackgroundTemplateNoTab'
 
-const PublicationScreen = (props: any) => {
-    const item = props.route.params.item;
-    return (
-        <Background
-            body={BodyView({item})}
-        />
-    );
+export type Item = {
+  publishDate: string
+  body: string
+  link: string
+  title: string
 }
 
-export default PublicationScreen;
+type Props = {
+  route: RouteProp<{ params: { item: Item } }, 'params'>
+}
+
+const PublicationScreen: React.FC<Props> = ({ route }) => {
+  const item = route.params
+
+  return (
+    <BackgroundNoTab
+      body={BodyView({
+        publishDate: item.item.publishDate,
+        body: item.item.body,
+        link: item.item.link,
+        title: item.item.title
+      })}
+    />
+  )
+}
+
+export default PublicationScreen

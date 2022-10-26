@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "company": "Google",
+    "amount": 420,
+    "currency": "USD",
+    "raisedDate": "12/01/2021",
+    "status": "raised"
+  },
+  {
+    "id": 1,
+    "company": "Google",
+    "amount": 420,
+    "currency": "USD",
+    "raisedDate": "12/01/2021",
+    "status": "approved"
+  },
+  {
+    "id": 2,
+    "company": "Google",
+    "amount": 420,
+    "currency": "USD",
+    "raisedDate": "12/01/2021",
+    "status": "rejected"
+  },
+  {
+    "id": 3,
+    "company": "Google",
+    "amount": 420,
+    "currency": "USD",
+    "raisedDate": "12/01/2021",
+    "status": "paid"
+  }
+]

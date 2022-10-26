@@ -1,11 +1,37 @@
-import {View, Text} from "react-native";
+import React from 'react'
 
-const InvoiceCards = () => {
-    return (
-        <View>
-            <Text>InvoiceCards</Text>
-        </View>
-    )
+import { View, FlatList } from 'react-native'
+import invoices from '../../data/InvoicesData.json'
+import InvoiceCard from './InvoiceCard'
+import NoInvoicesItem from './NoInvoicesItem'
+
+export type invoicesData = Invoice[]
+
+export type Invoice = {
+  id: number
+  company: string
+  currency: string
+  raisedDate: string
+  status: string
 }
 
-export default InvoiceCards;
+const renderItem = ({ item, index, separators }) => {
+  return <InvoiceCard item={item} />
+}
+
+const InvoiceCards = () => {
+  const data: invoicesData = invoices
+
+  return (
+    <View>
+      <FlatList
+        data={data}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        ListEmptyComponent={<NoInvoicesItem />}
+      />
+    </View>
+  )
+}
+
+export default InvoiceCards

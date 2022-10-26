@@ -1,0 +1,20 @@
+[
+  {
+    "projectTitle": "Project 1",
+    "notificationType": "Attached",
+    "notificationDescription": "You were attached to Project 1",
+    "time": "2021-01-01T00:00:00.000Z"
+  },
+  {
+    "projectTitle": "Project 2",
+    "notificationType": "Attached",
+    "notificationDescription": "You were attached to Project 2",
+    "time": "2020-01-01T00:00:00.000Z"
+  },
+  {
+    "projectTitle": "Project 3",
+    "notificationType": "Attached",
+    "notificationDescription": "You were attached to Project 3",
+    "time": "2019-01-01T00:00:00.000Z"
+  }
+]
