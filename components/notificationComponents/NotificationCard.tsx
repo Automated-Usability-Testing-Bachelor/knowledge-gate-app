@@ -81,7 +81,6 @@ const Notifications: React.FC = () => {
         notificationDescription={item.notificationDescription}
         time={item.time}
         onPress={() => {
-          // @ts-ignore
           navigation.navigate('ProjectsExpanded', { item })
         }}
       />
@@ -93,7 +92,7 @@ const Notifications: React.FC = () => {
       <FlatList
         data={NotificationsData}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.projectTitle}
       />
     </View>
   )

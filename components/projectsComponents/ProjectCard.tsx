@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     dropShadow: 25,
     borderRadius: 5,
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    // backgroundColor: Colors.offWhite.color,
     pressable: true,
     height: 100,
     borderColor: 'rgba(0, 27, 114, 0.3)',

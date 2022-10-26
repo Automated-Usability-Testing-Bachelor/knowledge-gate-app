@@ -10,7 +10,7 @@ import HeaderStyles from '../components/navigationComponents/HeaderStyles'
 import KLogo from '../assets/logos/Logomark/KGG_Logomark_Blue_RGB.svg'
 import Icons from '../components/navigationComponents/Icons'
 import InvoiceScreen from '../screens/InvoiceScreen'
-import NotificationScreen from '../screens/notificationScreen'
+import NotificationScreen from '../screens/NotificationScreen'
 
 const BottomTab = createBottomTabNavigator()
 
