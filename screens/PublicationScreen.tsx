@@ -1,7 +1,7 @@
 import { RouteProp } from '@react-navigation/native'
 import React from 'react'
-import BackgroundNoTab from '../components/BackgroundTemplateNoTab'
 import BodyView from '../components/publicationScreen/BodyView'
+import BackgroundNoTab from '../components/BackgroundTemplateNoTab'
 
 export type Item = {
   publishDate: string
@@ -20,10 +20,10 @@ const PublicationScreen: React.FC<Props> = ({ route }) => {
   return (
     <BackgroundNoTab
       body={BodyView({
-        publishDate: item.publishDate,
-        body: item.body,
-        link: item.link,
-        title: item.title
+        publishDate: item.item.publishDate,
+        body: item.item.body,
+        link: item.item.link,
+        title: item.item.title
       })}
     />
   )

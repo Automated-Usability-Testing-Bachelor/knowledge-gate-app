@@ -90,13 +90,11 @@ const Notifications: React.FC = () => {
   }
 
   return (
-    <View style={styles.notificationCardContainer}>
-      <FlatList
-        data={NotificationsData}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.projectTitle}
-      />
-    </View>
+    <FlatList
+      data={NotificationsData}
+      renderItem={renderItem}
+      keyExtractor={(item) => item.projectTitle}
+    />
   )
 }
 
