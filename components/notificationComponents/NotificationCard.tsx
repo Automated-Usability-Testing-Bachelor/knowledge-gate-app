@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import {
   Text,
   TouchableOpacity,
@@ -75,17 +75,15 @@ const NotificationCard: React.FC<Props> = ({
 
 const Notifications: React.FC = () => {
   const navigation = useNavigation()
-
-  const handleProjectCallback = useCallback(() => {
-    navigation.navigate('ProjectsExpanded', { item })
-  }, [navigation])
-
   const renderItem = ({ item }: any) => {
     return (
       <NotificationCard
         notificationDescription={item.notificationDescription}
         time={item.time}
-        onPress={handleProjectCallback}
+        onPress={() => {
+          // @ts-ignore
+          navigation.navigate('ProjectsExpanded', { item })
+        }}
       />
     )
   }
