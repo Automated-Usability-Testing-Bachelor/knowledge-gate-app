@@ -14,6 +14,8 @@ import {
   UserCircleIcon as UserCircleIconOutline
 } from 'react-native-heroicons/outline'
 
+const size = 28.8
+
 const Icons = ({
   focused,
   color,
@@ -28,9 +30,9 @@ const Icons = ({
       return (
         <>
           {focused ? (
-            <ClockIcon height={22} width={22} color={color} />
+            <ClockIcon height={size} width={size} color={color} />
           ) : (
-            <ClockIconOutline height={22} width={22} color={color} />
+            <ClockIconOutline height={size} width={size} color={color} />
           )}
         </>
       )
@@ -39,9 +41,9 @@ const Icons = ({
       return (
         <>
           {focused ? (
-            <BanknotesIcon height={22} width={22} color={color} />
+            <BanknotesIcon height={size} width={size} color={color} />
           ) : (
-            <BanknotesIconOutline height={22} width={22} color={color} />
+            <BanknotesIconOutline height={size} width={size} color={color} />
           )}
         </>
       )
@@ -49,9 +51,9 @@ const Icons = ({
       return (
         <>
           {focused ? (
-            <CalendarIcon height={22} width={22} color={color} />
+            <CalendarIcon height={size} width={size} color={color} />
           ) : (
-            <CalendarIconOutline height={22} width={22} color={color} />
+            <CalendarIconOutline height={size} width={size} color={color} />
           )}
         </>
       )
@@ -59,9 +61,9 @@ const Icons = ({
       return (
         <>
           {focused ? (
-            <BellIcon height={22} width={22} color={color} />
+            <BellIcon height={size} width={size} color={color} />
           ) : (
-            <BellIconOutline height={22} width={22} color={color} />
+            <BellIconOutline height={size} width={size} color={color} />
           )}
         </>
       )
@@ -69,9 +71,9 @@ const Icons = ({
       return (
         <>
           {focused ? (
-            <UserCircleIcon height={22} width={22} color={color} />
+            <UserCircleIcon height={size} width={size} color={color} />
           ) : (
-            <UserCircleIconOutline height={22} width={22} color={color} />
+            <UserCircleIconOutline height={size} width={size} color={color} />
           )}
         </>
       )
