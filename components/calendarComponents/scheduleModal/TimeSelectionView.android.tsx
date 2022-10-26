@@ -1,11 +1,39 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import moment from 'moment'
 import { DateTimePickerEvent } from '@react-native-community/datetimepicker'
+// eslint-disable-next-line import/no-unresolved
 import TimePicker from './TimePicker'
+import { MomentTimeRange } from '../../../mocks/CalendarMockData'
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 20
+  },
+  toContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10
+  },
+  fromContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingRight: 20,
+    paddingVertical: 10
+  },
+  timeContainer: {
+    marginLeft: 10,
+    paddingHorizontal: 15,
+    paddingVertical: 11,
+    backgroundColor: '#FFF',
+    borderRadius: 10
+  }
+})
 
 export type Props = {
-  returnTimeRangeCallback: Function
+  returnTimeRangeCallback: (timeRange: MomentTimeRange) => void
   startFrom: Date
   startTo: Date
 }
@@ -31,50 +59,52 @@ const TimeSelectionView: React.FC<Props> = ({
   const [toShow, setToShow] = useState(false)
   const [fromShow, setFromShow] = useState(false)
 
-  const openFromPicker = () => {
+  const openFromPicker = useCallback(() => {
     setFromShow(true)
-  }
+  }, [])
 
-  const openToPicker = () => {
+  const openToPicker = useCallback(() => {
     setToShow(true)
-  }
-  const onFromChange = (event: DateTimePickerEvent, date: Date) => {
-    console.log(date)
+  }, [])
+  const onFromChange = useCallback(
+    (event: DateTimePickerEvent, date: Date) => {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      if (date === undefined) {
+        setFromShow(false)
 
-    if (date === undefined) {
+        return
+      }
       setFromShow(false)
+      const currentDate = date
 
-      return
-    }
-    setFromShow(false)
+      const newDate = new Date(currentDate)
+      setFromDate(newDate)
+      const newTimeRange = { from: moment(newDate), to: moment(toDate) }
+      returnTimeRangeCallback(newTimeRange)
+      setFromString(moment(currentDate).format('hh:mm A'))
+    },
+    [returnTimeRangeCallback, toDate]
+  )
+  const onToChange = useCallback(
+    (event: DateTimePickerEvent, date: Date) => {
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      if (date === undefined) {
+        setToShow(false)
 
-    console.log(date)
-    const currentDate = date
-
-    const newDate = new Date(currentDate)
-    setFromDate(newDate)
-    const newTimeRange = { from: moment(newDate), to: moment(toDate) }
-    returnTimeRangeCallback(newTimeRange)
-    setFromString(moment(currentDate).format('hh:mm A'))
-  }
-  const onToChange = (event: DateTimePickerEvent, date: Date) => {
-    console.log(date.getHours())
-
-    if (date === undefined) {
+        return
+      }
       setToShow(false)
 
-      return
-    }
-    setToShow(false)
+      const currentDate = date
 
-    const currentDate = date
-
-    const newDate = new Date(currentDate)
-    setToDate(new Date(currentDate))
-    const newTimeRange = { from: moment(fromDate), to: moment(newDate) }
-    returnTimeRangeCallback(newTimeRange)
-    setToString(moment(currentDate).format('hh:mm A'))
-  }
+      const newDate = new Date(currentDate)
+      setToDate(new Date(currentDate))
+      const newTimeRange = { from: moment(fromDate), to: moment(newDate) }
+      returnTimeRangeCallback(newTimeRange)
+      setToString(moment(currentDate).format('hh:mm A'))
+    },
+    [fromDate, returnTimeRangeCallback]
+  )
   useEffect(() => {
     const date = new Date(fromDate)
     date.setMinutes(date.getMinutes() + 30)
@@ -92,7 +122,7 @@ const TimeSelectionView: React.FC<Props> = ({
       const newTimeRange = { from: moment(fromDate), to: moment(toDate) }
       returnTimeRangeCallback(newTimeRange)
     }
-  }, [fromDate])
+  }, [fromDate, returnTimeRangeCallback, toDate])
 
   return (
     <View>
@@ -130,30 +160,5 @@ const TimeSelectionView: React.FC<Props> = ({
     </View>
   )
 }
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 20
-  },
-  toContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 10
-  },
-  fromContainer: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingRight: 20,
-    paddingVertical: 10
-  },
-  timeContainer: {
-    marginLeft: 10,
-    paddingHorizontal: 15,
-    paddingVertical: 11,
-    backgroundColor: '#FFF',
-    borderRadius: 10
-  }
-})
 
 export default TimeSelectionView
