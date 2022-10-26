@@ -2,14 +2,6 @@ import * as React from 'react'
 import { StyleSheet, View } from 'react-native'
 import LogoSVG from '../../assets/logos/Additional_Lockups/Lockup02/KGG_Logo_Lockup_White_RGB-02.svg'
 
-const Logo = () => {
-  return (
-    <View style={styles.container}>
-      <LogoSVG height={200} width={200} fill={'white'} />
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 3,
@@ -22,5 +14,13 @@ const styles = StyleSheet.create({
     height: 211
   }
 })
+
+const Logo = () => {
+  return (
+    <View style={styles.container}>
+      <LogoSVG height={200} width={200} fill={'white'} />
+    </View>
+  )
+}
 
 export default Logo

@@ -4,15 +4,6 @@ import LoginForm from './LoginForm'
 import Colors from '../../constants/Colors'
 import LoginHeader from './LoginHeader'
 
-const LoginView = () => {
-  return (
-    <View style={styles.container}>
-      <LoginHeader />
-      <LoginForm />
-    </View>
-  )
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 2,
@@ -25,5 +16,14 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 0
   }
 })
+
+const LoginView = () => {
+  return (
+    <View style={styles.container}>
+      <LoginHeader />
+      <LoginForm />
+    </View>
+  )
+}
 
 export default LoginView

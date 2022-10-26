@@ -5,6 +5,16 @@ import LoginBtn from './LoginBtn'
 import InfoText from './InfoText'
 import ForgotPassword from './ForgotPassword'
 
+const styles = StyleSheet.create({
+  container: {
+    paddingBottom: 30,
+    justifyContent: 'center'
+  },
+  text: {
+    fontSize: 10
+  }
+})
+
 const LoginForm = () => {
   return (
     <View style={styles.container}>
@@ -12,21 +22,10 @@ const LoginForm = () => {
 
       <InputField prompt={'Password'} keyboardType={'default'} />
       <ForgotPassword />
-      <LoginBtn name='Login' />
+      <LoginBtn name={'Login'} />
       <InfoText />
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    paddingBottom: 30,
-    // backgroundColor: "yellow",
-    justifyContent: 'center'
-  },
-  text: {
-    fontSize: 10
-  }
-})
 
 export default LoginForm
