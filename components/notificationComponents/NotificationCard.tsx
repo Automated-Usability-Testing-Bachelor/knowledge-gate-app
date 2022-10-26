@@ -8,7 +8,6 @@ import {
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
-import { object } from 'prop-types'
 import Colors from '../../constants/Colors'
 import NotificationsData from '../../data/NotificationsData.json'
 import ProjectsData from '../../data/ProjectsData.json'
@@ -40,10 +39,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Sans-Regular',
     color: Colors.blue.color,
-    width: '60%'
+    width: '75%'
   },
   arrow: {
-    width: '20%',
+    width: '5%',
     alignItems: 'flex-end'
   }
 })
@@ -77,23 +76,21 @@ const NotificationCard: React.FC<Props> = ({
 
 const Notifications: React.FC = () => {
   const navigation = useNavigation()
+
   const renderItem = ({ item }: any) => {
-    function findArrayElementByTitle(ProjectTitle: string) {
+    function findArrayElementByTitle() {
       return ProjectsData.find((element) => {
         return element.title === item.projectTitle
       })
     }
+    const ArrayElement = findArrayElementByTitle()
 
     return (
       <NotificationCard
         notificationDescription={item.notificationDescription}
         time={item.time}
         onPress={() => {
-          // navigation.navigate('ProjectsExpanded', { item })
-          const ArrayElement = findArrayElementByTitle(item.projectTitle)
           navigation.navigate('ProjectsExpanded', { item: ArrayElement })
-          console.log(ArrayElement)
-          // console.log(findArrayElementByTitle(item.ProjectTitle))
         }}
       />
     )
