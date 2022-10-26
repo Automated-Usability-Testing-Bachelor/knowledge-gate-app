@@ -23,14 +23,12 @@ const InvoiceCards = () => {
   const data: invoicesData = invoices
 
   return (
-    <View>
-      <FlatList
-        data={data}
-        keyExtractor={(item) => item.id}
-        renderItem={renderItem}
-        ListEmptyComponent={<NoInvoicesItem />}
-      />
-    </View>
+    <FlatList
+      data={data}
+      keyExtractor={(item) => item.id}
+      renderItem={renderItem}
+      ListEmptyComponent={<NoInvoicesItem />}
+    />
   )
 }
 

@@ -1,22 +1,22 @@
-import React from "react";
+import React from 'react'
 import {
   FlatList,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
-} from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import Colors from "../../../constants/Colors";
-import ClinicalTrialsData from "../../../data/ClinicalTrialsData.json";
-import NoAvailability from "../../NoDataComponents/NoAvailabilities";
-import StatusBadge from "../../StatusBadge";
+  View
+} from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import Colors from '../../../constants/Colors'
+import ClinicalTrialsData from '../../../data/ClinicalTrialsData.json'
+import NoAvailability from '../../NoDataComponents/NoAvailabilities'
+import StatusBadge from '../../StatusBadge'
 
 const ClinicalTrial = ({ item }) => {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
   const onPressClin = () => {
-    navigation.navigate("ClinicalTrialScreen", { item });
-  };
+    navigation.navigate('ClinicalTrialScreen', { item })
+  }
 
   return (
     <View style={styles.cardContainer}>
@@ -36,8 +36,8 @@ const ClinicalTrial = ({ item }) => {
         </View>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
 const ClinicalTrials = () => {
   return (
@@ -54,8 +54,8 @@ const ClinicalTrials = () => {
         renderItem={({ item }) => <ClinicalTrial item={item} />}
       />
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   cardContainer: {
@@ -63,30 +63,30 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingVertical: 5,
     paddingHorizontal: 15,
-    borderRadius: 5,
+    borderRadius: 5
   },
   publishDateText: {
-    fontFamily: "Sans-Medium",
+    fontFamily: 'Sans-Medium',
     color: Colors.darkGrey.color,
-    fontSize: 10,
+    fontSize: 10
   },
   DateContainer: {
-    marginBottom: 10,
+    marginBottom: 10
   },
   TitleText: {
-    fontFamily: "Serif-SemiBold",
+    fontFamily: 'Serif-SemiBold',
     fontSize: 14,
-    color: Colors.black.color,
+    color: Colors.black.color
   },
   BodyText: {
-    fontFamily: "Sans-Light",
+    fontFamily: 'Sans-Light',
     fontSize: 12,
-    color: Colors.black.color,
+    color: Colors.black.color
   },
   badgeContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-end",
-  },
-});
+    flexDirection: 'row',
+    justifyContent: 'flex-end'
+  }
+})
 
-export default ClinicalTrials;
+export default ClinicalTrials

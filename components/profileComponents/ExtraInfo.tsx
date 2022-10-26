@@ -62,11 +62,10 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "flex-start"
+    flexDirection: 'row',
+    justifyContent: 'flex-start'
   },
   cardContainer: {
-
     alignItems: 'center',
     marginRight: 5
   },
