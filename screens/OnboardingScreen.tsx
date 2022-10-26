@@ -49,7 +49,7 @@ const OnboardingScreen = () => {
         <View style={styles.buttonsContainer}>
           <KggButton
             color={'blue'}
-            name={'skip'}
+            name={'Skip'}
             // eslint-disable-next-line react/jsx-no-bind
             onPress={() => {
               onPressSkip()
