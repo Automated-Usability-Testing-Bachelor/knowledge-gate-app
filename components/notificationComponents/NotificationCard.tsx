@@ -11,6 +11,7 @@ import { ChevronRightIcon } from 'react-native-heroicons/solid'
 import Colors from '../../constants/Colors'
 import NotificationsData from '../../data/NotificationsData.json'
 import ProjectsData from '../../data/ProjectsData.json'
+import { formatDate } from '../utils/formatDate'
 
 const styles = StyleSheet.create({
   notificationCardContainer: {
@@ -25,8 +26,9 @@ const styles = StyleSheet.create({
     height: 70,
     borderColor: 'rgba(0, 27, 114, 0.3)',
     borderWidth: 1,
+    display: 'flex',
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   time: {
@@ -62,7 +64,7 @@ const NotificationCard: React.FC<Props> = ({
       onPress={onPress}
     >
       <Text style={styles.time} numberOfLines={3}>
-        {time}
+        {formatDate(time)}
       </Text>
       <Text style={styles.notificationDescription}>
         {notificationDescription}
