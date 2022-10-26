@@ -4,7 +4,7 @@
     "slug": "kgg-react-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./components/calendarComponents/kBlue.png",
+    "icon": "./assets/logos/Secondary_Logo/kBlue.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
