@@ -5,48 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/KggButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/AvailabilityHeader.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/AvailabilityItem.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/CalendarBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/CalendarBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/ScheduleBtn.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/clockIcon.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/ScheduleAvailabilityModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/ScheduleAvailabilityModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.android.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.android.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.ios.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/scheduleModal/TimePicker.ios.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/clinicalTrialScreen/BodyView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/clinicalTrialScreen/BodyView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/clinicalTrialScreen/Dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/clinicalTrialScreen/Dialog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/invoiceComponents/InvoiceCards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/invoiceComponents/InvoiceCards.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/loginComponents/LoginHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loginComponents/LoginHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigationComponents/HeaderStyles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/OnboardingImage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/onboarding/OnboardingView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ExtraInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ExtraInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/PubClinButtonGroup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/PublicationsAndClinicalTrialsView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/tabs/ClinicalTrials.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/tabs/ClinicalTrials.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/tabs/StatusBadge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/publicationScreen/BodyView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/publicationScreen/BodyView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/publicationScreen/LinkOriginalButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/publicationScreen/LinkOriginalButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/Colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/constants/Colors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ClinicalTrialsData.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/ClinicalTrialsData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/ProfileData.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/ProfileData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mocks/CalendarMockData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/mocks/CalendarMockData.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ClinicalTrialScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/OnboardingCarouselScreen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/OnboardingScreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/OnboardingScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OnboardingScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/PublicationScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/PublicationScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
