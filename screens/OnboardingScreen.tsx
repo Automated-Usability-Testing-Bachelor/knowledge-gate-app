@@ -6,7 +6,6 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native'
 import FadeInView from '../components/animatedComponents/FadeInView'
 import KggButton from '../components/KggButton'
-
 import OnboardingView from '../components/onboarding/OnboardingView'
 
 const styles = StyleSheet.create({
@@ -20,21 +19,20 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 60
+    alignItems: 'center'
+    // marginTop: 60
   },
   buttonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-    marginBottom: 60,
-    marginTop: 30
+    marginBottom: 30,
+    marginTop: 10
   }
 })
 
 const OnboardingScreen = () => {
-  const headerText = 'Welcome to our Expert Application'
-  const appDevImageSource = require('../components/onboarding/app_development.png')
+  const headerText = 'Welcome to our Mobile Application'
   const navigation = useNavigation()
   const onPressSkip = () => {
     navigation.navigate('Root')
@@ -42,12 +40,16 @@ const OnboardingScreen = () => {
   const onPressGetStarted = () => {
     navigation.navigate('Carousel')
   }
-  const icon = { source: appDevImageSource, height: 260, width: 326 }
+  const icon = {
+    name: 'AppDevelopment',
+    height: 260,
+    width: 326
+  }
 
   return (
     <SafeAreaView style={styles.container}>
       <OnboardingView headerText={headerText} icon={icon} />
-      <FadeInView duration={3000}>
+      <FadeInView duration={0}>
         <View style={styles.buttonsContainer}>
           <KggButton
             color={'blue'}

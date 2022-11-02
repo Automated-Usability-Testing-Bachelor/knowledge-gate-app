@@ -33,13 +33,15 @@ const styles = StyleSheet.create({
   },
   time: {
     fontSize: 12,
-    fontFamily: 'Serif-Regular',
-    color: 'black',
+    fontFamily: 'Serif-Medium',
+    // color: 'black',
+    color: 'rgba(29, 29, 27, 0.6)',
     width: '20%'
   },
   notificationDescription: {
     fontSize: 16,
     fontFamily: 'Sans-Regular',
+    paddingLeft: 5,
     color: Colors.blue.color,
     width: '75%'
   },

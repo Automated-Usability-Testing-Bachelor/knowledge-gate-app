@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
   }
 })
 
+// @ts-ignore
 const ProfileHeader = ({ profileInfo }: ProfileData) => (
   <View style={styles.container}>
     <Image

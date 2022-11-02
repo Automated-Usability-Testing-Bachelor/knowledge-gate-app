@@ -2,14 +2,14 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import Header from './Header'
 import FadeInView from '../animatedComponents/FadeInView'
-import OnboardingImage, { IconObject } from './OnboardingImage'
+import OnboardingSVG, { IconObject } from './OnboardingSVG'
 import SecondHeader from './SecondHeader'
 
 const styles = StyleSheet.create({
   container: {},
   imageContainer: {
     alignItems: 'center',
-    paddingTop: 60
+    paddingVertical: 60
   },
   headerContainer: {}
 })
@@ -33,8 +33,8 @@ const OnboardingView: React.FC<Props> = ({
       </View>
       <View style={styles.imageContainer}>
         <FadeInView duration={2500}>
-          <OnboardingImage
-            source={icon.source}
+          <OnboardingSVG
+            name={icon.name}
             height={icon.height}
             width={icon.width}
           />

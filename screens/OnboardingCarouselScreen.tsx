@@ -15,7 +15,7 @@ import OnboardingView from '../components/onboarding/OnboardingView'
 import Colors from '../constants/Colors'
 import Arrow from '../components/onboarding/Arrow'
 import KggButton from '../components/KggButton'
-import { IconObject } from '../components/onboarding/OnboardingImage'
+import { IconObject } from '../components/onboarding/OnboardingSVG'
 
 export const SLIDER_WIDTH = Dimensions.get('window').width + 30
 
@@ -36,7 +36,7 @@ const data: OnboardingData = [
     headerText: 'Availability',
     secondHeaderText: 'Add your availability with our Calendar',
     icon: {
-      source: require('../components/onboarding/Calendar.png'),
+      name: 'Calendar',
       width: 360,
       height: 210.64
     }
@@ -46,7 +46,7 @@ const data: OnboardingData = [
     headerText: 'Projects',
     secondHeaderText: "View all the projects you've been invited to",
     icon: {
-      source: require('../components/onboarding/illustration.png'),
+      name: 'Illustration',
       width: 360,
       height: 298.48
     }
@@ -56,7 +56,7 @@ const data: OnboardingData = [
     headerText: 'Profile',
     secondHeaderText: 'View and edit your Expert Profile',
     icon: {
-      source: require('../components/onboarding/Social_media.png'),
+      name: 'SocialMedia',
       width: 360,
       height: 205.33
     }
@@ -66,7 +66,7 @@ const data: OnboardingData = [
     headerText: 'Invoice',
     secondHeaderText: 'Create an invoice through the app',
     icon: {
-      source: require('../components/onboarding/Invoice_sent.png'),
+      name: 'InvoiceSent',
       width: 360,
       height: 296.45
     }
