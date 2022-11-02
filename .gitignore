@@ -16,3 +16,5 @@ package-lock.json
 .idea
 
 src/apollo-client/.env.local
+
+.env.local
