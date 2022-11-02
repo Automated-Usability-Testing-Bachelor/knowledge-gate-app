@@ -21,9 +21,9 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     dropShadow: 25,
     borderRadius: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
     pressable: true,
     height: 70,
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
     borderColor: 'rgba(0, 27, 114, 0.3)',
     borderWidth: 1,
     display: 'flex',
@@ -94,6 +94,8 @@ const Notifications: React.FC = () => {
         notificationDescription={item.notificationDescription}
         time={item.time}
         onPress={() => {
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           navigation.navigate('ProjectsExpanded', { item: ArrayElement })
         }}
       />

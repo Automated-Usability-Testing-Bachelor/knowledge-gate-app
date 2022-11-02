@@ -35,9 +35,13 @@ const OnboardingScreen = () => {
   const headerText = 'Welcome to our Mobile Application'
   const navigation = useNavigation()
   const onPressSkip = () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     navigation.navigate('Root')
   }
   const onPressGetStarted = () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     navigation.navigate('Carousel')
   }
   const icon = {

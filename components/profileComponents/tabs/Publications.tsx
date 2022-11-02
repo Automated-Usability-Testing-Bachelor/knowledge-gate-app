@@ -11,9 +11,43 @@ import Colors from '../../../constants/Colors'
 import PublicationsData from '../../../data/PublicationsData.json'
 import NoAvailability from '../../NoDataComponents/NoAvailabilities'
 
+const styles = StyleSheet.create({
+  cardContainer: {
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    borderColor: 'rgba(0, 27, 114, 0.3)',
+    borderWidth: 1,
+    marginBottom: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 15,
+    borderRadius: 5
+  },
+  publishDateText: {
+    fontFamily: 'Sans-Medium',
+    color: Colors.darkGrey.color,
+    fontSize: 10
+  },
+  DateContainer: {
+    marginBottom: 10
+  },
+  TitleText: {
+    fontFamily: 'Serif-SemiBold',
+    fontSize: 14,
+    color: Colors.black.color
+  },
+  BodyText: {
+    fontFamily: 'Sans-Light',
+    fontSize: 12,
+    color: Colors.black.color
+  }
+})
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const Publication = ({ item }) => {
   const navigation = useNavigation()
   const onPressPub = () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     navigation.navigate('PublicationScreen', { item })
   }
 
@@ -45,6 +79,8 @@ const Publications = () => {
     <View>
       <FlatList
         data={PublicationsData}
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         keyExtractor={(item) => item.id}
         initialNumToRender={5}
         ListEmptyComponent={
@@ -57,33 +93,5 @@ const Publications = () => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  cardContainer: {
-    backgroundColor: Colors.offWhite.color,
-    marginBottom: 10,
-    paddingVertical: 5,
-    paddingHorizontal: 15,
-    borderRadius: 5
-  },
-  publishDateText: {
-    fontFamily: 'Sans-Medium',
-    color: Colors.darkGrey.color,
-    fontSize: 10
-  },
-  DateContainer: {
-    marginBottom: 10
-  },
-  TitleText: {
-    fontFamily: 'Serif-SemiBold',
-    fontSize: 14,
-    color: Colors.black.color
-  },
-  BodyText: {
-    fontFamily: 'Sans-Light',
-    fontSize: 12,
-    color: Colors.black.color
-  }
-})
 
 export default Publications

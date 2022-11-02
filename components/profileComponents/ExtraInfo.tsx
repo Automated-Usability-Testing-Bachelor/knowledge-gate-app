@@ -3,56 +3,6 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import Colors from '../../constants/Colors'
 
-const ExtraInfoCard = ({ extra }: any) => {
-  const navigation = useNavigation()
-
-  return (
-    <>
-      <View style={styles.cardContainer}>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => {
-            // @ts-ignore
-            navigation.navigate('ProfilePublicationsClinicalTrials', {})
-          }}
-        >
-          <Text style={styles.whiteText}>{extra.publications}</Text>
-          <Text style={styles.whiteText}>{'Publications'}</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.cardContainer}>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => {
-            // @ts-ignore
-            navigation.navigate('ProfilePublicationsClinicalTrials', {})
-          }}
-        >
-          <Text style={styles.whiteText}>{extra.clinicalTrials}</Text>
-          <Text style={styles.whiteText}>{'Clinical Trials'}</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.cardContainer}>
-        <TouchableOpacity style={styles.buttonContainer}>
-          <Text style={styles.whiteText}>{extra.murders}</Text>
-          <Text style={styles.whiteText}>{'Murders'}</Text>
-        </TouchableOpacity>
-      </View>
-    </>
-  )
-}
-
-const ExtraInfoView = ({ extra }: any) => (
-  <View>
-    <Text style={styles.header}>{'Additional Info'}</Text>
-    <View style={styles.container}>
-      {extra.map((element: any) => (
-        <ExtraInfoCard key={element} extra={element} />
-      ))}
-    </View>
-  </View>
-)
-
 const styles = StyleSheet.create({
   header: {
     fontSize: 16,
@@ -81,5 +31,57 @@ const styles = StyleSheet.create({
     fontSize: 12
   }
 })
+
+const ExtraInfoCard = ({ extra }: any) => {
+  const navigation = useNavigation()
+
+  return (
+    <>
+      <View style={styles.cardContainer}>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            navigation.navigate('ProfilePublicationsClinicalTrials', {})
+          }}
+        >
+          <Text style={styles.whiteText}>{extra.publications}</Text>
+          <Text style={styles.whiteText}>{'Publications'}</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.cardContainer}>
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            navigation.navigate('ProfilePublicationsClinicalTrials', {})
+          }}
+        >
+          <Text style={styles.whiteText}>{extra.clinicalTrials}</Text>
+          <Text style={styles.whiteText}>{'Clinical Trials'}</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.cardContainer}>
+        <TouchableOpacity style={styles.buttonContainer}>
+          <Text style={styles.whiteText}>{extra.murders}</Text>
+          <Text style={styles.whiteText}>{'Murders'}</Text>
+        </TouchableOpacity>
+      </View>
+    </>
+  )
+}
+
+const ExtraInfoView = ({ extra }: any) => (
+  <View>
+    <Text style={styles.header}>{'Additional Info'}</Text>
+    <View style={styles.container}>
+      {extra.map((element: any) => (
+        <ExtraInfoCard key={element} extra={element} />
+      ))}
+    </View>
+  </View>
+)
 
 export default ExtraInfoView

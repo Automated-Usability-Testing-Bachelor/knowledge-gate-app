@@ -35,6 +35,8 @@ const ProfileScreen = () => {
   return (
     <ScrollView style={{ backgroundColor: Colors.warmGrey.color }}>
       <BackgroundTemplate
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         header={ProfileHeader({ profileInfo: profileData })}
         body={ProfileBody({ profileInfo: profileData })}
       />

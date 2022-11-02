@@ -63,7 +63,8 @@ const ActualCalendar: React.FC<Props> = ({
   selectedDayCallback,
   currentMonthCallback
 }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars,@typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const [startSelectedDate, setSelectedStartDate] = useState(new Date())
   const [customDatesStyles, setCustomDatesStyles] = useState<CustomDateStyle[]>(
     []

@@ -72,7 +72,8 @@ const data: OnboardingData = [
     }
   }
 ]
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 const renderItem = ({ item }) => {
   return (
     <OnboardingView
@@ -138,16 +139,22 @@ const OnboardCarouselScreen = () => {
 
   const onPressBack = () => {
     if (isCarousel.current != null) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       isCarousel.current.snapToPrev()
     }
   }
   const onPressForward = () => {
     if (isCarousel.current != null) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       isCarousel.current.snapToNext()
     }
   }
 
-  const onPressGetStarted = () => {
+  const onPressToRoot = () => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     navigation.navigate('Root')
   }
 
@@ -162,7 +169,9 @@ const OnboardCarouselScreen = () => {
       <View style={styles.inerContainer}>
         <View style={styles.skipContainer}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('Root')}
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            onPress={() => onPressToRoot()}
             style={styles.buttonSkip}
           >
             <Text style={styles.skipText}>{'Skip'}</Text>
@@ -188,6 +197,8 @@ const OnboardCarouselScreen = () => {
           <Pagination
             dotsLength={data.length}
             activeDotIndex={index}
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             carouselRef={isCarousel}
             dotStyle={{
               width: 15,
@@ -214,7 +225,7 @@ const OnboardCarouselScreen = () => {
               <KggButton
                 color={'red'}
                 name={'Finish'}
-                onPress={onPressGetStarted}
+                onPress={onPressToRoot}
               />
             ) : (
               <Arrow onPress={onPressForward} isRight />
