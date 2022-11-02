@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context'
 import { Auth } from '@aws-amplify/auth'
 import { useMemo } from 'react'
 
+
 export const instantiateApolloClient = () => {
   const httpLink = createHttpLink({
     uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`
