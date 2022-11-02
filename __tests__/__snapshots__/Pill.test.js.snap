@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pill /> has 1 child 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "borderRadius": 100,
+        "margin": 2.5,
+        "paddingHorizontal": 10,
+        "paddingVertical": 5,
+      },
+      {
+        "backgroundColor": undefined,
+        "borderColor": undefined,
+        "borderWidth": 1,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontFamily": "Sans-Regular",
+          "fontSize": 12,
+        },
+        {
+          "color": undefined,
+        },
+      ]
+    }
+  />
+</View>
+`;

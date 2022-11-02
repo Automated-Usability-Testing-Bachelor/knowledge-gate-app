@@ -8,17 +8,18 @@ import {
 import { setContext } from '@apollo/client/link/context'
 import { Auth } from '@aws-amplify/auth'
 import { useMemo } from 'react'
-
+import {NEXT_PUBLIC_API_URL} from '@env'
 
 export const instantiateApolloClient = () => {
   const httpLink = createHttpLink({
-    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`
+    uri: `${NEXT_PUBLIC_API_URL}/graphql`
   })
 
   const authLink = setContext(async (_, { headers }: { headers: object }) => {
     try {
       const session = await Auth.currentSession()
       const token = session.getAccessToken().getJwtToken()
+      console.log(token)
 
       return {
         headers: {
@@ -26,6 +27,7 @@ export const instantiateApolloClient = () => {
           authorization: token ? `Bearer ${token}` : ''
         }
       }
+
     } catch (error) {
       if (error !== 'No current user') {
         console.log('authLink error: ', { extra: JSON.stringify(error) })
