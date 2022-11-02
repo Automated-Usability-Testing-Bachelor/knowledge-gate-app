@@ -5,7 +5,7 @@ import BackgroundTemplate from '../components/BackgroundTemplate'
 import ProfileHeader from '../components/profileComponents/ProfileHeader'
 import ProfileBody from '../components/profileComponents/ProfileBody'
 import Colors from '../constants/Colors'
-import profileData from '../data/ProfileData.json'
+import profileData from '../src/ProfileData.json'
 
 export type ProfileData = {
   name: string

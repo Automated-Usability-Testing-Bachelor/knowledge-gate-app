@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native'
 import Colors from '../../constants/Colors'
-import projectData from '../../data/ProjectsData.json'
+import projectData from '../../src/ProjectsData.json'
 
 const styles = StyleSheet.create({
   container: {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { View, FlatList } from 'react-native'
-import invoices from '../../data/InvoicesData.json'
+import invoices from '../../src/InvoicesData.json'
 import InvoiceCard from './InvoiceCard'
 import NoInvoicesItem from './NoInvoicesItem'
 

@@ -14,3 +14,5 @@ package-lock.json
 # macOS
 .DS_Store
 .idea
+
+src/apollo-client/.env.local

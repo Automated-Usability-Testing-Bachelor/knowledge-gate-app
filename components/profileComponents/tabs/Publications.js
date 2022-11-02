@@ -8,7 +8,7 @@ import {
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import Colors from '../../../constants/Colors'
-import PublicationsData from '../../../data/PublicationsData.json'
+import PublicationsData from '../../../src/PublicationsData.json'
 import NoAvailability from '../../NoDataComponents/NoAvailabilities'
 
 const Publication = ({ item }) => {

@@ -4,6 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { MenuProvider } from 'react-native-popup-menu'
 import useCachedResources from './hooks/useCachedResources'
 import Navigation from './navigation'
+import { ApolloWrapper } from './components/ApolloWrapper'
 
 const App = () => {
   const isLoadingComplete = useCachedResources()
@@ -14,10 +15,12 @@ const App = () => {
 
   return (
     <SafeAreaProvider>
-      <MenuProvider>
-        <StatusBar style={'dark'} /* style={'dark'} */ />
-        <Navigation />
-      </MenuProvider>
+      <ApolloWrapper>
+        <MenuProvider>
+          <StatusBar style={'dark'} /* style={'dark'} */ />
+          <Navigation />
+        </MenuProvider>
+      </ApolloWrapper>
     </SafeAreaProvider>
   )
 }

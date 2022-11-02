@@ -9,8 +9,8 @@ import {
 import { useNavigation } from '@react-navigation/native'
 import { ChevronRightIcon } from 'react-native-heroicons/solid'
 import Colors from '../../constants/Colors'
-import NotificationsData from '../../data/NotificationsData.json'
-import ProjectsData from '../../data/ProjectsData.json'
+import NotificationsData from '../../src/NotificationsData.json'
+import ProjectsData from '../../src/ProjectsData.json'
 import { formatDate } from '../utils/formatDate'
 
 const styles = StyleSheet.create({
