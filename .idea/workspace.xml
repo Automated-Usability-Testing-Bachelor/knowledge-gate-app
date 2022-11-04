@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="01016f1a-414f-4c00-9ac4-1e8dcdb6925f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ThreeDotsIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ThreeDotsIcon.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/calendarComponents/actualCalendar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/clinicalTrialScreen/Dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/clinicalTrialScreen/Dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/notificationComponents/NotificationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/notificationComponents/NotificationCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/ExtraInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ExtraInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/profileComponents/ProfileBody.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/ProfileBody.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/tabs/ClinicalTrials.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/tabs/ClinicalTrials.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/profileComponents/tabs/Publications.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/profileComponents/tabs/Publications.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/NotificationScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/NotificationScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/OnboardingCarouselScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OnboardingCarouselScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/OnboardingScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/OnboardingScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ProfileScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ProfileScreen.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +70,8 @@
       <workItem from="1665476235701" duration="292000" />
       <workItem from="1665648000296" duration="8590000" />
       <workItem from="1667381038034" duration="10114000" />
+      <workItem from="1667393321614" duration="1792000" />
+      <workItem from="1667461305281" duration="2247000" />
     </task>
     <servers />
   </component>

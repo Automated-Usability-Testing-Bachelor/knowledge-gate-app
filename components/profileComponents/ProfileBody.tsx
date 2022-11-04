@@ -23,11 +23,11 @@ const ProfileBody = ({ profileInfo }: any) => (
   <View style={styles.contentContainer}>
     <AboutText about={profileInfo.about} />
     <View style={styles.separator} />
-    <Skills skills={profileInfo.skills} />
+    <ExtraInfo extra={profileInfo.extraInfo} />
     <View style={styles.separator} />
     <Experience experience={profileInfo.experiences} />
     <View style={styles.separator} />
-    <ExtraInfo extra={profileInfo.extraInfo} />
+    <Skills skills={profileInfo.skills} />
   </View>
 )
 

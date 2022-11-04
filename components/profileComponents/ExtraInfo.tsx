@@ -73,9 +73,9 @@ const ExtraInfoCard = ({ extra }: any) => {
   )
 }
 
-const ExtraInfoView = ({ extra }: any) => (
+const PublicationsAndClinicalTrialsButtons = ({ extra }: any) => (
   <View>
-    <Text style={styles.header}>{'Additional Info'}</Text>
+    <Text style={styles.header}>{'Publications and Clinical Trials'}</Text>
     <View style={styles.container}>
       {extra.map((element: any) => (
         <ExtraInfoCard key={element} extra={element} />
@@ -84,4 +84,4 @@ const ExtraInfoView = ({ extra }: any) => (
   </View>
 )
 
-export default ExtraInfoView
+export default PublicationsAndClinicalTrialsButtons
