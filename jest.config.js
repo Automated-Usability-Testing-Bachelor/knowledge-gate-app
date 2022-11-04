@@ -9,7 +9,7 @@ module.exports = {
 
   // Stop running tests after `n` failures
   // bail: 0,
-
+  //setupFilesAfterEnv: ['<rootDir>setup-tests.js'],
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\marku\\AppData\\Local\\Temp\\jest",
 

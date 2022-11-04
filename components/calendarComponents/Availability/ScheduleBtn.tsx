@@ -9,13 +9,15 @@ const styles = StyleSheet.create({
 
 export type Props = {
   ShowModalCallback: () => void
+  testID?: string
 }
-const ScheduleBtn: React.FC<Props> = ({ ShowModalCallback }) => {
+const ScheduleBtn: React.FC<Props> = ({ ShowModalCallback, testID }) => {
   return (
     <View style={styles.container}>
       <RedButton
         name={'Schedule'}
         onPress={ShowModalCallback}
+        testID={testID}
         icon={
           <View>
             <PlusIcon />

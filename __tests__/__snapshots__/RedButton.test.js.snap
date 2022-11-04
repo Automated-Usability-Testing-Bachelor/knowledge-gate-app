@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RedButton /> Test onPress event 1`] = `
+<View
+  style={
+    {
+      "flexDirection": "row",
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignSelf": "center",
+        "borderRadius": 10,
+        "opacity": 1,
+        "padding": 12,
+      }
+    }
+    testID="button"
+  >
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "#DD2638",
+          "borderRadius": 10,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingHorizontal": 10,
+          "paddingVertical": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#FFF",
+            "lineHeight": 18,
+            "paddingHorizontal": 5,
+          }
+        }
+      />
+      <View />
+    </View>
+  </View>
+</View>
+`;

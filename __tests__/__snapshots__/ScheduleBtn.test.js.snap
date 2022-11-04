@@ -1,0 +1,269 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VisibleItem /> Test onPress event 1`] = `
+<View
+  style={
+    {
+      "marginBottom": 25,
+      "paddingHorizontal": 25,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignSelf": "center",
+          "borderRadius": 10,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+      testID="button"
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "backgroundColor": "#DD2638",
+            "borderRadius": 10,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#FFF",
+              "lineHeight": 18,
+              "paddingHorizontal": 5,
+            }
+          }
+        >
+          Schedule
+        </Text>
+        <View>
+          <View
+            style={
+              {
+                "paddingLeft": 5,
+                "paddingRight": 5,
+              }
+            }
+          >
+            <RNSVGSvgView
+              align="xMidYMid"
+              aria-hidden="true"
+              bbHeight={18}
+              bbWidth={18}
+              color={4294967295}
+              fill="currentColor"
+              focusable={false}
+              height={18}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 18,
+                    "width": 18,
+                  },
+                ]
+              }
+              tintColor={4294967295}
+              vbHeight={24}
+              vbWidth={24}
+              width={18}
+            >
+              <RNSVGGroup
+                fill={
+                  [
+                    2,
+                  ]
+                }
+                propList={
+                  [
+                    "fill",
+                  ]
+                }
+              >
+                <RNSVGPath
+                  clipRule={0}
+                  d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+                  fillRule={0}
+                  propList={
+                    [
+                      "fillRule",
+                    ]
+                  }
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<VisibleItem /> Test onPress event when not set in props 1`] = `
+<View
+  style={
+    {
+      "marginBottom": 25,
+      "paddingHorizontal": 25,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={false}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignSelf": "center",
+          "borderRadius": 10,
+          "opacity": 1,
+          "padding": 12,
+        }
+      }
+      testID="button"
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "alignSelf": "center",
+            "backgroundColor": "#DD2638",
+            "borderRadius": 10,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingHorizontal": 10,
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#FFF",
+              "lineHeight": 18,
+              "paddingHorizontal": 5,
+            }
+          }
+        >
+          Schedule
+        </Text>
+        <View>
+          <View
+            style={
+              {
+                "paddingLeft": 5,
+                "paddingRight": 5,
+              }
+            }
+          >
+            <RNSVGSvgView
+              align="xMidYMid"
+              aria-hidden="true"
+              bbHeight={18}
+              bbWidth={18}
+              color={4294967295}
+              fill="currentColor"
+              focusable={false}
+              height={18}
+              meetOrSlice={0}
+              minX={0}
+              minY={0}
+              style={
+                [
+                  {
+                    "backgroundColor": "transparent",
+                    "borderWidth": 0,
+                  },
+                  {
+                    "flex": 0,
+                    "height": 18,
+                    "width": 18,
+                  },
+                ]
+              }
+              tintColor={4294967295}
+              vbHeight={24}
+              vbWidth={24}
+              width={18}
+            >
+              <RNSVGGroup
+                fill={
+                  [
+                    2,
+                  ]
+                }
+                propList={
+                  [
+                    "fill",
+                  ]
+                }
+              >
+                <RNSVGPath
+                  clipRule={0}
+                  d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z"
+                  fillRule={0}
+                  propList={
+                    [
+                      "fillRule",
+                    ]
+                  }
+                />
+              </RNSVGGroup>
+            </RNSVGSvgView>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;

@@ -39,11 +39,13 @@ export type Props = {
   leftActionState: any
   // eslint-disable-next-line react/no-unused-prop-types, @typescript-eslint/no-explicit-any
   rightActionState: any
+  testID?: string
 }
 
 export type Data = {
   index: number
   item: Availability
+  testID?: string
 }
 
 const VisibleItem: React.FC<Props> = (props) => {
@@ -53,7 +55,8 @@ const VisibleItem: React.FC<Props> = (props) => {
     rowHeightAnimatedValue,
     removeRow,
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    rightActionState
+    rightActionState,
+    testID
   } = props
 
   if (rightActionState) {
@@ -85,6 +88,7 @@ const VisibleItem: React.FC<Props> = (props) => {
         style={[styles.rowFrontVisible, { justifyContent: 'center' }]}
         onPress={onPress}
         underlayColor={'#aaa'}
+        testID={testID}
       >
         <View
           style={{

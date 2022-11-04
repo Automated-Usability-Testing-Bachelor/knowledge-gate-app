@@ -139,6 +139,7 @@ const SwipeableAvilabilityView: React.FC<Props> = ({
         }}
         leftActionState={undefined}
         rightActionState={undefined}
+        testID={data.testID}
       />
     )
   }

@@ -33,15 +33,17 @@ export type Props = {
   name: string
   icon?: React.ReactElement
   onPress(): void
+  testID?: string
 }
 
-const RedButton: React.FC<Props> = ({ name, icon, onPress }) => {
+const RedButton: React.FC<Props> = ({ name, icon, onPress, testID }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity
         onPress={onPress}
         style={styles.touchable}
         activeOpacity={0.6}
+        testID={testID}
       >
         <View style={styles.button}>
           <Text style={styles.text}>{name}</Text>
