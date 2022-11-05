@@ -11,6 +11,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "postinstall": "patch-package",
+    "ci:graphql:generate": "graphql-codegen --config codegen.yml && yarn eslint ./src/@generated/graphql.ts --fix",
+    "graphql:generate": "env-cmd -f .env.local yarn ci:graphql:generate",
     "ci:lint": "tsc --noEmit && eslint --ext .js,.jsx,.ts,.tsx ./",
     "test": "jest -u"
   },

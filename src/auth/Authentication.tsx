@@ -1,61 +1,35 @@
-import {
-  AuthenticationDetails,
-  CognitoUser,
-  CognitoUserPool
-} from 'amazon-cognito-identity-js'
+import { Auth } from '@aws-amplify/auth'
+import { Amplify } from '@aws-amplify/core'
 import React, {
   createContext,
   PropsWithChildren,
   useCallback,
   useContext,
   useMemo,
-  useState
+  useState,
 } from 'react'
 import { config } from '../../config'
 import { Empty } from '../types/empty'
 import { dlog } from '../utils/dlog'
+import { isTokenContainer } from './tokenContainerGuard'
 
-type SignInArgs = {
-  username: string
-  password: string
-}
-
-const cognitoSignIn = ({ username, password }: SignInArgs) => {
-  const userData = {
-    Username: username,
-    Pool: new CognitoUserPool({
-      UserPoolId: config.NEXT_PUBLIC_AWS_USER_POOL_ID,
-      ClientId: config.NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID,
-    }),
-  }
-
-  const cognitoUser = new CognitoUser(userData)
-
-  return new Promise<string>((resolve, reject) => {
-    cognitoUser.authenticateUser(
-      new AuthenticationDetails({
-        Username: username,
-        Password: password,
-      }),
-      {
-        onSuccess: (value) => {
-          resolve(value.getAccessToken().getJwtToken())
-        },
-        onFailure: reject,
-      }
-    )
-  })
-}
+Amplify.configure({
+  Auth: {
+    region: config.NEXT_PUBLIC_AWS_REGION,
+    userPoolId: config.NEXT_PUBLIC_AWS_USER_POOL_ID,
+    userPoolWebClientId: config.NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID,
+  },
+})
 
 type IAuthContext = {
   sessionToken: string | null
+  updateSessionTokenUsingCognitoResponse: (cognitoResponse: unknown) => void
   cognitoSignOut: () => Promise<void>
-  signIn: (args: SignInArgs) => Promise<void>
 }
 
 const defaultState = {
   sessionToken: null,
-  signIn: () => {
+  updateSessionTokenUsingCognitoResponse: () => {
     throw new Error('not implemented')
   },
   cognitoSignOut: () => {
@@ -70,29 +44,30 @@ export const AuthenticationProvider: React.FC<PropsWithChildren<Empty>> = ({
 }) => {
   const [sessionToken, setSessionToken] = useState<string | null>(null)
 
-  const signIn = useCallback(async (args: SignInArgs) => {
+  const updateSessionTokenUsingCognitoResponse = useCallback(
+    (data: unknown | undefined) => {
+      if (isTokenContainer(data)) {
+        setSessionToken(data?.signInUserSession?.accessToken?.jwtToken ?? null)
+      }
+    },
+    []
+  )
+
+  async function cognitoSignOut() {
     try {
-      const token = await cognitoSignIn(args)
-
-      setSessionToken(token)
+      await Auth.signOut()
     } catch (error) {
-      console.log('Sign in error: ', error)
+      dlog('SignOut error', { extra: JSON.stringify(error) })
     }
-  }, [])
-
-  const cognitoSignOut = useCallback(() => {
-    dlog('cognitoSignOut')
-
-    return Promise.resolve()
-  }, [])
+  }
 
   const memoedValue = useMemo(
     () => ({
       sessionToken,
+      updateSessionTokenUsingCognitoResponse,
       cognitoSignOut,
-      signIn,
     }),
-    [cognitoSignOut, sessionToken, signIn]
+    [sessionToken, updateSessionTokenUsingCognitoResponse]
   )
 
   return (

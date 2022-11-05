@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { useAuth } from '../../src/auth/Authentication'
+import { useAuthenticate } from '../../src/auth/useAuthenticate'
+import { dlog } from '../../src/utils/dlog'
 import ForgotPassword from './ForgotPassword'
 import InfoText from './InfoText'
 import InputField from './InputField'
@@ -17,20 +18,26 @@ const styles = StyleSheet.create({
 })
 
 const LoginForm: React.FC = () => {
-  const { signIn } = useAuth()
-
   const [email, setEmail] = useState<string>()
   const [password, setPassword] = useState<string>()
 
-  const handleSignInClick = useCallback(() => {
+  const authenticate = useAuthenticate()
+
+  const handleSignIn = useCallback(async () => {
     if (!email || !password) {
-      // TODO: process better
+      // TODO: Fix this
 
       return
     }
 
-    signIn({ username: email, password })
-  }, [])
+    try {
+      await authenticate(email, password)
+    } catch (error) {
+      dlog(`Submit failed for an email: ${email}`, {
+        extra: JSON.stringify(error),
+      })
+    }
+  }, [authenticate, email, password])
 
   return (
     <View style={styles.container}>
@@ -48,7 +55,7 @@ const LoginForm: React.FC = () => {
         onChangeText={setPassword}
       />
       <ForgotPassword />
-      <LoginBtn name={'Login'} onClick={handleSignInClick} />
+      <LoginBtn name={'Login'} onClick={handleSignIn} />
       <InfoText />
     </View>
   )

@@ -90,7 +90,7 @@ module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
   plugins: ["deprecation", "promise"],
-  extends: ["airbnb-typescript-prettier", "plugin:storybook/recommended", "plugin:promise/recommended"],
+  extends: ["airbnb-typescript-prettier", "plugin:promise/recommended"],
   rules,
   overrides: [{
     files: ["*.ts", "*.tsx"],
@@ -109,10 +109,6 @@ module.exports = {
       "import/no-extraneous-dependencies": [
         "error",
         {
-          "devDependencies": [
-            "**/*.stories.*",
-            "**/.storybook/**/*.*"
-          ],
           "peerDependencies": true
         }
       ],

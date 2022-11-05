@@ -1,0 +1,36 @@
+query GetViewer {
+  viewer {
+    id
+    showTutorial
+    notificationCount(unread: true)
+    email
+    OrganizationMembership {
+      id
+      organizationMemberRole
+      Organization {
+        id
+        showExpertSearch
+        detailedProjectFields
+        isOnboardingStatusPresented
+      }
+    }
+    Expert {
+      id
+      VettingQuestionsAnswers {
+        id
+        text
+        expertProjectCollaborationId
+        VettingQuestion {
+          text
+          id
+          createdAt
+        }
+        vettingQuestionId
+      }
+    }
+    role
+    name
+    phone
+    profilePicturePath
+  }
+}
