@@ -6,19 +6,25 @@ import React, {
   useCallback,
   useContext,
   useMemo,
-  useState,
+  useState
 } from 'react'
-import { config } from '../../config'
+//import { config } from '../../config'
 import { Empty } from '../types/empty'
 import { dlog } from '../utils/dlog'
 import { isTokenContainer } from './tokenContainerGuard'
 
+import {
+  NEXT_PUBLIC_AWS_USER_POOL_ID,
+  NEXT_PUBLIC_AWS_REGION,
+  NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID
+} from '@env'
+
 Amplify.configure({
   Auth: {
-    region: config.NEXT_PUBLIC_AWS_REGION,
-    userPoolId: config.NEXT_PUBLIC_AWS_USER_POOL_ID,
-    userPoolWebClientId: config.NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID,
-  },
+    region: NEXT_PUBLIC_AWS_REGION,
+    userPoolId: NEXT_PUBLIC_AWS_USER_POOL_ID,
+    userPoolWebClientId: NEXT_PUBLIC_AWS_USER_POOL_WEB_CLIENT_ID
+  }
 })
 
 type IAuthContext = {
@@ -34,13 +40,13 @@ const defaultState = {
   },
   cognitoSignOut: () => {
     throw new Error('not implemented')
-  },
+  }
 }
 
 const AuthenticationContext = createContext<IAuthContext>(defaultState)
 
 export const AuthenticationProvider: React.FC<PropsWithChildren<Empty>> = ({
-  children,
+  children
 }) => {
   const [sessionToken, setSessionToken] = useState<string | null>(null)
 
@@ -65,7 +71,7 @@ export const AuthenticationProvider: React.FC<PropsWithChildren<Empty>> = ({
     () => ({
       sessionToken,
       updateSessionTokenUsingCognitoResponse,
-      cognitoSignOut,
+      cognitoSignOut
     }),
     [sessionToken, updateSessionTokenUsingCognitoResponse]
   )

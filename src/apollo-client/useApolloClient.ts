@@ -7,12 +7,15 @@ import {
 import { setContext } from '@apollo/client/link/context'
 import { Auth } from '@aws-amplify/auth'
 import { useMemo } from 'react'
-import { config } from '../../config'
 import { dlog } from '../utils/dlog'
+
+import {
+  NEXT_PUBLIC_API_URL
+} from '@env'
 
 export const instantiateApolloClient = () => {
   const httpLink = createHttpLink({
-    uri: `${config.NEXT_PUBLIC_API_URL}/graphql`,
+    uri: `${NEXT_PUBLIC_API_URL}/graphql`,
   })
 
   const authLink = setContext(async (_, { headers }: { headers: object }) => {
