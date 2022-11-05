@@ -8,11 +8,11 @@ import ForgotPassword from './ForgotPassword'
 const styles = StyleSheet.create({
   container: {
     paddingBottom: 30,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   text: {
-    fontSize: 10
-  }
+    fontSize: 10,
+  },
 })
 
 const LoginForm: React.FC = () => {

@@ -9,19 +9,17 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.blue.color,
     display: 'flex',
-    flex: 1
+    flex: 1,
   },
   avoid: {
     flex: 1,
-    // backgroundColor: "lightgreen",
     justifyContent: 'space-between',
-    minHeight: 650
+    minHeight: 650,
   },
   inner: {
     flex: 1,
-    alignSelf: 'stretch'
-    // backgroundColor: "lightblue",
-  }
+    alignSelf: 'stretch',
+  },
 })
 
 const LoginScreen = ({ navigation }) => {

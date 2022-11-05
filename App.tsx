@@ -1,4 +1,3 @@
-/* eslint-disable react/style-prop-object */
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { MenuProvider } from 'react-native-popup-menu'
@@ -17,7 +16,8 @@ const App = () => {
     <SafeAreaProvider>
       <ApolloWrapper>
         <MenuProvider>
-          <StatusBar style={'dark'} /* style={'dark'} */ />
+          {/* eslint-disable-next-line react/style-prop-object */}
+          <StatusBar style={'dark'} />
           <Navigation />
         </MenuProvider>
       </ApolloWrapper>

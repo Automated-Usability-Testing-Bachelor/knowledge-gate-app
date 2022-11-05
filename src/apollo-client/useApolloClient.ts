@@ -1,47 +1,45 @@
-/* eslint-disable no-console */
 import {
   createHttpLink,
   ApolloClient,
   InMemoryCache,
-  ApolloLink
+  ApolloLink,
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import { Auth } from '@aws-amplify/auth'
 import { useMemo } from 'react'
-import {NEXT_PUBLIC_API_URL} from '@env'
+import { config } from '../../config'
+import { dlog } from '../utils/dlog'
 
 export const instantiateApolloClient = () => {
   const httpLink = createHttpLink({
-    uri: `${NEXT_PUBLIC_API_URL}/graphql`
+    uri: `${config.NEXT_PUBLIC_API_URL}/graphql`,
   })
 
   const authLink = setContext(async (_, { headers }: { headers: object }) => {
     try {
       const session = await Auth.currentSession()
       const token = session.getAccessToken().getJwtToken()
-      console.log(token)
 
       return {
         headers: {
           ...headers,
-          authorization: token ? `Bearer ${token}` : ''
-        }
+          authorization: token ? `Bearer ${token}` : '',
+        },
       }
-
     } catch (error) {
       if (error !== 'No current user') {
-        console.log('authLink error: ', { extra: JSON.stringify(error) })
+        dlog('authLink error: ', { extra: JSON.stringify(error) })
       }
 
       return {
-        headers
+        headers,
       }
     }
   })
 
   return new ApolloClient({
     link: ApolloLink.from([authLink, httpLink]),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache(),
   })
 }
 

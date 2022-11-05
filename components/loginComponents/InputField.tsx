@@ -4,14 +4,14 @@ import Colors from '../../constants/Colors'
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 20
+    marginTop: 20,
   },
   input: {
     backgroundColor: Colors.offWhite.color,
     padding: 5,
     borderRadius: 5,
-    paddingLeft: 15
-  }
+    paddingLeft: 15,
+  },
 })
 
 type Props = {
