@@ -1,32 +1,26 @@
-import { useNavigation } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
-import React, { useCallback } from 'react'
+import React from 'react'
 import { StyleSheet, View } from 'react-native'
-import RedButton from '../RedButton'
 import { StackParamList } from '../../navigation/StackParamList'
+import RedButton from '../RedButton'
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 20
-  }
+    paddingTop: 20,
+  },
 })
 
 type PropsButton = {
   name: string
+  onClick: () => void
 }
 
 export type StackNavigation = StackNavigationProp<StackParamList>
 
-const LoginBtn: React.FC<PropsButton> = ({ name }) => {
-  const navigation = useNavigation<StackNavigation>()
-
-  const redButtonHandler = useCallback(() => {
-    navigation.navigate('Onboarding')
-  }, [navigation])
-
+const LoginBtn: React.FC<PropsButton> = ({ name, onClick }) => {
   return (
     <View style={styles.container}>
-      <RedButton name={name} onPress={redButtonHandler} icon={undefined} />
+      <RedButton name={name} onPress={onClick} icon={undefined} />
     </View>
   )
 }

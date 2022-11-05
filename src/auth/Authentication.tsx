@@ -1,8 +1,7 @@
 import {
   AuthenticationDetails,
   CognitoUser,
-  CognitoUserPool,
-  CognitoUserSession,
+  CognitoUserPool
 } from 'amazon-cognito-identity-js'
 import React, {
   createContext,
@@ -10,7 +9,7 @@ import React, {
   useCallback,
   useContext,
   useMemo,
-  useState,
+  useState
 } from 'react'
 import { config } from '../../config'
 import { Empty } from '../types/empty'
@@ -32,14 +31,16 @@ const cognitoSignIn = ({ username, password }: SignInArgs) => {
 
   const cognitoUser = new CognitoUser(userData)
 
-  return new Promise<CognitoUserSession>((resolve, reject) => {
+  return new Promise<string>((resolve, reject) => {
     cognitoUser.authenticateUser(
       new AuthenticationDetails({
         Username: username,
         Password: password,
       }),
       {
-        onSuccess: resolve,
+        onSuccess: (value) => {
+          resolve(value.getAccessToken().getJwtToken())
+        },
         onFailure: reject,
       }
     )
@@ -68,11 +69,15 @@ export const AuthenticationProvider: React.FC<PropsWithChildren<Empty>> = ({
   children,
 }) => {
   const [sessionToken, setSessionToken] = useState<string | null>(null)
-  // const [initialLoading, setInitialLoading] = useState(true)
 
   const signIn = useCallback(async (args: SignInArgs) => {
-    const { getAccessToken } = await cognitoSignIn(args)
-    setSessionToken(getAccessToken().getJwtToken())
+    try {
+      const token = await cognitoSignIn(args)
+
+      setSessionToken(token)
+    } catch (error) {
+      console.log('Sign in error: ', error)
+    }
   }, [])
 
   const cognitoSignOut = useCallback(() => {

@@ -17,13 +17,17 @@ const styles = StyleSheet.create({
 type Props = {
   prompt: string
   keyboardType: KeyboardTypeOptions
+  onChangeText: (text: string) => void
+  value?: string
 }
 
-const InputField: React.FC<Props> = ({ prompt, keyboardType }) => {
+const InputField: React.FC<Props> = ({ prompt, keyboardType, onChangeText, value }) => {
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
+        onChangeText={onChangeText}
+        value={value}
         keyboardType={keyboardType}
         placeholder={prompt}
         placeholderTextColor={Colors.darkGrey.color}

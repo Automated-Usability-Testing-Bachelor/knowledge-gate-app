@@ -4,6 +4,7 @@ import { MenuProvider } from 'react-native-popup-menu'
 import useCachedResources from './hooks/useCachedResources'
 import Navigation from './navigation'
 import { ApolloWrapper } from './components/ApolloWrapper'
+import { AuthenticationProvider } from './src/auth/Authentication'
 
 const App = () => {
   const isLoadingComplete = useCachedResources()
@@ -13,15 +14,17 @@ const App = () => {
   }
 
   return (
-    <SafeAreaProvider>
-      <ApolloWrapper>
-        <MenuProvider>
-          {/* eslint-disable-next-line react/style-prop-object */}
-          <StatusBar style={'dark'} />
-          <Navigation />
-        </MenuProvider>
-      </ApolloWrapper>
-    </SafeAreaProvider>
+    <AuthenticationProvider>
+      <SafeAreaProvider>
+        <ApolloWrapper>
+          <MenuProvider>
+            {/* eslint-disable-next-line react/style-prop-object */}
+            <StatusBar style={'dark'} />
+            <Navigation />
+          </MenuProvider>
+        </ApolloWrapper>
+      </SafeAreaProvider>
+    </AuthenticationProvider>
   )
 }
 
