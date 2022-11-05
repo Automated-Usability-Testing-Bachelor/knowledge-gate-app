@@ -96,7 +96,6 @@ const rules = {
       endOfLine: "auto",
       singleQuote: true,
       semi: false,
-      trailingComma: "none"
     }
   ],
   "no-warning-comments": "warn",

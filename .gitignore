@@ -18,3 +18,7 @@ package-lock.json
 src/apollo-client/.env.local
 
 .env.local
+
+config.ts
+
+yarn-error.log
