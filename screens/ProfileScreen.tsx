@@ -36,7 +36,7 @@ const ProfileScreen = () => {
     <ScrollView style={{ backgroundColor: Colors.warmGrey.color }}>
       <BackgroundTemplate
         header={<ProfileHeader {...profileData} />}
-        body={<ProfileBody profileInfo={profileData} />}
+        body={<ProfileBody {...profileData} />}
       />
     </ScrollView>
   )

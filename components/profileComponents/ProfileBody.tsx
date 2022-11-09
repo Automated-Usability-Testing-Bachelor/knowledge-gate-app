@@ -5,16 +5,22 @@ import AboutText from './AboutText'
 import Skills from './Skills'
 import Experience from './Experience'
 import ExtraInfo from './ExtraInfo'
+import { ProfileData } from '../../screens/ProfileScreen'
 
-const ProfileBody = ({ profileInfo }: any) => (
+const ProfileBody: React.FC<ProfileData> = ({
+  about,
+  skills,
+  experiences,
+  extraInfo,
+}) => (
   <View style={styles.contentContainer}>
-    <AboutText about={profileInfo.about} />
+    <AboutText about={about} />
     <View style={styles.separator} />
-    <Skills skills={profileInfo.skills} />
+    <Skills skills={skills} />
     <View style={styles.separator} />
-    <Experience experience={profileInfo.experiences} />
+    <Experience experience={experiences} />
     <View style={styles.separator} />
-    <ExtraInfo extra={profileInfo.extraInfo} />
+    <ExtraInfo extra={extraInfo} />
   </View>
 )
 
