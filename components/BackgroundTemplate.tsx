@@ -5,8 +5,8 @@ import Colors from '../constants/Colors'
 const styles = StyleSheet.create({
   background: {
     backgroundColor: Colors.warmGrey.color,
-    height: '100%'
-  }
+    height: '100%',
+  },
 })
 
 type BackgroundTemplateProps = {
@@ -16,7 +16,7 @@ type BackgroundTemplateProps = {
 
 const BackgroundTemplate: React.FC<BackgroundTemplateProps> = ({
   body,
-  header
+  header,
 }) => {
   return (
     <SafeAreaView style={styles.background}>

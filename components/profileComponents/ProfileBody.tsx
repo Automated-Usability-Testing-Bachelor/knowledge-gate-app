@@ -21,14 +21,14 @@ const ProfileBody = ({ profileInfo }: any) => (
 const styles = StyleSheet.create({
   contentContainer: {
     paddingHorizontal: 20,
-    height: '100%'
+    height: '100%',
   },
   separator: {
     margin: 10,
     borderWidth: 0.5,
     height: 1,
-    borderColor: Colors.darkGrey.color
-  }
+    borderColor: Colors.darkGrey.color,
+  },
 })
 
 export default ProfileBody
