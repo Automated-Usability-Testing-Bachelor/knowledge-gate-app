@@ -1,5 +1,9 @@
+import { StackNavigationState, useNavigation } from '@react-navigation/core'
+import { StackNavigationProp } from '@react-navigation/stack'
 import { useCallback, useState } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
+import Navigation from '../../navigation'
+import { StackParamList } from '../../navigation/StackParamList'
 import { useAuthenticate } from '../../src/auth/useAuthenticate'
 import { dlog } from '../../src/utils/dlog'
 import ForgotPassword from './ForgotPassword'
@@ -17,27 +21,35 @@ const styles = StyleSheet.create({
   },
 })
 
+export type StackNavigation = StackNavigationProp<StackParamList>
+
 const LoginForm: React.FC = () => {
-  const [email, setEmail] = useState<string>()
-  const [password, setPassword] = useState<string>()
+  const [email, setEmail] = useState<string>('ardit@knowledgegategroup.com')
+  const [password, setPassword] = useState<string>('Ardit123456')
+
+  const [loginFailed, setLoginFailed] = useState<boolean>(false)
 
   const authenticate = useAuthenticate()
+
+  const navigation = useNavigation<StackNavigation>()
 
   const handleSignIn = useCallback(async () => {
     if (!email || !password) {
       // TODO: Fix this
+      setLoginFailed(true)
 
       return
     }
 
     try {
       await authenticate(email, password)
+      navigation.navigate('Onboarding')
     } catch (error) {
       dlog(`Submit failed for an email: ${email}`, {
         extra: JSON.stringify(error),
       })
     }
-  }, [authenticate, email, password])
+  }, [authenticate, email, password, navigation])
 
   return (
     <View style={styles.container}>
@@ -55,6 +67,7 @@ const LoginForm: React.FC = () => {
         onChangeText={setPassword}
       />
       <ForgotPassword />
+      {loginFailed && <Text>{'Login failed'}</Text>}
       <LoginBtn name={'Login'} onClick={handleSignIn} />
       <InfoText />
     </View>

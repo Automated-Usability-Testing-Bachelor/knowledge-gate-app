@@ -26,6 +26,8 @@ export const useAuthenticate = () => {
       const { data, error: viewerError } =
         await apolloClient.query<GetViewerQuery>({ query: GetViewerDocument })
 
+        console.log({ data })
+
       if (viewerError) {
         throw viewerError
       } else if (!data.viewer.id) {
