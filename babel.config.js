@@ -5,7 +5,7 @@ module.exports = function (api) {
     presets: [
       'babel-preset-expo',
       ['@babel/preset-env', { targets: { node: 'current' } }],
-      '@babel/preset-typescript'
+      '@babel/preset-typescript',
     ],
     plugins: [
       'react-native-reanimated/plugin',
@@ -17,9 +17,9 @@ module.exports = function (api) {
           blacklist: null,
           whitelist: null,
           safe: false,
-          allowUndefined: true
-        }
-      ]
-    ]
+          allowUndefined: true,
+        },
+      ],
+    ],
   }
 }
